@@ -14,6 +14,7 @@ Notes and plans for building RL environments (in the [Harbor](https://github.com
 | [02 – Realistic environments](docs/02-realistic-environments.md) | 8 realistic, CPU-only environment ideas across different domains |
 | [03 – 2026 trends](docs/03-trends-2026.md) | What people on X and in papers are saying about RL environments, and what it means for these ideas |
 | [04 – Benefits eligibility plan](docs/04-benefits-eligibility-plan.md) | The chosen domain: environment design, reward, training pipeline, risks |
+| [05 – Skills](docs/05-skills.md) | Claude Code skills in `.claude/skills/`: 4 written for ttune, 3 pulled in from Harbor, plus relevant account skills |
 
 ## Constraints I'm working under
 
