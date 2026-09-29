@@ -1,0 +1,113 @@
+description: Maximum assets for a couple to qualify for Medicaid under the 'medically needy' pathway.
+metadata:
+  label: Medicaid medically needy pathway for couples asset limit
+  breakdown:
+    - state_code
+  unit: currency-USD
+  period: month
+  reference:
+    - title: "Medicaid Financial Eligibility for Seniors and People with Disabilities: Findings from a 50-State Survey | KFF"
+      href: https://www.kff.org/report-section/medicaid-financial-eligibility-for-seniors-and-people-with-disabilities-findings-from-a-50-state-survey-appendix-tables/
+
+AK:
+  2018-01-01: -.inf
+AL:
+  2018-01-01: -.inf
+AR:
+  2018-01-01: 3_000
+AZ:
+  2018-01-01: -.inf
+CA:
+  2018-01-01: 3_000
+CO:
+  2018-01-01: -.inf
+CT:
+  2018-01-01: 2_400
+DC:
+  2018-01-01: 6_000
+DE:
+  2018-01-01: -.inf
+FL:
+  2018-01-01: 6_000
+GA:
+  2018-01-01: 4_000
+HI:
+  2018-01-01: 3_000
+IA:
+  2018-01-01: 10_000
+ID:
+  2018-01-01: -.inf
+IL:
+  2018-01-01: 3_000
+IN:
+  2018-01-01: -.inf
+KS:
+  2018-01-01: 3_000
+KY:
+  2018-01-01: 4_000
+LA:
+  2018-01-01: 3_000
+MA:
+  2018-01-01: 3_000
+MD:
+  2018-01-01: 3_000
+ME:
+  2018-01-01: 3_000
+MI:
+  2018-01-01: 3_000
+MN:
+  2018-01-01: 6_000
+MO:
+  2018-01-01: -.inf
+MS:
+  2018-01-01: -.inf
+MT:
+  2018-01-01: 3_000
+NC:
+  2018-01-01: 3_000
+ND:
+  2018-01-01: 6_000
+NE:
+  2018-01-01: 6_000
+NH:
+  2018-01-01: 4_000
+NJ:
+  2018-01-01: 6_000
+NM:
+  2018-01-01: -.inf
+NV:
+  2018-01-01: -.inf
+NY:
+  2018-01-01: 22_200
+OH:
+  2018-01-01: -.inf
+OK:
+  2018-01-01: -.inf
+OR:
+  2018-01-01: -.inf
+PA:
+  2018-01-01: 3_200
+RI:
+  2018-01-01: 6_000
+SC:
+  2018-01-01: -.inf
+SD:
+  2018-01-01: -.inf
+TN:
+  2018-01-01: 3_000
+TX:
+  2018-01-01: 3_000
+UT:
+  2018-01-01: 3_000
+VA:
+  2018-01-01: 3_000
+VT:
+  2018-01-01: 3_000
+WA:
+  2018-01-01: 3_000
+WV:
+  2018-01-01: 3_000
+WI:
+  2018-01-01: 3_000
+WY:
+  2018-01-01: -.inf

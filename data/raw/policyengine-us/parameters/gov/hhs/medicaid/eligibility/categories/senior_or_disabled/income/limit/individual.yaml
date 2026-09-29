@@ -1,0 +1,131 @@
+description: Maximum countable income limit for an individual to qualify for Medicaid under the optional senior or disabled pathway, as percent of Federal Poverty Line.
+metadata:
+  unit: /1
+  label: Medicaid senior or disabled income limit (individual)
+  period: year
+  breakdown:
+  - state_code
+  reference:
+    - title: Medicaid Eligibility and Enrollment Policies for Seniors and People with Disabilities (Non-MAGI) During the Unwinding Appendix Table 6| KFF"
+      href: https://www.kff.org/report-section/medicaid-eligibility-and-enrollment-policies-for-seniors-and-people-with-disabilities-non-magi-during-the-unwinding-appendix/
+    - title: Medicaid Financial Eligibility for Seniors and People with Disabilities Findings from a 50-State Survey
+      href: https://www.kff.org/report-section/medicaid-financial-eligibility-for-seniors-and-people-with-disabilities-findings-from-a-50-state-survey-appendix-tables/
+    - title: Connecticut Benefits Quick Guide (Revised February 15, 2023)
+      href: https://portal.ct.gov/-/media/aginganddisability/agingservices/choices/quick-guide---accessible-version-21523.pdf#page=2
+    - title: Connecticut Benefits Quick Guide (Revised May 6, 2024)
+      href: https://portal.ct.gov/-/media/aginganddisability/agingservices/choices/benefitsquickguide.pdf#page=2
+    - title: Connecticut CHOICES Benefits Quick Guide (Rev 04.04.2025)
+      href: https://portal.ct.gov/ads/-/media/ads-beta/choices/choices-benefits-quick-guide.pdf?rev=3b8c59ca12224218bc4c4438649e7ac7#page=1
+
+AK:
+  2018-01-01: 0.74
+  2021-01-01: 0.83
+AL:
+  2018-01-01: 0.75
+AZ:
+  2018-01-01: 1.00
+AR:
+  2018-01-01: 0.80
+CA:
+  2018-01-01: 1.00
+  2021-01-01: 1.38
+CO:
+  2018-01-01: 0.75
+CT:
+  2018-01-01: 0.63
+  2021-01-01: 0.98
+  2023-01-01: 0.327
+  2024-01-01: 0.576
+  2025-01-01: 0.64
+DE:
+  2018-01-01: 0.75
+DC:
+  2018-01-01: 1.00
+FL:
+  2018-01-01: 0.88
+GA:
+  2018-01-01: 0.75
+HI:
+  2018-01-01: 1.00
+ID:
+  2018-01-01: 0.80
+  2021-01-01: 0.78
+IL:
+  2018-01-01: 1.00
+IN:
+  2018-01-01: 1.00
+IA:
+  2018-01-01: 0.75
+KS:
+  2018-01-01: 0.75
+KY:
+  2018-01-01: 0.75
+LA:
+  2018-01-01: 0.75
+ME:
+  2018-01-01: 1.00
+MD:
+  2018-01-01: 0.75
+MA:
+  2018-01-01: 1.00
+MI:
+  2018-01-01: 1.00
+MN:
+  2018-01-01: 1.00
+MS:
+  2018-01-01: 0.75
+MO:
+  2018-01-01: 0.87
+  2021-01-01: 0.85
+MT:
+  2018-01-01: 0.75
+NE:
+  2018-01-01: 1.00
+NV:
+  2018-01-01: 0.75
+NH:
+  2018-01-01: 0.75
+NJ:
+  2018-01-01: 1.00
+NM:
+  2018-01-01: 0.75
+NY:
+  2018-01-01: 0.82
+NC:
+  2018-01-01: 1.00
+ND:
+  2018-01-01: 0.75
+OH:
+  2018-01-01: 0.75
+OK:
+  2018-01-01: 1.00
+OR:
+  2018-01-01: 0.75
+PA:
+  2018-01-01: 1.00
+RI:
+  2018-01-01: 1.00
+SC:
+  2018-01-01: 1.00
+SD:
+  2018-01-01: 0.75
+TN:
+  2018-01-01: 0.75
+TX:
+  2018-01-01: 0.75
+UT:
+  2018-01-01: 1.00
+VT:
+  2018-01-01: 0.74
+  2021-01-01: 0.80
+VA:
+  2018-01-01: 0.80
+WA:
+  2018-01-01: 0.75
+WV:
+  2018-01-01: 0.75
+WI:
+  2018-01-01: 0.83
+  2021-01-01: 1.00
+WY:
+  2018-01-01: 0.75

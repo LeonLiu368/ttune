@@ -1,0 +1,164 @@
+description: The USDA allows an excess shelter deduction of up to this amount when computing SNAP benefits.
+
+CONTIGUOUS_US:
+  1996-08-22: 247
+  1997-01-01: 250
+  1998-10-01: 275
+  1999-10-01: 280
+  2000-10-01: 340
+  # Subsequent: Updated based on CPI-U.
+  2015-10-01: 504
+  2016-10-01: 517
+  2017-10-01: 535
+  2018-10-01: 552
+  2019-10-01: 569
+  2020-10-01: 586
+  2021-10-01: 597
+  2022-10-01: 624
+  2023-10-01: 672
+  2024-10-01: 712
+  2025-10-01: 744
+  2026-10-01: 769
+AK_URBAN:
+  1996-08-22: 429
+  1997-01-01: 434
+  1998-10-01: 478
+  1999-10-01: 483
+  2000-10-01: 543
+  # Subsequent: Updated based on CPI-U.
+  2015-10-01: 805
+  2016-10-01: 826
+  2017-10-01: 854
+  2018-10-01: 881
+  2019-10-01: 908
+  2020-10-01: 936
+  2021-10-01: 954
+  2022-10-01: 996
+  2023-10-01: 1_073
+  2024-10-01: 1_137
+  2025-10-01: 1_189
+  2026-10-01: 1_229
+AK_RURAL_1:
+  1996-08-22: 429
+  1997-01-01: 434
+  1998-10-01: 478
+  1999-10-01: 483
+  2000-10-01: 543
+  # Subsequent: Updated based on CPI-U.
+  2015-10-01: 805
+  2016-10-01: 826
+  2017-10-01: 854
+  2018-10-01: 881
+  2019-10-01: 908
+  2020-10-01: 936
+  2021-10-01: 954
+  2022-10-01: 996
+  2023-10-01: 1_073
+  2024-10-01: 1_137
+  2025-10-01: 1_189
+  2026-10-01: 1_229
+AK_RURAL_2:
+  1996-08-22: 429
+  1997-01-01: 434
+  1998-10-01: 478
+  1999-10-01: 483
+  2000-10-01: 543
+  # Subsequent: Updated based on CPI-U.
+  2015-10-01: 805
+  2016-10-01: 826
+  2017-10-01: 854
+  2018-10-01: 881
+  2019-10-01: 908
+  2020-10-01: 936
+  2021-10-01: 954
+  2022-10-01: 996
+  2023-10-01: 1_073
+  2024-10-01: 1_137
+  2025-10-01: 1_189
+  2026-10-01: 1_229
+GU:
+  1996-08-22: 300
+  1997-01-01: 304
+  1998-10-01: 334
+  1999-10-01: 339
+  2000-10-01: 399
+  # Subsequent: Updated based on CPI-U.
+  2015-10-01: 592
+  2016-10-01: 607
+  2017-10-01: 627
+  2018-10-01: 647
+  2019-10-01: 667
+  2020-10-01: 688
+  2021-10-01: 701
+  2022-10-01: 732
+  2023-10-01: 789
+  2024-10-01: 835
+  2025-10-01: 873
+  2026-10-01: 903
+HI:
+  1996-08-22: 353
+  1997-01-01: 357
+  1998-10-01: 393
+  1999-10-01: 398
+  2000-10-01: 458
+  # Subsequent: Updated based on CPI-U.
+  2015-10-01: 679
+  2016-10-01: 697
+  2017-10-01: 720
+  2018-10-01: 743
+  2019-10-01: 766
+  2020-10-01: 790
+  2021-10-01: 805
+  2022-10-01: 840
+  2023-10-01: 905
+  2024-10-01: 959
+  2025-10-01: 1_003
+  2026-10-01: 1_036
+VI:
+  1996-08-22: 182
+  1997-01-01: 184
+  1998-10-01: 203
+  1999-10-01: 208
+  2000-10-01: 268
+  # Subsequent: Updated based on CPI-U.
+  2015-10-01: 397
+  2016-10-01: 408
+  2017-10-01: 421
+  2018-10-01: 435
+  2019-10-01: 448
+  2020-10-01: 462
+  2021-10-01: 471
+  2022-10-01: 492
+  2023-10-01: 529
+  2024-10-01: 561
+  2025-10-01: 586
+  2026-10-01: 606
+
+metadata:
+  unit: currency-USD
+  period: month
+  label: SNAP maximum shelter deduction
+  reference:
+    - title: 7 U.S. Code § 2014(e)(6)(B) # Values from 1996-08-22 to 2000-10-01.
+      href: https://www.law.cornell.edu/uscode/text/7/2014#e_6_B
+    - title: SNAP FY2022 Maximum Allotments and Deductions
+      href: https://fns-prod.azureedge.us/sites/default/files/media/file/FY22-Maximum-Allotments-Deductions.pdf#page=2
+    - title: SNAP FY2021 Maximum Allotments and Deductions
+      href: https://fns-prod.azureedge.us/sites/default/files/media/file/FY21-Maximum-Allotments-Deductions.pdf#page=2
+    # This page links to other PDFs.
+    - title: USDA Cost of Living Adjustments
+      href: https://www.fns.usda.gov/snap/allotment/COLA
+    - title: SNAP FY2024 Maximum Allotments and Deductions
+      href: https://fns-prod.azureedge.us/sites/default/files/media/file/FY24-Maximum-Allotments-and-Deductions.pdf#page=2
+    - title: SNAP FY2025 Cost-of-Living Adjustments
+      href: https://www.fns.usda.gov/snap/fy-2025-cola
+    - title: SNAP FY2026 Cost-of-Living Adjustments
+      href: https://www.fns.usda.gov/snap/allotment/cola/fy26
+    - title: SNAP FY2027 Cost-of-Living Adjustments
+      href: https://www.fns.usda.gov/snap/allotment/cola/fy27
+    - title: SNAP FY2027 Cost-of-Living Adjustments memo
+      href: https://www.usda.gov/sites/default/files/guidance-documents/fna.snap-cola2027.pdf#page=6
+  breakdown:
+    - snap_region
+  uprating: gov.usda.snap.uprating
+  propagate_metadata_to_children: true

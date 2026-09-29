@@ -1,0 +1,113 @@
+- name: Default is zero because zero housing costs.
+  period: 2022
+  input:
+    state_code: TX
+  output:
+    snap_excess_shelter_expense_deduction: 0
+
+- name: If net income pre-shelter is double housing cost, they only get the utility allowance, since 50% of the income is deducted.
+  period: 2022
+  input:
+    snap_net_income_pre_shelter: 12_000
+    housing_cost: 6_000
+    snap_utility_allowance: 100
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_shelter_expense_deduction: 100
+
+- name: If net income pre-shelter equals housing cost, they get half the housing cost.
+  period: 2022
+  input:
+    snap_net_income_pre_shelter: 6_000
+    housing_cost: 6_000
+    snap_utility_allowance: 0
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_shelter_expense_deduction: 3_000 # Uncapped since less than 597 * 12 = $7,164.
+
+- name: Caps at $597 per month in contiguous US.
+  period: 2022-01
+  input:
+    housing_cost:
+      2022: 600 * 12
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_shelter_expense_deduction: 597
+
+- name: Uncapped if includes elderly or disabled people.
+  period: 2022
+  input:
+    state_code: TX
+    housing_cost: 600 * 12
+    has_snap_elderly_disabled_member: true
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_shelter_expense_deduction: 600 * 12
+
+- name: Homeless households get a flat benefit.
+  period: 2022-01
+  input:
+    state_code: TX
+    is_homeless: true
+    housing_cost: 1
+  output:
+    snap_excess_shelter_expense_deduction: 159.73
+
+- name: Pre-2019 Alaska homeless deduction was already available.
+  period: 2016-10
+  input:
+    state_code:
+      2016: AK
+    is_homeless:
+      2016: true
+    housing_cost:
+      2016: 1
+  output:
+    snap_excess_shelter_expense_deduction: 143
+
+- name: Post-farm-bill homeless deduction is available nationwide.
+  period: 2020-10
+  input:
+    state_code:
+      2020: AL
+    is_homeless:
+      2020: true
+    housing_cost:
+      2020: 1
+  output:
+    snap_excess_shelter_expense_deduction: 156.74
+
+- name: Caps at $701 per month in GU with housing costs and utility allowance added.
+  period: 2022-01
+  input:
+    snap_net_income_pre_shelter: 0
+    snap_region_str: GU
+    housing_cost: 4_800 # 400 monthly 
+    snap_utility_allowance: 300
+    has_snap_elderly_disabled_member: false
+    is_homeless: false
+    weekly_hours_worked_before_lsr: 40
+  output:
+    # cap at 701, 
+    snap_excess_shelter_expense_deduction: 700
+
+- name: FY2027 shelter cap uses the published COLA value.
+  period: 2027-01
+  absolute_error_margin: 0.01
+  input:
+    housing_cost:
+      2027: 12_000
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_shelter_expense_deduction: 769
+
+- name: FY2027 homeless shelter deduction uses the published COLA value.
+  period: 2027-01
+  absolute_error_margin: 0.01
+  input:
+    state_code: TX
+    is_homeless: true
+    housing_cost: 1
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_shelter_expense_deduction: 205.66

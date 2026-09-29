@@ -16,6 +16,10 @@ Notes and plans for building RL environments (in the [Harbor](https://github.com
 | [04 – Benefits eligibility plan](docs/04-benefits-eligibility-plan.md) | The chosen domain: environment design, reward, training pipeline, risks |
 | [05 – Skills](docs/05-skills.md) | Claude Code skills in `.claude/skills/`: 4 written for ttune, 3 pulled in from Harbor, plus relevant account skills |
 
+## Data
+
+[`data/`](data/README.md) holds raw inputs for the benefits environment: PolicyEngine's rule parameters and about 1,300 example households for SNAP, WIC, EITC and Medicaid. [`data/sources.json`](data/sources.json) lists every source, including the official government ones a future scraper should fetch.
+
 ## Constraints I'm working under
 
 - Little compute: CPU-side verification, small open-weight models (4–8B), LoRA, a single rented GPU or a hosted fine-tuning API.

@@ -1,0 +1,89 @@
+- name: SNAP entitles to WIC.
+  period: 2022
+  input:
+    snap: 1
+    medicaid_enrolled: 0
+    tanf: 0
+  output:
+    meets_wic_categorical_eligibility: true
+
+- name: Without SNAP, no WIC categorical eligibility.
+  period: 2022
+  input:
+    snap: 0
+    medicaid_enrolled: 0
+    tanf: 0
+  output:
+    meets_wic_categorical_eligibility: false
+
+- name: medicaid_enrolled entitles to WIC.
+  period: 2022
+  input:
+    snap: 0
+    medicaid_enrolled: 1
+    tanf: 0
+  output:
+    meets_wic_categorical_eligibility: true
+
+- name: Being in the same household as a pregnant medicaid_enrolled recipient entitles to WIC.
+  period: 2022
+  input:
+    people:
+      pregnant:
+        medicaid_enrolled: 1
+        is_pregnant: true
+      child:
+        medicaid_enrolled: 0
+    spm_units:
+      spm_unit:
+        members: [pregnant, child]
+        snap: 0
+        tanf: 0
+  output:
+    meets_wic_categorical_eligibility: [true, true]
+
+- name: Being in the same household as a non-pregnant non-infant medicaid_enrolled recipient doesn't entitle to WIC.
+  period: 2022
+  input:
+    people:
+      father:
+        medicaid_enrolled: 1
+      child:
+        medicaid_enrolled: 0
+    spm_units:
+      spm_unit:
+        members: [father, child]
+        snap: 0
+        tanf: 0
+  output:
+    meets_wic_categorical_eligibility: [true, false]
+
+- name: Reported TANF receipt entitles to WIC when computed benefits are zero.
+  period: 2022
+  input:
+    people:
+      mother:
+        medicaid_enrolled: 0
+    spm_units:
+      spm_unit:
+        members: [mother]
+        snap: 0
+        tanf: 0
+        receives_tanf: true
+  output:
+    meets_wic_categorical_eligibility: [true]
+
+- name: Reported SNAP receipt entitles to WIC when computed benefits are zero.
+  period: 2022
+  input:
+    people:
+      mother:
+        medicaid_enrolled: 0
+    spm_units:
+      spm_unit:
+        members: [mother]
+        snap: 0
+        tanf: 0
+        receives_snap: true
+  output:
+    meets_wic_categorical_eligibility: [true]

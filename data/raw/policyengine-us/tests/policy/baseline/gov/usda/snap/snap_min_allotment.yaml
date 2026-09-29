@@ -1,0 +1,110 @@
+- name: Family of 2
+  period: 2022-01
+  input:
+    spm_unit_size: 2
+    state_group: CONTIGUOUS_US
+  output:
+    # Eligible as a family of 2.
+    # $250/mo is the maximum SNAP benefit for 1-person households in the
+    # contiguous US.
+    snap_min_allotment: 250 * 0.08   # Maximum allotments change every October.
+
+- name: Family of 3
+  period: 2022-01
+  input:
+    spm_unit_size: 3
+    weekly_hours_worked_before_lsr: 40
+  output:
+    # Ineligible as a family of 3.
+    snap_min_allotment: 0
+
+- name: NJ provides a different minimum allotment amount
+  period: 2024-01
+  input:
+    spm_unit_size: 2
+    state_code: NJ
+    state_group: CONTIGUOUS_US
+  output:
+    snap_min_allotment: 95
+
+- name: DC provides a different minimum allotment amount
+  period: 2024-01
+  input:
+    spm_unit_size: 2
+    state_code: DC
+    state_group: CONTIGUOUS_US
+  output:
+    snap_min_allotment: 30
+
+- name: In other states, we keep the standard minimum allotment amount
+  period: 2022-01
+  input:
+    spm_unit_size: 2
+    state_code: CA
+    state_group: CONTIGUOUS_US
+  output:
+    snap_min_allotment: 250 * 0.08
+
+- name: Above age threshold in 2017, Maryland provides a different minimum allotment amount 
+  period: 2022-01
+  input:
+    spm_unit_size: 1
+    md_snap_elderly_present: true
+    state_code_str: MD
+    state_group: CONTIGUOUS_US
+  output:
+    snap_min_allotment: 30
+
+- name: Below age threshold in 2022, Maryland follows the federal rules 
+  period: 2022-01
+  input:
+    spm_unit_size: 1
+    md_snap_elderly_present: false
+    state_code_str: MD
+    state_group: CONTIGUOUS_US
+  output:
+    snap_min_allotment: 250 * 0.08 
+  
+- name: Above age threshold in 2023, Maryland provides a different minimum allotment amount.
+  period: 2023-01
+  input:
+    spm_unit_size: 1
+    md_snap_elderly_present: true
+    state_code_str: MD
+    state_group: CONTIGUOUS_US
+  output:
+    snap_min_allotment: 40
+
+- name: Before Maryland's supplement took effect, Maryland follows the federal rules
+  period: 2016-01
+  input:
+    spm_unit_size: 1
+    md_snap_elderly_present: true
+    state_code_str: MD
+    state_group: CONTIGUOUS_US
+  output:
+    # 8% of the $194 one-person maximum allotment is $15.52, rounded to
+    # the nearest whole dollar: $16 (the USDA FY 2016 minimum benefit).
+    snap_min_allotment: 16
+
+- name: FY 2025 minimum allotment rounds down to the nearest whole dollar
+  period: 2025-01
+  input:
+    spm_unit_size: 1
+    state_code: CA
+    state_group: CONTIGUOUS_US
+  output:
+    # 8% of the $292 one-person maximum allotment is $23.36, rounded to
+    # the nearest whole dollar per 7 CFR 273.10(e)(2)(ii)(C): $23.
+    snap_min_allotment: 23
+
+- name: FY 2026 minimum allotment rounds up to the nearest whole dollar
+  period: 2026-01
+  input:
+    spm_unit_size: 1
+    state_code: CA
+    state_group: CONTIGUOUS_US
+  output:
+    # 8% of the $298 one-person maximum allotment is $23.84, rounded to
+    # the nearest whole dollar per 7 CFR 273.10(e)(2)(ii)(C): $24.
+    snap_min_allotment: 24

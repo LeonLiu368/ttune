@@ -1,0 +1,330 @@
+- name: low income, eligible for Medicaid
+  period: 2022
+  input:
+    medicaid_optional_senior_or_disabled_countable_income: 600
+    state_code: CT
+  output:
+    is_optional_senior_or_disabled_income_eligible: true
+
+- name: high income, ineligible for Medicaid
+  period: 2022
+  input:
+    medicaid_optional_senior_or_disabled_countable_income: 1_000_000
+    state_code: FL
+  output:
+    is_optional_senior_or_disabled_income_eligible: false
+    
+
+- name: Joint filers over Connecticut's couple limit are ineligible.
+  period: 2022
+  input:
+    people:
+      person1:
+        medicaid_optional_senior_or_disabled_countable_income: 9_000
+      person2:
+        medicaid_optional_senior_or_disabled_countable_income: 9_000
+    marital_units:
+      marital_unit1:
+        members: [person1, person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: CT
+    tax_units:
+      tax_unit:
+        members: [person1, person2]
+        tax_unit_is_joint: true
+  output:
+    is_optional_senior_or_disabled_income_eligible: [false, false]
+
+- name: Joint filers under Connecticut's couple limit are eligible.
+  period: 2022
+  input:
+    people:
+      person1:
+        medicaid_optional_senior_or_disabled_countable_income: 6_700
+      person2:
+        medicaid_optional_senior_or_disabled_countable_income: 6_700
+    marital_units:
+      marital_unit1:
+        members: [person1, person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: CT
+    tax_units:
+      tax_unit:
+        members: [person1, person2]
+        tax_unit_is_joint: true
+  output:
+    is_optional_senior_or_disabled_income_eligible: [true, true]
+
+- name: Earned income below Connecticut's 2025 limit is eligible.
+  period: 2025
+  input:
+    age: 70
+    employment_income: 20_000
+    state_code: CT
+  output:
+    is_optional_senior_or_disabled_income_eligible: true
+
+- name: Earned income over Connecticut's 2025 limit is ineligible.
+  period: 2025
+  input:
+    age: 70
+    employment_income: 34_000
+    state_code: CT
+  output:
+    is_optional_senior_or_disabled_income_eligible: false
+
+# Issue #9125: Missouri MHABD applies an 85% FPL non-spend-down standard to
+# old-age and disability-based eligibility but a 100% FPL standard to
+# blindness-based eligibility (DSS Manual § 0805.015.45).
+- name: Missouri blind applicant between 85% and 100% FPL is income-eligible
+  period: 2025
+  input:
+    people:
+      person1:
+        is_blind: true
+        medicaid_optional_senior_or_disabled_countable_income: 13_500
+    tax_units:
+      tax_unit:
+        members: [person1]
+    households:
+      household:
+        members: [person1]
+        state_code: MO
+  output:
+    is_optional_senior_or_disabled_income_eligible: [true]
+
+- name: Missouri non-blind applicant with the same income fails the 85% standard
+  period: 2025
+  input:
+    people:
+      person1:
+        medicaid_optional_senior_or_disabled_countable_income: 13_500
+    tax_units:
+      tax_unit:
+        members: [person1]
+    households:
+      household:
+        members: [person1]
+        state_code: MO
+  output:
+    is_optional_senior_or_disabled_income_eligible: [false]
+
+- name: Missouri blind applicant above 100% FPL is ineligible
+  period: 2025
+  input:
+    people:
+      person1:
+        is_blind: true
+        medicaid_optional_senior_or_disabled_countable_income: 15_700
+    tax_units:
+      tax_unit:
+        members: [person1]
+    households:
+      household:
+        members: [person1]
+        state_code: MO
+  output:
+    is_optional_senior_or_disabled_income_eligible: [false]
+
+# The standards are income maxima (DSS Manual § 0805.015.45), so income
+# exactly at the limit qualifies.
+- name: Missouri blind applicant at exactly 100% FPL is income-eligible
+  period: 2025
+  input:
+    people:
+      person1:
+        is_blind: true
+        medicaid_optional_senior_or_disabled_countable_income: 15_660
+    tax_units:
+      tax_unit:
+        members: [person1]
+    households:
+      household:
+        members: [person1]
+        state_code: MO
+  output:
+    is_optional_senior_or_disabled_income_eligible: [true]
+
+- name: Missouri non-blind applicant at exactly 85% FPL is income-eligible
+  period: 2025
+  input:
+    people:
+      person1:
+        medicaid_optional_senior_or_disabled_countable_income: 13_308
+    tax_units:
+      tax_unit:
+        members: [person1]
+    households:
+      household:
+        members: [person1]
+        state_code: MO
+  output:
+    is_optional_senior_or_disabled_income_eligible: [true]
+
+# The limits are inclusive maxima in every state, not just Missouri:
+# 42 U.S.C. § 1396a(m)(1)(B) covers income that "does not exceed" the
+# state's standard. Florida's limit is 88% FPL: 0.88 x 15,650 = 13,772
+# for one person and 0.88 x 21,150 = 18,612 for a couple in 2025.
+- name: Income exactly at Florida's limit is eligible
+  period: 2025
+  input:
+    people:
+      person1:
+        medicaid_optional_senior_or_disabled_countable_income: 13_772
+    tax_units:
+      tax_unit:
+        members: [person1]
+    households:
+      household:
+        members: [person1]
+        state_code: FL
+  output:
+    is_optional_senior_or_disabled_income_eligible: [true]
+
+- name: Income one dollar over Florida's limit is ineligible
+  period: 2025
+  input:
+    people:
+      person1:
+        medicaid_optional_senior_or_disabled_countable_income: 13_773
+    tax_units:
+      tax_unit:
+        members: [person1]
+    households:
+      household:
+        members: [person1]
+        state_code: FL
+  output:
+    is_optional_senior_or_disabled_income_eligible: [false]
+
+- name: Joint income exactly at Florida's couple limit is eligible
+  period: 2025
+  input:
+    people:
+      person1:
+        medicaid_optional_senior_or_disabled_countable_income: 9_306
+      person2:
+        medicaid_optional_senior_or_disabled_countable_income: 9_306
+    tax_units:
+      tax_unit:
+        members: [person1, person2]
+        tax_unit_is_joint: true
+    marital_units:
+      marital_unit1:
+        members: [person1, person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: FL
+  output:
+    is_optional_senior_or_disabled_income_eligible: [true, true]
+
+- name: Joint income over Florida's couple limit is ineligible
+  period: 2025
+  input:
+    people:
+      person1:
+        medicaid_optional_senior_or_disabled_countable_income: 9_307
+      person2:
+        medicaid_optional_senior_or_disabled_countable_income: 9_307
+    tax_units:
+      tax_unit:
+        members: [person1, person2]
+        tax_unit_is_joint: true
+    marital_units:
+      marital_unit1:
+        members: [person1, person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: FL
+  output:
+    is_optional_senior_or_disabled_income_eligible: [false, false]
+
+# The couple standard applies to the couple's combined countable income
+# even when the spouses file separate returns (42 CFR 435.602; Missouri
+# DSS Manual § 0805.015.05).
+- name: Missouri married couple filing separately is tested on combined income against the couple standard
+  period: 2026
+  input:
+    people:
+      person1:
+        age: 70
+        medicaid_optional_senior_or_disabled_countable_income: 14_880
+      person2:
+        age: 68
+        medicaid_optional_senior_or_disabled_countable_income: 14_880
+    tax_units:
+      tax_unit1:
+        members: [person1]
+      tax_unit2:
+        members: [person2]
+    marital_units:
+      marital_unit:
+        members: [person1, person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: MO
+  output:
+    # 29,760 combined exceeds the 18,396 couple standard.
+    is_optional_senior_or_disabled_income_eligible: [false, false]
+
+- name: Missouri unmarried adults in separate tax units are each tested on their own income
+  period: 2026
+  input:
+    people:
+      person1:
+        age: 70
+        medicaid_optional_senior_or_disabled_countable_income: 13_500
+      person2:
+        age: 68
+        medicaid_optional_senior_or_disabled_countable_income: 13_500
+    tax_units:
+      tax_unit1:
+        members: [person1]
+      tax_unit2:
+        members: [person2]
+    marital_units:
+      marital_unit1:
+        members: [person1]
+      marital_unit2:
+        members: [person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: MO
+  output:
+    # Each 13,500 is under the 13,572 individual standard.
+    is_optional_senior_or_disabled_income_eligible: [true, true]
+
+# Each spouse is under the 13,572 individual standard, so only the couple
+# sum makes this ineligible; a per-person test would return [true, true].
+- name: Missouri couple each under the individual standard but over the couple standard combined is ineligible
+  period: 2026
+  input:
+    people:
+      person1:
+        age: 70
+        medicaid_optional_senior_or_disabled_countable_income: 9_300
+      person2:
+        age: 68
+        medicaid_optional_senior_or_disabled_countable_income: 9_300
+    tax_units:
+      tax_unit:
+        members: [person1, person2]
+        tax_unit_is_joint: true
+    marital_units:
+      marital_unit:
+        members: [person1, person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: MO
+  output:
+    # 18,600 combined exceeds the 18,396 couple standard.
+    is_optional_senior_or_disabled_income_eligible: [false, false]

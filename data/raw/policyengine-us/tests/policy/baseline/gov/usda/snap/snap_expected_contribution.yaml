@@ -1,0 +1,61 @@
+- name: Family of 4, no member(s) with disabilities, income of 24k/year (Standard Test)
+  period: 2022
+  input:
+    people:
+      person_1:
+        age: 30
+      person_2:
+        age: 35
+      person_3:
+        age: 17
+      person_4:
+        age: 15
+    spm_units:
+      spm_unit:
+        snap_gross_income: 2000 * 12
+        snap_earned_income_deduction: (2000 * 0.2) * 12
+        snap_standard_deduction: 181 * 12
+        snap_net_income_pre_shelter: (2000 - (2000 * 0.2) - 181) * 12
+        snap_excess_shelter_expense_deduction: 586 * 12
+        housing_cost: 1700 * 12
+        has_snap_elderly_disabled_member: false
+        members: [person_1, person_2, person_3, person_4]
+        snap_net_income: 833 * 12
+    households:
+      household:
+        state_group: CONTIGUOUS_US
+  output:
+    # 30% of the $833 rounded net income is $249.90, rounded up to $250.
+    snap_expected_contribution: 250 * 12
+
+- name: Family of 4, member(s) with disabilities, income of 24k/year (Standard Test)
+  period: 2022
+  input:
+    people:
+      person_1:
+        is_usda_disabled: true
+        age: 30
+      person_2:
+        age: 35
+      person_3:
+        age: 17
+      person_4:
+        age: 15
+    spm_units:
+      spm_unit:
+        snap_gross_income: 2000 * 12
+        snap_earned_income_deduction: (2000 * 0.2) * 12
+        snap_standard_deduction: 181 * 12
+        snap_net_income_pre_shelter: (2000 - (2000 * 0.2) - 181) * 12
+        snap_excess_shelter_expense_deduction: (1700 - (1419 * 0.5)) * 12
+        housing_cost: 1700 * 12
+        has_snap_elderly_disabled_member: true
+        members: [person_1, person_2, person_3, person_4]
+        snap_net_income: 428.5 * 12
+    households:
+      household:
+        state_group: CONTIGUOUS_US
+  output:
+    # Net income of $428.50 rounds half-up to $429 each month; 30% is
+    # $128.70, rounded up to $129.
+    snap_expected_contribution: 129 * 12

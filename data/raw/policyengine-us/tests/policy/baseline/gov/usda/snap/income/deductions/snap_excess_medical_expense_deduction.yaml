@@ -1,0 +1,150 @@
+- name: Default is zero, since default medical expenses are zero.
+  period: 2022
+  output:
+    snap_excess_medical_expense_deduction: 0
+
+- name: Elderly person with no medical expenses gets zero.
+  period: 2022
+  input:
+    is_usda_elderly: true
+  output:
+    snap_excess_medical_expense_deduction: 0
+
+- name: Disabled person with $35 medical expenses gets $0.
+  period: 2022
+  input:
+    is_usda_disabled: true
+    other_medical_expenses: 35 * 12
+  output:
+    snap_allowable_medical_expenses: 35 * 12
+    snap_excess_medical_expense_deduction: 0
+
+- name: Disabled person in California with $35.01 medical expenses gets the standard medical expense deduction.
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    is_usda_disabled: true
+    other_medical_expenses: 35.01 * 12
+    state_code_str: CA
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_medical_expense_deduction: 120 * 12
+
+- name: Elderly/disabled person in California with $155 medical expenses gets the standard medical expense deduction.
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    is_usda_disabled: true
+    is_usda_elderly: true
+    other_medical_expenses: 155 * 12
+    state_code_str: CA
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_medical_expense_deduction: (155 - 35) * 12
+
+- name: Elderly person in California with $156 medical expenses takes the normal deduction.
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    is_usda_elderly: true
+    other_medical_expenses: 156 * 12
+    state_code_str: CA
+    weekly_hours_worked_before_lsr: 40
+  output:
+    snap_excess_medical_expense_deduction: (156 - 35) * 12
+
+- name: Disabled person in California with $35.01 medical expenses gets the standard medical expense deduction.
+  period: 2025
+  absolute_error_margin: 1
+  input:
+    is_usda_disabled: true
+    other_medical_expenses: 35.01 * 12
+    state_code_str: CA
+  output:
+    snap_excess_medical_expense_deduction: 150 * 12
+
+- name: Elderly/disabled person in California with $185 medical expenses gets the standard medical expense deduction.
+  period: 2025
+  absolute_error_margin: 1
+  input:
+    is_usda_disabled: true
+    is_usda_elderly: true
+    other_medical_expenses: 185 * 12
+    state_code_str: CA
+  output:
+    snap_excess_medical_expense_deduction: 150 * 12
+
+- name: Elderly person in California with $186 medical expenses takes the normal deduction.
+  period: 2025
+  absolute_error_margin: 1
+  input:
+    is_usda_elderly: true
+    other_medical_expenses: 186 * 12
+    state_code_str: CA
+  output:
+    snap_excess_medical_expense_deduction: 151 * 12  # $151 excess
+
+- name: Expenses must be for the elderly/disabled person.
+  period: 2022
+  input:
+    people:
+      elderly:
+        is_usda_elderly: true
+      young:
+        other_medical_expenses: 100 * 12
+    spm_units:
+      spm_unit:
+        members: [elderly, young]
+    households:
+      household:
+        members: [elderly, young]
+        state_code_str: CA
+  output:
+    snap_excess_medical_expense_deduction: 0
+
+- name: Prorated ineligible elderly member's medical expenses are excluded.
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    people:
+      person1:
+        age: 70
+        immigration_status: UNDOCUMENTED
+        other_medical_expenses: 6_000
+      person2:
+        age: 33
+    spm_units:
+      spm_unit:
+        members: [person1, person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: TX
+  output:
+    # The prorated member is not a household member (7 CFR 273.9(d)(3),
+    # 271.2), so their $500 monthly expenses do not count, and with zero
+    # excess the standard medical deduction is not claimable either.
+    snap_excess_medical_expense_deduction: 0
+
+- name: Eligible elderly member's medical expenses remain deductible.
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    people:
+      person1:
+        age: 70
+        immigration_status: CITIZEN
+        other_medical_expenses: 6_000
+      person2:
+        age: 33
+    spm_units:
+      spm_unit:
+        members: [person1, person2]
+    households:
+      household:
+        members: [person1, person2]
+        state_code: TX
+  output:
+    # $500 monthly expenses less the $35 disregard, above Texas's $135
+    # standard medical deduction.
+    snap_excess_medical_expense_deduction: 465

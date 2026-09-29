@@ -1,0 +1,12 @@
+description: Person-level income sources that count as earned income for SNAP
+
+values:
+  2009-01-01:
+    - employment_income
+    # Self-employment income after the expense deduction is computed at the
+    # SPM unit level and attributed to members in snap_earned_income and
+    # snap_gross_test_income.
+metadata:
+  reference:
+    - title: 7 CFR 273.9(b)(1)
+      href: https://www.law.cornell.edu/cfr/text/7/273.9#b_1
