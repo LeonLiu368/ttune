@@ -50,7 +50,7 @@ The government sources (HHS/ASPE, USDA FNS, IRS, Medicaid.gov) are fetched by `p
 - `direct`: download the first URL in `urls` that returns 200 (later URLs are fallbacks).
 - `page`: download the page, then any links on it whose URL matches `follow.pattern`, on `follow.hosts` (default: the page's own host), up to `follow.max`.
 
-Each run writes a new dated snapshot only when content changed, and updates the source's `status`, `retrieved`, `latest_snapshot` and `last_error`. A run where nothing changed leaves the repo untouched, so no PR is opened. It waits 1 second between requests to a host, retries transient errors, respects robots.txt, caps files at 50 MB, and never executes anything it downloads.
+Each run writes a new dated snapshot only when content changed, and updates the source's `status`, `retrieved`, `latest_snapshot` and `last_error`. A run where nothing changed leaves the repo untouched, so no PR is opened. It waits 1 second between requests to a host, retries transient errors, follows robots.txt per RFC 9309 (a 4xx robots.txt means no restrictions, a 5xx or unreachable one means stay away), caps files at 50 MB, and never executes anything it downloads.
 
 ```bash
 pip install -r requirements.txt

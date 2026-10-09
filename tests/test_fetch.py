@@ -223,15 +223,25 @@ def test_robots_disallow_skips_fetch(server, client, tmp_path):
     assert "/private/doc.pdf" not in server.hits
 
 
-def test_robots_txt_forbidden_disallows_everything_and_says_so(server, client, tmp_path):
+def test_robots_txt_client_error_means_no_restrictions(server, client, tmp_path):
     server.routes["/robots.txt"] = (403, {}, b"")
     server.routes["/doc.pdf"] = ok(b"pdf")
-    source = direct("forbidden", f"{server.base}/doc.pdf")
+    source = direct("open", f"{server.base}/doc.pdf")
+
+    row = fetch_source(client, source, tmp_path, NOW)
+
+    assert row["result"] == "new"
+
+
+def test_robots_txt_server_error_disallows_everything(server, client, tmp_path):
+    server.routes["/robots.txt"] = (503, {}, b"")
+    server.routes["/doc.pdf"] = ok(b"pdf")
+    source = direct("down", f"{server.base}/doc.pdf")
 
     row = fetch_source(client, source, tmp_path, NOW)
 
     assert row["result"] == "error"
-    assert "robots.txt itself returned HTTP 403" in source["last_error"]
+    assert "robots.txt unreachable" in source["last_error"]
     assert "/doc.pdf" not in server.hits
 
 

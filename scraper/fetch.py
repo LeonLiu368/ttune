@@ -48,7 +48,7 @@ class Http:
         self.retries = retries
         self.backoff = backoff
         self._last_request: dict[str, float] = {}
-        self._robots: dict[str, tuple[RobotFileParser | None, str]] = {}
+        self._robots: dict[str, tuple[RobotFileParser, str]] = {}
 
     def get(self, url: str) -> Fetched:
         reason = self._robots_check(url)
@@ -61,26 +61,25 @@ class Http:
         parts = urlsplit(url)
         origin = f"{parts.scheme}://{parts.netloc}"
         if origin not in self._robots:
-            parser: RobotFileParser | None = RobotFileParser()
+            # RFC 9309: a 4xx robots.txt means no restrictions; 5xx or unreachable means disallow all.
+            parser = RobotFileParser()
             reason = "its rules disallow this path"
             try:
                 resp = self._get(origin + "/robots.txt")
-            except FetchError:
-                # Unreachable robots.txt: the real request will surface the network problem.
-                parser = None
+            except FetchError as exc:
+                parser.disallow_all = True
+                reason = f"robots.txt unreachable: {exc}"
             else:
-                if resp.status in (401, 403):
-                    parser.disallow_all = True
-                    reason = f"robots.txt itself returned HTTP {resp.status}"
-                elif resp.status == 200:
+                if resp.status == 200:
                     parser.parse(resp.body.decode("utf-8", "replace").splitlines())
-                else:
+                elif 400 <= resp.status < 500:
                     parser.allow_all = True
+                else:
+                    parser.disallow_all = True
+                    reason = f"robots.txt returned HTTP {resp.status}"
             self._robots[origin] = (parser, reason)
         parser, reason = self._robots[origin]
-        if parser is None or parser.can_fetch(USER_AGENT, url):
-            return None
-        return reason
+        return None if parser.can_fetch(USER_AGENT, url) else reason
 
     def _throttle(self, host: str) -> None:
         last = self._last_request.get(host)
