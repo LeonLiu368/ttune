@@ -58,7 +58,7 @@ jobs:
           delete-branch: true
 
       - name: Fail if any source failed
-        if: steps.fetch.outcome == 'failure'
+        if: always() && steps.fetch.outcome == 'failure'
         run: |
           echo "One or more sources failed; see the job summary."
           exit 1

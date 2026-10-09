@@ -48,18 +48,21 @@ class Http:
         self.retries = retries
         self.backoff = backoff
         self._last_request: dict[str, float] = {}
-        self._robots: dict[str, RobotFileParser | None] = {}
+        self._robots: dict[str, tuple[RobotFileParser | None, str]] = {}
 
     def get(self, url: str) -> Fetched:
-        if not self._robots_allow(url):
-            raise FetchError(f"disallowed by robots.txt: {url}")
+        reason = self._robots_check(url)
+        if reason:
+            raise FetchError(f"disallowed by robots.txt ({reason}): {url}")
         return self._get(url)
 
-    def _robots_allow(self, url: str) -> bool:
+    def _robots_check(self, url: str) -> str | None:
+        """Return why robots.txt disallows the URL, or None if it's allowed."""
         parts = urlsplit(url)
         origin = f"{parts.scheme}://{parts.netloc}"
         if origin not in self._robots:
             parser: RobotFileParser | None = RobotFileParser()
+            reason = "its rules disallow this path"
             try:
                 resp = self._get(origin + "/robots.txt")
             except FetchError:
@@ -68,13 +71,16 @@ class Http:
             else:
                 if resp.status in (401, 403):
                     parser.disallow_all = True
+                    reason = f"robots.txt itself returned HTTP {resp.status}"
                 elif resp.status == 200:
                     parser.parse(resp.body.decode("utf-8", "replace").splitlines())
                 else:
                     parser.allow_all = True
-            self._robots[origin] = parser
-        parser = self._robots[origin]
-        return parser is None or parser.can_fetch(USER_AGENT, url)
+            self._robots[origin] = (parser, reason)
+        parser, reason = self._robots[origin]
+        if parser is None or parser.can_fetch(USER_AGENT, url):
+            return None
+        return reason
 
     def _throttle(self, host: str) -> None:
         last = self._last_request.get(host)

@@ -56,15 +56,17 @@
       "format": "html+pdf",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "Cited by PolicyEngine's SNAP max-allotment tests.",
+      "notes": "The FNS COLA page only links to the memo on USDA's guidance portal, so the scraper starts there and follows its PDF links. Cited by PolicyEngine's SNAP max-allotment tests.",
       "fetch": {
         "type": "page",
         "urls": [
-          "https://www.fns.usda.gov/snap/allotment/cola/fy27"
+          "https://www.usda.gov/guidance-documents/snap/fna/snap-fiscal-year-2027-cost-living-adjustments"
         ],
         "follow": {
           "pattern": "(?i)\\.pdf$",
           "hosts": [
+            "www.usda.gov",
+            "www.fna.usda.gov",
             "www.fns.usda.gov",
             "fns-prod.azureedge.us"
           ],
@@ -82,7 +84,7 @@
       "format": "xlsx",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "The cited 'fna' host may be a typo for 'fns'; the scraper tries both.",
+      "notes": "FNS is now the Food and Nutrition Administration at fna.usda.gov; www.fns.usda.gov redirects there. The fns URL is kept as a fallback.",
       "fetch": {
         "type": "direct",
         "urls": [

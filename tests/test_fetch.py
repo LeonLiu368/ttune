@@ -219,8 +219,20 @@ def test_robots_disallow_skips_fetch(server, client, tmp_path):
     row = fetch_source(client, source, tmp_path, NOW)
 
     assert row["result"] == "error"
-    assert "robots.txt" in source["last_error"]
+    assert "its rules disallow this path" in source["last_error"]
     assert "/private/doc.pdf" not in server.hits
+
+
+def test_robots_txt_forbidden_disallows_everything_and_says_so(server, client, tmp_path):
+    server.routes["/robots.txt"] = (403, {}, b"")
+    server.routes["/doc.pdf"] = ok(b"pdf")
+    source = direct("forbidden", f"{server.base}/doc.pdf")
+
+    row = fetch_source(client, source, tmp_path, NOW)
+
+    assert row["result"] == "error"
+    assert "robots.txt itself returned HTTP 403" in source["last_error"]
+    assert "/doc.pdf" not in server.hits
 
 
 def test_oversized_download_is_rejected(server, client, tmp_path, monkeypatch):
