@@ -18,7 +18,7 @@ Notes and plans for building RL environments (in the [Harbor](https://github.com
 
 ## Data
 
-[`data/`](data/README.md) holds raw inputs for the benefits environment: PolicyEngine's rule parameters and about 1,300 example households for SNAP, WIC, EITC and Medicaid. [`data/sources.json`](data/sources.json) lists every source, including the official government ones a future scraper should fetch.
+[`data/`](data/README.md) holds raw inputs for the benefits environment: PolicyEngine's rule parameters and about 1,300 example households for SNAP, WIC, EITC and Medicaid. [`data/sources.json`](data/sources.json) lists every source. The official government sources are fetched by [`scraper/`](scraper/), which runs monthly on GitHub Actions and opens a PR with new snapshots; see [data/README.md](data/README.md#scraper).
 
 ## Constraints I'm working under
 

@@ -1,18 +1,22 @@
 # data
 
-Raw data for the benefits-eligibility environment ([docs/04](../docs/04-benefits-eligibility-plan.md)). This first batch was fetched by hand; a scraper will take over later, using [`sources.json`](sources.json) as its target list.
+Raw data for the benefits-eligibility environment ([docs/04](../docs/04-benefits-eligibility-plan.md)). The PolicyEngine files were fetched by hand; the government sources are fetched by the scraper in [`scraper/`](../scraper/), driven by [`sources.json`](sources.json).
 
 ## Layout
 
 ```
 data/
 ├── README.md
-├── sources.json          # every source: URL, license, status, retrieval date, commit
+├── sources.json          # every source: URL, license, status, retrieval date, fetch settings
 └── raw/                  # unmodified copies, one folder per source
-    └── policyengine-us/
-        ├── LICENSE       # AGPL-3.0
-        ├── parameters/   # the rules
-        └── tests/        # example households with known correct answers
+    ├── policyengine-us/  # fetched by hand
+    │   ├── LICENSE       # AGPL-3.0
+    │   ├── parameters/   # the rules
+    │   └── tests/        # example households with known correct answers
+    └── <source-id>/      # fetched by the scraper
+        └── <date>/       # one snapshot per change in content
+            ├── <files>
+            └── _fetch.json   # URL, final URL, HTTP status, content type, size, SHA-256
 ```
 
 Nothing in `raw/` is edited by hand. Cleaned or derived data goes in a separate `data/processed/` folder once there is some.
@@ -39,9 +43,25 @@ A handful of parameter files use `0000-01-01` as a "since forever" date, which p
 
 These tests are public, so models may have seen them during pretraining. Use them as seeds and for checks, not as held-out evaluation tasks.
 
-## Not fetched yet
+## Scraper
 
-The official government sources (USDA FNS, IRS, HHS/ASPE, Medicaid.gov) were blocked from the environment that built this folder; only GitHub and PyPI were reachable. They're listed in `sources.json` with `"status": "todo"`. The scraper's first job is to fetch those and cross-check them against the PolicyEngine parameters.
+The government sources (HHS/ASPE, USDA FNS, IRS, Medicaid.gov) are fetched by `python -m scraper`. Each entry in `sources.json` with a `fetch` block is one of:
+
+- `direct`: download the first URL in `urls` that returns 200 (later URLs are fallbacks).
+- `page`: download the page, then any links on it whose URL matches `follow.pattern`, on `follow.hosts` (default: the page's own host), up to `follow.max`.
+
+Each run writes a new dated snapshot only when content changed, and updates the source's `status`, `retrieved`, `latest_snapshot` and `last_error`. A run where nothing changed leaves the repo untouched, so no PR is opened. It waits 1 second between requests to a host, retries transient errors, respects robots.txt, caps files at 50 MB, and never executes anything it downloads.
+
+```bash
+pip install -r requirements.txt
+python -m scraper status                       # what's fetched, what isn't
+python -m scraper fetch                        # all fetchable sources
+python -m scraper fetch --source irs-form-w2   # just one
+```
+
+**On GitHub:** the `Scrape sources` workflow runs on the 3rd of each month and on demand (Actions → Scrape sources → Run workflow, optionally with one source id). It opens or updates a single PR from the `scrape/update` branch with any new snapshots, and the run summary lists each source's result. Creating that PR needs the repo setting **Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests"**. Without it the branch is still pushed and the PR can be opened by hand.
+
+Raw files are only half the job: parsing them into rows and cross-checking against the PolicyEngine parameters comes next, once the real file layouts are known.
 
 Still needed and not yet sourced: templates for realistic documents (pay stubs, leases, benefit notices). Only the blank W-2 form is listed so far.
 
@@ -53,4 +73,4 @@ Still needed and not yet sourced: templates for realistic documents (pay stubs, 
 
 ## Refreshing
 
-Until the scraper exists, re-fetch with a sparse clone of `policyengine-us` using the `paths` listed in `sources.json`, copy them into `raw/policyengine-us/`, and update `commit`, `retrieved` and `pypi_version_at_retrieval`.
+Government sources: run the scraper (above). PolicyEngine: re-fetch with a sparse clone of `policyengine-us` using the `paths` listed in `sources.json`, copy them into `raw/policyengine-us/`, and update `commit`, `retrieved` and `pypi_version_at_retrieval`.

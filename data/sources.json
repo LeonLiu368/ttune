@@ -1,11 +1,14 @@
 {
-  "_about": "Every data source for ttune. status=fetched: a copy is under data/raw. status=todo: a target for the scraper (not reachable from the environment that created this file).",
+  "_about": "Every data source for ttune. Entries with a 'fetch' block are downloaded by `python -m scraper fetch` (see data/README.md); the rest are fetched by hand. status: todo = never fetched, fetched = latest snapshot is complete, partial = some linked files failed, error = last attempt failed (see last_error).",
   "sources": [
     {
       "id": "policyengine-us",
       "name": "PolicyEngine US: rule parameters and test households",
       "url": "https://github.com/PolicyEngine/policyengine-us",
-      "kind": ["rules", "examples"],
+      "kind": [
+        "rules",
+        "examples"
+      ],
       "format": "yaml",
       "license": "AGPL-3.0",
       "status": "fetched",
@@ -29,59 +32,116 @@
       "id": "hhs-poverty-guidelines",
       "name": "HHS/ASPE federal poverty guidelines",
       "url": "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines",
-      "kind": ["rules"],
+      "kind": [
+        "rules"
+      ],
       "format": "html",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "Cross-check against raw/policyengine-us/parameters/gov/hhs/fpg.yaml."
+      "notes": "Cross-check against raw/policyengine-us/parameters/gov/hhs/fpg.yaml.",
+      "fetch": {
+        "type": "page",
+        "urls": [
+          "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines"
+        ]
+      }
     },
     {
       "id": "fns-snap-cola-fy27",
       "name": "USDA FNS SNAP FY2027 cost-of-living adjustments (max allotments, income limits, deductions)",
       "url": "https://www.fns.usda.gov/snap/allotment/cola/fy27",
-      "kind": ["rules"],
+      "kind": [
+        "rules"
+      ],
       "format": "html+pdf",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "Cited by PolicyEngine's SNAP max-allotment tests."
+      "notes": "Cited by PolicyEngine's SNAP max-allotment tests.",
+      "fetch": {
+        "type": "page",
+        "urls": [
+          "https://www.fns.usda.gov/snap/allotment/cola/fy27"
+        ],
+        "follow": {
+          "pattern": "(?i)\\.pdf$",
+          "hosts": [
+            "www.fns.usda.gov",
+            "fns-prod.azureedge.us"
+          ],
+          "max": 10
+        }
+      }
     },
     {
       "id": "fns-snap-sua-fy26",
       "name": "USDA FNS SNAP standard utility allowances by state, FY2026",
       "url": "https://www.fna.usda.gov/sites/default/files/resource-files/2026-05-21-SUA-Table-FY26.xlsx",
-      "kind": ["rules"],
+      "kind": [
+        "rules"
+      ],
       "format": "xlsx",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "URL copied as cited in PolicyEngine parameters; the 'fna' host may be a typo for 'fns'. Check both."
+      "notes": "The cited 'fna' host may be a typo for 'fns'; the scraper tries both.",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://www.fna.usda.gov/sites/default/files/resource-files/2026-05-21-SUA-Table-FY26.xlsx",
+          "https://www.fns.usda.gov/sites/default/files/resource-files/2026-05-21-SUA-Table-FY26.xlsx"
+        ]
+      }
     },
     {
       "id": "irs-eitc-rp-25-32",
       "name": "IRS Rev. Proc. 2025-32 (inflation-adjusted EITC amounts)",
       "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
-      "kind": ["rules"],
+      "kind": [
+        "rules"
+      ],
       "format": "pdf",
       "license": "US government work (public domain)",
-      "status": "todo"
+      "status": "todo",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf"
+        ]
+      }
     },
     {
       "id": "medicaid-eligibility-levels",
       "name": "Medicaid and CHIP income eligibility levels by state",
       "url": "https://download.medicaid.gov/data/medicaid-and-chip-eligibility-levels.xy8t-auhk.csv",
-      "kind": ["rules"],
+      "kind": [
+        "rules"
+      ],
       "format": "csv",
       "license": "US government work (public domain)",
-      "status": "todo"
+      "status": "todo",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://download.medicaid.gov/data/medicaid-and-chip-eligibility-levels.xy8t-auhk.csv"
+        ]
+      }
     },
     {
       "id": "irs-form-w2",
       "name": "IRS Form W-2 (blank), template for rendering synthetic documents",
       "url": "https://www.irs.gov/pub/irs-pdf/fw2.pdf",
-      "kind": ["templates"],
+      "kind": [
+        "templates"
+      ],
       "format": "pdf",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "Other document templates (pay stubs, leases, benefit notices) still need sources."
+      "notes": "Other document templates (pay stubs, leases, benefit notices) still need sources.",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://www.irs.gov/pub/irs-pdf/fw2.pdf"
+        ]
+      }
     }
   ]
 }

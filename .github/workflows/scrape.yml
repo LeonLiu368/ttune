@@ -1,0 +1,64 @@
+name: Scrape sources
+
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Only this source id (blank = all fetchable sources)"
+        required: false
+        default: ""
+  schedule:
+    - cron: "17 6 3 * *" # 06:17 UTC on the 3rd of each month
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Fetch
+        id: fetch
+        continue-on-error: true
+        env:
+          SOURCE: ${{ inputs.source }}
+        run: |
+          args=()
+          if [ -n "$SOURCE" ]; then args+=(--source "$SOURCE"); fi
+          python -m scraper fetch "${args[@]}" --summary "$RUNNER_TEMP/summary.md"
+
+      - name: Job summary
+        if: always()
+        run: cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
+
+      # Opens or updates one PR with new snapshots and sources.json changes; no PR if nothing changed.
+      - name: Open pull request
+        if: always()
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: scrape/update
+          add-paths: data
+          commit-message: "Scrape: update raw government sources"
+          title: "Scrape: update raw government sources"
+          body-path: ${{ runner.temp }}/summary.md
+          delete-branch: true
+
+      - name: Fail if any source failed
+        if: steps.fetch.outcome == 'failure'
+        run: |
+          echo "One or more sources failed; see the job summary."
+          exit 1
