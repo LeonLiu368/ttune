@@ -94,7 +94,11 @@ Parsers live in `scraper/parsers/` and are registered in `scraper/parsers/__init
 | Source | Parser |
 |---|---|
 | `medicaid-eligibility-levels` | done: income limits by state and category (% FPL), plus notes |
-| `fns-snap-sua-fy26`, `irs-eitc-rp-25-32`, `hhs-poverty-guidelines`, `fns-snap-cola-fy27` | not yet; see [ROADMAP.md](../ROADMAP.md) |
+| `fns-snap-sua-fy26` | done: every allowance by state, sub-state area and household size (`N or more` is recorded at size N), plus footnotes |
+| `irs-eitc-rp-25-32` | done: the EITC table by number of children (`children_3` = three or more) and the investment income limit |
+| `hhs-poverty-guidelines`, `fns-snap-cola-fy27` | not yet: written once their files are fetched; see [ROADMAP.md](../ROADMAP.md) |
+
+The spreadsheet and PDF parsers need `openpyxl` and `pdfplumber` (both in `requirements.txt`).
 
 Still needed and not yet sourced: templates for realistic documents (pay stubs, leases, benefit notices). Only the blank W-2 form is listed so far.
 

@@ -1,0 +1,50 @@
+14
+(3) Refundable Portion. For taxable years beginning in 2026, the amount used in
+§ 23(a)(4) to determine the amount of the credit under § 23 that may be refundable is
+$5,120.
+.05 Child Tax Credit.
+(1) Maximum amount of the credit. For taxable years beginning in 2026, the
+maximum amount of the credit allowed under § 24(a) is $2,200.
+(2) Refundable portion. For taxable years beginning in 2026, the amount used in
+§ 24(d)(1)(A) to determine the amount of the credit under § 24 that may be refundable is
+$1,700.
+.06 Earned Income Credit.
+(1) In general. For taxable years beginning in 2026, the following amounts are
+used to determine the earned income credit under § 32(b). The "earned income
+amount" is the amount of earned income at or above which the maximum amount of the
+earned income credit is allowed. The "threshold phaseout amount" is the amount of
+adjusted gross income (or, if greater, earned income) above which the maximum
+amount of the credit begins to phase out. The "completed phaseout amount" is the
+amount of adjusted gross income (or, if greater, earned income) at or above which no
+credit is allowed. The threshold phaseout amounts and the completed phaseout
+amounts shown in the table below for married taxpayers filing a joint return include the
+increase provided in § 32(b)(2)(B), as adjusted for inflation for taxable years beginning
+in 2026. The threshold phaseout amounts and the completed phaseout amounts shown
+in the table below for taxpayers with all other filing statuses also apply to married
+taxpayers who are not filing a joint return and satisfy the special rules for separated
+spouses in § 32(d).15
+Number of Qualifying Children
+Item One Two Three or More None
+Earned Income Amount $13,020 $18,290 $18,290 $8,680
+Maximum Amount of Credit $4,427 $7,316 $8,231 $664
+Threshold Phaseout Amount $31,160 $31,160 $31,160 $18,140
+(Married Filing Jointly)
+Completed Phaseout $58,863 $65,899 $70,244 $26,820
+Amount (Married Filing
+Jointly)
+Threshold Phaseout Amount $23,890 $23,890 $23,890 $10,860
+(All other filing statuses)
+Completed Phaseout $51,593 $58,629 $62,974 $19,540
+Amount (All other filing
+statuses)
+The instructions for the Form 1040 series provide tables showing the amount of the
+earned income credit for each type of taxpayer.
+(2) Excessive Investment Income. For taxable years beginning in 2026, the
+earned income tax credit is not allowed under § 32(i) if the aggregate amount of certain
+investment income exceeds $12,200.
+.07 Rehabilitation Expenditures Treated as Separate New Building. For calendar
+year 2026, the per low-income unit qualified basis amount under § 42(e)(3)(A)(ii)(II) is
+$8,700.
+.08 Low-Income Housing Credit. For calendar year 2026, the amount used under
+§ 42(h)(3)(C)(ii) to calculate the State housing credit ceiling for the low-income housing
+credit is the greater of (1) $3.416 multiplied by the State population, or (2) $3,953,600.

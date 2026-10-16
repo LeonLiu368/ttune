@@ -2,7 +2,7 @@
 
 Notes and plans for building RL environments (in the [Harbor](https://github.com/laude-institute/harbor) format) and using them to fine-tune / RL a small model of my own, on little compute.
 
-**What's next:** see [ROADMAP.md](ROADMAP.md) for a diagram of what's done, in progress and next.
+**What's next:** see [ROADMAP.md](ROADMAP.md) for what's done, in progress and next.
 
 ## Current direction
 
