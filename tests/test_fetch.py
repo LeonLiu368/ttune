@@ -8,7 +8,7 @@ import pytest
 
 from scraper import fetch as fetch_mod
 from scraper.__main__ import main
-from scraper.fetch import Fetched, Http, fetch_source, filename_for
+from scraper.fetch import Fetched, Http, fetch_source, filename_for, import_files
 
 NOW = datetime(2026, 10, 9, 12, 0, 0, tzinfo=timezone.utc)
 LATER = datetime(2026, 10, 9, 13, 30, 0, tzinfo=timezone.utc)
@@ -275,3 +275,48 @@ def test_cli_rejects_unknown_source(tmp_path, capsys):
 
     assert main(["--data-dir", str(tmp_path), "fetch", "--source", "nope"]) == 2
     assert "nope" in capsys.readouterr().err
+
+
+def test_import_snapshots_hand_downloaded_files(tmp_path):
+    downloads = tmp_path / "downloads"
+    downloads.mkdir()
+    (downloads / "FY27 COLA memo.pdf").write_bytes(b"%PDF memo")
+    source = {"id": "cola", "url": "https://www.usda.gov/cola", "status": "todo"}
+
+    row = import_files(source, [downloads / "FY27 COLA memo.pdf"], "https://www.usda.gov/memo.pdf", tmp_path, NOW)
+
+    snapshot = tmp_path / "raw/cola/2026-10-09"
+    assert (snapshot / "FY27_COLA_memo.pdf").read_bytes() == b"%PDF memo"
+    meta = json.loads((snapshot / "_fetch.json").read_text())
+    assert meta["method"] == "manual"
+    assert meta["files"][0]["url"] == "https://www.usda.gov/memo.pdf"
+    assert meta["files"][0]["content_type"] == "application/pdf"
+    assert row["result"] == "new" and source["status"] == "fetched"
+
+
+def _sources_file(tmp_path, *sources):
+    (tmp_path / "sources.json").write_text(json.dumps({"sources": list(sources)}))
+
+
+def _where(source_id, where):
+    return {"id": source_id, "url": "https://x.gov", "fetch": {"type": "direct", "urls": ["http://127.0.0.1:9/x"], "where": where}}
+
+
+def test_ci_skips_local_and_manual_sources(tmp_path, monkeypatch):
+    called = []
+    monkeypatch.setattr("scraper.__main__.fetch_source", lambda http, s, d: called.append(s["id"]) or
+                        {"id": s["id"], "result": "new", "files": 1, "notes": ""})
+    _sources_file(tmp_path, _where("a", "anywhere"), _where("l", "local"), _where("m", "manual"))
+    summary = tmp_path / "summary.md"
+
+    assert main(["--data-dir", str(tmp_path), "fetch", "--ci", "--summary", str(summary)]) == 0
+    assert called == ["a"]
+    assert "| `l` | skipped |" in summary.read_text() and "| `m` | skipped |" in summary.read_text()
+
+    called.clear()
+    main(["--data-dir", str(tmp_path), "fetch"])
+    assert called == ["a", "l"]
+
+    called.clear()
+    main(["--data-dir", str(tmp_path), "fetch", "--source", "m"])
+    assert called == ["m"]

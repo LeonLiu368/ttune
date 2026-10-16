@@ -39,7 +39,7 @@ jobs:
         run: |
           args=()
           if [ -n "$SOURCE" ]; then args+=(--source "$SOURCE"); fi
-          python -m scraper fetch "${args[@]}" --summary "$RUNNER_TEMP/summary.md"
+          python -m scraper fetch --ci "${args[@]}" --summary "$RUNNER_TEMP/summary.md"
 
       - name: Job summary
         if: always()

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import mimetypes
 import re
 import time
 from dataclasses import dataclass
@@ -39,6 +40,7 @@ class Fetched:
     status: int
     content_type: str
     body: bytes
+    name: str | None = None  # local filename for imported files
 
 
 class Http:
@@ -181,7 +183,7 @@ def collect(http: Http, config: dict) -> tuple[list[Fetched], list[str]]:
 
 
 def filename_for(fetched: Fetched) -> str:
-    name = unquote(Path(urlsplit(fetched.final_url).path).name)
+    name = fetched.name or unquote(Path(urlsplit(fetched.final_url).path).name)
     name = re.sub(r"[^A-Za-z0-9._-]+", "_", name).lstrip("._-")[:120]
     mime = fetched.content_type.split(";", 1)[0].strip().lower()
     if not Path(name).suffix:
@@ -207,7 +209,9 @@ def _signature(entries: list[dict]) -> list[tuple[str, str]]:
     return sorted((e["url"], e["sha256"]) for e in entries)
 
 
-def save_snapshot(source_dir: Path, files: list[Fetched], errors: list[str], now: datetime) -> Path | None:
+def save_snapshot(
+    source_dir: Path, files: list[Fetched], errors: list[str], now: datetime, method: str = "scraper"
+) -> Path | None:
     """Write a new snapshot, or return None if content matches the latest one."""
     taken: set[str] = set()
     entries = [
@@ -232,7 +236,7 @@ def save_snapshot(source_dir: Path, files: list[Fetched], errors: list[str], now
     snapshot.mkdir(parents=True)
     for f, entry in zip(files, entries):
         (snapshot / entry["file"]).write_bytes(f.body)
-    meta = {"fetched_at": now.isoformat(timespec="seconds"), "files": entries, "errors": errors}
+    meta = {"fetched_at": now.isoformat(timespec="seconds"), "method": method, "files": entries, "errors": errors}
     (snapshot / META_FILE).write_text(json.dumps(meta, indent=2) + "\n")
     return snapshot
 
@@ -250,8 +254,27 @@ def fetch_source(http: Http, source: dict, data_dir: Path, now: datetime | None 
         return {"id": source_id, "result": "error", "files": 0, "notes": str(exc)}
 
     snapshot = save_snapshot(source_dir, files, errors, now)
+    return _record(source, snapshot, errors, len(files), data_dir, now)
+
+
+def import_files(source: dict, paths: list[Path], url: str, data_dir: Path, now: datetime | None = None) -> dict:
+    """Snapshot files downloaded by hand (e.g. in a browser) exactly as if the scraper had fetched them."""
+    now = now or datetime.now(timezone.utc)
+    files = []
+    for path in paths:
+        if path.stat().st_size > MAX_BYTES:
+            raise FetchError(f"larger than {MAX_BYTES} bytes: {path}")
+        content_type = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
+        # status 0: we didn't make the HTTP request; _fetch.json records method=manual.
+        files.append(Fetched(url=url, final_url=url, status=0, content_type=content_type,
+                             body=path.read_bytes(), name=path.name))
+    snapshot = save_snapshot(data_dir / "raw" / source["id"], files, [], now, method="manual")
+    return _record(source, snapshot, [], len(files), data_dir, now)
+
+
+def _record(source: dict, snapshot: Path | None, errors: list[str], n_files: int, data_dir: Path, now: datetime) -> dict:
     source["status"] = "partial" if errors else "fetched"
-    source["local_path"] = f"raw/{source_id}"
+    source["local_path"] = f"raw/{source['id']}"
     if errors:
         source["last_error"] = "; ".join(errors)
     else:
@@ -262,4 +285,4 @@ def fetch_source(http: Http, source: dict, data_dir: Path, now: datetime | None 
         result = "partial" if errors else "new"
         source["retrieved"] = now.date().isoformat()
         source["latest_snapshot"] = snapshot.relative_to(data_dir).as_posix()
-    return {"id": source_id, "result": result, "files": len(files), "notes": "; ".join(errors)}
+    return {"id": source["id"], "result": result, "files": n_files, "notes": "; ".join(errors)}

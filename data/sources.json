@@ -1,5 +1,5 @@
 {
-  "_about": "Every data source for ttune. Entries with a 'fetch' block are downloaded by `python -m scraper fetch` (see data/README.md); the rest are fetched by hand. status: todo = never fetched, fetched = latest snapshot is complete, partial = some linked files failed, error = last attempt failed (see last_error).",
+  "_about": "Every data source for ttune. Entries with a 'fetch' block are downloaded by `python -m scraper fetch` (see data/README.md); the rest are fetched by hand. status: todo = never fetched, fetched = latest snapshot is complete, partial = some linked files failed, error = last attempt failed (see last_error). fetch.where: anywhere (default) | local (CI skips it) | manual (browser download + `import`).",
   "sources": [
     {
       "id": "policyengine-us",
@@ -38,12 +38,13 @@
       "format": "html",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "Cross-check against raw/policyengine-us/parameters/gov/hhs/fpg.yaml.",
+      "notes": "aspe.hhs.gov returns 403 to GitHub's runners but works from a home connection, so this is fetched locally (CI skips it). Cross-check against raw/policyengine-us/parameters/gov/hhs/fpg.yaml.",
       "fetch": {
         "type": "page",
         "urls": [
           "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines"
-        ]
+        ],
+        "where": "local"
       }
     },
     {
@@ -56,7 +57,7 @@
       "format": "html+pdf",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "The FNS COLA page only links to the memo on USDA's guidance portal, so the scraper starts there and follows its PDF links. Cited by PolicyEngine's SNAP max-allotment tests.",
+      "notes": "www.usda.gov returns 403 to the scraper from both GitHub and a home connection, so it blocks non-browser clients. Open the guidance page in a browser, download the memo PDF(s), then: python -m scraper import fns-snap-cola-fy27 <files> --url <pdf link>. Cited by PolicyEngine's SNAP max-allotment tests.",
       "fetch": {
         "type": "page",
         "urls": [
@@ -71,7 +72,8 @@
             "fns-prod.azureedge.us"
           ],
           "max": 10
-        }
+        },
+        "where": "manual"
       }
     },
     {

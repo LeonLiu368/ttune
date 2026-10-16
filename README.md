@@ -2,6 +2,8 @@
 
 Notes and plans for building RL environments (in the [Harbor](https://github.com/laude-institute/harbor) format) and using them to fine-tune / RL a small model of my own, on little compute.
 
+**What's next:** see [ROADMAP.md](ROADMAP.md) for a diagram of what's done, in progress and next.
+
 ## Current direction
 
 **Public-benefits eligibility.** An agent reads a household's messy documents and determines eligibility and amounts for SNAP, Medicaid, EITC, WIC and similar programs, using [PolicyEngine](https://github.com/PolicyEngine) as an exact, open-source verifier. Full plan: [docs/04-benefits-eligibility-plan.md](docs/04-benefits-eligibility-plan.md).
