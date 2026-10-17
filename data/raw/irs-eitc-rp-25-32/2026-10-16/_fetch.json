@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-16T01:16:31+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "rp-25-32.pdf",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+      "final_url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 260406,
+      "sha256": "e9ada115fb43a4af5ea326ca91edd40ab0bf29b9be01d2c13d7b8fa96214635b"
+    }
+  ],
+  "errors": []
+}

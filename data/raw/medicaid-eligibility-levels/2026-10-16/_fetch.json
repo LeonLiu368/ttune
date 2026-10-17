@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-16T01:16:32+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "medicaid-and-chip-eligibility-levels.xy8t-auhk.csv",
+      "url": "https://download.medicaid.gov/data/medicaid-and-chip-eligibility-levels.xy8t-auhk.csv",
+      "final_url": "https://download.medicaid.gov/data/medicaid-and-chip-eligibility-levels.xy8t-auhk.csv",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "bytes": 5135,
+      "sha256": "bb9b257e316ababb38187cdd90f9c1536de97620f0791a3d146cb386a32d6e50"
+    }
+  ],
+  "errors": []
+}
