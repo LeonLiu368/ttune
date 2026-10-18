@@ -1,0 +1,409 @@
+source_id,parameter,region,household_size,period,official,policyengine,status,policyengine_file,note
+medicaid-eligibility-levels,income_limit.infant,AL,,,141%,1.46,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 141% + 5-point disregard = 1.46
+medicaid-eligibility-levels,income_limit.child_1_5,AL,,,141%,1.46,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 141% + 5-point disregard = 1.46
+medicaid-eligibility-levels,income_limit.child_6_18,AL,,,141%,1.46,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 141% + 5-point disregard = 1.46
+medicaid-eligibility-levels,income_limit.child,AL,,,312%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,AL,,,141%,1.46,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 141% + 5-point disregard = 1.46
+medicaid-eligibility-levels,income_limit.pregnant,AL,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,AL,,,13%,0.18,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 13% + 5-point disregard = 0.18
+medicaid-eligibility-levels,income_limit.expansion_adult,AL,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,AR,,,142%,1.47,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_1_5,AR,,,142%,1.47,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_6_18,AR,,,142%,1.47,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child,AR,,,211%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,AR,,,209%,2.14,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 209% + 5-point disregard = 2.14
+medicaid-eligibility-levels,income_limit.pregnant,AR,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,AR,,,17%,0.2,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 17% + 5-point disregard = 0.22
+medicaid-eligibility-levels,income_limit.expansion_adult,AR,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,CO,,,142%,1.47,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_1_5,CO,,,142%,1.47,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_6_18,CO,,,142%,1.47,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child,CO,,,260%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,CO,,,195%,2,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 195% + 5-point disregard = 2
+medicaid-eligibility-levels,income_limit.pregnant,CO,,,260%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,CO,,,68%,0.73,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 68% + 5-point disregard = 0.73
+medicaid-eligibility-levels,income_limit.expansion_adult,CO,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,DC,,,319%,3.24,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 319% + 5-point disregard = 3.24
+medicaid-eligibility-levels,income_limit.child_1_5,DC,,,319%,3.24,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 319% + 5-point disregard = 3.24
+medicaid-eligibility-levels,income_limit.child_6_18,DC,,,319%,3.24,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 319% + 5-point disregard = 3.24
+medicaid-eligibility-levels,income_limit.child,DC,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,DC,,,319%,3.24,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 319% + 5-point disregard = 3.24
+medicaid-eligibility-levels,income_limit.pregnant,DC,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,DC,,,216%,1.38,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 216% + 5-point disregard = 2.21
+medicaid-eligibility-levels,income_limit.expansion_adult,DC,,,210%,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 210% + 5-point disregard = 2.15
+medicaid-eligibility-levels,income_limit.infant,GA,,,205%,2.1,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 205% + 5-point disregard = 2.1
+medicaid-eligibility-levels,income_limit.child_1_5,GA,,,149%,1.54,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 149% + 5-point disregard = 1.54
+medicaid-eligibility-levels,income_limit.child_6_18,GA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,GA,,,247%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,GA,,,220%,2.25,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 220% + 5-point disregard = 2.25
+medicaid-eligibility-levels,income_limit.pregnant,GA,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,GA,,,34%,0.291,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 34% + 5-point disregard = 0.39
+medicaid-eligibility-levels,income_limit.expansion_adult,GA,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,HI,,,308%,3.13,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 308% + 5-point disregard = 3.13
+medicaid-eligibility-levels,income_limit.child_1_5,HI,,,308%,3.13,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 308% + 5-point disregard = 3.13
+medicaid-eligibility-levels,income_limit.child_6_18,HI,,,308%,3.13,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 308% + 5-point disregard = 3.13
+medicaid-eligibility-levels,income_limit.child,HI,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,HI,,,191%,1.96,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 191% + 5-point disregard = 1.96
+medicaid-eligibility-levels,income_limit.pregnant,HI,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,HI,,,105%,1.1,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 105% + 5-point disregard = 1.1
+medicaid-eligibility-levels,income_limit.expansion_adult,HI,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,ID,,,142%,1.47,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_1_5,ID,,,142%,1.47,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_6_18,ID,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,ID,,,185%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,ID,,,133%,1.38,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.pregnant,ID,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,ID,,,24%,0.21,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 24% + 5-point disregard = 0.29
+medicaid-eligibility-levels,income_limit.expansion_adult,ID,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,IL,,,142%,3.18,differ,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_1_5,IL,,,142%,3.18,differ,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_6_18,IL,,,142%,3.18,differ,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child,IL,,,313%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,IL,,,208%,2.13,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 208% + 5-point disregard = 2.13
+medicaid-eligibility-levels,income_limit.pregnant,IL,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,IL,,,133%,1.38,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.expansion_adult,IL,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,IN,,,208%,2.13,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 208% + 5-point disregard = 2.13
+medicaid-eligibility-levels,income_limit.child_1_5,IN,,,158%,1.63,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 158% + 5-point disregard = 1.63
+medicaid-eligibility-levels,income_limit.child_6_18,IN,,,158%,1.63,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 158% + 5-point disregard = 1.63
+medicaid-eligibility-levels,income_limit.child,IN,,,250%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,IN,,,208%,2.13,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 208% + 5-point disregard = 2.13
+medicaid-eligibility-levels,income_limit.pregnant,IN,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,IN,,,19%,0.22,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 19% + 5-point disregard = 0.24
+medicaid-eligibility-levels,income_limit.expansion_adult,IN,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,KS,,,166%,1.71,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 166% + 5-point disregard = 1.71
+medicaid-eligibility-levels,income_limit.child_1_5,KS,,,149%,1.54,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 149% + 5-point disregard = 1.54
+medicaid-eligibility-levels,income_limit.child_6_18,KS,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,KS,,,238%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,KS,,,166%,1.71,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 166% + 5-point disregard = 1.71
+medicaid-eligibility-levels,income_limit.pregnant,KS,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,KS,,,33%,0.38,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 33% + 5-point disregard = 0.38
+medicaid-eligibility-levels,income_limit.expansion_adult,KS,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,KY,,,195%,2.18,differ,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 195% + 5-point disregard = 2
+medicaid-eligibility-levels,income_limit.child_1_5,KY,,,159%,2.18,differ,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 159% + 5-point disregard = 1.64
+medicaid-eligibility-levels,income_limit.child_6_18,KY,,,159%,2.18,differ,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 159% + 5-point disregard = 1.64
+medicaid-eligibility-levels,income_limit.child,KY,,,213%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,KY,,,195%,2,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 195% + 5-point disregard = 2
+medicaid-eligibility-levels,income_limit.pregnant,KY,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,KY,,,23%,0.27,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 23% + 5-point disregard = 0.28
+medicaid-eligibility-levels,income_limit.expansion_adult,KY,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,LA,,,212%,2.17,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 212% + 5-point disregard = 2.17
+medicaid-eligibility-levels,income_limit.child_1_5,LA,,,212%,2.17,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 212% + 5-point disregard = 2.17
+medicaid-eligibility-levels,income_limit.child_6_18,LA,,,212%,2.17,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 212% + 5-point disregard = 2.17
+medicaid-eligibility-levels,income_limit.child,LA,,,250%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,LA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.pregnant,LA,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,LA,,,19%,0.24,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 19% + 5-point disregard = 0.24
+medicaid-eligibility-levels,income_limit.expansion_adult,LA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,ME,,,191%,3.05,differ,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 191% + 5-point disregard = 1.96
+medicaid-eligibility-levels,income_limit.child_1_5,ME,,,157%,3.05,differ,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 157% + 5-point disregard = 1.62
+medicaid-eligibility-levels,income_limit.child_6_18,ME,,,157%,3.05,differ,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 157% + 5-point disregard = 1.62
+medicaid-eligibility-levels,income_limit.child,ME,,,208%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,ME,,,209%,2.14,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 209% + 5-point disregard = 2.14
+medicaid-eligibility-levels,income_limit.pregnant,ME,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,ME,,,100%,1.05,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 100% + 5-point disregard = 1.05
+medicaid-eligibility-levels,income_limit.expansion_adult,ME,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,MD,,,317%,3.22,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 317% + 5-point disregard = 3.22
+medicaid-eligibility-levels,income_limit.child_1_5,MD,,,317%,3.22,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 317% + 5-point disregard = 3.22
+medicaid-eligibility-levels,income_limit.child_6_18,MD,,,317%,3.22,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 317% + 5-point disregard = 3.22
+medicaid-eligibility-levels,income_limit.child,MD,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,MD,,,259%,2.64,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 259% + 5-point disregard = 2.64
+medicaid-eligibility-levels,income_limit.pregnant,MD,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,MD,,,123%,1.28,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 123% + 5-point disregard = 1.28
+medicaid-eligibility-levels,income_limit.expansion_adult,MD,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,MA,,,200%,2.05,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 200% + 5-point disregard = 2.05
+medicaid-eligibility-levels,income_limit.child_1_5,MA,,,150%,1.55,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 150% + 5-point disregard = 1.55
+medicaid-eligibility-levels,income_limit.child_6_18,MA,,,150%,1.55,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 150% + 5-point disregard = 1.55
+medicaid-eligibility-levels,income_limit.child,MA,,,300%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,MA,,,200%,2.05,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 200% + 5-point disregard = 2.05
+medicaid-eligibility-levels,income_limit.pregnant,MA,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,MA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.expansion_adult,MA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,MI,,,212%,2.17,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 212% + 5-point disregard = 2.17
+medicaid-eligibility-levels,income_limit.child_1_5,MI,,,212%,2.17,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 212% + 5-point disregard = 2.17
+medicaid-eligibility-levels,income_limit.child_6_18,MI,,,212%,2.17,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 212% + 5-point disregard = 2.17
+medicaid-eligibility-levels,income_limit.child,MI,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,MI,,,195%,2,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 195% + 5-point disregard = 2
+medicaid-eligibility-levels,income_limit.pregnant,MI,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,MI,,,54%,0.59,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 54% + 5-point disregard = 0.59
+medicaid-eligibility-levels,income_limit.expansion_adult,MI,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,MN,,,283%,2.88,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 283% + 5-point disregard = 2.88
+medicaid-eligibility-levels,income_limit.child_1_5,MN,,,275%,2.8,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 275% + 5-point disregard = 2.8
+medicaid-eligibility-levels,income_limit.child_6_18,MN,,,275%,2.8,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 275% + 5-point disregard = 2.8
+medicaid-eligibility-levels,income_limit.child,MN,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,MN,,,278%,2.83,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 278% + 5-point disregard = 2.83
+medicaid-eligibility-levels,income_limit.pregnant,MN,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,MN,,,133%,1.38,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.expansion_adult,MN,,,200%,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 200% + 5-point disregard = 2.05
+medicaid-eligibility-levels,income_limit.infant,MS,,,194%,1.99,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 194% + 5-point disregard = 1.99
+medicaid-eligibility-levels,income_limit.child_1_5,MS,,,143%,1.48,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 143% + 5-point disregard = 1.48
+medicaid-eligibility-levels,income_limit.child_6_18,MS,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,MS,,,209%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,MS,,,194%,1.99,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 194% + 5-point disregard = 1.99
+medicaid-eligibility-levels,income_limit.pregnant,MS,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,MS,,,23%,0.219,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 23% + 5-point disregard = 0.28
+medicaid-eligibility-levels,income_limit.expansion_adult,MS,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,MO,,,196%,2.01,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 196% + 5-point disregard = 2.01
+medicaid-eligibility-levels,income_limit.child_1_5,MO,,,150%,1.53,differ,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 150% + 5-point disregard = 1.55
+medicaid-eligibility-levels,income_limit.child_6_18,MO,,,150%,1.53,differ,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 150% + 5-point disregard = 1.55
+medicaid-eligibility-levels,income_limit.child,MO,,,300%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,MO,,,196%,2.01,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 196% + 5-point disregard = 2.01
+medicaid-eligibility-levels,income_limit.pregnant,MO,,,300%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,MO,,,18%,0.23,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 18% + 5-point disregard = 0.23
+medicaid-eligibility-levels,income_limit.expansion_adult,MO,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,MT,,,143%,1.48,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 143% + 5-point disregard = 1.48
+medicaid-eligibility-levels,income_limit.child_1_5,MT,,,143%,1.48,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 143% + 5-point disregard = 1.48
+medicaid-eligibility-levels,income_limit.child_6_18,MT,,,143%,1.48,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 143% + 5-point disregard = 1.48
+medicaid-eligibility-levels,income_limit.child,MT,,,261%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,MT,,,157%,1.62,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 157% + 5-point disregard = 1.62
+medicaid-eligibility-levels,income_limit.pregnant,MT,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,MT,,,24%,0.29,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 24% + 5-point disregard = 0.29
+medicaid-eligibility-levels,income_limit.expansion_adult,MT,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,NE,,,213%,2.18,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 213% + 5-point disregard = 2.18
+medicaid-eligibility-levels,income_limit.child_1_5,NE,,,213%,2.18,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 213% + 5-point disregard = 2.18
+medicaid-eligibility-levels,income_limit.child_6_18,NE,,,213%,2.18,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 213% + 5-point disregard = 2.18
+medicaid-eligibility-levels,income_limit.child,NE,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,NE,,,194%,1.99,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 194% + 5-point disregard = 1.99
+medicaid-eligibility-levels,income_limit.pregnant,NE,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,NE,,,58%,0.63,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 58% + 5-point disregard = 0.63
+medicaid-eligibility-levels,income_limit.expansion_adult,NE,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,NV,,,160%,1.65,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 160% + 5-point disregard = 1.65
+medicaid-eligibility-levels,income_limit.child_1_5,NV,,,160%,1.65,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 160% + 5-point disregard = 1.65
+medicaid-eligibility-levels,income_limit.child_6_18,NV,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,NV,,,200%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,NV,,,160%,2.05,differ,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 160% + 5-point disregard = 1.65
+medicaid-eligibility-levels,income_limit.pregnant,NV,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,NV,,,32%,0.35,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 32% + 5-point disregard = 0.37
+medicaid-eligibility-levels,income_limit.expansion_adult,NV,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,NH,,,318%,3.23,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 318% + 5-point disregard = 3.23
+medicaid-eligibility-levels,income_limit.child_1_5,NH,,,318%,3.23,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 318% + 5-point disregard = 3.23
+medicaid-eligibility-levels,income_limit.child_6_18,NH,,,318%,3.23,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 318% + 5-point disregard = 3.23
+medicaid-eligibility-levels,income_limit.child,NH,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,NH,,,196%,2.01,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 196% + 5-point disregard = 2.01
+medicaid-eligibility-levels,income_limit.pregnant,NH,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,NH,,,68%,0.67,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 68% + 5-point disregard = 0.73
+medicaid-eligibility-levels,income_limit.expansion_adult,NH,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,NY,,,218%,2.23,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 218% + 5-point disregard = 2.23
+medicaid-eligibility-levels,income_limit.child_1_5,NY,,,149%,1.54,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 149% + 5-point disregard = 1.54
+medicaid-eligibility-levels,income_limit.child_6_18,NY,,,149%,1.54,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 149% + 5-point disregard = 1.54
+medicaid-eligibility-levels,income_limit.child,NY,,,400%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,NY,,,218%,2.23,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 218% + 5-point disregard = 2.23
+medicaid-eligibility-levels,income_limit.pregnant,NY,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,NY,,,133%,1.38,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.expansion_adult,NY,,,200%,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 200% + 5-point disregard = 2.05
+medicaid-eligibility-levels,income_limit.infant,ND,,,147%,2.05,differ,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 147% + 5-point disregard = 1.52
+medicaid-eligibility-levels,income_limit.child_1_5,ND,,,147%,2.05,differ,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 147% + 5-point disregard = 1.52
+medicaid-eligibility-levels,income_limit.child_6_18,ND,,,133%,2.05,differ,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,ND,,,170%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,ND,,,147%,1.75,differ,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 147% + 5-point disregard = 1.52
+medicaid-eligibility-levels,income_limit.pregnant,ND,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,ND,,,52%,0.53,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 52% + 5-point disregard = 0.57
+medicaid-eligibility-levels,income_limit.expansion_adult,ND,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,OH,,,206%,2.11,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 206% + 5-point disregard = 2.11
+medicaid-eligibility-levels,income_limit.child_1_5,OH,,,206%,2.11,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 206% + 5-point disregard = 2.11
+medicaid-eligibility-levels,income_limit.child_6_18,OH,,,206%,2.11,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 206% + 5-point disregard = 2.11
+medicaid-eligibility-levels,income_limit.child,OH,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,OH,,,200%,2.05,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 200% + 5-point disregard = 2.05
+medicaid-eligibility-levels,income_limit.pregnant,OH,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,OH,,,90%,0.95,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 90% + 5-point disregard = 0.95
+medicaid-eligibility-levels,income_limit.expansion_adult,OH,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,OK,,,205%,2.1,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 205% + 5-point disregard = 2.1
+medicaid-eligibility-levels,income_limit.child_1_5,OK,,,205%,2.1,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 205% + 5-point disregard = 2.1
+medicaid-eligibility-levels,income_limit.child_6_18,OK,,,205%,2.1,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 205% + 5-point disregard = 2.1
+medicaid-eligibility-levels,income_limit.child,OK,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,OK,,,133%,2.1,differ,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.pregnant,OK,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,OK,,,41%,0.46,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 41% + 5-point disregard = 0.46
+medicaid-eligibility-levels,income_limit.expansion_adult,OK,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,OR,,,185%,1.9,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 185% + 5-point disregard = 1.9
+medicaid-eligibility-levels,income_limit.child_1_5,OR,,,133%,1.38,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child_6_18,OR,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,OR,,,300%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,OR,,,185%,1.9,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 185% + 5-point disregard = 1.9
+medicaid-eligibility-levels,income_limit.pregnant,OR,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,OR,,,40%,0.42,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 40% + 5-point disregard = 0.45
+medicaid-eligibility-levels,income_limit.expansion_adult,OR,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,PA,,,215%,2.2,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 215% + 5-point disregard = 2.2
+medicaid-eligibility-levels,income_limit.child_1_5,PA,,,157%,1.62,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 157% + 5-point disregard = 1.62
+medicaid-eligibility-levels,income_limit.child_6_18,PA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,PA,,,314%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,PA,,,215%,2.2,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 215% + 5-point disregard = 2.2
+medicaid-eligibility-levels,income_limit.pregnant,PA,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,PA,,,33%,0.38,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 33% + 5-point disregard = 0.38
+medicaid-eligibility-levels,income_limit.expansion_adult,PA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,RI,,,261%,2.66,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 261% + 5-point disregard = 2.66
+medicaid-eligibility-levels,income_limit.child_1_5,RI,,,261%,2.66,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 261% + 5-point disregard = 2.66
+medicaid-eligibility-levels,income_limit.child_6_18,RI,,,261%,2.66,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 261% + 5-point disregard = 2.66
+medicaid-eligibility-levels,income_limit.child,RI,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,RI,,,190%,2.58,differ,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 190% + 5-point disregard = 1.95
+medicaid-eligibility-levels,income_limit.pregnant,RI,,,253%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,RI,,,116%,1.21,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 116% + 5-point disregard = 1.21
+medicaid-eligibility-levels,income_limit.expansion_adult,RI,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,SC,,,208%,2.13,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 208% + 5-point disregard = 2.13
+medicaid-eligibility-levels,income_limit.child_1_5,SC,,,208%,2.13,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 208% + 5-point disregard = 2.13
+medicaid-eligibility-levels,income_limit.child_6_18,SC,,,208%,2.13,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 208% + 5-point disregard = 2.13
+medicaid-eligibility-levels,income_limit.child,SC,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,SC,,,194%,1.99,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 194% + 5-point disregard = 1.99
+medicaid-eligibility-levels,income_limit.pregnant,SC,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,SC,,,62%,0.67,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 62% + 5-point disregard = 0.67
+medicaid-eligibility-levels,income_limit.expansion_adult,SC,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,SD,,,182%,1.87,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 182% + 5-point disregard = 1.87
+medicaid-eligibility-levels,income_limit.child_1_5,SD,,,182%,1.87,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 182% + 5-point disregard = 1.87
+medicaid-eligibility-levels,income_limit.child_6_18,SD,,,182%,1.87,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 182% + 5-point disregard = 1.87
+medicaid-eligibility-levels,income_limit.child,SD,,,204%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,SD,,,133%,1.38,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.pregnant,SD,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,SD,,,57%,0.57,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 57% + 5-point disregard = 0.62
+medicaid-eligibility-levels,income_limit.expansion_adult,SD,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,TX,,,198%,2.03,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 198% + 5-point disregard = 2.03
+medicaid-eligibility-levels,income_limit.child_1_5,TX,,,144%,1.49,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 144% + 5-point disregard = 1.49
+medicaid-eligibility-levels,income_limit.child_6_18,TX,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,TX,,,201%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,TX,,,198%,2.03,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 198% + 5-point disregard = 2.03
+medicaid-eligibility-levels,income_limit.pregnant,TX,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,TX,,,15%,0.151,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 15% + 5-point disregard = 0.2
+medicaid-eligibility-levels,income_limit.expansion_adult,TX,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,UT,,,139%,1.44,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 139% + 5-point disregard = 1.44
+medicaid-eligibility-levels,income_limit.child_1_5,UT,,,139%,1.44,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 139% + 5-point disregard = 1.44
+medicaid-eligibility-levels,income_limit.child_6_18,UT,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,UT,,,200%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,UT,,,139%,1.44,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 139% + 5-point disregard = 1.44
+medicaid-eligibility-levels,income_limit.pregnant,UT,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,UT,,,44%,0.46,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 44% + 5-point disregard = 0.49
+medicaid-eligibility-levels,income_limit.expansion_adult,UT,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,VT,,,312%,3.17,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 312% + 5-point disregard = 3.17
+medicaid-eligibility-levels,income_limit.child_1_5,VT,,,312%,3.17,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 312% + 5-point disregard = 3.17
+medicaid-eligibility-levels,income_limit.child_6_18,VT,,,312%,3.17,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 312% + 5-point disregard = 3.17
+medicaid-eligibility-levels,income_limit.child,VT,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,VT,,,208%,2.13,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 208% + 5-point disregard = 2.13
+medicaid-eligibility-levels,income_limit.pregnant,VT,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,VT,,,53%,0.54,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 53% + 5-point disregard = 0.58
+medicaid-eligibility-levels,income_limit.expansion_adult,VT,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,VA,,,143%,1.48,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 143% + 5-point disregard = 1.48
+medicaid-eligibility-levels,income_limit.child_1_5,VA,,,143%,1.48,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 143% + 5-point disregard = 1.48
+medicaid-eligibility-levels,income_limit.child_6_18,VA,,,143%,1.48,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 143% + 5-point disregard = 1.48
+medicaid-eligibility-levels,income_limit.child,VA,,,200%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,VA,,,143%,1.48,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 143% + 5-point disregard = 1.48
+medicaid-eligibility-levels,income_limit.pregnant,VA,,,200%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,VA,,,49%,0.54,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 49% + 5-point disregard = 0.54
+medicaid-eligibility-levels,income_limit.expansion_adult,VA,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,WA,,,210%,2.15,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 210% + 5-point disregard = 2.15
+medicaid-eligibility-levels,income_limit.child_1_5,WA,,,210%,2.15,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 210% + 5-point disregard = 2.15
+medicaid-eligibility-levels,income_limit.child_6_18,WA,,,210%,2.15,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 210% + 5-point disregard = 2.15
+medicaid-eligibility-levels,income_limit.child,WA,,,312%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,WA,,,193%,2.15,differ,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 193% + 5-point disregard = 1.98
+medicaid-eligibility-levels,income_limit.pregnant,WA,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,WA,,,40%,0.42,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 40% + 5-point disregard = 0.45
+medicaid-eligibility-levels,income_limit.expansion_adult,WA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,WV,,,158%,1.63,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 158% + 5-point disregard = 1.63
+medicaid-eligibility-levels,income_limit.child_1_5,WV,,,141%,1.46,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 141% + 5-point disregard = 1.46
+medicaid-eligibility-levels,income_limit.child_6_18,WV,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,WV,,,300%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,WV,,,158%,1.9,differ,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 158% + 5-point disregard = 1.63
+medicaid-eligibility-levels,income_limit.pregnant,WV,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,WV,,,19%,0.23,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 19% + 5-point disregard = 0.24
+medicaid-eligibility-levels,income_limit.expansion_adult,WV,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,FL,,,206%,2.11,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 206% + 5-point disregard = 2.11
+medicaid-eligibility-levels,income_limit.child_1_5,FL,,,140%,1.45,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 140% + 5-point disregard = 1.45
+medicaid-eligibility-levels,income_limit.child_6_18,FL,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,FL,,,210%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,FL,,,191%,1.96,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 191% + 5-point disregard = 1.96
+medicaid-eligibility-levels,income_limit.pregnant,FL,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,FL,,,29%,0.264,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 29% + 5-point disregard = 0.34
+medicaid-eligibility-levels,income_limit.expansion_adult,FL,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,DE,,,212%,2.17,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 212% + 5-point disregard = 2.17
+medicaid-eligibility-levels,income_limit.child_1_5,DE,,,142%,1.47,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_6_18,DE,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,DE,,,212%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,DE,,,212%,2.17,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 212% + 5-point disregard = 2.17
+medicaid-eligibility-levels,income_limit.pregnant,DE,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,DE,,,87%,0.92,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 87% + 5-point disregard = 0.92
+medicaid-eligibility-levels,income_limit.expansion_adult,DE,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,IA,,,375%,2.2,differ,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 375% + 5-point disregard = 3.8
+medicaid-eligibility-levels,income_limit.child_1_5,IA,,,167%,1.72,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 167% + 5-point disregard = 1.72
+medicaid-eligibility-levels,income_limit.child_6_18,IA,,,167%,1.72,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 167% + 5-point disregard = 1.72
+medicaid-eligibility-levels,income_limit.child,IA,,,302%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,IA,,,375%,3.8,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 375% + 5-point disregard = 3.8
+medicaid-eligibility-levels,income_limit.pregnant,IA,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,IA,,,54%,0.54,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 54% + 5-point disregard = 0.59
+medicaid-eligibility-levels,income_limit.expansion_adult,IA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,WI,,,301%,3.06,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 301% + 5-point disregard = 3.06
+medicaid-eligibility-levels,income_limit.child_1_5,WI,,,186%,1.91,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 186% + 5-point disregard = 1.91
+medicaid-eligibility-levels,income_limit.child_6_18,WI,,,151%,1.56,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 151% + 5-point disregard = 1.56
+medicaid-eligibility-levels,income_limit.child,WI,,,301%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,WI,,,301%,3.06,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 301% + 5-point disregard = 3.06
+medicaid-eligibility-levels,income_limit.pregnant,WI,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,WI,,,95%,1,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 95% + 5-point disregard = 1
+medicaid-eligibility-levels,income_limit.expansion_adult,WI,,,No,1,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,AZ,,,147%,1.52,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 147% + 5-point disregard = 1.52
+medicaid-eligibility-levels,income_limit.child_1_5,AZ,,,141%,1.46,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 141% + 5-point disregard = 1.46
+medicaid-eligibility-levels,income_limit.child_6_18,AZ,,,133%,1.38,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,AZ,,,200%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,AZ,,,156%,1.61,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 156% + 5-point disregard = 1.61
+medicaid-eligibility-levels,income_limit.pregnant,AZ,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,AZ,,,106%,1.11,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 106% + 5-point disregard = 1.11
+medicaid-eligibility-levels,income_limit.expansion_adult,AZ,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,CA,,,261%,2.66,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 261% + 5-point disregard = 2.66
+medicaid-eligibility-levels,income_limit.child_1_5,CA,,,261%,2.66,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 261% + 5-point disregard = 2.66
+medicaid-eligibility-levels,income_limit.child_6_18,CA,,,261%,2.66,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 261% + 5-point disregard = 2.66
+medicaid-eligibility-levels,income_limit.child,CA,,,317%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,CA,,,208%,2.13,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 208% + 5-point disregard = 2.13
+medicaid-eligibility-levels,income_limit.pregnant,CA,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,CA,,,109%,1.14,match,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 109% + 5-point disregard = 1.14
+medicaid-eligibility-levels,income_limit.expansion_adult,CA,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,NJ,,,194%,1.99,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 194% + 5-point disregard = 1.99
+medicaid-eligibility-levels,income_limit.child_1_5,NJ,,,142%,1.47,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_6_18,NJ,,,142%,1.47,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child,NJ,,,350%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,NJ,,,194%,1.99,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 194% + 5-point disregard = 1.99
+medicaid-eligibility-levels,income_limit.pregnant,NJ,,,200%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,NJ,,,31%,0.34,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 31% + 5-point disregard = 0.36
+medicaid-eligibility-levels,income_limit.expansion_adult,NJ,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,TN,,,195%,2.16,differ,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 195% + 5-point disregard = 2
+medicaid-eligibility-levels,income_limit.child_1_5,TN,,,142%,2.16,differ,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 142% + 5-point disregard = 1.47
+medicaid-eligibility-levels,income_limit.child_6_18,TN,,,133%,2.16,differ,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,TN,,,250%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,TN,,,195%,2.55,differ,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 195% + 5-point disregard = 2
+medicaid-eligibility-levels,income_limit.pregnant,TN,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,TN,,,101%,1,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 101% + 5-point disregard = 1.06
+medicaid-eligibility-levels,income_limit.expansion_adult,TN,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,NM,,,300%,3.05,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 300% + 5-point disregard = 3.05
+medicaid-eligibility-levels,income_limit.child_1_5,NM,,,300%,3.05,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 300% + 5-point disregard = 3.05
+medicaid-eligibility-levels,income_limit.child_6_18,NM,,,240%,2.45,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 240% + 5-point disregard = 2.45
+medicaid-eligibility-levels,income_limit.child,NM,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,NM,,,250%,2.55,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 250% + 5-point disregard = 2.55
+medicaid-eligibility-levels,income_limit.pregnant,NM,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,NM,,,45%,0.47,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 45% + 5-point disregard = 0.5
+medicaid-eligibility-levels,income_limit.expansion_adult,NM,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,WY,,,154%,2.05,differ,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 154% + 5-point disregard = 1.59
+medicaid-eligibility-levels,income_limit.child_1_5,WY,,,154%,2.05,differ,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 154% + 5-point disregard = 1.59
+medicaid-eligibility-levels,income_limit.child_6_18,WY,,,133%,2.05,differ,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,WY,,,200%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,WY,,,154%,1.59,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 154% + 5-point disregard = 1.59
+medicaid-eligibility-levels,income_limit.pregnant,WY,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,WY,,,54%,0.433,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 54% + 5-point disregard = 0.59
+medicaid-eligibility-levels,income_limit.expansion_adult,WY,,,No,not covered (-inf),match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,neither covers this group
+medicaid-eligibility-levels,income_limit.infant,CT,,,196%,2.01,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 196% + 5-point disregard = 2.01
+medicaid-eligibility-levels,income_limit.child_1_5,CT,,,196%,2.01,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 196% + 5-point disregard = 2.01
+medicaid-eligibility-levels,income_limit.child_6_18,CT,,,196%,2.01,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 196% + 5-point disregard = 2.01
+medicaid-eligibility-levels,income_limit.child,CT,,,318%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,CT,,,258%,2.63,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 258% + 5-point disregard = 2.63
+medicaid-eligibility-levels,income_limit.pregnant,CT,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,CT,,,133%,1.6,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.expansion_adult,CT,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.infant,NC,,,210%,2.16,differ,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 210% + 5-point disregard = 2.15
+medicaid-eligibility-levels,income_limit.child_1_5,NC,,,210%,2.16,differ,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 210% + 5-point disregard = 2.15
+medicaid-eligibility-levels,income_limit.child_6_18,NC,,,133%,2.16,differ,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 133% + 5-point disregard = 1.38
+medicaid-eligibility-levels,income_limit.child,NC,,,211%,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,NC,,,196%,2.01,match,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 196% + 5-point disregard = 2.01
+medicaid-eligibility-levels,income_limit.pregnant,NC,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,NC,,,43%,1.38,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 43% + 5-point disregard = 0.48
+medicaid-eligibility-levels,income_limit.expansion_adult,NC,,,No,1.38,differ,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official says 'No'
+medicaid-eligibility-levels,income_limit.infant,AK,,,203%,2.08,match,hhs/medicaid/eligibility/categories/infant/income_limit.yaml,official 203% + 5-point disregard = 2.08
+medicaid-eligibility-levels,income_limit.child_1_5,AK,,,203%,2.08,match,hhs/medicaid/eligibility/categories/young_child/income_limit.yaml,official 203% + 5-point disregard = 2.08
+medicaid-eligibility-levels,income_limit.child_6_18,AK,,,203%,2.08,match,hhs/medicaid/eligibility/categories/older_child/income_limit.yaml,official 203% + 5-point disregard = 2.08
+medicaid-eligibility-levels,income_limit.child,AK,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.pregnant,AK,,,200%,2.3,differ,hhs/medicaid/eligibility/categories/pregnant/income_limit.yaml,official 200% + 5-point disregard = 2.05
+medicaid-eligibility-levels,income_limit.pregnant,AK,,,N/A,,missing in PolicyEngine,,CHIP parameters aren't in the downloaded PolicyEngine files
+medicaid-eligibility-levels,income_limit.parent,AK,,,139%,1.36,differ,hhs/medicaid/eligibility/categories/parent/income_limit.yaml,official 139% + 5-point disregard = 1.44
+medicaid-eligibility-levels,income_limit.expansion_adult,AK,,,133%,1.38,match,hhs/medicaid/eligibility/categories/adult/income_limit.yaml,official 133% + 5-point disregard = 1.38

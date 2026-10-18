@@ -1,0 +1,26 @@
+source_id,parameter,region,household_size,period,official,policyengine,status,policyengine_file,note
+irs-eitc-rp-25-32,eitc.earned_income_amount.children_1,,,2026,"$13,020",13020.6,match,irs/credits/eitc/max.yaml / phase_in_rate.yaml,derived: max credit ÷ phase-in rate
+irs-eitc-rp-25-32,eitc.earned_income_amount.children_2,,,2026,"$18,290",18290,match,irs/credits/eitc/max.yaml / phase_in_rate.yaml,derived: max credit ÷ phase-in rate
+irs-eitc-rp-25-32,eitc.earned_income_amount.children_3,,,2026,"$18,290",18291.1,match,irs/credits/eitc/max.yaml / phase_in_rate.yaml,derived: max credit ÷ phase-in rate
+irs-eitc-rp-25-32,eitc.earned_income_amount.children_0,,,2026,"$8,680",8679.74,match,irs/credits/eitc/max.yaml / phase_in_rate.yaml,derived: max credit ÷ phase-in rate
+irs-eitc-rp-25-32,eitc.max_credit.children_1,,,2026,"$4,427",4427,match,irs/credits/eitc/max.yaml,
+irs-eitc-rp-25-32,eitc.max_credit.children_2,,,2026,"$7,316",7316,match,irs/credits/eitc/max.yaml,
+irs-eitc-rp-25-32,eitc.max_credit.children_3,,,2026,"$8,231",8231,match,irs/credits/eitc/max.yaml,
+irs-eitc-rp-25-32,eitc.max_credit.children_0,,,2026,$664,664,match,irs/credits/eitc/max.yaml,
+irs-eitc-rp-25-32,eitc.phaseout_start.joint.children_1,,,2026,"$31,160",31160,match,irs/credits/eitc/phase_out/start.yaml + joint_bonus.yaml,phase-out start + joint bonus
+irs-eitc-rp-25-32,eitc.phaseout_start.joint.children_2,,,2026,"$31,160",31160,match,irs/credits/eitc/phase_out/start.yaml + joint_bonus.yaml,phase-out start + joint bonus
+irs-eitc-rp-25-32,eitc.phaseout_start.joint.children_3,,,2026,"$31,160",31160,match,irs/credits/eitc/phase_out/start.yaml + joint_bonus.yaml,phase-out start + joint bonus
+irs-eitc-rp-25-32,eitc.phaseout_start.joint.children_0,,,2026,"$18,140",18140,match,irs/credits/eitc/phase_out/start.yaml + joint_bonus.yaml,phase-out start + joint bonus
+irs-eitc-rp-25-32,eitc.phaseout_end.joint.children_1,,,2026,"$58,863",58863.4,match,irs/credits/eitc/phase_out/start.yaml + max.yaml / rate.yaml,derived: phase-out start + max credit ÷ phase-out rate
+irs-eitc-rp-25-32,eitc.phaseout_end.joint.children_2,,,2026,"$65,899",65898.8,match,irs/credits/eitc/phase_out/start.yaml + max.yaml / rate.yaml,derived: phase-out start + max credit ÷ phase-out rate
+irs-eitc-rp-25-32,eitc.phaseout_end.joint.children_3,,,2026,"$70,244",70243.6,match,irs/credits/eitc/phase_out/start.yaml + max.yaml / rate.yaml,derived: phase-out start + max credit ÷ phase-out rate
+irs-eitc-rp-25-32,eitc.phaseout_end.joint.children_0,,,2026,"$26,820",26819.7,match,irs/credits/eitc/phase_out/start.yaml + max.yaml / rate.yaml,derived: phase-out start + max credit ÷ phase-out rate
+irs-eitc-rp-25-32,eitc.phaseout_start.other.children_1,,,2026,"$23,890",23890,match,irs/credits/eitc/phase_out/start.yaml,
+irs-eitc-rp-25-32,eitc.phaseout_start.other.children_2,,,2026,"$23,890",23890,match,irs/credits/eitc/phase_out/start.yaml,
+irs-eitc-rp-25-32,eitc.phaseout_start.other.children_3,,,2026,"$23,890",23890,match,irs/credits/eitc/phase_out/start.yaml,
+irs-eitc-rp-25-32,eitc.phaseout_start.other.children_0,,,2026,"$10,860",10860,match,irs/credits/eitc/phase_out/start.yaml,
+irs-eitc-rp-25-32,eitc.phaseout_end.other.children_1,,,2026,"$51,593",51593.4,match,irs/credits/eitc/phase_out/start.yaml + max.yaml / rate.yaml,derived: phase-out start + max credit ÷ phase-out rate
+irs-eitc-rp-25-32,eitc.phaseout_end.other.children_2,,,2026,"$58,629",58628.8,match,irs/credits/eitc/phase_out/start.yaml + max.yaml / rate.yaml,derived: phase-out start + max credit ÷ phase-out rate
+irs-eitc-rp-25-32,eitc.phaseout_end.other.children_3,,,2026,"$62,974",62973.6,match,irs/credits/eitc/phase_out/start.yaml + max.yaml / rate.yaml,derived: phase-out start + max credit ÷ phase-out rate
+irs-eitc-rp-25-32,eitc.phaseout_end.other.children_0,,,2026,"$19,540",19539.7,match,irs/credits/eitc/phase_out/start.yaml + max.yaml / rate.yaml,derived: phase-out start + max credit ÷ phase-out rate
+irs-eitc-rp-25-32,eitc.investment_income_limit,,,2026,"$12,200",12200,match,irs/credits/eitc/phase_out/max_investment_income.yaml,

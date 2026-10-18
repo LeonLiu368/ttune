@@ -1,0 +1,901 @@
+source_id,parameter,region,household_size,period,official,policyengine,status,policyengine_file,note
+fns-snap-sua-fy26,sua.heating_cooling,AL,,2025-10-01,637,637,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AL,,2025-10-01,466,466,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,AL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AL,,2025-10-01,53,53,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AL,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AK_C,,2025-10-01,625,625,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AK_C,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,AK_C,,2025-10-01,134,134,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AK_C,,2025-10-01,310,310,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AK_C,,2025-10-01,59,59,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AK_C,,2025-10-01,61,61,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AK_C,,2025-10-01,37,37,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AK_C,,2025-10-01,26,26,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AK_C,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AK_N,,2025-10-01,825,825,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AK_N,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,AK_N,,2025-10-01,170,170,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AK_N,,2025-10-01,492,492,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AK_N,,2025-10-01,44,44,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AK_N,,2025-10-01,45,45,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AK_N,,2025-10-01,38,38,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AK_N,,2025-10-01,35,35,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AK_N,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AK_NW,,2025-10-01,1107,1107,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AK_NW,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,AK_NW,,2025-10-01,158,158,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AK_NW,,2025-10-01,761,761,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AK_NW,,2025-10-01,63,63,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AK_NW,,2025-10-01,48,48,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AK_NW,,2025-10-01,40,40,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AK_NW,,2025-10-01,37,37,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AK_NW,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AK_SC,,2025-10-01,591,591,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AK_SC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,AK_SC,,2025-10-01,109,109,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AK_SC,,2025-10-01,308,308,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AK_SC,,2025-10-01,42,42,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AK_SC,,2025-10-01,65,65,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AK_SC,,2025-10-01,40,40,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AK_SC,,2025-10-01,27,27,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AK_SC,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AK_SE,,2025-10-01,517,517,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AK_SE,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,AK_SE,,2025-10-01,72,72,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AK_SE,,2025-10-01,244,244,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AK_SE,,2025-10-01,49,49,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AK_SE,,2025-10-01,81,81,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AK_SE,,2025-10-01,34,34,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AK_SE,,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AK_SE,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AK_SW,,2025-10-01,1064,1064,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AK_SW,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,AK_SW,,2025-10-01,169,169,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AK_SW,,2025-10-01,676,676,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AK_SW,,2025-10-01,111,111,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AK_SW,,2025-10-01,54,54,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AK_SW,,2025-10-01,17,17,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AK_SW,,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AK_SW,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AZ,1,2025-10-01,323,323,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.heating_cooling,AZ,2,2025-10-01,323,323,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.heating_cooling,AZ,3,2025-10-01,323,323,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AZ,1,2025-10-01,149,149,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AZ,2,2025-10-01,149,149,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AZ,3,2025-10-01,149,149,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.electricity,AZ,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.electricity,AZ,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.electricity,AZ,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AZ,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AZ,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AZ,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AZ,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.water,AZ,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.water,AZ,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AZ,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.sewage,AZ,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.sewage,AZ,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AZ,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.trash,AZ,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.trash,AZ,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AZ,1,2025-10-01,44,44,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.phone,AZ,2,2025-10-01,44,44,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.phone,AZ,3,2025-10-01,44,44,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AZ,1,2025-10-01,6,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.smd_offset,AZ,2,2025-10-01,6,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.smd_offset,AZ,3,2025-10-01,6,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AZ,4,2025-10-01,438,438,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AZ,4,2025-10-01,201,201,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.electricity,AZ,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AZ,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AZ,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AZ,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AZ,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AZ,4,2025-10-01,44,44,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AZ,4,2025-10-01,6,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,AR,,2025-10-01,342,342,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,AR,,2025-10-01,274,274,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,AR,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,AR,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,AR,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,AR,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,AR,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,AR,,2025-10-01,51,51,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,AR,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,CA,,2025-10-01,663,663,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,CA,,2025-10-01,170,170,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,CA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,CA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,CA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,CA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,CA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,CA,,2025-10-01,20,20,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,CA,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,CO,,2025-10-01,594,594,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,CO,,2025-10-01,377,377,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,CO,,2025-10-01,71,71,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,CO,,2025-10-01,71,71,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,CO,,2025-10-01,71,71,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,CO,,2025-10-01,71,71,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,CO,,2025-10-01,71,71,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,CO,,2025-10-01,97,97,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,CO,,2025-10-01,7,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,CT,,2025-10-01,976,976,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,CT,,2025-10-01,430,430,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,CT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,CT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,CT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,CT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,CT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,CT,,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,CT,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,DE,,2025-10-01,543,543,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,DE,,2025-10-01,369,369,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,DE,,2025-10-01,102,102,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,DE,,2025-10-01,102,102,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,DE,,2025-10-01,102,102,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,DE,,2025-10-01,102,102,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,DE,,2025-10-01,102,102,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,DE,,2025-10-01,24,24,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,DE,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,DC,,2025-10-01,384,384,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,DC,,2025-10-01,348,348,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,DC,,2025-10-01,90,90,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,DC,,2025-10-01,90,90,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,DC,,2025-10-01,90,90,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,DC,,2025-10-01,90,90,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,DC,,2025-10-01,90,90,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,DC,,2025-10-01,76,76,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,DC,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,FL,,2025-10-01,430,430,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,FL,,2025-10-01,348,348,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,FL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,FL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,FL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,FL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,FL,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,FL,,2025-10-01,56,56,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,FL,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GA,,2025-10-01,405,405,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,GA,,2025-10-01,358,358,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,GA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,GA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,GA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,GA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,GA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,GA,,2025-10-01,47,47,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,GA,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,1,2025-10-01,193,193,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,1,2025-10-01,37,37,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,1,2025-10-01,39,39,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,1,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,1,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,1,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,1,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,2,2025-10-01,224,224,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,2,2025-10-01,37,37,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,2,2025-10-01,51,51,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,2,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,2,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,2,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,2,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,3,2025-10-01,224,224,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,3,2025-10-01,37,37,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,3,2025-10-01,51,51,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,3,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,3,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,3,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,3,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,4,2025-10-01,267,267,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,4,2025-10-01,74,74,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,4,2025-10-01,71,71,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,4,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,4,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,4,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,4,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,5,2025-10-01,304,304,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,5,2025-10-01,74,74,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,5,2025-10-01,87,87,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,5,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,5,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,5,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,5,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,6,2025-10-01,347,347,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,6,2025-10-01,74,74,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,6,2025-10-01,114,114,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,6,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,6,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,6,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,6,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,7,2025-10-01,394,394,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,7,2025-10-01,111,111,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,7,2025-10-01,140,140,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,7,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,7,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,7,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,7,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,8,2025-10-01,413,413,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,8,2025-10-01,111,111,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,8,2025-10-01,154,154,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,8,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,8,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,8,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,8,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,9,2025-10-01,442,442,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,9,2025-10-01,111,111,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,9,2025-10-01,176,176,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,9,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,9,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,9,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,9,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,10,2025-10-01,442,442,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,10,2025-10-01,111,111,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,10,2025-10-01,176,176,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,10,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,10,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,10,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,10,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,11,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,11,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,11,2025-10-01,453,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,11,2025-10-01,111,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,11,2025-10-01,183,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,11,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,11,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,11,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,11,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,12,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,12,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,12,2025-10-01,453,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,12,2025-10-01,111,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,12,2025-10-01,183,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,12,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,12,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,12,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,12,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,GU,13,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,GU,13,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,GU,13,2025-10-01,453,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,GU,13,2025-10-01,111,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,GU,13,2025-10-01,183,,missing in PolicyEngine,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,GU,13,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,GU,13,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,GU,13,2025-10-01,29,29,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,GU,13,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,HI,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,1,2025-10-01,299,299,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,1,2025-10-01,299,299,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,1,2025-10-01,67,67,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,1,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,1,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,1,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,HI,1,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,HI,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,2,2025-10-01,324,324,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,2,2025-10-01,324,324,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,2,2025-10-01,75,75,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,2,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,2,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,2,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,HI,2,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,HI,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,3,2025-10-01,376,376,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,3,2025-10-01,376,376,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,3,2025-10-01,83,83,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,3,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,3,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,3,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,HI,3,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,HI,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.heating_cooling,HI,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,4,2025-10-01,469,469,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,5,2025-10-01,469,469,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,4,2025-10-01,469,469,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,5,2025-10-01,469,469,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,4,2025-10-01,98,98,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,5,2025-10-01,98,98,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,4,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,5,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,4,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,5,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,4,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,5,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,HI,4,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.smd_offset,HI,5,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,HI,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,6,2025-10-01,554,554,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,6,2025-10-01,554,554,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,6,2025-10-01,112,112,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,6,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,6,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,6,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,HI,6,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,HI,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.heating_cooling,HI,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.heating_cooling,HI,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.heating_cooling,HI,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,HI,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,7,2025-10-01,625,625,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,8,2025-10-01,625,625,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,9,2025-10-01,625,625,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,HI,10,2025-10-01,625,625,match,usda/snap/income/deductions/utility/single/by_household_size/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,7,2025-10-01,625,625,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,8,2025-10-01,625,625,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,9,2025-10-01,625,625,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,HI,10,2025-10-01,625,625,match,usda/snap/income/deductions/utility/single/by_household_size/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,7,2025-10-01,135,135,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,8,2025-10-01,135,135,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,9,2025-10-01,135,135,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,HI,10,2025-10-01,135,135,match,usda/snap/income/deductions/utility/single/by_household_size/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,7,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,8,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,9,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,HI,10,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,7,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,8,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,9,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,HI,10,2025-10-01,100,100,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,7,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,8,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,9,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,HI,10,2025-10-01,43,43,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,HI,7,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.smd_offset,HI,8,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.smd_offset,HI,9,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.smd_offset,HI,10,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,ID,,2025-10-01,390,390,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,ID,,2025-10-01,133,133,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,ID,,2025-10-01,133,133,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,ID,,2025-10-01,133,133,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,ID,,2025-10-01,133,133,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,ID,,2025-10-01,133,133,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,ID,,2025-10-01,133,133,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,ID,,2025-10-01,49,49,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,ID,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,IL,,2025-10-01,546,546,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,IL,,2025-10-01,457,457,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,IL,,2025-10-01,78,78,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,IL,,2025-10-01,78,78,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,IL,,2025-10-01,78,78,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,IL,,2025-10-01,78,78,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,IL,,2025-10-01,78,78,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,IL,,2025-10-01,67,67,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,IL,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,IN,,2025-10-01,486,486,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,IN,,2025-10-01,283,283,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,IN,,2025-10-01,62,62,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,IN,,2025-10-01,62,62,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,IN,,2025-10-01,62,62,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,IN,,2025-10-01,62,62,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,IN,,2025-10-01,62,62,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,IN,,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,IN,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,IA,,2025-10-01,554,554,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,IA,,2025-10-01,292,292,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,IA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,IA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,IA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,IA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,IA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,IA,,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,IA,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,KS,,2025-10-01,469,469,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,KS,,2025-10-01,345,345,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,KS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,KS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,KS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,KS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,KS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,KS,,2025-10-01,44,44,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,KS,,2025-10-01,10,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,KY,,2025-10-01,388,388,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,KY,,2025-10-01,331,331,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,KY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,KY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,KY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,KY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,KY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,KY,,2025-10-01,64,64,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,KY,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,LA,,2025-10-01,465,465,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,LA,,2025-10-01,0,258,differ,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,LA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,LA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,LA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,LA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,LA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,LA,,2025-10-01,76,76,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,LA,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,ME,,2025-10-01,1096,1096,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,ME,,2025-10-01,598,598,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,ME,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,ME,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,ME,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,ME,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,ME,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,ME,,2025-10-01,0,114,differ,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,ME,,2025-10-01,114,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,MD,,2025-10-01,572,557,differ,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1
+fns-snap-sua-fy26,sua.basic_limited,MD,,2025-10-01,350,341,differ,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1
+fns-snap-sua-fy26,sua.electricity,MD,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1
+fns-snap-sua-fy26,sua.gas_fuel,MD,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1
+fns-snap-sua-fy26,sua.water,MD,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1
+fns-snap-sua-fy26,sua.sewage,MD,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1
+fns-snap-sua-fy26,sua.trash,MD,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1
+fns-snap-sua-fy26,sua.phone,MD,,2025-10-01,41,40,differ,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1
+fns-snap-sua-fy26,sua.smd_offset,MD,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,MA,,2025-10-01,914,914,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,MA,,2025-10-01,556,556,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,MA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,MA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,MA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,MA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,MA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,MA,,2025-10-01,64,64,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,MA,,2025-10-01,6,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,MI,,2025-10-01,682,682,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,MI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,MI,,2025-10-01,181,181,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,MI,,2025-10-01,33,33,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,MI,,2025-10-01,119,119,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,MI,,2025-10-01,119,119,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,MI,,2025-10-01,30,30,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,MI,,2025-10-01,31,31,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,MI,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,MN,,2025-10-01,667,667,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,MN,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,MN,,2025-10-01,235,235,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,MN,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,MN,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,MN,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,MN,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,MN,,2025-10-01,62,62,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,MN,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,MS,,2025-10-01,308,308,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,MS,,2025-10-01,228,228,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,MS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,MS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,MS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,MS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,MS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,MS,,2025-10-01,50,50,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,MS,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,MO,,2025-10-01,509,509,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,MO,,2025-10-01,373,373,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,MO,,2025-10-01,162,162,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,MO,,2025-10-01,162,162,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,MO,,2025-10-01,162,162,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,MO,,2025-10-01,162,162,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,MO,,2025-10-01,162,162,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,MO,,2025-10-01,81,81,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,MO,,2025-10-01,7,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,MT,,2025-10-01,799,799,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,MT,,2025-10-01,267,267,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,MT,,2025-10-01,116,116,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,MT,,2025-10-01,116,116,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,MT,,2025-10-01,116,116,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,MT,,2025-10-01,116,116,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,MT,,2025-10-01,116,116,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,MT,,2025-10-01,34,34,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,MT,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NE,,2025-10-01,615,615,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NE,,2025-10-01,321,321,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,NE,,2025-10-01,63,63,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NE,,2025-10-01,63,63,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NE,,2025-10-01,63,63,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NE,,2025-10-01,63,63,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NE,,2025-10-01,63,63,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NE,,2025-10-01,54,54,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,NE,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NV,,2025-10-01,446,446,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NV,,2025-10-01,361,361,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,NV,,2025-10-01,77,77,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NV,,2025-10-01,77,77,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NV,,2025-10-01,77,77,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NV,,2025-10-01,77,77,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NV,,2025-10-01,77,77,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NV,,2025-10-01,52,52,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,NV,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NH,,2025-10-01,1018,1018,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NH,,2025-10-01,373,373,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,NH,,2025-10-01,217,217,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NH,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NH,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NH,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NH,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NH,,2025-10-01,39,39,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,NH,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NJ,,2025-10-01,-,977,no official value,usda/snap/income/deductions/utility/standard/main.yaml,Pending
+fns-snap-sua-fy26,sua.basic_limited,NJ,,2025-10-01,-,505,no official value,usda/snap/income/deductions/utility/limited/main.yaml,Pending
+fns-snap-sua-fy26,sua.electricity,NJ,,2025-10-01,-,0,no official value,usda/snap/income/deductions/utility/single/electricity.yaml,Pending
+fns-snap-sua-fy26,sua.gas_fuel,NJ,,2025-10-01,-,0,no official value,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Pending
+fns-snap-sua-fy26,sua.water,NJ,,2025-10-01,-,0,no official value,usda/snap/income/deductions/utility/single/water.yaml,Pending
+fns-snap-sua-fy26,sua.sewage,NJ,,2025-10-01,-,0,no official value,usda/snap/income/deductions/utility/single/sewage.yaml,Pending
+fns-snap-sua-fy26,sua.trash,NJ,,2025-10-01,-,0,no official value,usda/snap/income/deductions/utility/single/trash.yaml,Pending
+fns-snap-sua-fy26,sua.phone,NJ,,2025-10-01,-,33,no official value,usda/snap/income/deductions/utility/single/phone.yaml,Pending
+fns-snap-sua-fy26,sua.smd_offset,NJ,,2025-10-01,-,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NM,,2025-10-01,419,419,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NM,,2025-10-01,289,289,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,NM,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NM,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NM,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NM,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NM,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NM,,2025-10-01,51,51,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,NM,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NY_NAS,,2025-10-01,988,988,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NY_NAS,,2025-10-01,419,388,differ,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,NY_NAS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NY_NAS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NY_NAS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NY_NAS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NY_NAS,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NY_NAS,,2025-10-01,32,32,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,NY_NAS,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NY_NYC,,2025-10-01,1062,1062,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NY_NYC,,2025-10-01,419,419,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,NY_NYC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NY_NYC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NY_NYC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NY_NYC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NY_NYC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NY_NYC,,2025-10-01,32,32,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,NY_NYC,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NY_ONY,,2025-10-01,877,877,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NY_ONY,,2025-10-01,388,355,differ,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,NY_ONY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NY_ONY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NY_ONY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NY_ONY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NY_ONY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NY_ONY,,2025-10-01,32,32,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,NY_ONY,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NC,1,2025-10-01,636.74,637,differ,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,under $1 apart; FNS gives cents
+fns-snap-sua-fy26,sua.basic_limited,NC,1,2025-10-01,392,392,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.electricity,NC,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NC,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NC,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NC,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NC,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NC,1,2025-10-01,42.11,42,differ,usda/snap/income/deductions/utility/single/phone.yaml,under $1 apart; FNS gives cents
+fns-snap-sua-fy26,sua.smd_offset,NC,1,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NC,2,2025-10-01,699,699,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NC,2,2025-10-01,431,431,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.electricity,NC,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NC,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NC,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NC,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NC,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NC,2,2025-10-01,42.11,42,differ,usda/snap/income/deductions/utility/single/phone.yaml,under $1 apart; FNS gives cents
+fns-snap-sua-fy26,sua.smd_offset,NC,2,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NC,3,2025-10-01,768,768,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NC,3,2025-10-01,474,474,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.electricity,NC,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NC,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NC,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NC,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NC,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NC,3,2025-10-01,42.11,42,differ,usda/snap/income/deductions/utility/single/phone.yaml,under $1 apart; FNS gives cents
+fns-snap-sua-fy26,sua.smd_offset,NC,3,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NC,4,2025-10-01,837,837,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NC,4,2025-10-01,518,518,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.electricity,NC,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NC,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NC,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NC,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NC,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NC,4,2025-10-01,42.11,42,differ,usda/snap/income/deductions/utility/single/phone.yaml,under $1 apart; FNS gives cents
+fns-snap-sua-fy26,sua.smd_offset,NC,4,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,NC,5,2025-10-01,912,912,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.basic_limited,NC,5,2025-10-01,564,564,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,
+fns-snap-sua-fy26,sua.electricity,NC,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,NC,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,NC,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,NC,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,NC,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,NC,5,2025-10-01,42.11,42,differ,usda/snap/income/deductions/utility/single/phone.yaml,under $1 apart; FNS gives cents
+fns-snap-sua-fy26,sua.smd_offset,NC,5,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,ND,,2025-10-01,772,772,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,ND,,2025-10-01,286,286,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,ND,,2025-10-01,126,126,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,ND,,2025-10-01,126,126,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,ND,,2025-10-01,126,126,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,ND,,2025-10-01,126,126,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,ND,,2025-10-01,126,126,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,ND,,2025-10-01,35,35,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,ND,,2025-10-01,7,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,OH,,2025-10-01,766,766,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,OH,,2025-10-01,479,479,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,OH,,2025-10-01,108,108,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,OH,,2025-10-01,108,108,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,OH,,2025-10-01,108,108,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,OH,,2025-10-01,108,108,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,OH,,2025-10-01,108,108,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,OH,,2025-10-01,46,46,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,OH,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,OK,,2025-10-01,412,412,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,OK,,2025-10-01,354,354,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,OK,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,OK,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,OK,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,OK,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,OK,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,OK,,2025-10-01,49,49,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,OK,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,OR,,2025-10-01,515,515,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,OR,,2025-10-01,404,404,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,OR,,2025-10-01,65,65,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,OR,,2025-10-01,65,65,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,OR,,2025-10-01,65,65,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,OR,,2025-10-01,65,65,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,OR,,2025-10-01,65,65,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,OR,,2025-10-01,81,81,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,OR,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,PA,,2025-10-01,857,857,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,PA,,2025-10-01,488,488,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,PA,,2025-10-01,128,128,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,PA,,2025-10-01,128,128,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,PA,,2025-10-01,128,128,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,PA,,2025-10-01,128,128,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,PA,,2025-10-01,128,128,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,PA,,2025-10-01,107,107,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,PA,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,RI,,2025-10-01,844,844,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,RI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,RI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,RI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,RI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,RI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,RI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,RI,,2025-10-01,27,27,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,RI,,2025-10-01,7,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,SC,,2025-10-01,388,388,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,SC,,2025-10-01,265,265,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,SC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,SC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,SC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,SC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,SC,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,SC,,2025-10-01,27,27,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,SC,,2025-10-01,9,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,SD,,2025-10-01,950,950,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,SD,,2025-10-01,265,265,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,SD,,2025-10-01,109,109,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,SD,,2025-10-01,109,109,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,SD,,2025-10-01,109,109,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,SD,,2025-10-01,109,109,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,SD,,2025-10-01,109,109,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,SD,,2025-10-01,60,60,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,SD,,2025-10-01,14,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,1,2025-10-01,451,451,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,1,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,1,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,1,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,2,2025-10-01,466,466,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,2,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,2,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,2,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,3,2025-10-01,485,485,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,3,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,3,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,3,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,4,2025-10-01,503,503,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,4,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,4,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,4,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,5,2025-10-01,519,519,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,5,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,5,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,5,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,5,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,6,2025-10-01,536,536,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,6,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,6,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,6,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,6,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,7,2025-10-01,551,551,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,7,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,7,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,7,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,7,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,8,2025-10-01,568,568,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,8,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,8,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,8,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,8,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,9,2025-10-01,587,587,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,9,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,9,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,9,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,9,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TN,10,2025-10-01,602,602,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,TN,10,2025-10-01,162,162,match,usda/snap/income/deductions/utility/limited/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,TN,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,TN,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,TN,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,TN,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,TN,10,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,TN,10,2025-10-01,36,36,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,TN,10,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,TX,,2025-10-01,445,445,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,TX,,2025-10-01,400,400,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,TX,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,TX,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,TX,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,TX,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,TX,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,TX,,2025-10-01,62,62,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,TX,,2025-10-01,4,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,UT,,2025-10-01,514,514,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,UT,,2025-10-01,431,431,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,UT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,UT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,UT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,UT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,UT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,UT,,2025-10-01,59,59,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,UT,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,VT,,2025-10-01,1096,1096,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,VT,,2025-10-01,311,311,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,VT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,VT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,VT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,VT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,VT,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,VT,,2025-10-01,37,37,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,VT,,2025-10-01,7,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,VI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/standard/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,VI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,VI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,VI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,VI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,VI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,VI,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,VI,,2025-10-01,34,34,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,VI,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,VA,1,2025-10-01,375,375,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.heating_cooling,VA,2,2025-10-01,375,375,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.heating_cooling,VA,3,2025-10-01,375,375,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,VA,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,VA,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,VA,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,VA,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,VA,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,VA,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,VA,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,VA,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,VA,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,VA,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,VA,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,VA,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,VA,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,VA,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,VA,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,VA,1,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,VA,2,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,VA,3,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,VA,1,2025-10-01,54,54,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,VA,2,2025-10-01,54,54,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,VA,3,2025-10-01,54,54,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,VA,1,2025-10-01,10,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.smd_offset,VA,2,2025-10-01,10,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.smd_offset,VA,3,2025-10-01,10,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,VA,4,2025-10-01,476,476,match,usda/snap/income/deductions/utility/standard/by_household_size/amount.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.basic_limited,VA,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/limited/main.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.electricity,VA,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.gas_fuel,VA,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.water,VA,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.sewage,VA,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.trash,VA,4,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.phone,VA,4,2025-10-01,54,54,match,usda/snap/income/deductions/utility/single/phone.yaml,Indicates the State is not a mandatory SUA State
+fns-snap-sua-fy26,sua.smd_offset,VA,4,2025-10-01,10,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,WA,,2025-10-01,515,515,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,WA,,2025-10-01,406,406,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,WA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,WA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,WA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,WA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,WA,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,WA,,2025-10-01,58,58,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,WA,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,WV,,2025-10-01,518,518,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,WV,,2025-10-01,330,330,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,WV,,2025-10-01,88,88,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,WV,,2025-10-01,88,88,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,WV,,2025-10-01,88,88,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,WV,,2025-10-01,88,88,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,WV,,2025-10-01,88,88,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,WV,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,WV,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,WI,,2025-10-01,870,553,differ,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,WI,,2025-10-01,436,385,differ,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,WI,,2025-10-01,139,155,differ,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,WI,,2025-10-01,34,48,differ,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,WI,,2025-10-01,112,106,differ,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,WI,,2025-10-01,112,106,differ,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,WI,,2025-10-01,47,28,differ,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,WI,,2025-10-01,106,31,differ,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,WI,,2025-10-01,0,,missing in PolicyEngine,,PolicyEngine doesn't store this column
+fns-snap-sua-fy26,sua.heating_cooling,WY,,2025-10-01,510,510,match,usda/snap/income/deductions/utility/standard/main.yaml,
+fns-snap-sua-fy26,sua.basic_limited,WY,,2025-10-01,340,340,match,usda/snap/income/deductions/utility/limited/main.yaml,
+fns-snap-sua-fy26,sua.electricity,WY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/electricity.yaml,
+fns-snap-sua-fy26,sua.gas_fuel,WY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/gas_and_fuel.yaml,
+fns-snap-sua-fy26,sua.water,WY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/water.yaml,
+fns-snap-sua-fy26,sua.sewage,WY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/sewage.yaml,
+fns-snap-sua-fy26,sua.trash,WY,,2025-10-01,0,0,match,usda/snap/income/deductions/utility/single/trash.yaml,
+fns-snap-sua-fy26,sua.phone,WY,,2025-10-01,57,57,match,usda/snap/income/deductions/utility/single/phone.yaml,
+fns-snap-sua-fy26,sua.smd_offset,WY,,2025-10-01,10,,missing in PolicyEngine,,PolicyEngine doesn't store this column

@@ -136,7 +136,8 @@
       },
       "local_path": "raw/medicaid-eligibility-levels",
       "retrieved": "2026-10-16",
-      "latest_snapshot": "raw/medicaid-eligibility-levels/2026-10-16"
+      "latest_snapshot": "raw/medicaid-eligibility-levels/2026-10-16",
+      "notes": "Stale: the CSV has no date, and checked against PolicyEngine as of 2018-04-01 it matches 294 values vs 235 as of today (PolicyEngine cites this file as April 1, 2018 data). Idaho, for example, shows no Medicaid expansion, which it adopted in 2020. Don't use it for current rules; find a current source."
     },
     {
       "id": "irs-form-w2",

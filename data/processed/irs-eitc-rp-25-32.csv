@@ -1,0 +1,26 @@
+source_id,snapshot,program,parameter,region,value,unit,raw,location,household_size,period
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.earned_income_amount.children_1,,13020.0,usd_per_year,"$13,020","EITC table, row 'Earned Income Amount', column 'One'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.earned_income_amount.children_2,,18290.0,usd_per_year,"$18,290","EITC table, row 'Earned Income Amount', column 'Two'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.earned_income_amount.children_3,,18290.0,usd_per_year,"$18,290","EITC table, row 'Earned Income Amount', column 'Three or More'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.earned_income_amount.children_0,,8680.0,usd_per_year,"$8,680","EITC table, row 'Earned Income Amount', column 'None'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.max_credit.children_1,,4427.0,usd_per_year,"$4,427","EITC table, row 'Maximum Amount of Credit', column 'One'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.max_credit.children_2,,7316.0,usd_per_year,"$7,316","EITC table, row 'Maximum Amount of Credit', column 'Two'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.max_credit.children_3,,8231.0,usd_per_year,"$8,231","EITC table, row 'Maximum Amount of Credit', column 'Three or More'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.max_credit.children_0,,664.0,usd_per_year,$664,"EITC table, row 'Maximum Amount of Credit', column 'None'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_start.joint.children_1,,31160.0,usd_per_year,"$31,160","EITC table, row 'Threshold Phaseout Amount (Married Filing Jointly)', column 'One'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_start.joint.children_2,,31160.0,usd_per_year,"$31,160","EITC table, row 'Threshold Phaseout Amount (Married Filing Jointly)', column 'Two'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_start.joint.children_3,,31160.0,usd_per_year,"$31,160","EITC table, row 'Threshold Phaseout Amount (Married Filing Jointly)', column 'Three or More'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_start.joint.children_0,,18140.0,usd_per_year,"$18,140","EITC table, row 'Threshold Phaseout Amount (Married Filing Jointly)', column 'None'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_end.joint.children_1,,58863.0,usd_per_year,"$58,863","EITC table, row 'Completed Phaseout Amount (Married Filing Jointly)', column 'One'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_end.joint.children_2,,65899.0,usd_per_year,"$65,899","EITC table, row 'Completed Phaseout Amount (Married Filing Jointly)', column 'Two'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_end.joint.children_3,,70244.0,usd_per_year,"$70,244","EITC table, row 'Completed Phaseout Amount (Married Filing Jointly)', column 'Three or More'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_end.joint.children_0,,26820.0,usd_per_year,"$26,820","EITC table, row 'Completed Phaseout Amount (Married Filing Jointly)', column 'None'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_start.other.children_1,,23890.0,usd_per_year,"$23,890","EITC table, row 'Threshold Phaseout Amount (All other filing statuses)', column 'One'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_start.other.children_2,,23890.0,usd_per_year,"$23,890","EITC table, row 'Threshold Phaseout Amount (All other filing statuses)', column 'Two'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_start.other.children_3,,23890.0,usd_per_year,"$23,890","EITC table, row 'Threshold Phaseout Amount (All other filing statuses)', column 'Three or More'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_start.other.children_0,,10860.0,usd_per_year,"$10,860","EITC table, row 'Threshold Phaseout Amount (All other filing statuses)', column 'None'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_end.other.children_1,,51593.0,usd_per_year,"$51,593","EITC table, row 'Completed Phaseout Amount (All other filing statuses)', column 'One'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_end.other.children_2,,58629.0,usd_per_year,"$58,629","EITC table, row 'Completed Phaseout Amount (All other filing statuses)', column 'Two'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_end.other.children_3,,62974.0,usd_per_year,"$62,974","EITC table, row 'Completed Phaseout Amount (All other filing statuses)', column 'Three or More'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.phaseout_end.other.children_0,,19540.0,usd_per_year,"$19,540","EITC table, row 'Completed Phaseout Amount (All other filing statuses)', column 'None'",,2026
+irs-eitc-rp-25-32,raw/irs-eitc-rp-25-32/2026-10-16,eitc,eitc.investment_income_limit,,12200.0,usd_per_year,"$12,200","EITC section, excessive investment income",,2026

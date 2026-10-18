@@ -9,6 +9,7 @@ data/
 ├── README.md
 ├── sources.json          # every source: URL, license, status, retrieval date, fetch settings
 ├── processed/            # parsed rows, one CSV per source (python -m scraper extract)
+│   └── checks/           # each value vs PolicyEngine, plus summary.md (python -m scraper check)
 └── raw/                  # unmodified copies, one folder per source
     ├── policyengine-us/  # fetched by hand
     │   ├── LICENSE       # AGPL-3.0
@@ -99,6 +100,21 @@ Parsers live in `scraper/parsers/` and are registered in `scraper/parsers/__init
 | `hhs-poverty-guidelines`, `fns-snap-cola-fy27` | not yet: written once their files are fetched; see [ROADMAP.md](../ROADMAP.md) |
 
 The spreadsheet and PDF parsers need `openpyxl` and `pdfplumber` (both in `requirements.txt`).
+
+## Check
+
+`python -m scraper check` compares every parsed value with the matching PolicyEngine parameter in `raw/policyengine-us` and writes `processed/checks/<source-id>.csv` (one row per value, with the PolicyEngine file it was compared against) and `processed/checks/summary.md`. Each value is one of:
+
+| Status | Meaning |
+|---|---|
+| match | Same number (Medicaid limits after adding the 5-point MAGI disregard PolicyEngine includes) |
+| differ | Official and PolicyEngine disagree; read the note |
+| missing in PolicyEngine | PolicyEngine doesn't store it (e.g. the SNAP SMD offset, CHIP limits) |
+| no official value | The source left it blank or pending |
+
+Some EITC amounts aren't stored in PolicyEngine but computed from its rates (earned income amount = max credit ÷ phase-in rate; completed phase-out = phase-out start + max credit ÷ phase-out rate). `check` derives them the same way and allows the IRS's $10 rounding.
+
+The monthly workflow runs `extract` and `check` after fetching and adds the summary to the PR, so drift between official numbers and PolicyEngine shows up there.
 
 Still needed and not yet sourced: templates for realistic documents (pay stubs, leases, benefit notices). Only the blank W-2 form is listed so far.
 

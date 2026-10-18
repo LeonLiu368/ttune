@@ -1,0 +1,936 @@
+source_id,snapshot,program,parameter,region,value,unit,raw,location,household_size,period
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AL,637.0,usd_per_month,637,"line 4 (Alabama), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AL,466.0,usd_per_month,466,"line 4 (Alabama), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AL,0.0,usd_per_month,0,"line 4 (Alabama), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AL,0.0,usd_per_month,0,"line 4 (Alabama), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AL,0.0,usd_per_month,0,"line 4 (Alabama), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AL,0.0,usd_per_month,0,"line 4 (Alabama), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AL,0.0,usd_per_month,0,"line 4 (Alabama), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AL,53.0,usd_per_month,53,"line 4 (Alabama), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AL,4.0,usd_per_month,4,"line 4 (Alabama), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AK_C,625.0,usd_per_month,625,"line 5 (Alaska - Central), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AK_C,0.0,usd_per_month,0,"line 5 (Alaska - Central), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AK_C,134.0,usd_per_month,134,"line 5 (Alaska - Central), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AK_C,310.0,usd_per_month,310,"line 5 (Alaska - Central), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AK_C,59.0,usd_per_month,59,"line 5 (Alaska - Central), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AK_C,61.0,usd_per_month,61,"line 5 (Alaska - Central), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AK_C,37.0,usd_per_month,37,"line 5 (Alaska - Central), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AK_C,26.0,usd_per_month,26,"line 5 (Alaska - Central), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AK_C,0.0,usd_per_month,0,"line 5 (Alaska - Central), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AK_N,825.0,usd_per_month,825,"line 6 (Alaska - Northern), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AK_N,0.0,usd_per_month,0,"line 6 (Alaska - Northern), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AK_N,170.0,usd_per_month,170,"line 6 (Alaska - Northern), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AK_N,492.0,usd_per_month,492,"line 6 (Alaska - Northern), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AK_N,44.0,usd_per_month,44,"line 6 (Alaska - Northern), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AK_N,45.0,usd_per_month,45,"line 6 (Alaska - Northern), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AK_N,38.0,usd_per_month,38,"line 6 (Alaska - Northern), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AK_N,35.0,usd_per_month,35,"line 6 (Alaska - Northern), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AK_N,0.0,usd_per_month,0,"line 6 (Alaska - Northern), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AK_NW,1107.0,usd_per_month,1107,"line 7 (Alaska - Northwest), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AK_NW,0.0,usd_per_month,0,"line 7 (Alaska - Northwest), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AK_NW,158.0,usd_per_month,158,"line 7 (Alaska - Northwest), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AK_NW,761.0,usd_per_month,761,"line 7 (Alaska - Northwest), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AK_NW,63.0,usd_per_month,63,"line 7 (Alaska - Northwest), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AK_NW,48.0,usd_per_month,48,"line 7 (Alaska - Northwest), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AK_NW,40.0,usd_per_month,40,"line 7 (Alaska - Northwest), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AK_NW,37.0,usd_per_month,37,"line 7 (Alaska - Northwest), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AK_NW,0.0,usd_per_month,0,"line 7 (Alaska - Northwest), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AK_SC,591.0,usd_per_month,591,"line 8 (Alaska - Southcentral), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AK_SC,0.0,usd_per_month,0,"line 8 (Alaska - Southcentral), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AK_SC,109.0,usd_per_month,109,"line 8 (Alaska - Southcentral), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AK_SC,308.0,usd_per_month,308,"line 8 (Alaska - Southcentral), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AK_SC,42.0,usd_per_month,42,"line 8 (Alaska - Southcentral), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AK_SC,65.0,usd_per_month,65,"line 8 (Alaska - Southcentral), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AK_SC,40.0,usd_per_month,40,"line 8 (Alaska - Southcentral), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AK_SC,27.0,usd_per_month,27,"line 8 (Alaska - Southcentral), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AK_SC,0.0,usd_per_month,0,"line 8 (Alaska - Southcentral), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AK_SE,517.0,usd_per_month,517,"line 9 (Alaska - Southeast), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AK_SE,0.0,usd_per_month,0,"line 9 (Alaska - Southeast), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AK_SE,72.0,usd_per_month,72,"line 9 (Alaska - Southeast), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AK_SE,244.0,usd_per_month,244,"line 9 (Alaska - Southeast), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AK_SE,49.0,usd_per_month,49,"line 9 (Alaska - Southeast), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AK_SE,81.0,usd_per_month,81,"line 9 (Alaska - Southeast), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AK_SE,34.0,usd_per_month,34,"line 9 (Alaska - Southeast), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AK_SE,36.0,usd_per_month,36,"line 9 (Alaska - Southeast), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AK_SE,0.0,usd_per_month,0,"line 9 (Alaska - Southeast), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AK_SW,1064.0,usd_per_month,1064,"line 10 (Alaska - Southwest), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AK_SW,0.0,usd_per_month,0,"line 10 (Alaska - Southwest), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AK_SW,169.0,usd_per_month,169,"line 10 (Alaska - Southwest), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AK_SW,676.0,usd_per_month,676,"line 10 (Alaska - Southwest), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AK_SW,111.0,usd_per_month,111,"line 10 (Alaska - Southwest), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AK_SW,54.0,usd_per_month,54,"line 10 (Alaska - Southwest), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AK_SW,17.0,usd_per_month,17,"line 10 (Alaska - Southwest), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AK_SW,36.0,usd_per_month,36,"line 10 (Alaska - Southwest), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AK_SW,0.0,usd_per_month,0,"line 10 (Alaska - Southwest), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AZ,323.0,usd_per_month,323,"line 11 (Arizona - 1 to 3 members), column 'Heating and Cooling Utility Allowance (HCSUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AZ,323.0,usd_per_month,323,"line 11 (Arizona - 1 to 3 members), column 'Heating and Cooling Utility Allowance (HCSUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AZ,323.0,usd_per_month,323,"line 11 (Arizona - 1 to 3 members), column 'Heating and Cooling Utility Allowance (HCSUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AZ,149.0,usd_per_month,149,"line 11 (Arizona - 1 to 3 members), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AZ,149.0,usd_per_month,149,"line 11 (Arizona - 1 to 3 members), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AZ,149.0,usd_per_month,149,"line 11 (Arizona - 1 to 3 members), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Electricity'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Electricity'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Electricity'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Gas and Fuel'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Gas and Fuel'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Gas and Fuel'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Water'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Water'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Water'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Sewage'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Sewage'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Sewage'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Trash'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Trash'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AZ,0.0,usd_per_month,0,"line 11 (Arizona - 1 to 3 members), column 'Trash'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AZ,44.0,usd_per_month,44,"line 11 (Arizona - 1 to 3 members), column 'Phone'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AZ,44.0,usd_per_month,44,"line 11 (Arizona - 1 to 3 members), column 'Phone'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AZ,44.0,usd_per_month,44,"line 11 (Arizona - 1 to 3 members), column 'Phone'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AZ,6.0,usd_per_month,6,"line 11 (Arizona - 1 to 3 members), column 'SMD Offset'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AZ,6.0,usd_per_month,6,"line 11 (Arizona - 1 to 3 members), column 'SMD Offset'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AZ,6.0,usd_per_month,6,"line 11 (Arizona - 1 to 3 members), column 'SMD Offset'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AZ,438.0,usd_per_month,438,"line 12 (Arizona - 4 or more members), column 'Heating and Cooling Utility Allowance (HCSUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AZ,201.0,usd_per_month,201,"line 12 (Arizona - 4 or more members), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AZ,0.0,usd_per_month,0,"line 12 (Arizona - 4 or more members), column 'Electricity'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AZ,0.0,usd_per_month,0,"line 12 (Arizona - 4 or more members), column 'Gas and Fuel'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AZ,0.0,usd_per_month,0,"line 12 (Arizona - 4 or more members), column 'Water'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AZ,0.0,usd_per_month,0,"line 12 (Arizona - 4 or more members), column 'Sewage'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AZ,0.0,usd_per_month,0,"line 12 (Arizona - 4 or more members), column 'Trash'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AZ,44.0,usd_per_month,44,"line 12 (Arizona - 4 or more members), column 'Phone'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AZ,6.0,usd_per_month,6,"line 12 (Arizona - 4 or more members), column 'SMD Offset'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,AR,342.0,usd_per_month,342,"line 13 (Arkansas), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,AR,274.0,usd_per_month,274,"line 13 (Arkansas), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,AR,0.0,usd_per_month,0,"line 13 (Arkansas), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,AR,0.0,usd_per_month,0,"line 13 (Arkansas), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,AR,0.0,usd_per_month,0,"line 13 (Arkansas), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,AR,0.0,usd_per_month,0,"line 13 (Arkansas), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,AR,0.0,usd_per_month,0,"line 13 (Arkansas), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,AR,51.0,usd_per_month,51,"line 13 (Arkansas), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,AR,4.0,usd_per_month,4,"line 13 (Arkansas), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,CA,663.0,usd_per_month,663,"line 14 (California), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,CA,170.0,usd_per_month,170,"line 14 (California), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,CA,0.0,usd_per_month,0,"line 14 (California), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,CA,0.0,usd_per_month,0,"line 14 (California), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,CA,0.0,usd_per_month,0,"line 14 (California), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,CA,0.0,usd_per_month,0,"line 14 (California), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,CA,0.0,usd_per_month,0,"line 14 (California), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,CA,20.0,usd_per_month,20,"line 14 (California), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,CA,4.0,usd_per_month,4,"line 14 (California), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,CO,594.0,usd_per_month,594,"line 15 (Colorado), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,CO,377.0,usd_per_month,377,"line 15 (Colorado), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,CO,71.0,usd_per_month,71,"line 15 (Colorado), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,CO,71.0,usd_per_month,71,"line 15 (Colorado), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,CO,71.0,usd_per_month,71,"line 15 (Colorado), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,CO,71.0,usd_per_month,71,"line 15 (Colorado), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,CO,71.0,usd_per_month,71,"line 15 (Colorado), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,CO,97.0,usd_per_month,97,"line 15 (Colorado), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,CO,7.0,usd_per_month,7,"line 15 (Colorado), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,CT,976.0,usd_per_month,976,"line 16 (Connecticut), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,CT,430.0,usd_per_month,430,"line 16 (Connecticut), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,CT,0.0,usd_per_month,0,"line 16 (Connecticut), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,CT,0.0,usd_per_month,0,"line 16 (Connecticut), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,CT,0.0,usd_per_month,0,"line 16 (Connecticut), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,CT,0.0,usd_per_month,0,"line 16 (Connecticut), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,CT,0.0,usd_per_month,0,"line 16 (Connecticut), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,CT,36.0,usd_per_month,36,"line 16 (Connecticut), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,CT,0.0,usd_per_month,0,"line 16 (Connecticut), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,DE,543.0,usd_per_month,543,"line 17 (Delaware), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,DE,369.0,usd_per_month,369,"line 17 (Delaware), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,DE,102.0,usd_per_month,102,"line 17 (Delaware), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,DE,102.0,usd_per_month,102,"line 17 (Delaware), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,DE,102.0,usd_per_month,102,"line 17 (Delaware), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,DE,102.0,usd_per_month,102,"line 17 (Delaware), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,DE,102.0,usd_per_month,102,"line 17 (Delaware), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,DE,24.0,usd_per_month,24,"line 17 (Delaware), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,DE,0.0,usd_per_month,0,"line 17 (Delaware), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,DC,384.0,usd_per_month,384,"line 18 (District of Columbia), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,DC,348.0,usd_per_month,348,"line 18 (District of Columbia), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,DC,90.0,usd_per_month,90,"line 18 (District of Columbia), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,DC,90.0,usd_per_month,90,"line 18 (District of Columbia), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,DC,90.0,usd_per_month,90,"line 18 (District of Columbia), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,DC,90.0,usd_per_month,90,"line 18 (District of Columbia), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,DC,90.0,usd_per_month,90,"line 18 (District of Columbia), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,DC,76.0,usd_per_month,76,"line 18 (District of Columbia), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,DC,0.0,usd_per_month,0,"line 18 (District of Columbia), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,FL,430.0,usd_per_month,430,"line 19 (Florida), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,FL,348.0,usd_per_month,348,"line 19 (Florida), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,FL,0.0,usd_per_month,0,"line 19 (Florida), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,FL,0.0,usd_per_month,0,"line 19 (Florida), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,FL,0.0,usd_per_month,0,"line 19 (Florida), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,FL,0.0,usd_per_month,0,"line 19 (Florida), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,FL,0.0,usd_per_month,0,"line 19 (Florida), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,FL,56.0,usd_per_month,56,"line 19 (Florida), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,FL,0.0,usd_per_month,0,"line 19 (Florida), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GA,405.0,usd_per_month,405,"line 20 (Georgia), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GA,358.0,usd_per_month,358,"line 20 (Georgia), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GA,0.0,usd_per_month,0,"line 20 (Georgia), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GA,0.0,usd_per_month,0,"line 20 (Georgia), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GA,0.0,usd_per_month,0,"line 20 (Georgia), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GA,0.0,usd_per_month,0,"line 20 (Georgia), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GA,0.0,usd_per_month,0,"line 20 (Georgia), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GA,47.0,usd_per_month,47,"line 20 (Georgia), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GA,4.0,usd_per_month,4,"line 20 (Georgia), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 21 (Guam - 1 member*), column 'Heating and Cooling Utility Allowance (HCSUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 21 (Guam - 1 member*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,193.0,usd_per_month,193,"line 21 (Guam - 1 member*), column 'Electricity'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,37.0,usd_per_month,37,"line 21 (Guam - 1 member*), column 'Gas and Fuel'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,39.0,usd_per_month,39,"line 21 (Guam - 1 member*), column 'Water'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 21 (Guam - 1 member*), column 'Sewage'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 21 (Guam - 1 member*), column 'Trash'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 21 (Guam - 1 member*), column 'Phone'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 21 (Guam - 1 member*), column 'SMD Offset'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 21 (Guam - 1 member*),1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 22 (Guam - 2 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 22 (Guam - 2 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,224.0,usd_per_month,224,"line 22 (Guam - 2 members*), column 'Electricity'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,37.0,usd_per_month,37,"line 22 (Guam - 2 members*), column 'Gas and Fuel'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,51.0,usd_per_month,51,"line 22 (Guam - 2 members*), column 'Water'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 22 (Guam - 2 members*), column 'Sewage'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 22 (Guam - 2 members*), column 'Trash'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 22 (Guam - 2 members*), column 'Phone'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 22 (Guam - 2 members*), column 'SMD Offset'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 22 (Guam - 2 members*),2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 23 (Guam - 3 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 23 (Guam - 3 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,224.0,usd_per_month,224,"line 23 (Guam - 3 members*), column 'Electricity'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,37.0,usd_per_month,37,"line 23 (Guam - 3 members*), column 'Gas and Fuel'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,51.0,usd_per_month,51,"line 23 (Guam - 3 members*), column 'Water'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 23 (Guam - 3 members*), column 'Sewage'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 23 (Guam - 3 members*), column 'Trash'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 23 (Guam - 3 members*), column 'Phone'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 23 (Guam - 3 members*), column 'SMD Offset'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 23 (Guam - 3 members*),3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 24 (Guam - 4 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 24 (Guam - 4 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,267.0,usd_per_month,267,"line 24 (Guam - 4 members*), column 'Electricity'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,74.0,usd_per_month,74,"line 24 (Guam - 4 members*), column 'Gas and Fuel'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,71.0,usd_per_month,71,"line 24 (Guam - 4 members*), column 'Water'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 24 (Guam - 4 members*), column 'Sewage'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 24 (Guam - 4 members*), column 'Trash'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 24 (Guam - 4 members*), column 'Phone'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 24 (Guam - 4 members*), column 'SMD Offset'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 24 (Guam - 4 members*),4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 25 (Guam - 5 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 25 (Guam - 5 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,304.0,usd_per_month,304,"line 25 (Guam - 5 members*), column 'Electricity'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,74.0,usd_per_month,74,"line 25 (Guam - 5 members*), column 'Gas and Fuel'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,87.0,usd_per_month,87,"line 25 (Guam - 5 members*), column 'Water'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 25 (Guam - 5 members*), column 'Sewage'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 25 (Guam - 5 members*), column 'Trash'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 25 (Guam - 5 members*), column 'Phone'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 25 (Guam - 5 members*), column 'SMD Offset'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 25 (Guam - 5 members*),5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 26 (Guam - 6 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 26 (Guam - 6 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,347.0,usd_per_month,347,"line 26 (Guam - 6 members*), column 'Electricity'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,74.0,usd_per_month,74,"line 26 (Guam - 6 members*), column 'Gas and Fuel'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,114.0,usd_per_month,114,"line 26 (Guam - 6 members*), column 'Water'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 26 (Guam - 6 members*), column 'Sewage'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 26 (Guam - 6 members*), column 'Trash'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 26 (Guam - 6 members*), column 'Phone'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 26 (Guam - 6 members*), column 'SMD Offset'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 26 (Guam - 6 members*),6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 27 (Guam - 7 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 27 (Guam - 7 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,394.0,usd_per_month,394,"line 27 (Guam - 7 members*), column 'Electricity'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,111.0,usd_per_month,111,"line 27 (Guam - 7 members*), column 'Gas and Fuel'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,140.0,usd_per_month,140,"line 27 (Guam - 7 members*), column 'Water'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 27 (Guam - 7 members*), column 'Sewage'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 27 (Guam - 7 members*), column 'Trash'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 27 (Guam - 7 members*), column 'Phone'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 27 (Guam - 7 members*), column 'SMD Offset'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 27 (Guam - 7 members*),7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 28 (Guam - 8 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 28 (Guam - 8 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,413.0,usd_per_month,413,"line 28 (Guam - 8 members*), column 'Electricity'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,111.0,usd_per_month,111,"line 28 (Guam - 8 members*), column 'Gas and Fuel'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,154.0,usd_per_month,154,"line 28 (Guam - 8 members*), column 'Water'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 28 (Guam - 8 members*), column 'Sewage'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 28 (Guam - 8 members*), column 'Trash'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 28 (Guam - 8 members*), column 'Phone'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 28 (Guam - 8 members*), column 'SMD Offset'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 28 (Guam - 8 members*),8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 29 (Guam - 9 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 29 (Guam - 9 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,442.0,usd_per_month,442,"line 29 (Guam - 9 members*), column 'Electricity'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,111.0,usd_per_month,111,"line 29 (Guam - 9 members*), column 'Gas and Fuel'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,176.0,usd_per_month,176,"line 29 (Guam - 9 members*), column 'Water'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 29 (Guam - 9 members*), column 'Sewage'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 29 (Guam - 9 members*), column 'Trash'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 29 (Guam - 9 members*), column 'Phone'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 29 (Guam - 9 members*), column 'SMD Offset'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 29 (Guam - 9 members*),9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 30 (Guam - 10 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 30 (Guam - 10 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,442.0,usd_per_month,442,"line 30 (Guam - 10 members*), column 'Electricity'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,111.0,usd_per_month,111,"line 30 (Guam - 10 members*), column 'Gas and Fuel'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,176.0,usd_per_month,176,"line 30 (Guam - 10 members*), column 'Water'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 30 (Guam - 10 members*), column 'Sewage'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 30 (Guam - 10 members*), column 'Trash'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 30 (Guam - 10 members*), column 'Phone'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 30 (Guam - 10 members*), column 'SMD Offset'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 30 (Guam - 10 members*),10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 31 (Guam - 11 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 31 (Guam - 11 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,453.0,usd_per_month,453,"line 31 (Guam - 11 members*), column 'Electricity'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,111.0,usd_per_month,111,"line 31 (Guam - 11 members*), column 'Gas and Fuel'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,183.0,usd_per_month,183,"line 31 (Guam - 11 members*), column 'Water'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 31 (Guam - 11 members*), column 'Sewage'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 31 (Guam - 11 members*), column 'Trash'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 31 (Guam - 11 members*), column 'Phone'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 31 (Guam - 11 members*), column 'SMD Offset'",11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 31 (Guam - 11 members*),11,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 32 (Guam - 12 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 32 (Guam - 12 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,453.0,usd_per_month,453,"line 32 (Guam - 12 members*), column 'Electricity'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,111.0,usd_per_month,111,"line 32 (Guam - 12 members*), column 'Gas and Fuel'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,183.0,usd_per_month,183,"line 32 (Guam - 12 members*), column 'Water'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 32 (Guam - 12 members*), column 'Sewage'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 32 (Guam - 12 members*), column 'Trash'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 32 (Guam - 12 members*), column 'Phone'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 32 (Guam - 12 members*), column 'SMD Offset'",12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 32 (Guam - 12 members*),12,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,GU,0.0,usd_per_month,0,"line 33 (Guam - 13 member +*), column 'Heating and Cooling Utility Allowance (HCSUA)'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,GU,0.0,usd_per_month,0,"line 33 (Guam - 13 member +*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,GU,453.0,usd_per_month,453,"line 33 (Guam - 13 member +*), column 'Electricity'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,GU,111.0,usd_per_month,111,"line 33 (Guam - 13 member +*), column 'Gas and Fuel'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,GU,183.0,usd_per_month,183,"line 33 (Guam - 13 member +*), column 'Water'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,GU,29.0,usd_per_month,29,"line 33 (Guam - 13 member +*), column 'Sewage'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,GU,31.0,usd_per_month,31,"line 33 (Guam - 13 member +*), column 'Trash'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,GU,29.0,usd_per_month,29,"line 33 (Guam - 13 member +*), column 'Phone'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,GU,0.0,usd_per_month,0,"line 33 (Guam - 13 member +*), column 'SMD Offset'",13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,GU,,text,Indicates the State is not a mandatory SUA State,line 33 (Guam - 13 member +*),13,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 34 (Hawaii - 1 member*), column 'Heating and Cooling Utility Allowance (HCSUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 34 (Hawaii - 1 member*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,299.0,usd_per_month,299,"line 34 (Hawaii - 1 member*), column 'Electricity'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,299.0,usd_per_month,299,"line 34 (Hawaii - 1 member*), column 'Gas and Fuel'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,67.0,usd_per_month,67,"line 34 (Hawaii - 1 member*), column 'Water'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 34 (Hawaii - 1 member*), column 'Sewage'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 34 (Hawaii - 1 member*), column 'Trash'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 34 (Hawaii - 1 member*), column 'Phone'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 34 (Hawaii - 1 member*), column 'SMD Offset'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,HI,,text,Indicates the State is not a mandatory SUA State,line 34 (Hawaii - 1 member*),1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 35 (Hawaii - 2 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 35 (Hawaii - 2 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,324.0,usd_per_month,324,"line 35 (Hawaii - 2 members*), column 'Electricity'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,324.0,usd_per_month,324,"line 35 (Hawaii - 2 members*), column 'Gas and Fuel'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,75.0,usd_per_month,75,"line 35 (Hawaii - 2 members*), column 'Water'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 35 (Hawaii - 2 members*), column 'Sewage'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 35 (Hawaii - 2 members*), column 'Trash'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 35 (Hawaii - 2 members*), column 'Phone'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 35 (Hawaii - 2 members*), column 'SMD Offset'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,HI,,text,Indicates the State is not a mandatory SUA State,line 35 (Hawaii - 2 members*),2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 36 (Hawaii - 3 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 36 (Hawaii - 3 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,376.0,usd_per_month,376,"line 36 (Hawaii - 3 members*), column 'Electricity'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,376.0,usd_per_month,376,"line 36 (Hawaii - 3 members*), column 'Gas and Fuel'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,83.0,usd_per_month,83,"line 36 (Hawaii - 3 members*), column 'Water'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 36 (Hawaii - 3 members*), column 'Sewage'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 36 (Hawaii - 3 members*), column 'Trash'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 36 (Hawaii - 3 members*), column 'Phone'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 36 (Hawaii - 3 members*), column 'SMD Offset'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,HI,,text,Indicates the State is not a mandatory SUA State,line 36 (Hawaii - 3 members*),3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 37 (Hawaii - 4 to 5 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 37 (Hawaii - 4 to 5 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 37 (Hawaii - 4 to 5 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 37 (Hawaii - 4 to 5 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,469.0,usd_per_month,469,"line 37 (Hawaii - 4 to 5 members*), column 'Electricity'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,469.0,usd_per_month,469,"line 37 (Hawaii - 4 to 5 members*), column 'Electricity'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,469.0,usd_per_month,469,"line 37 (Hawaii - 4 to 5 members*), column 'Gas and Fuel'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,469.0,usd_per_month,469,"line 37 (Hawaii - 4 to 5 members*), column 'Gas and Fuel'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,98.0,usd_per_month,98,"line 37 (Hawaii - 4 to 5 members*), column 'Water'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,98.0,usd_per_month,98,"line 37 (Hawaii - 4 to 5 members*), column 'Water'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 37 (Hawaii - 4 to 5 members*), column 'Sewage'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 37 (Hawaii - 4 to 5 members*), column 'Sewage'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 37 (Hawaii - 4 to 5 members*), column 'Trash'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 37 (Hawaii - 4 to 5 members*), column 'Trash'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 37 (Hawaii - 4 to 5 members*), column 'Phone'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 37 (Hawaii - 4 to 5 members*), column 'Phone'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 37 (Hawaii - 4 to 5 members*), column 'SMD Offset'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 37 (Hawaii - 4 to 5 members*), column 'SMD Offset'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,HI,,text,Indicates the State is not a mandatory SUA State,line 37 (Hawaii - 4 to 5 members*),4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 38 (Hawaii - 6 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 38 (Hawaii - 6 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,554.0,usd_per_month,554,"line 38 (Hawaii - 6 members*), column 'Electricity'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,554.0,usd_per_month,554,"line 38 (Hawaii - 6 members*), column 'Gas and Fuel'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,112.0,usd_per_month,112,"line 38 (Hawaii - 6 members*), column 'Water'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 38 (Hawaii - 6 members*), column 'Sewage'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 38 (Hawaii - 6 members*), column 'Trash'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 38 (Hawaii - 6 members*), column 'Phone'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 38 (Hawaii - 6 members*), column 'SMD Offset'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,HI,,text,Indicates the State is not a mandatory SUA State,line 38 (Hawaii - 6 members*),6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,625.0,usd_per_month,625,"line 39 (Hawaii - 7 to 10 members*), column 'Electricity'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,625.0,usd_per_month,625,"line 39 (Hawaii - 7 to 10 members*), column 'Electricity'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,625.0,usd_per_month,625,"line 39 (Hawaii - 7 to 10 members*), column 'Electricity'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,HI,625.0,usd_per_month,625,"line 39 (Hawaii - 7 to 10 members*), column 'Electricity'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,625.0,usd_per_month,625,"line 39 (Hawaii - 7 to 10 members*), column 'Gas and Fuel'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,625.0,usd_per_month,625,"line 39 (Hawaii - 7 to 10 members*), column 'Gas and Fuel'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,625.0,usd_per_month,625,"line 39 (Hawaii - 7 to 10 members*), column 'Gas and Fuel'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,HI,625.0,usd_per_month,625,"line 39 (Hawaii - 7 to 10 members*), column 'Gas and Fuel'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,135.0,usd_per_month,135,"line 39 (Hawaii - 7 to 10 members*), column 'Water'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,135.0,usd_per_month,135,"line 39 (Hawaii - 7 to 10 members*), column 'Water'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,135.0,usd_per_month,135,"line 39 (Hawaii - 7 to 10 members*), column 'Water'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,HI,135.0,usd_per_month,135,"line 39 (Hawaii - 7 to 10 members*), column 'Water'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 39 (Hawaii - 7 to 10 members*), column 'Sewage'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 39 (Hawaii - 7 to 10 members*), column 'Sewage'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 39 (Hawaii - 7 to 10 members*), column 'Sewage'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,HI,100.0,usd_per_month,100,"line 39 (Hawaii - 7 to 10 members*), column 'Sewage'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 39 (Hawaii - 7 to 10 members*), column 'Trash'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 39 (Hawaii - 7 to 10 members*), column 'Trash'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 39 (Hawaii - 7 to 10 members*), column 'Trash'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,HI,100.0,usd_per_month,100,"line 39 (Hawaii - 7 to 10 members*), column 'Trash'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 39 (Hawaii - 7 to 10 members*), column 'Phone'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 39 (Hawaii - 7 to 10 members*), column 'Phone'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 39 (Hawaii - 7 to 10 members*), column 'Phone'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,HI,43.0,usd_per_month,43,"line 39 (Hawaii - 7 to 10 members*), column 'Phone'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'SMD Offset'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'SMD Offset'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'SMD Offset'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,HI,0.0,usd_per_month,0,"line 39 (Hawaii - 7 to 10 members*), column 'SMD Offset'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,HI,,text,Indicates the State is not a mandatory SUA State,line 39 (Hawaii - 7 to 10 members*),7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,ID,390.0,usd_per_month,390,"line 40 (Idaho), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,ID,133.0,usd_per_month,133,"line 40 (Idaho), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,ID,133.0,usd_per_month,133,"line 40 (Idaho), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,ID,133.0,usd_per_month,133,"line 40 (Idaho), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,ID,133.0,usd_per_month,133,"line 40 (Idaho), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,ID,133.0,usd_per_month,133,"line 40 (Idaho), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,ID,133.0,usd_per_month,133,"line 40 (Idaho), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,ID,49.0,usd_per_month,49,"line 40 (Idaho), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,ID,0.0,usd_per_month,0,"line 40 (Idaho), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,IL,546.0,usd_per_month,546,"line 41 (Illinois), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,IL,457.0,usd_per_month,457,"line 41 (Illinois), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,IL,78.0,usd_per_month,78,"line 41 (Illinois), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,IL,78.0,usd_per_month,78,"line 41 (Illinois), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,IL,78.0,usd_per_month,78,"line 41 (Illinois), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,IL,78.0,usd_per_month,78,"line 41 (Illinois), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,IL,78.0,usd_per_month,78,"line 41 (Illinois), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,IL,67.0,usd_per_month,67,"line 41 (Illinois), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,IL,0.0,usd_per_month,0,"line 41 (Illinois), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,IN,486.0,usd_per_month,486,"line 42 (Indiana), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,IN,283.0,usd_per_month,283,"line 42 (Indiana), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,IN,62.0,usd_per_month,62,"line 42 (Indiana), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,IN,62.0,usd_per_month,62,"line 42 (Indiana), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,IN,62.0,usd_per_month,62,"line 42 (Indiana), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,IN,62.0,usd_per_month,62,"line 42 (Indiana), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,IN,62.0,usd_per_month,62,"line 42 (Indiana), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,IN,36.0,usd_per_month,36,"line 42 (Indiana), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,IN,0.0,usd_per_month,0,"line 42 (Indiana), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,IA,554.0,usd_per_month,554,"line 43 (Iowa), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,IA,292.0,usd_per_month,292,"line 43 (Iowa), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,IA,0.0,usd_per_month,0,"line 43 (Iowa), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,IA,0.0,usd_per_month,0,"line 43 (Iowa), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,IA,0.0,usd_per_month,0,"line 43 (Iowa), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,IA,0.0,usd_per_month,0,"line 43 (Iowa), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,IA,0.0,usd_per_month,0,"line 43 (Iowa), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,IA,36.0,usd_per_month,36,"line 43 (Iowa), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,IA,4.0,usd_per_month,4,"line 43 (Iowa), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,KS,469.0,usd_per_month,469,"line 44 (Kansas), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,KS,345.0,usd_per_month,345,"line 44 (Kansas), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,KS,0.0,usd_per_month,0,"line 44 (Kansas), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,KS,0.0,usd_per_month,0,"line 44 (Kansas), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,KS,0.0,usd_per_month,0,"line 44 (Kansas), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,KS,0.0,usd_per_month,0,"line 44 (Kansas), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,KS,0.0,usd_per_month,0,"line 44 (Kansas), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,KS,44.0,usd_per_month,44,"line 44 (Kansas), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,KS,10.0,usd_per_month,10,"line 44 (Kansas), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,KY,388.0,usd_per_month,388,"line 45 (Kentucky), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,KY,331.0,usd_per_month,331,"line 45 (Kentucky), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,KY,0.0,usd_per_month,0,"line 45 (Kentucky), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,KY,0.0,usd_per_month,0,"line 45 (Kentucky), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,KY,0.0,usd_per_month,0,"line 45 (Kentucky), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,KY,0.0,usd_per_month,0,"line 45 (Kentucky), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,KY,0.0,usd_per_month,0,"line 45 (Kentucky), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,KY,64.0,usd_per_month,64,"line 45 (Kentucky), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,KY,4.0,usd_per_month,4,"line 45 (Kentucky), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,LA,465.0,usd_per_month,465,"line 46 (Louisiana), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,LA,0.0,usd_per_month,0,"line 46 (Louisiana), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,LA,0.0,usd_per_month,0,"line 46 (Louisiana), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,LA,0.0,usd_per_month,0,"line 46 (Louisiana), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,LA,0.0,usd_per_month,0,"line 46 (Louisiana), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,LA,0.0,usd_per_month,0,"line 46 (Louisiana), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,LA,0.0,usd_per_month,0,"line 46 (Louisiana), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,LA,76.0,usd_per_month,76,"line 46 (Louisiana), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,LA,4.0,usd_per_month,4,"line 46 (Louisiana), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,ME,1096.0,usd_per_month,1096,"line 47 (Maine), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,ME,598.0,usd_per_month,598,"line 47 (Maine), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,ME,0.0,usd_per_month,0,"line 47 (Maine), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,ME,0.0,usd_per_month,0,"line 47 (Maine), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,ME,0.0,usd_per_month,0,"line 47 (Maine), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,ME,0.0,usd_per_month,0,"line 47 (Maine), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,ME,0.0,usd_per_month,0,"line 47 (Maine), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,ME,0.0,usd_per_month,0,"line 47 (Maine), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,ME,114.0,usd_per_month,114,"line 47 (Maine), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,MD,572.0,usd_per_month,572,"line 48 (Maryland**), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,MD,350.0,usd_per_month,350,"line 48 (Maryland**), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,MD,0.0,usd_per_month,0,"line 48 (Maryland**), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,MD,0.0,usd_per_month,0,"line 48 (Maryland**), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,MD,0.0,usd_per_month,0,"line 48 (Maryland**), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,MD,0.0,usd_per_month,0,"line 48 (Maryland**), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,MD,0.0,usd_per_month,0,"line 48 (Maryland**), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,MD,41.0,usd_per_month,41,"line 48 (Maryland**), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,MD,0.0,usd_per_month,0,"line 48 (Maryland**), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,MD,,text,Indicates the State does not follow the fiscal year for their SUA approvals. Maryland's SUA is effective January 1,line 48 (Maryland**),,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,MA,914.0,usd_per_month,914,"line 49 (Massachusetts), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,MA,556.0,usd_per_month,556,"line 49 (Massachusetts), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,MA,0.0,usd_per_month,0,"line 49 (Massachusetts), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,MA,0.0,usd_per_month,0,"line 49 (Massachusetts), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,MA,0.0,usd_per_month,0,"line 49 (Massachusetts), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,MA,0.0,usd_per_month,0,"line 49 (Massachusetts), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,MA,0.0,usd_per_month,0,"line 49 (Massachusetts), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,MA,64.0,usd_per_month,64,"line 49 (Massachusetts), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,MA,6.0,usd_per_month,6,"line 49 (Massachusetts), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,MI,682.0,usd_per_month,682,"line 50 (Michigan), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,MI,0.0,usd_per_month,0,"line 50 (Michigan), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,MI,181.0,usd_per_month,181,"line 50 (Michigan), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,MI,33.0,usd_per_month,33,"line 50 (Michigan), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,MI,119.0,usd_per_month,119,"line 50 (Michigan), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,MI,119.0,usd_per_month,119,"line 50 (Michigan), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,MI,30.0,usd_per_month,30,"line 50 (Michigan), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,MI,31.0,usd_per_month,31,"line 50 (Michigan), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,MI,4.0,usd_per_month,4,"line 50 (Michigan), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,MN,667.0,usd_per_month,667,"line 51 (Minnesota), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,MN,0.0,usd_per_month,0,"line 51 (Minnesota), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,MN,235.0,usd_per_month,235,"line 51 (Minnesota), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,MN,0.0,usd_per_month,0,"line 51 (Minnesota), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,MN,0.0,usd_per_month,0,"line 51 (Minnesota), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,MN,0.0,usd_per_month,0,"line 51 (Minnesota), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,MN,0.0,usd_per_month,0,"line 51 (Minnesota), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,MN,62.0,usd_per_month,62,"line 51 (Minnesota), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,MN,0.0,usd_per_month,0,"line 51 (Minnesota), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,MS,308.0,usd_per_month,308,"line 52 (Mississippi), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,MS,228.0,usd_per_month,228,"line 52 (Mississippi), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,MS,0.0,usd_per_month,0,"line 52 (Mississippi), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,MS,0.0,usd_per_month,0,"line 52 (Mississippi), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,MS,0.0,usd_per_month,0,"line 52 (Mississippi), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,MS,0.0,usd_per_month,0,"line 52 (Mississippi), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,MS,0.0,usd_per_month,0,"line 52 (Mississippi), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,MS,50.0,usd_per_month,50,"line 52 (Mississippi), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,MS,0.0,usd_per_month,0,"line 52 (Mississippi), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,MO,509.0,usd_per_month,509,"line 53 (Missouri), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,MO,373.0,usd_per_month,373,"line 53 (Missouri), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,MO,162.0,usd_per_month,162,"line 53 (Missouri), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,MO,162.0,usd_per_month,162,"line 53 (Missouri), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,MO,162.0,usd_per_month,162,"line 53 (Missouri), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,MO,162.0,usd_per_month,162,"line 53 (Missouri), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,MO,162.0,usd_per_month,162,"line 53 (Missouri), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,MO,81.0,usd_per_month,81,"line 53 (Missouri), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,MO,7.0,usd_per_month,7,"line 53 (Missouri), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,MT,799.0,usd_per_month,799,"line 54 (Montana), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,MT,267.0,usd_per_month,267,"line 54 (Montana), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,MT,116.0,usd_per_month,116,"line 54 (Montana), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,MT,116.0,usd_per_month,116,"line 54 (Montana), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,MT,116.0,usd_per_month,116,"line 54 (Montana), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,MT,116.0,usd_per_month,116,"line 54 (Montana), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,MT,116.0,usd_per_month,116,"line 54 (Montana), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,MT,34.0,usd_per_month,34,"line 54 (Montana), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,MT,0.0,usd_per_month,0,"line 54 (Montana), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NE,615.0,usd_per_month,615,"line 55 (Nebraska), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NE,321.0,usd_per_month,321,"line 55 (Nebraska), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NE,63.0,usd_per_month,63,"line 55 (Nebraska), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NE,63.0,usd_per_month,63,"line 55 (Nebraska), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NE,63.0,usd_per_month,63,"line 55 (Nebraska), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NE,63.0,usd_per_month,63,"line 55 (Nebraska), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NE,63.0,usd_per_month,63,"line 55 (Nebraska), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NE,54.0,usd_per_month,54,"line 55 (Nebraska), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NE,0.0,usd_per_month,0,"line 55 (Nebraska), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NV,446.0,usd_per_month,446,"line 56 (Nevada), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NV,361.0,usd_per_month,361,"line 56 (Nevada), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NV,77.0,usd_per_month,77,"line 56 (Nevada), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NV,77.0,usd_per_month,77,"line 56 (Nevada), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NV,77.0,usd_per_month,77,"line 56 (Nevada), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NV,77.0,usd_per_month,77,"line 56 (Nevada), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NV,77.0,usd_per_month,77,"line 56 (Nevada), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NV,52.0,usd_per_month,52,"line 56 (Nevada), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NV,0.0,usd_per_month,0,"line 56 (Nevada), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NH,1018.0,usd_per_month,1018,"line 57 (New Hampshire), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NH,373.0,usd_per_month,373,"line 57 (New Hampshire), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NH,217.0,usd_per_month,217,"line 57 (New Hampshire), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NH,0.0,usd_per_month,0,"line 57 (New Hampshire), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NH,0.0,usd_per_month,0,"line 57 (New Hampshire), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NH,0.0,usd_per_month,0,"line 57 (New Hampshire), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NH,0.0,usd_per_month,0,"line 57 (New Hampshire), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NH,39.0,usd_per_month,39,"line 57 (New Hampshire), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NH,0.0,usd_per_month,0,"line 57 (New Hampshire), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NJ,,usd_per_month,-,"line 58 (New Jersey***), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,NJ,,text,Pending,line 58 (New Jersey***),,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NM,419.0,usd_per_month,419,"line 59 (New Mexico), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NM,289.0,usd_per_month,289,"line 59 (New Mexico), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NM,0.0,usd_per_month,0,"line 59 (New Mexico), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NM,0.0,usd_per_month,0,"line 59 (New Mexico), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NM,0.0,usd_per_month,0,"line 59 (New Mexico), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NM,0.0,usd_per_month,0,"line 59 (New Mexico), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NM,0.0,usd_per_month,0,"line 59 (New Mexico), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NM,51.0,usd_per_month,51,"line 59 (New Mexico), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NM,0.0,usd_per_month,0,"line 59 (New Mexico), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NY_NAS,988.0,usd_per_month,988,"line 60 (New York - Nassau and Suffolk Counties), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NY_NAS,419.0,usd_per_month,419,"line 60 (New York - Nassau and Suffolk Counties), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NY_NAS,0.0,usd_per_month,0,"line 60 (New York - Nassau and Suffolk Counties), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NY_NAS,0.0,usd_per_month,0,"line 60 (New York - Nassau and Suffolk Counties), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NY_NAS,0.0,usd_per_month,0,"line 60 (New York - Nassau and Suffolk Counties), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NY_NAS,0.0,usd_per_month,0,"line 60 (New York - Nassau and Suffolk Counties), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NY_NAS,0.0,usd_per_month,0,"line 60 (New York - Nassau and Suffolk Counties), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NY_NAS,32.0,usd_per_month,32,"line 60 (New York - Nassau and Suffolk Counties), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NY_NAS,0.0,usd_per_month,0,"line 60 (New York - Nassau and Suffolk Counties), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NY_NYC,1062.0,usd_per_month,1062,"line 61 (New York - New York City), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NY_NYC,419.0,usd_per_month,419,"line 61 (New York - New York City), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NY_NYC,0.0,usd_per_month,0,"line 61 (New York - New York City), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NY_NYC,0.0,usd_per_month,0,"line 61 (New York - New York City), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NY_NYC,0.0,usd_per_month,0,"line 61 (New York - New York City), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NY_NYC,0.0,usd_per_month,0,"line 61 (New York - New York City), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NY_NYC,0.0,usd_per_month,0,"line 61 (New York - New York City), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NY_NYC,32.0,usd_per_month,32,"line 61 (New York - New York City), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NY_NYC,0.0,usd_per_month,0,"line 61 (New York - New York City), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NY_ONY,877.0,usd_per_month,877,"line 62 (New York - Rest of New York State), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NY_ONY,388.0,usd_per_month,388,"line 62 (New York - Rest of New York State), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NY_ONY,0.0,usd_per_month,0,"line 62 (New York - Rest of New York State), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NY_ONY,0.0,usd_per_month,0,"line 62 (New York - Rest of New York State), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NY_ONY,0.0,usd_per_month,0,"line 62 (New York - Rest of New York State), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NY_ONY,0.0,usd_per_month,0,"line 62 (New York - Rest of New York State), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NY_ONY,0.0,usd_per_month,0,"line 62 (New York - Rest of New York State), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NY_ONY,32.0,usd_per_month,32,"line 62 (New York - Rest of New York State), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NY_ONY,0.0,usd_per_month,0,"line 62 (New York - Rest of New York State), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NC,636.74,usd_per_month,636.74,"line 63 (North Carolina - 1 member), column 'Heating and Cooling Utility Allowance (HCSUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NC,392.0,usd_per_month,392,"line 63 (North Carolina - 1 member), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NC,0.0,usd_per_month,0,"line 63 (North Carolina - 1 member), column 'Electricity'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NC,0.0,usd_per_month,0,"line 63 (North Carolina - 1 member), column 'Gas and Fuel'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NC,0.0,usd_per_month,0,"line 63 (North Carolina - 1 member), column 'Water'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NC,0.0,usd_per_month,0,"line 63 (North Carolina - 1 member), column 'Sewage'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NC,0.0,usd_per_month,0,"line 63 (North Carolina - 1 member), column 'Trash'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NC,42.11,usd_per_month,42.11,"line 63 (North Carolina - 1 member), column 'Phone'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NC,0.0,usd_per_month,0,"line 63 (North Carolina - 1 member), column 'SMD Offset'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NC,699.0,usd_per_month,699,"line 64 (North Carolina - 2 members), column 'Heating and Cooling Utility Allowance (HCSUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NC,431.0,usd_per_month,431,"line 64 (North Carolina - 2 members), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NC,0.0,usd_per_month,0,"line 64 (North Carolina - 2 members), column 'Electricity'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NC,0.0,usd_per_month,0,"line 64 (North Carolina - 2 members), column 'Gas and Fuel'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NC,0.0,usd_per_month,0,"line 64 (North Carolina - 2 members), column 'Water'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NC,0.0,usd_per_month,0,"line 64 (North Carolina - 2 members), column 'Sewage'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NC,0.0,usd_per_month,0,"line 64 (North Carolina - 2 members), column 'Trash'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NC,42.11,usd_per_month,42.11,"line 64 (North Carolina - 2 members), column 'Phone'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NC,0.0,usd_per_month,0,"line 64 (North Carolina - 2 members), column 'SMD Offset'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NC,768.0,usd_per_month,768,"line 65 (North Carolina - 3 members), column 'Heating and Cooling Utility Allowance (HCSUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NC,474.0,usd_per_month,474,"line 65 (North Carolina - 3 members), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NC,0.0,usd_per_month,0,"line 65 (North Carolina - 3 members), column 'Electricity'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NC,0.0,usd_per_month,0,"line 65 (North Carolina - 3 members), column 'Gas and Fuel'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NC,0.0,usd_per_month,0,"line 65 (North Carolina - 3 members), column 'Water'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NC,0.0,usd_per_month,0,"line 65 (North Carolina - 3 members), column 'Sewage'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NC,0.0,usd_per_month,0,"line 65 (North Carolina - 3 members), column 'Trash'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NC,42.11,usd_per_month,42.11,"line 65 (North Carolina - 3 members), column 'Phone'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NC,0.0,usd_per_month,0,"line 65 (North Carolina - 3 members), column 'SMD Offset'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NC,837.0,usd_per_month,837,"line 66 (North Carolina - 4 members), column 'Heating and Cooling Utility Allowance (HCSUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NC,518.0,usd_per_month,518,"line 66 (North Carolina - 4 members), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NC,0.0,usd_per_month,0,"line 66 (North Carolina - 4 members), column 'Electricity'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NC,0.0,usd_per_month,0,"line 66 (North Carolina - 4 members), column 'Gas and Fuel'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NC,0.0,usd_per_month,0,"line 66 (North Carolina - 4 members), column 'Water'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NC,0.0,usd_per_month,0,"line 66 (North Carolina - 4 members), column 'Sewage'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NC,0.0,usd_per_month,0,"line 66 (North Carolina - 4 members), column 'Trash'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NC,42.11,usd_per_month,42.11,"line 66 (North Carolina - 4 members), column 'Phone'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NC,0.0,usd_per_month,0,"line 66 (North Carolina - 4 members), column 'SMD Offset'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,NC,912.0,usd_per_month,912,"line 67 (North Carolina - 5 or more members), column 'Heating and Cooling Utility Allowance (HCSUA)'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,NC,564.0,usd_per_month,564,"line 67 (North Carolina - 5 or more members), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,NC,0.0,usd_per_month,0,"line 67 (North Carolina - 5 or more members), column 'Electricity'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,NC,0.0,usd_per_month,0,"line 67 (North Carolina - 5 or more members), column 'Gas and Fuel'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,NC,0.0,usd_per_month,0,"line 67 (North Carolina - 5 or more members), column 'Water'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,NC,0.0,usd_per_month,0,"line 67 (North Carolina - 5 or more members), column 'Sewage'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,NC,0.0,usd_per_month,0,"line 67 (North Carolina - 5 or more members), column 'Trash'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,NC,42.11,usd_per_month,42.11,"line 67 (North Carolina - 5 or more members), column 'Phone'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,NC,0.0,usd_per_month,0,"line 67 (North Carolina - 5 or more members), column 'SMD Offset'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,ND,772.0,usd_per_month,772,"line 68 (North Dakota), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,ND,286.0,usd_per_month,286,"line 68 (North Dakota), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,ND,126.0,usd_per_month,126,"line 68 (North Dakota), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,ND,126.0,usd_per_month,126,"line 68 (North Dakota), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,ND,126.0,usd_per_month,126,"line 68 (North Dakota), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,ND,126.0,usd_per_month,126,"line 68 (North Dakota), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,ND,126.0,usd_per_month,126,"line 68 (North Dakota), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,ND,35.0,usd_per_month,35,"line 68 (North Dakota), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,ND,7.0,usd_per_month,7,"line 68 (North Dakota), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,OH,766.0,usd_per_month,766,"line 69 (Ohio), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,OH,479.0,usd_per_month,479,"line 69 (Ohio), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,OH,108.0,usd_per_month,108,"line 69 (Ohio), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,OH,108.0,usd_per_month,108,"line 69 (Ohio), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,OH,108.0,usd_per_month,108,"line 69 (Ohio), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,OH,108.0,usd_per_month,108,"line 69 (Ohio), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,OH,108.0,usd_per_month,108,"line 69 (Ohio), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,OH,46.0,usd_per_month,46,"line 69 (Ohio), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,OH,0.0,usd_per_month,0,"line 69 (Ohio), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,OK,412.0,usd_per_month,412,"line 70 (Oklahoma), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,OK,354.0,usd_per_month,354,"line 70 (Oklahoma), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,OK,0.0,usd_per_month,0,"line 70 (Oklahoma), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,OK,0.0,usd_per_month,0,"line 70 (Oklahoma), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,OK,0.0,usd_per_month,0,"line 70 (Oklahoma), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,OK,0.0,usd_per_month,0,"line 70 (Oklahoma), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,OK,0.0,usd_per_month,0,"line 70 (Oklahoma), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,OK,49.0,usd_per_month,49,"line 70 (Oklahoma), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,OK,0.0,usd_per_month,0,"line 70 (Oklahoma), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,OR,515.0,usd_per_month,515,"line 71 (Oregon), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,OR,404.0,usd_per_month,404,"line 71 (Oregon), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,OR,65.0,usd_per_month,65,"line 71 (Oregon), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,OR,65.0,usd_per_month,65,"line 71 (Oregon), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,OR,65.0,usd_per_month,65,"line 71 (Oregon), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,OR,65.0,usd_per_month,65,"line 71 (Oregon), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,OR,65.0,usd_per_month,65,"line 71 (Oregon), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,OR,81.0,usd_per_month,81,"line 71 (Oregon), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,OR,0.0,usd_per_month,0,"line 71 (Oregon), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,PA,857.0,usd_per_month,857,"line 72 (Pennsylvania), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,PA,488.0,usd_per_month,488,"line 72 (Pennsylvania), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,PA,128.0,usd_per_month,128,"line 72 (Pennsylvania), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,PA,128.0,usd_per_month,128,"line 72 (Pennsylvania), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,PA,128.0,usd_per_month,128,"line 72 (Pennsylvania), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,PA,128.0,usd_per_month,128,"line 72 (Pennsylvania), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,PA,128.0,usd_per_month,128,"line 72 (Pennsylvania), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,PA,107.0,usd_per_month,107,"line 72 (Pennsylvania), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,PA,0.0,usd_per_month,0,"line 72 (Pennsylvania), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,RI,844.0,usd_per_month,844,"line 73 (Rhode Island), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,RI,0.0,usd_per_month,0,"line 73 (Rhode Island), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,RI,0.0,usd_per_month,0,"line 73 (Rhode Island), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,RI,0.0,usd_per_month,0,"line 73 (Rhode Island), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,RI,0.0,usd_per_month,0,"line 73 (Rhode Island), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,RI,0.0,usd_per_month,0,"line 73 (Rhode Island), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,RI,0.0,usd_per_month,0,"line 73 (Rhode Island), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,RI,27.0,usd_per_month,27,"line 73 (Rhode Island), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,RI,7.0,usd_per_month,7,"line 73 (Rhode Island), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,SC,388.0,usd_per_month,388,"line 74 (South Carolina), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,SC,265.0,usd_per_month,265,"line 74 (South Carolina), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,SC,0.0,usd_per_month,0,"line 74 (South Carolina), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,SC,0.0,usd_per_month,0,"line 74 (South Carolina), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,SC,0.0,usd_per_month,0,"line 74 (South Carolina), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,SC,0.0,usd_per_month,0,"line 74 (South Carolina), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,SC,0.0,usd_per_month,0,"line 74 (South Carolina), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,SC,27.0,usd_per_month,27,"line 74 (South Carolina), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,SC,9.0,usd_per_month,9,"line 74 (South Carolina), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,SD,950.0,usd_per_month,950,"line 75 (South Dakota), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,SD,265.0,usd_per_month,265,"line 75 (South Dakota), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,SD,109.0,usd_per_month,109,"line 75 (South Dakota), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,SD,109.0,usd_per_month,109,"line 75 (South Dakota), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,SD,109.0,usd_per_month,109,"line 75 (South Dakota), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,SD,109.0,usd_per_month,109,"line 75 (South Dakota), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,SD,109.0,usd_per_month,109,"line 75 (South Dakota), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,SD,60.0,usd_per_month,60,"line 75 (South Dakota), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,SD,14.0,usd_per_month,14,"line 75 (South Dakota), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,451.0,usd_per_month,451,"line 76 (Tennessee - 1 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 76 (Tennessee - 1 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 76 (Tennessee - 1 members*), column 'Electricity'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 76 (Tennessee - 1 members*), column 'Gas and Fuel'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 76 (Tennessee - 1 members*), column 'Water'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 76 (Tennessee - 1 members*), column 'Sewage'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 76 (Tennessee - 1 members*), column 'Trash'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 76 (Tennessee - 1 members*), column 'Phone'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 76 (Tennessee - 1 members*), column 'SMD Offset'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 76 (Tennessee - 1 members*),1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,466.0,usd_per_month,466,"line 77 (Tennessee - 2 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 77 (Tennessee - 2 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 77 (Tennessee - 2 members*), column 'Electricity'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 77 (Tennessee - 2 members*), column 'Gas and Fuel'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 77 (Tennessee - 2 members*), column 'Water'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 77 (Tennessee - 2 members*), column 'Sewage'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 77 (Tennessee - 2 members*), column 'Trash'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 77 (Tennessee - 2 members*), column 'Phone'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 77 (Tennessee - 2 members*), column 'SMD Offset'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 77 (Tennessee - 2 members*),2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,485.0,usd_per_month,485,"line 78 (Tennessee - 3 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 78 (Tennessee - 3 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 78 (Tennessee - 3 members*), column 'Electricity'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 78 (Tennessee - 3 members*), column 'Gas and Fuel'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 78 (Tennessee - 3 members*), column 'Water'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 78 (Tennessee - 3 members*), column 'Sewage'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 78 (Tennessee - 3 members*), column 'Trash'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 78 (Tennessee - 3 members*), column 'Phone'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 78 (Tennessee - 3 members*), column 'SMD Offset'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 78 (Tennessee - 3 members*),3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,503.0,usd_per_month,503,"line 79 (Tennessee - 4 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 79 (Tennessee - 4 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 79 (Tennessee - 4 members*), column 'Electricity'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 79 (Tennessee - 4 members*), column 'Gas and Fuel'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 79 (Tennessee - 4 members*), column 'Water'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 79 (Tennessee - 4 members*), column 'Sewage'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 79 (Tennessee - 4 members*), column 'Trash'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 79 (Tennessee - 4 members*), column 'Phone'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 79 (Tennessee - 4 members*), column 'SMD Offset'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 79 (Tennessee - 4 members*),4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,519.0,usd_per_month,519,"line 80 (Tennessee - 5 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 80 (Tennessee - 5 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 80 (Tennessee - 5 members*), column 'Electricity'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 80 (Tennessee - 5 members*), column 'Gas and Fuel'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 80 (Tennessee - 5 members*), column 'Water'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 80 (Tennessee - 5 members*), column 'Sewage'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 80 (Tennessee - 5 members*), column 'Trash'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 80 (Tennessee - 5 members*), column 'Phone'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 80 (Tennessee - 5 members*), column 'SMD Offset'",5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 80 (Tennessee - 5 members*),5,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,536.0,usd_per_month,536,"line 81 (Tennessee - 6 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 81 (Tennessee - 6 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 81 (Tennessee - 6 members*), column 'Electricity'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 81 (Tennessee - 6 members*), column 'Gas and Fuel'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 81 (Tennessee - 6 members*), column 'Water'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 81 (Tennessee - 6 members*), column 'Sewage'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 81 (Tennessee - 6 members*), column 'Trash'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 81 (Tennessee - 6 members*), column 'Phone'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 81 (Tennessee - 6 members*), column 'SMD Offset'",6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 81 (Tennessee - 6 members*),6,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,551.0,usd_per_month,551,"line 82 (Tennessee - 7 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 82 (Tennessee - 7 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 82 (Tennessee - 7 members*), column 'Electricity'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 82 (Tennessee - 7 members*), column 'Gas and Fuel'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 82 (Tennessee - 7 members*), column 'Water'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 82 (Tennessee - 7 members*), column 'Sewage'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 82 (Tennessee - 7 members*), column 'Trash'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 82 (Tennessee - 7 members*), column 'Phone'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 82 (Tennessee - 7 members*), column 'SMD Offset'",7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 82 (Tennessee - 7 members*),7,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,568.0,usd_per_month,568,"line 83 (Tennessee - 8 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 83 (Tennessee - 8 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 83 (Tennessee - 8 members*), column 'Electricity'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 83 (Tennessee - 8 members*), column 'Gas and Fuel'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 83 (Tennessee - 8 members*), column 'Water'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 83 (Tennessee - 8 members*), column 'Sewage'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 83 (Tennessee - 8 members*), column 'Trash'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 83 (Tennessee - 8 members*), column 'Phone'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 83 (Tennessee - 8 members*), column 'SMD Offset'",8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 83 (Tennessee - 8 members*),8,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,587.0,usd_per_month,587,"line 84 (Tennessee - 9 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 84 (Tennessee - 9 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 84 (Tennessee - 9 members*), column 'Electricity'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 84 (Tennessee - 9 members*), column 'Gas and Fuel'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 84 (Tennessee - 9 members*), column 'Water'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 84 (Tennessee - 9 members*), column 'Sewage'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 84 (Tennessee - 9 members*), column 'Trash'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 84 (Tennessee - 9 members*), column 'Phone'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 84 (Tennessee - 9 members*), column 'SMD Offset'",9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 84 (Tennessee - 9 members*),9,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TN,602.0,usd_per_month,602,"line 85 (Tennessee - 10 or more members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TN,162.0,usd_per_month,162,"line 85 (Tennessee - 10 or more members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TN,0.0,usd_per_month,0,"line 85 (Tennessee - 10 or more members*), column 'Electricity'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TN,0.0,usd_per_month,0,"line 85 (Tennessee - 10 or more members*), column 'Gas and Fuel'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TN,0.0,usd_per_month,0,"line 85 (Tennessee - 10 or more members*), column 'Water'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TN,0.0,usd_per_month,0,"line 85 (Tennessee - 10 or more members*), column 'Sewage'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TN,0.0,usd_per_month,0,"line 85 (Tennessee - 10 or more members*), column 'Trash'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TN,36.0,usd_per_month,36,"line 85 (Tennessee - 10 or more members*), column 'Phone'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TN,0.0,usd_per_month,0,"line 85 (Tennessee - 10 or more members*), column 'SMD Offset'",10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,TN,,text,Indicates the State is not a mandatory SUA State,line 85 (Tennessee - 10 or more members*),10,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,TX,445.0,usd_per_month,445,"line 86 (Texas), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,TX,400.0,usd_per_month,400,"line 86 (Texas), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,TX,0.0,usd_per_month,0,"line 86 (Texas), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,TX,0.0,usd_per_month,0,"line 86 (Texas), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,TX,0.0,usd_per_month,0,"line 86 (Texas), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,TX,0.0,usd_per_month,0,"line 86 (Texas), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,TX,0.0,usd_per_month,0,"line 86 (Texas), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,TX,62.0,usd_per_month,62,"line 86 (Texas), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,TX,4.0,usd_per_month,4,"line 86 (Texas), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,UT,514.0,usd_per_month,514,"line 87 (Utah), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,UT,431.0,usd_per_month,431,"line 87 (Utah), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,UT,0.0,usd_per_month,0,"line 87 (Utah), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,UT,0.0,usd_per_month,0,"line 87 (Utah), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,UT,0.0,usd_per_month,0,"line 87 (Utah), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,UT,0.0,usd_per_month,0,"line 87 (Utah), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,UT,0.0,usd_per_month,0,"line 87 (Utah), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,UT,59.0,usd_per_month,59,"line 87 (Utah), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,UT,0.0,usd_per_month,0,"line 87 (Utah), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,VT,1096.0,usd_per_month,1096,"line 88 (Vermont), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,VT,311.0,usd_per_month,311,"line 88 (Vermont), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,VT,0.0,usd_per_month,0,"line 88 (Vermont), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,VT,0.0,usd_per_month,0,"line 88 (Vermont), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,VT,0.0,usd_per_month,0,"line 88 (Vermont), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,VT,0.0,usd_per_month,0,"line 88 (Vermont), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,VT,0.0,usd_per_month,0,"line 88 (Vermont), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,VT,37.0,usd_per_month,37,"line 88 (Vermont), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,VT,7.0,usd_per_month,7,"line 88 (Vermont), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,VI,0.0,usd_per_month,0,"line 89 (Virgin Islands*), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,VI,0.0,usd_per_month,0,"line 89 (Virgin Islands*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,VI,0.0,usd_per_month,0,"line 89 (Virgin Islands*), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,VI,0.0,usd_per_month,0,"line 89 (Virgin Islands*), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,VI,0.0,usd_per_month,0,"line 89 (Virgin Islands*), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,VI,0.0,usd_per_month,0,"line 89 (Virgin Islands*), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,VI,0.0,usd_per_month,0,"line 89 (Virgin Islands*), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,VI,34.0,usd_per_month,34,"line 89 (Virgin Islands*), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,VI,0.0,usd_per_month,0,"line 89 (Virgin Islands*), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,VI,,text,Indicates the State is not a mandatory SUA State,line 89 (Virgin Islands*),,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,VA,375.0,usd_per_month,375,"line 90 (Virginia - 1 to 3 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,VA,375.0,usd_per_month,375,"line 90 (Virginia - 1 to 3 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,VA,375.0,usd_per_month,375,"line 90 (Virginia - 1 to 3 members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Electricity'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Electricity'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Electricity'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Gas and Fuel'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Gas and Fuel'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Gas and Fuel'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Water'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Water'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Water'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Sewage'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Sewage'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Sewage'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Trash'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Trash'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,VA,0.0,usd_per_month,0,"line 90 (Virginia - 1 to 3 members*), column 'Trash'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,VA,54.0,usd_per_month,54,"line 90 (Virginia - 1 to 3 members*), column 'Phone'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,VA,54.0,usd_per_month,54,"line 90 (Virginia - 1 to 3 members*), column 'Phone'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,VA,54.0,usd_per_month,54,"line 90 (Virginia - 1 to 3 members*), column 'Phone'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,VA,10.0,usd_per_month,10,"line 90 (Virginia - 1 to 3 members*), column 'SMD Offset'",1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,VA,10.0,usd_per_month,10,"line 90 (Virginia - 1 to 3 members*), column 'SMD Offset'",2,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,VA,10.0,usd_per_month,10,"line 90 (Virginia - 1 to 3 members*), column 'SMD Offset'",3,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,VA,,text,Indicates the State is not a mandatory SUA State,line 90 (Virginia - 1 to 3 members*),1,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,VA,476.0,usd_per_month,476,"line 91 (Virginia - 4 or more members*), column 'Heating and Cooling Utility Allowance (HCSUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,VA,0.0,usd_per_month,0,"line 91 (Virginia - 4 or more members*), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,VA,0.0,usd_per_month,0,"line 91 (Virginia - 4 or more members*), column 'Electricity'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,VA,0.0,usd_per_month,0,"line 91 (Virginia - 4 or more members*), column 'Gas and Fuel'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,VA,0.0,usd_per_month,0,"line 91 (Virginia - 4 or more members*), column 'Water'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,VA,0.0,usd_per_month,0,"line 91 (Virginia - 4 or more members*), column 'Sewage'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,VA,0.0,usd_per_month,0,"line 91 (Virginia - 4 or more members*), column 'Trash'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,VA,54.0,usd_per_month,54,"line 91 (Virginia - 4 or more members*), column 'Phone'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,VA,10.0,usd_per_month,10,"line 91 (Virginia - 4 or more members*), column 'SMD Offset'",4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.footnote,VA,,text,Indicates the State is not a mandatory SUA State,line 91 (Virginia - 4 or more members*),4,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,WA,515.0,usd_per_month,515,"line 92 (Washington), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,WA,406.0,usd_per_month,406,"line 92 (Washington), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,WA,0.0,usd_per_month,0,"line 92 (Washington), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,WA,0.0,usd_per_month,0,"line 92 (Washington), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,WA,0.0,usd_per_month,0,"line 92 (Washington), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,WA,0.0,usd_per_month,0,"line 92 (Washington), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,WA,0.0,usd_per_month,0,"line 92 (Washington), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,WA,58.0,usd_per_month,58,"line 92 (Washington), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,WA,0.0,usd_per_month,0,"line 92 (Washington), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,WV,518.0,usd_per_month,518,"line 93 (West Virginia), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,WV,330.0,usd_per_month,330,"line 93 (West Virginia), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,WV,88.0,usd_per_month,88,"line 93 (West Virginia), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,WV,88.0,usd_per_month,88,"line 93 (West Virginia), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,WV,88.0,usd_per_month,88,"line 93 (West Virginia), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,WV,88.0,usd_per_month,88,"line 93 (West Virginia), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,WV,88.0,usd_per_month,88,"line 93 (West Virginia), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,WV,0.0,usd_per_month,0,"line 93 (West Virginia), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,WV,0.0,usd_per_month,0,"line 93 (West Virginia), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,WI,870.0,usd_per_month,870,"line 94 (Wisconsin), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,WI,436.0,usd_per_month,436,"line 94 (Wisconsin), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,WI,139.0,usd_per_month,139,"line 94 (Wisconsin), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,WI,34.0,usd_per_month,34,"line 94 (Wisconsin), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,WI,112.0,usd_per_month,112,"line 94 (Wisconsin), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,WI,112.0,usd_per_month,112,"line 94 (Wisconsin), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,WI,47.0,usd_per_month,47,"line 94 (Wisconsin), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,WI,106.0,usd_per_month,106,"line 94 (Wisconsin), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,WI,0.0,usd_per_month,0,"line 94 (Wisconsin), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.heating_cooling,WY,510.0,usd_per_month,510,"line 95 (Wyoming), column 'Heating and Cooling Utility Allowance (HCSUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.basic_limited,WY,340.0,usd_per_month,340,"line 95 (Wyoming), column 'Basic/ Limited Utility Allowance (BUA/LUA)'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.electricity,WY,0.0,usd_per_month,0,"line 95 (Wyoming), column 'Electricity'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.gas_fuel,WY,0.0,usd_per_month,0,"line 95 (Wyoming), column 'Gas and Fuel'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.water,WY,0.0,usd_per_month,0,"line 95 (Wyoming), column 'Water'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.sewage,WY,0.0,usd_per_month,0,"line 95 (Wyoming), column 'Sewage'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.trash,WY,0.0,usd_per_month,0,"line 95 (Wyoming), column 'Trash'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.phone,WY,57.0,usd_per_month,57,"line 95 (Wyoming), column 'Phone'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.smd_offset,WY,10.0,usd_per_month,10,"line 95 (Wyoming), column 'SMD Offset'",,2025-10-01
+fns-snap-sua-fy26,raw/fns-snap-sua-fy26/2026-10-16,snap,sua.note,,,text,Note: Standard Medical Deduction (SMD) offsets have been taken out of the HCSUA amount shown in column B,line 99,,2025-10-01
