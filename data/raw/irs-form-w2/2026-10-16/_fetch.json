@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-16T01:16:33+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "fw2.pdf",
+      "url": "https://www.irs.gov/pub/irs-pdf/fw2.pdf",
+      "final_url": "https://www.irs.gov/pub/irs-pdf/fw2.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 2150352,
+      "sha256": "61eca7c81f16d3965819fe1f31be4fe68c1b2887a81f51172f1d2ed2b2b9f087"
+    }
+  ],
+  "errors": []
+}

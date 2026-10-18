@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-16T01:16:29+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "2026-05-21-SUA-Table-FY26.xlsx",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/2026-05-21-SUA-Table-FY26.xlsx",
+      "final_url": "https://fna-bwbufwdzbabpezgc.z01.azurefd.us/sites/default/files/resource-files/2026-05-21-SUA-Table-FY26.xlsx",
+      "status": 200,
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 24655,
+      "sha256": "b5f5ca7b7ae372e20b037631f9ab113897e684271daf2bc9dfbcc4d962a8ea9b"
+    }
+  ],
+  "errors": []
+}

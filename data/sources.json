@@ -85,7 +85,7 @@
       ],
       "format": "xlsx",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "notes": "FNS is now the Food and Nutrition Administration at fna.usda.gov; www.fns.usda.gov redirects there. The fns URL is kept as a fallback.",
       "fetch": {
         "type": "direct",
@@ -93,7 +93,10 @@
           "https://www.fna.usda.gov/sites/default/files/resource-files/2026-05-21-SUA-Table-FY26.xlsx",
           "https://www.fns.usda.gov/sites/default/files/resource-files/2026-05-21-SUA-Table-FY26.xlsx"
         ]
-      }
+      },
+      "local_path": "raw/fns-snap-sua-fy26",
+      "retrieved": "2026-10-16",
+      "latest_snapshot": "raw/fns-snap-sua-fy26/2026-10-16"
     },
     {
       "id": "irs-eitc-rp-25-32",
@@ -104,13 +107,16 @@
       ],
       "format": "pdf",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf"
         ]
-      }
+      },
+      "local_path": "raw/irs-eitc-rp-25-32",
+      "retrieved": "2026-10-16",
+      "latest_snapshot": "raw/irs-eitc-rp-25-32/2026-10-16"
     },
     {
       "id": "medicaid-eligibility-levels",
@@ -121,13 +127,16 @@
       ],
       "format": "csv",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://download.medicaid.gov/data/medicaid-and-chip-eligibility-levels.xy8t-auhk.csv"
         ]
-      }
+      },
+      "local_path": "raw/medicaid-eligibility-levels",
+      "retrieved": "2026-10-16",
+      "latest_snapshot": "raw/medicaid-eligibility-levels/2026-10-16"
     },
     {
       "id": "irs-form-w2",
@@ -138,14 +147,17 @@
       ],
       "format": "pdf",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "notes": "Other document templates (pay stubs, leases, benefit notices) still need sources.",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://www.irs.gov/pub/irs-pdf/fw2.pdf"
         ]
-      }
+      },
+      "local_path": "raw/irs-form-w2",
+      "retrieved": "2026-10-16",
+      "latest_snapshot": "raw/irs-form-w2/2026-10-16"
     }
   ]
 }
