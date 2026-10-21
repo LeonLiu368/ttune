@@ -26,9 +26,9 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
 ## 3. Build the environment
 
 - [ ] Household sets and evals, tracked as issues:
-  - [ ] [#2](https://github.com/LeonLiu368/ttune/issues/2) Household schema, in-distribution sampler and case text
-  - [ ] [#3](https://github.com/LeonLiu368/ttune/issues/3) PolicyEngine ground truth and `python -m envgen generate` (ID set of 200)
-  - [ ] [#4](https://github.com/LeonLiu368/ttune/issues/4) Out-of-distribution set of 200: rare shapes, threshold edges, held-out states
+  - [x] [#2](https://github.com/LeonLiu368/ttune/issues/2) Household schema, in-distribution sampler and case text
+  - [x] [#3](https://github.com/LeonLiu368/ttune/issues/3) PolicyEngine ground truth and `python -m envgen generate` (ID set of 200)
+  - [x] [#4](https://github.com/LeonLiu368/ttune/issues/4) Out-of-distribution set of 200: rare shapes, threshold edges, held-out states ([data/households](data/households/README.md))
   - [ ] [#5](https://github.com/LeonLiu368/ttune/issues/5) Eval harness: scoring, OpenRouter client, run and compare
   - [ ] [#6](https://github.com/LeonLiu368/ttune/issues/6) Eval workflow and first ID vs OOD results (needs the `OPENROUTER_API_KEY` repo secret)
 - [ ] Messy document renderer
@@ -73,6 +73,10 @@ From `python -m scraper check` (full list in [`data/processed/checks/summary.md`
 The scraper doesn't spoof a browser to get past these. If a site blocks it, the source is fetched by hand.
 
 ## Housekeeping
+
+- Fetch FNS's FY2027 standard utility allowance table when it's published (ttune has FY2026; the household answers use PolicyEngine's FY2027 allowances).
+- Model SSI: let a case say a member receives SSI without conflicting with PolicyEngine's own SSI calculation.
+- Refresh `data/raw/policyengine-us` (commit from 2026-09-29) to match the installed policyengine-us 2.50.1, so `check` and the household answers use the same rules.
 
 - Bump `actions/checkout`, `actions/setup-python` and `peter-evans/create-pull-request` off Node 20 (read their changelogs first).
 - Test the ttune skills in `.claude/skills/` with skill-creator once the first Harbor task exists.

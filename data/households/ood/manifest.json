@@ -1,0 +1,118 @@
+{
+  "counts": {
+    "eligible": {
+      "eitc": {
+        "no": 72,
+        "yes": 128
+      },
+      "medicaid": {
+        "no": 58,
+        "yes": 142
+      },
+      "snap": {
+        "no": 99,
+        "yes": 101
+      },
+      "wic": {
+        "no": 117,
+        "yes": 83
+      }
+    },
+    "shift": {
+      "held_out_state": 66,
+      "rare_shape": 67,
+      "threshold_edge": 67
+    },
+    "size": {
+      "1": 20,
+      "10": 2,
+      "11": 6,
+      "12": 1,
+      "2": 30,
+      "3": 48,
+      "4": 30,
+      "5": 49,
+      "6": 5,
+      "7": 3,
+      "8": 4,
+      "9": 2
+    },
+    "state": {
+      "AK": 7,
+      "AL": 2,
+      "AR": 3,
+      "AZ": 3,
+      "CA": 2,
+      "CO": 2,
+      "CT": 3,
+      "DC": 7,
+      "DE": 1,
+      "FL": 4,
+      "GA": 4,
+      "HI": 7,
+      "IA": 2,
+      "ID": 4,
+      "IL": 4,
+      "IN": 5,
+      "KS": 5,
+      "KY": 5,
+      "LA": 1,
+      "MA": 1,
+      "MD": 2,
+      "ME": 7,
+      "MI": 2,
+      "MN": 4,
+      "MO": 1,
+      "MS": 7,
+      "MT": 3,
+      "NC": 4,
+      "ND": 6,
+      "NE": 3,
+      "NH": 4,
+      "NJ": 2,
+      "NM": 6,
+      "NV": 3,
+      "NY": 7,
+      "OH": 3,
+      "OK": 7,
+      "OR": 6,
+      "PA": 4,
+      "RI": 6,
+      "SC": 7,
+      "SD": 1,
+      "TN": 1,
+      "TX": 3,
+      "UT": 4,
+      "VA": 6,
+      "VT": 6,
+      "WA": 2,
+      "WI": 1,
+      "WV": 4,
+      "WY": 6
+    },
+    "twist": {
+      "college_student": 13,
+      "disabled_member": 14,
+      "edge_eitc": 22,
+      "edge_medicaid": 22,
+      "edge_snap": 23,
+      "large_household": 15,
+      "mixed_citizenship": 10,
+      "multigenerational": 17,
+      "pregnant_member": 13,
+      "self_employment": 14
+    }
+  },
+  "inputs_year": "2026",
+  "n": 200,
+  "periods": {
+    "eitc": "2026",
+    "medicaid": "2026",
+    "snap": "2026-10",
+    "wic": "2026-10"
+  },
+  "policyengine_us": "2.50.1",
+  "poverty_guidelines": "data/processed/hhs-poverty-guidelines.csv (HHS 2026)",
+  "seed": 1,
+  "set": "ood"
+}

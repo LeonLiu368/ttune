@@ -1,0 +1,4 @@
+# Household generator (envgen): PolicyEngine for ground truth. Kept apart from requirements.txt because it
+# pulls in pandas, numpy and tables, which the scraper doesn't need.
+-r requirements.txt
+policyengine-us==2.50.1

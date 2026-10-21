@@ -8,6 +8,7 @@ Raw data for the benefits-eligibility environment ([docs/04](../docs/04-benefits
 data/
 ├── README.md
 ├── sources.json          # every source: URL, license, status, retrieval date, fetch settings
+├── households/           # generated ID and OOD household sets with PolicyEngine answers (python -m envgen)
 ├── processed/            # parsed rows, one CSV per source (python -m scraper extract)
 │   └── checks/           # each value vs PolicyEngine, plus summary.md (python -m scraper check)
 └── raw/                  # unmodified copies, one folder per source
@@ -21,7 +22,7 @@ data/
             └── _fetch.json   # URL, final URL, HTTP status, content type, size, SHA-256, method
 ```
 
-Nothing in `raw/` is edited by hand. Everything in `processed/` is regenerated from `raw/` by `extract`.
+Nothing in `raw/` is edited by hand. Everything in `processed/` is regenerated from `raw/` by `extract`, and everything in `households/` by `python -m envgen generate` (see [households/README.md](households/README.md)).
 
 ## What's here so far
 

@@ -1,0 +1,88 @@
+{
+  "counts": {
+    "eligible": {
+      "eitc": {
+        "no": 90,
+        "yes": 110
+      },
+      "medicaid": {
+        "no": 101,
+        "yes": 99
+      },
+      "snap": {
+        "no": 101,
+        "yes": 99
+      },
+      "wic": {
+        "no": 160,
+        "yes": 40
+      }
+    },
+    "shift": {
+      "none": 200
+    },
+    "size": {
+      "1": 71,
+      "2": 36,
+      "3": 37,
+      "4": 31,
+      "5": 25
+    },
+    "state": {
+      "AL": 9,
+      "AR": 5,
+      "AZ": 3,
+      "CA": 7,
+      "CO": 9,
+      "CT": 4,
+      "DE": 7,
+      "FL": 4,
+      "GA": 5,
+      "IA": 4,
+      "ID": 7,
+      "IL": 3,
+      "IN": 2,
+      "KS": 9,
+      "KY": 3,
+      "LA": 2,
+      "MA": 4,
+      "MD": 6,
+      "MI": 4,
+      "MN": 4,
+      "MO": 3,
+      "MT": 5,
+      "NC": 9,
+      "NE": 3,
+      "NH": 3,
+      "NJ": 2,
+      "NV": 4,
+      "OH": 6,
+      "OK": 5,
+      "PA": 2,
+      "RI": 6,
+      "SC": 8,
+      "SD": 4,
+      "TN": 2,
+      "TX": 6,
+      "UT": 7,
+      "VA": 4,
+      "WA": 6,
+      "WI": 6,
+      "WV": 4,
+      "WY": 4
+    },
+    "twist": {}
+  },
+  "inputs_year": "2026",
+  "n": 200,
+  "periods": {
+    "eitc": "2026",
+    "medicaid": "2026",
+    "snap": "2026-10",
+    "wic": "2026-10"
+  },
+  "policyengine_us": "2.50.1",
+  "poverty_guidelines": "data/processed/hhs-poverty-guidelines.csv (HHS 2026)",
+  "seed": 1,
+  "set": "id"
+}
