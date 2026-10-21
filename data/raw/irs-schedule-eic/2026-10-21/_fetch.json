@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-21T17:06:45+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "f1040sei.pdf",
+      "url": "https://www.irs.gov/pub/irs-pdf/f1040sei.pdf",
+      "final_url": "https://www.irs.gov/pub/irs-pdf/f1040sei.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 112439,
+      "sha256": "b6dab52511ece16e710899542d952db578bf6c872d2580ee6760fb88ed77c4ba"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-21T17:06:42+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels.html",
+      "url": "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels",
+      "final_url": "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 139992,
+      "sha256": "40c010a5c2a8518f39eccd9318f242aa7e3d179a156ef891ea5aef536953c02e"
+    }
+  ],
+  "errors": []
+}

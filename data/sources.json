@@ -37,14 +37,17 @@
       ],
       "format": "txt",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "notes": "aspe.hhs.gov returns 403 to GitHub's runners, so this fetches the same guidelines from HHS's annual Federal Register notice (plain-text version). Each January, point it at the new notice: search federalregister.gov for 'Annual Update of the HHS Poverty Guidelines'. Cross-check against raw/policyengine-us/parameters/gov/hhs/fpg.yaml.",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://www.federalregister.gov/documents/full_text/text/2026/01/15/2026-00755.txt"
         ]
-      }
+      },
+      "local_path": "raw/hhs-poverty-guidelines",
+      "retrieved": "2026-10-21",
+      "latest_snapshot": "raw/hhs-poverty-guidelines/2026-10-21"
     },
     {
       "id": "fns-snap-cola-fy27",
@@ -55,7 +58,7 @@
       ],
       "format": "html+pdf",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "notes": "FNS (now fna.usda.gov) lists the FY27 tables as separate PDFs on its COLA page: income eligibility standards, maximum allotments and deductions, allotments for AK/HI/GU/VI, and minimum allotments. www.usda.gov's guidance page blocks non-browser clients, so it isn't used. Cited by PolicyEngine's SNAP max-allotment tests.",
       "fetch": {
         "type": "page",
@@ -69,7 +72,10 @@
           ],
           "max": 10
         }
-      }
+      },
+      "local_path": "raw/fns-snap-cola-fy27",
+      "retrieved": "2026-10-21",
+      "latest_snapshot": "raw/fns-snap-cola-fy27/2026-10-21"
     },
     {
       "id": "fns-snap-sua-fy26",
@@ -144,14 +150,17 @@
       ],
       "format": "html",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "notes": "The HTML table on Medicaid.gov's eligibility-levels page, with the date it states ('as of ...'). Replaces the 2018 CSV in medicaid-eligibility-levels.",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels"
         ]
-      }
+      },
+      "local_path": "raw/medicaid-eligibility-levels-current",
+      "retrieved": "2026-10-21",
+      "latest_snapshot": "raw/medicaid-eligibility-levels-current/2026-10-21"
     },
     {
       "id": "irs-form-w2",
@@ -183,13 +192,16 @@
       ],
       "format": "pdf",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://www.irs.gov/pub/irs-pdf/f1099nec.pdf"
         ]
-      }
+      },
+      "local_path": "raw/irs-form-1099-nec",
+      "retrieved": "2026-10-21",
+      "latest_snapshot": "raw/irs-form-1099-nec/2026-10-21"
     },
     {
       "id": "irs-form-1099-g",
@@ -200,13 +212,16 @@
       ],
       "format": "pdf",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://www.irs.gov/pub/irs-pdf/f1099g.pdf"
         ]
-      }
+      },
+      "local_path": "raw/irs-form-1099-g",
+      "retrieved": "2026-10-21",
+      "latest_snapshot": "raw/irs-form-1099-g/2026-10-21"
     },
     {
       "id": "irs-schedule-eic",
@@ -217,13 +232,16 @@
       ],
       "format": "pdf",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://www.irs.gov/pub/irs-pdf/f1040sei.pdf"
         ]
-      }
+      },
+      "local_path": "raw/irs-schedule-eic",
+      "retrieved": "2026-10-21",
+      "latest_snapshot": "raw/irs-schedule-eic/2026-10-21"
     },
     {
       "id": "hud-model-lease-90105a",
@@ -234,13 +252,16 @@
       ],
       "format": "pdf",
       "license": "US government work (public domain)",
-      "status": "todo",
+      "status": "fetched",
       "fetch": {
         "type": "direct",
         "urls": [
           "https://www.hud.gov/sites/dfiles/OCHCO/documents/90105a.pdf"
         ]
-      }
+      },
+      "local_path": "raw/hud-model-lease-90105a",
+      "retrieved": "2026-10-21",
+      "latest_snapshot": "raw/hud-model-lease-90105a/2026-10-21"
     }
   ]
 }
