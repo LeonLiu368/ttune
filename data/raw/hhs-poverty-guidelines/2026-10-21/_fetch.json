@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-21T17:06:32+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "2026-00755.txt",
+      "url": "https://www.federalregister.gov/documents/full_text/text/2026/01/15/2026-00755.txt",
+      "final_url": "https://www.federalregister.gov/documents/full_text/text/2026/01/15/2026-00755.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 11666,
+      "sha256": "fbddaefee61048aace09f738186dc3b4350cbdf885053e6b61bd0a9230214614"
+    }
+  ],
+  "errors": []
+}

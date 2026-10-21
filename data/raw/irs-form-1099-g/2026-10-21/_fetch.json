@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-21T17:06:44+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "f1099g.pdf",
+      "url": "https://www.irs.gov/pub/irs-pdf/f1099g.pdf",
+      "final_url": "https://www.irs.gov/pub/irs-pdf/f1099g.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 542657,
+      "sha256": "65a416c52508d8a3d77ee1734194767d1e1c8a607c778fd1914dd1a62da569a2"
+    }
+  ],
+  "errors": []
+}

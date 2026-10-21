@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-21T17:06:43+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "f1099nec.pdf",
+      "url": "https://www.irs.gov/pub/irs-pdf/f1099nec.pdf",
+      "final_url": "https://www.irs.gov/pub/irs-pdf/f1099nec.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 537467,
+      "sha256": "68a8f00078be6dd6a4912cc4209df317b31840d5fe19560222d39df9f2f7ff49"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-10-21T17:06:46+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "90105a.pdf",
+      "url": "https://www.hud.gov/sites/dfiles/OCHCO/documents/90105a.pdf",
+      "final_url": "https://www.hud.gov/sites/dfiles/OCHCO/documents/90105a.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 266465,
+      "sha256": "ae735de3c9619a2bb7f2431db1d06e2476468d627e82232fe463815b08b78754"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,52 @@
+{
+  "fetched_at": "2026-10-21T17:06:33+00:00",
+  "method": "scraper",
+  "files": [
+    {
+      "file": "cola.html",
+      "url": "https://www.fna.usda.gov/snap/allotment/cola",
+      "final_url": "https://www.fna.usda.gov/snap/allotment/cola",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 111186,
+      "sha256": "e7f240ca6727bccbbdb46e1f14bcb4958fc5d76cbd887edd3677cb630d31faa9"
+    },
+    {
+      "file": "snap-fy27-incomeEligibilityStandards.pdf",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-fy27-incomeEligibilityStandards.pdf",
+      "final_url": "https://fna-bwbufwdzbabpezgc.z01.azurefd.us/sites/default/files/resource-files/snap-fy27-incomeEligibilityStandards.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 184214,
+      "sha256": "774404361683d278571c4411dcda20c34d13f30e1c29f71b184e5ec481d1de31"
+    },
+    {
+      "file": "snap-fy27maximumAllotments-deductions.pdf",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-fy27maximumAllotments-deductions.pdf",
+      "final_url": "https://fna-bwbufwdzbabpezgc.z01.azurefd.us/sites/default/files/resource-files/snap-fy27maximumAllotments-deductions.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 117404,
+      "sha256": "9ab3399405573a65c15661224f2d1b2203ca8f68f1bc207d45b88ad92adf9840"
+    },
+    {
+      "file": "snap-fy27allotments-AKHIGUVI.pdf",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-fy27allotments-AKHIGUVI.pdf",
+      "final_url": "https://fna-bwbufwdzbabpezgc.z01.azurefd.us/sites/default/files/resource-files/snap-fy27allotments-AKHIGUVI.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 134668,
+      "sha256": "0e62718a75f98d79ca7d8aa80279832e1bcce0a7abeeecc6c71f6f026a5fad3c"
+    },
+    {
+      "file": "snap-fy27MinimumAllotments.pdf",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-fy27MinimumAllotments.pdf",
+      "final_url": "https://fna-bwbufwdzbabpezgc.z01.azurefd.us/sites/default/files/resource-files/snap-fy27MinimumAllotments.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 106227,
+      "sha256": "25d78188a35f5e0320ea45c9495508f968c91eae46c86a99031a821dcad06d6e"
+    }
+  ],
+  "errors": []
+}
