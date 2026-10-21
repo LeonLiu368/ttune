@@ -145,7 +145,7 @@ def cmd_check(args: argparse.Namespace) -> int:
 def cmd_status(args: argparse.Namespace) -> int:
     for s in load_sources(args.data_dir)["sources"]:
         how = where(s) if s.get("fetch") else "by hand"
-        print(f"{s['id']:30} {s.get('status', ''):9} {how:9} {s.get('latest_snapshot') or s.get('local_path', '')}")
+        print(f"{s['id']:36} {s.get('status', ''):9} {how:9} {s.get('latest_snapshot') or s.get('local_path', '')}")
     return 0
 
 

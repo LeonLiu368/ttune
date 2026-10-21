@@ -47,7 +47,7 @@ These tests are public, so models may have seen them during pretraining. Use the
 
 ## Scraper
 
-The government sources (HHS/ASPE, USDA FNS, IRS, Medicaid.gov) are fetched by `python -m scraper`. Each entry in `sources.json` with a `fetch` block is one of:
+The government sources (the Federal Register, USDA FNS, IRS, Medicaid.gov, HUD) are fetched by `python -m scraper`. Each entry in `sources.json` with a `fetch` block is one of:
 
 - `direct`: download the first URL in `urls` that returns 200 (later URLs are fallbacks).
 - `page`: download the page, then any links on it whose URL matches `follow.pattern`, on `follow.hosts` (default: the page's own host), up to `follow.max`.
@@ -57,8 +57,8 @@ The government sources (HHS/ASPE, USDA FNS, IRS, Medicaid.gov) are fetched by `p
 | `where` | Meaning | Who fetches it |
 |---|---|---|
 | `anywhere` (default) | Works from GitHub's runners | The monthly workflow |
-| `local` | The site blocks cloud IPs (e.g. aspe.hhs.gov) | You, from a home connection: `fetch --source <id>` |
-| `manual` | The site blocks the scraper everywhere (e.g. www.usda.gov) | You, in a browser, then `import` |
+| `local` | The site blocks cloud IPs (e.g. aspe.hhs.gov; no source needs this now) | You, from a home connection: `fetch --source <id>` |
+| `manual` | The site blocks the scraper everywhere (e.g. www.usda.gov; no source needs this now) | You, in a browser, then `import` |
 
 Each run writes a new dated snapshot only when content changed, and updates the source's `status`, `retrieved`, `latest_snapshot` and `last_error`. A run where nothing changed leaves the repo untouched, so no PR is opened. It waits 1 second between requests to a host, retries transient errors, follows robots.txt per RFC 9309 (a 4xx robots.txt means no restrictions, a 5xx or unreachable one means stay away), caps files at 50 MB, and never executes anything it downloads.
 
@@ -68,7 +68,7 @@ python -m scraper status                       # what's fetched, what isn't
 python -m scraper fetch                        # all fetchable sources
 python -m scraper fetch --source irs-form-w2   # just one (works for any `where`)
 python -m scraper fetch --ci                   # what the workflow runs: skips local and manual
-python -m scraper import fns-snap-cola-fy27 ~/Downloads/memo.pdf --url <where you downloaded it>
+python -m scraper import <source-id> ~/Downloads/file.pdf --url <where you downloaded it>
 python -m scraper extract                      # parse latest snapshots into processed/
 ```
 

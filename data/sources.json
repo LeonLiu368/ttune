@@ -30,50 +30,45 @@
     },
     {
       "id": "hhs-poverty-guidelines",
-      "name": "HHS/ASPE federal poverty guidelines",
-      "url": "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines",
+      "name": "HHS federal poverty guidelines, 2026 (Federal Register notice 2026-00755)",
+      "url": "https://www.federalregister.gov/documents/2026/01/15/2026-00755/annual-update-of-the-hhs-poverty-guidelines",
       "kind": [
         "rules"
       ],
-      "format": "html",
+      "format": "txt",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "aspe.hhs.gov returns 403 to GitHub's runners but works from a home connection, so this is fetched locally (CI skips it). Cross-check against raw/policyengine-us/parameters/gov/hhs/fpg.yaml.",
+      "notes": "aspe.hhs.gov returns 403 to GitHub's runners, so this fetches the same guidelines from HHS's annual Federal Register notice (plain-text version). Each January, point it at the new notice: search federalregister.gov for 'Annual Update of the HHS Poverty Guidelines'. Cross-check against raw/policyengine-us/parameters/gov/hhs/fpg.yaml.",
       "fetch": {
-        "type": "page",
+        "type": "direct",
         "urls": [
-          "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines"
-        ],
-        "where": "local"
+          "https://www.federalregister.gov/documents/full_text/text/2026/01/15/2026-00755.txt"
+        ]
       }
     },
     {
       "id": "fns-snap-cola-fy27",
       "name": "USDA FNS SNAP FY2027 cost-of-living adjustments (max allotments, income limits, deductions)",
-      "url": "https://www.fns.usda.gov/snap/allotment/cola/fy27",
+      "url": "https://www.fna.usda.gov/snap/allotment/cola",
       "kind": [
         "rules"
       ],
       "format": "html+pdf",
       "license": "US government work (public domain)",
       "status": "todo",
-      "notes": "www.usda.gov returns 403 to the scraper from both GitHub and a home connection, so it blocks non-browser clients. Open the guidance page in a browser, download the memo PDF(s), then: python -m scraper import fns-snap-cola-fy27 <files> --url <pdf link>. Cited by PolicyEngine's SNAP max-allotment tests.",
+      "notes": "FNS (now fna.usda.gov) lists the FY27 tables as separate PDFs on its COLA page: income eligibility standards, maximum allotments and deductions, allotments for AK/HI/GU/VI, and minimum allotments. www.usda.gov's guidance page blocks non-browser clients, so it isn't used. Cited by PolicyEngine's SNAP max-allotment tests.",
       "fetch": {
         "type": "page",
         "urls": [
-          "https://www.usda.gov/guidance-documents/snap/fna/snap-fiscal-year-2027-cost-living-adjustments"
+          "https://www.fna.usda.gov/snap/allotment/cola"
         ],
         "follow": {
-          "pattern": "(?i)\\.pdf$",
+          "pattern": "(?i)/snap-fy27[^/]*\\.pdf$",
           "hosts": [
-            "www.usda.gov",
-            "www.fna.usda.gov",
-            "www.fns.usda.gov",
-            "fns-prod.azureedge.us"
+            "www.fna.usda.gov"
           ],
           "max": 10
-        },
-        "where": "manual"
+        }
       }
     },
     {
@@ -137,7 +132,26 @@
       "local_path": "raw/medicaid-eligibility-levels",
       "retrieved": "2026-10-16",
       "latest_snapshot": "raw/medicaid-eligibility-levels/2026-10-16",
-      "notes": "Stale: the CSV has no date, and checked against PolicyEngine as of 2018-04-01 it matches 294 values vs 235 as of today (PolicyEngine cites this file as April 1, 2018 data). Idaho, for example, shows no Medicaid expansion, which it adopted in 2020. Don't use it for current rules; find a current source."
+      "notes": "Stale: the CSV has no date, and checked against PolicyEngine as of 2018-04-01 it matches 294 values vs 235 as of today (PolicyEngine cites this file as April 1, 2018 data). Idaho, for example, shows no Medicaid expansion, which it adopted in 2020. Don't use it for current rules; find a current source.",
+      "superseded_by": "medicaid-eligibility-levels-current"
+    },
+    {
+      "id": "medicaid-eligibility-levels-current",
+      "name": "Medicaid, CHIP and BHP income eligibility levels by state (Medicaid.gov table)",
+      "url": "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels",
+      "kind": [
+        "rules"
+      ],
+      "format": "html",
+      "license": "US government work (public domain)",
+      "status": "todo",
+      "notes": "The HTML table on Medicaid.gov's eligibility-levels page, with the date it states ('as of ...'). Replaces the 2018 CSV in medicaid-eligibility-levels.",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://www.medicaid.gov/medicaid/national-medicaid-chip-program-information/medicaid-childrens-health-insurance-program-basic-health-program-eligibility-levels"
+        ]
+      }
     },
     {
       "id": "irs-form-w2",
@@ -149,7 +163,7 @@
       "format": "pdf",
       "license": "US government work (public domain)",
       "status": "fetched",
-      "notes": "Other document templates (pay stubs, leases, benefit notices) still need sources.",
+      "notes": "Pay stubs and benefit notices have no reliable public-domain template, so ttune's document renderer will draw its own.",
       "fetch": {
         "type": "direct",
         "urls": [
@@ -159,6 +173,74 @@
       "local_path": "raw/irs-form-w2",
       "retrieved": "2026-10-16",
       "latest_snapshot": "raw/irs-form-w2/2026-10-16"
+    },
+    {
+      "id": "irs-form-1099-nec",
+      "name": "IRS Form 1099-NEC (blank), template for self-employment and gig income",
+      "url": "https://www.irs.gov/pub/irs-pdf/f1099nec.pdf",
+      "kind": [
+        "templates"
+      ],
+      "format": "pdf",
+      "license": "US government work (public domain)",
+      "status": "todo",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://www.irs.gov/pub/irs-pdf/f1099nec.pdf"
+        ]
+      }
+    },
+    {
+      "id": "irs-form-1099-g",
+      "name": "IRS Form 1099-G (blank), template for unemployment compensation",
+      "url": "https://www.irs.gov/pub/irs-pdf/f1099g.pdf",
+      "kind": [
+        "templates"
+      ],
+      "format": "pdf",
+      "license": "US government work (public domain)",
+      "status": "todo",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://www.irs.gov/pub/irs-pdf/f1099g.pdf"
+        ]
+      }
+    },
+    {
+      "id": "irs-schedule-eic",
+      "name": "IRS Schedule EIC (Form 1040), qualifying-child information for the EITC",
+      "url": "https://www.irs.gov/pub/irs-pdf/f1040sei.pdf",
+      "kind": [
+        "templates"
+      ],
+      "format": "pdf",
+      "license": "US government work (public domain)",
+      "status": "todo",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://www.irs.gov/pub/irs-pdf/f1040sei.pdf"
+        ]
+      }
+    },
+    {
+      "id": "hud-model-lease-90105a",
+      "name": "HUD model lease for subsidized programs (HUD-90105a), template for rendering leases",
+      "url": "https://www.hud.gov/sites/dfiles/OCHCO/documents/90105a.pdf",
+      "kind": [
+        "templates"
+      ],
+      "format": "pdf",
+      "license": "US government work (public domain)",
+      "status": "todo",
+      "fetch": {
+        "type": "direct",
+        "urls": [
+          "https://www.hud.gov/sites/dfiles/OCHCO/documents/90105a.pdf"
+        ]
+      }
     }
   ]
 }
