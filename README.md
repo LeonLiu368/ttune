@@ -8,6 +8,23 @@ Notes and plans for building RL environments (in the [Harbor](https://github.com
 
 **Public-benefits eligibility.** An agent reads a household's messy documents and determines eligibility and amounts for SNAP, Medicaid, EITC, WIC and similar programs, using [PolicyEngine](https://github.com/PolicyEngine) as an exact, open-source verifier. Full plan: [docs/04-benefits-eligibility-plan.md](docs/04-benefits-eligibility-plan.md).
 
+## Research: where ttune fits
+
+Earlier work shows language models still get benefits and tax rules wrong often, and none of it trains a model to do better. The best model answers about 77% of SNAP questions correctly ([Public Benefits Bench](https://www.vals.ai/benchmarks/public-benefits-bench)). The best gets 78% of full tax returns right, and only with web search ([TaxCalcBench](https://github.com/column-tax/tax-calc-bench)). These benchmarks use small, fixed, hand-written test sets, and each covers one program.
+
+ttune adds what's missing:
+
+| What we plan to hit | Closest earlier work | How ttune does it |
+|---|---|---|
+| Exact answers from a rules engine | TaxCalcBench, τ-bench | PolicyEngine's answer for every household |
+| Generated, unlimited cases | Reasoning Gym, GSM-Symbolic | A seeded household generator ([#2](https://github.com/LeonLiu368/ttune/issues/2)) |
+| A planned in- vs out-of-distribution test | GSM-Symbolic | Typical vs unusual households, one kind of shift each ([#4](https://github.com/LeonLiu368/ttune/issues/4)) |
+| Wrongful denials cost more than other errors | None found | Counted double in the score ([#5](https://github.com/LeonLiu368/ttune/issues/5)) |
+| An RL environment to train on | Reasoning Gym (no benefits programs) | A Harbor environment, then fine-tuning and RL |
+| Rules checked against official sources | None found | A monthly scraper and `python -m scraper check` |
+
+**Goals, in order:** build two household sets of 200 with exact answers; measure how much worse a small open model (4–8B) does on the unusual set; find which kind of household causes the drop; package it as an environment that shortcut answers can't game; then train to close the gap without losing ground on typical households.
+
 ## Docs
 
 | Doc | What's in it |
@@ -16,7 +33,8 @@ Notes and plans for building RL environments (in the [Harbor](https://github.com
 | [02 – Realistic environments](docs/02-realistic-environments.md) | 8 realistic, CPU-only environment ideas across different domains |
 | [03 – 2026 trends](docs/03-trends-2026.md) | What people on X and in papers are saying about RL environments, and what it means for these ideas |
 | [04 – Benefits eligibility plan](docs/04-benefits-eligibility-plan.md) | The chosen domain: environment design, reward, training pipeline, risks |
-| [05 – Skills](docs/05-skills.md) | Claude Code skills in `.claude/skills/`: 4 written for ttune, 3 pulled in from Harbor, plus relevant account skills |
+| [05 – Skills](docs/05-skills.md) | Claude Code skills in `.claude/skills/`: 4 written for ttune, 4 pulled in (3 from Harbor, plus plain-language), plus relevant account skills |
+| [06 – Research report](docs/06-research-report.md) | Earlier work on benefits, tax and legal reasoning, verifiable RL environments and robustness; what it did well, where it falls short, ttune's checklist, goals and methods |
 
 ## Data
 
