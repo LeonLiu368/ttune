@@ -1,0 +1,31 @@
+source_id,parameter,region,household_size,period,official,policyengine,status,policyengine_file,note
+hhs-poverty-guidelines,guideline,CONTIGUOUS_US,1,2026,"1...........................................................     $15,960",15960,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,CONTIGUOUS_US,2,2026,"2...........................................................      21,640",21640,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,CONTIGUOUS_US,3,2026,"3...........................................................      27,320",27320,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,CONTIGUOUS_US,4,2026,"4...........................................................      33,000",33000,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,CONTIGUOUS_US,5,2026,"5...........................................................      38,680",38680,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,CONTIGUOUS_US,6,2026,"6...........................................................      44,360",44360,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,CONTIGUOUS_US,7,2026,"7...........................................................      50,040",50040,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,CONTIGUOUS_US,8,2026,"8...........................................................      55,720",55720,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,first_person,CONTIGUOUS_US,,2026,"1...........................................................     $15,960",15960,match,hhs/fpg.yaml,
+hhs-poverty-guidelines,additional_person,CONTIGUOUS_US,,2026,"more than 8 persons, add $5,680 for each additional person",5680,match,hhs/fpg.yaml,
+hhs-poverty-guidelines,guideline,AK,1,2026,"1...........................................................     $19,950",19950,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,AK,2,2026,"2...........................................................      27,050",27050,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,AK,3,2026,"3...........................................................      34,150",34150,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,AK,4,2026,"4...........................................................      41,250",41250,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,AK,5,2026,"5...........................................................      48,350",48350,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,AK,6,2026,"6...........................................................      55,450",55450,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,AK,7,2026,"7...........................................................      62,550",62550,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,AK,8,2026,"8...........................................................      69,650",69650,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,first_person,AK,,2026,"1...........................................................     $19,950",19950,match,hhs/fpg.yaml,
+hhs-poverty-guidelines,additional_person,AK,,2026,"more than 8 persons, add $7,100 for each additional person",7100,match,hhs/fpg.yaml,
+hhs-poverty-guidelines,guideline,HI,1,2026,"1...........................................................     $18,360",18360,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,HI,2,2026,"2...........................................................      24,890",24890,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,HI,3,2026,"3...........................................................      31,420",31420,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,HI,4,2026,"4...........................................................      37,950",37950,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,HI,5,2026,"5...........................................................      44,480",44480,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,HI,6,2026,"6...........................................................      51,010",51010,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,HI,7,2026,"7...........................................................      57,540",57540,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,guideline,HI,8,2026,"8...........................................................      64,070",64070,match,hhs/fpg.yaml,first_person + (size - 1) × additional_person
+hhs-poverty-guidelines,first_person,HI,,2026,"1...........................................................     $18,360",18360,match,hhs/fpg.yaml,
+hhs-poverty-guidelines,additional_person,HI,,2026,"more than 8 persons, add $6,530 for each additional person",6530,match,hhs/fpg.yaml,

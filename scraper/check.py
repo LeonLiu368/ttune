@@ -125,7 +125,8 @@ def compare_medicaid(rows: list[dict], pe: PolicyEngine) -> list[Result]:
             continue
         category = MEDICAID_CATEGORIES[row["parameter"]]
         rel = f"hhs/medicaid/eligibility/categories/{category}/income_limit.yaml"
-        date = row["snapshot"].rsplit("/", 1)[-1][:10]  # the CSV has no date; use when it was fetched
+        # Use the date the source states; the 2018 CSV has none, so fall back to when it was fetched.
+        date = row["period"] or row["snapshot"].rsplit("/", 1)[-1][:10]
         pe_value = pe.value(rel, date, row["region"])
         official = _num(row["value"])
         not_covered = pe_value is None or (isinstance(pe_value, float) and math.isinf(pe_value))
@@ -249,8 +250,95 @@ def _derived(row: dict, official, derived, rel: str, note: str) -> Result:
     return _result(row, row["raw"], round(derived, 2), status, rel, note)
 
 
+# --- HHS poverty guidelines -------------------------------------------------------------------
+
+FPG = "hhs/fpg.yaml"
+
+
+def fpg(pe: PolicyEngine, region: str, size: int, date: str) -> float | None:
+    first = pe.value(FPG, date, "first_person", region)
+    extra = pe.value(FPG, date, "additional_person", region)
+    return None if first is None or extra is None else first + (size - 1) * extra
+
+
+def compare_fpg(rows: list[dict], pe: PolicyEngine) -> list[Result]:
+    results = []
+    for row in rows:
+        date = f"{row['period']}-01-01"
+        official = _num(row["value"])
+        if row["parameter"] == "guideline":
+            pe_value = fpg(pe, row["region"], int(row["household_size"]), date)
+            results.append(_exact(row, official, pe_value, FPG, "first_person + (size - 1) × additional_person"))
+        else:
+            results.append(_exact(row, official, pe.value(FPG, date, row["parameter"], row["region"]), FPG))
+    return results
+
+
+# --- SNAP cost-of-living adjustments (FNS FY tables) -------------------------------------------
+
+SNAP = "usda/snap/"
+SHELTER_CAP_REGIONS = {"AK": "AK_URBAN"}  # PolicyEngine keys Alaska's shelter cap by SNAP region
+INCOME_LIMIT_RATES = {"income_limit.net": "net", "income_limit.gross": "gross"}
+
+
+def _snap_income_limit(pe: PolicyEngine, row: dict, date: str) -> tuple[float | None, str]:
+    """PolicyEngine's monthly limit: rate × poverty guideline ÷ 12, rounded up to the next dollar (7 CFR 273.9)."""
+    parameter = row["parameter"].removesuffix(".additional_person")
+    rel = f"{SNAP}income/limit/{INCOME_LIMIT_RATES[parameter]}.yaml"
+    rate = at(pe.load(rel), date)
+    if row["parameter"].endswith(".additional_person"):
+        annual = pe.value(FPG, date, "additional_person", row["region"])
+    else:
+        annual = fpg(pe, row["region"], int(row["household_size"]), date)
+    if rate is None or annual is None:
+        return None, rel
+    return float(math.ceil(round(rate * annual / 12, 2))), f"{rel} × {FPG}"
+
+
+def compare_cola(rows: list[dict], pe: PolicyEngine) -> list[Result]:
+    results = []
+    for row in rows:
+        date = f"{int(row['period'].removeprefix('FY')) - 1}-10-01"  # FY2027 starts 2026-10-01
+        parameter, region, official = row["parameter"], row["region"], _num(row["value"])
+        size = int(row["household_size"]) if row["household_size"] else None
+        if parameter == "max_allotment":
+            rel = SNAP + "max_allotment.yaml"
+            results.append(_exact(row, official, pe.value(rel, date, "main", region, size), rel))
+        elif parameter == "max_allotment.additional_person":
+            rel = SNAP + "max_allotment.yaml"
+            results.append(_exact(row, official, pe.value(rel, date, "additional", region), rel))
+        elif parameter == "standard_deduction":
+            rel = SNAP + "income/deductions/standard.yaml"
+            results.append(_exact(row, official, pe.value(rel, date, region, size), rel))
+        elif parameter == "excess_shelter_deduction.cap":
+            rel = SNAP + "income/deductions/excess_shelter_expense/cap.yaml"
+            results.append(_exact(row, official, pe.value(rel, date, SHELTER_CAP_REGIONS.get(region, region)), rel))
+        elif parameter == "homeless_shelter_deduction":
+            rel = SNAP + "income/deductions/excess_shelter_expense/homeless/deduction.yaml"
+            results.append(_cents(row, official, at(pe.load(rel), date), rel, "one national amount"))
+        elif parameter.startswith("asset_limit."):
+            rel = SNAP + "asset_test/limit.yaml"
+            results.append(_exact(row, official, pe.value(rel, date, parameter.split(".", 1)[1]), rel))
+        elif parameter.removesuffix(".additional_person") in INCOME_LIMIT_RATES:
+            pe_value, rel = _snap_income_limit(pe, row, date)
+            results.append(_exact(row, official, pe_value, rel, "derived: rate × poverty guideline ÷ 12, rounded up"))
+        else:
+            results.append(_result(row, row["raw"], None, "missing in PolicyEngine", "", "no mapping for this item"))
+    return results
+
+
+def _cents(row: dict, official, pe_value, rel: str, note: str = "") -> Result:
+    if pe_value is None:
+        return _result(row, row["raw"], None, "missing in PolicyEngine", rel, note)
+    status = "match" if abs(official - pe_value) < 0.005 else "differ"
+    return _result(row, row["raw"], pe_value, status, rel, note)
+
+
 COMPARISONS: dict[str, Comparison] = {
+    "hhs-poverty-guidelines": compare_fpg,
+    "fns-snap-cola-fy27": compare_cola,
     "medicaid-eligibility-levels": compare_medicaid,
+    "medicaid-eligibility-levels-current": compare_medicaid,
     "fns-snap-sua-fy26": compare_sua,
     "irs-eitc-rp-25-32": compare_eitc,
 }

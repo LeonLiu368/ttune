@@ -5,7 +5,8 @@ from pathlib import Path
 import pytest
 
 from scraper.__main__ import main
-from scraper.check import PE_ROOT, PolicyEngine, compare_eitc, compare_medicaid, compare_sua
+from scraper.check import (PE_ROOT, PolicyEngine, compare_cola, compare_eitc, compare_fpg, compare_medicaid,
+                           compare_sua)
 from scraper.extract import Row
 
 PE_FILES = {
@@ -83,6 +84,14 @@ brackets:
       2018-01-01: 0.1598
 """,
     "irs/credits/eitc/phase_out/max_investment_income.yaml": "values:\n  2026-01-01: 12_200\n",
+    "hhs/fpg.yaml": "first_person:\n  CONTIGUOUS_US:\n    2025-01-01: 15_650\n    2026-01-01: 15_960\n"
+                    "additional_person:\n  CONTIGUOUS_US:\n    2026-01-01: 5_680\n",
+    "usda/snap/max_allotment.yaml": "main:\n  CONTIGUOUS_US:\n    1:\n      2025-10-01: 298\n      2026-10-01: 306\n"
+                                    "additional:\n  CONTIGUOUS_US:\n    2026-10-01: 225\n",
+    "usda/snap/income/deductions/excess_shelter_expense/cap.yaml":
+        "AK_URBAN:\n  2026-10-01: 1_229\nHI:\n  2026-10-01: 1_036\n",
+    "usda/snap/income/deductions/excess_shelter_expense/homeless/deduction.yaml": "values:\n  2025-10-01: 198.99\n",
+    "usda/snap/income/limit/gross.yaml": "values:\n  2005-01-01: 1.3\n",
 }
 COLUMNS = ["source_id", "snapshot", *(f.name for f in fields(Row))]
 
@@ -209,3 +218,45 @@ def test_cli_writes_reports_and_summary(data_dir, capsys):
 
 def test_cli_rejects_source_without_comparison(data_dir, capsys):
     assert main(["--data-dir", str(data_dir), "check", "--source", "irs-form-w2"]) == 2
+
+
+def test_fpg_compares_each_size_with_first_plus_additional(pe):
+    rows = [
+        row("h", "fpg", "guideline", "CONTIGUOUS_US", "33000.0", "4 ... 33,000", "usd_per_year", size="4", period="2026"),
+        row("h", "fpg", "guideline", "CONTIGUOUS_US", "33100.0", "4 ... 33,100", "usd_per_year", size="4", period="2026"),
+        row("h", "fpg", "additional_person", "CONTIGUOUS_US", "5680.0", "add $5,680", "usd_per_year", period="2026"),
+        row("h", "fpg", "first_person", "AK", "19950.0", "1 ... $19,950", "usd_per_year", period="2026"),
+    ]
+
+    results = compare_fpg(rows, pe)
+
+    assert [r.status for r in results] == ["match", "differ", "match", "missing in PolicyEngine"]
+    assert results[1].policyengine == "33000"
+
+
+def test_cola_maps_regions_periods_and_derived_income_limits(pe):
+    rows = [
+        row("c", "snap", "max_allotment", "CONTIGUOUS_US", "306.0", "1 $306", size="1", period="FY2027"),
+        row("c", "snap", "max_allotment.additional_person", "CONTIGUOUS_US", "225.0", "$225 per", period="FY2027"),
+        row("c", "snap", "excess_shelter_deduction.cap", "AK", "1229.0", "$1,229", period="FY2027"),
+        row("c", "snap", "excess_shelter_deduction.cap", "HI", "1306.0", "$1,306", period="FY2027"),
+        row("c", "snap", "homeless_shelter_deduction", "VI", "205.66", "$205.66", period="FY2027"),
+        # 1.3 × $15,960 ÷ 12 = $1,728.99 → $1,729; 1.3 × $5,680 ÷ 12 = $615.33 → $616
+        row("c", "snap", "income_limit.gross", "CONTIGUOUS_US", "1729.0", "1 $1,729", size="1", period="FY2027"),
+        row("c", "snap", "income_limit.gross.additional_person", "CONTIGUOUS_US", "616.0", "$616", period="FY2027"),
+        row("c", "snap", "income_limit.gross_separate_elderly", "CONTIGUOUS_US", "2195.0", "$2,195", size="1",
+            period="FY2027"),
+    ]
+
+    results = compare_cola(rows, pe)
+
+    assert [r.status for r in results] == ["match", "match", "match", "differ", "differ", "match", "match",
+                                           "missing in PolicyEngine"]
+    assert results[3].policyengine == "1036"
+    assert results[4].policyengine == "198.99"
+
+
+def test_medicaid_uses_the_date_the_source_states(pe):
+    rows = [row("m", "medicaid", "income_limit.expansion_adult", "DC", "210.0", "210%", "pct_fpl", period="2023-12-01")]
+
+    assert compare_medicaid(rows, pe)[0].status == "match"  # 2.15 until 2026, then 1.38

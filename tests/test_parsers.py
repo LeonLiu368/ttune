@@ -1,9 +1,10 @@
+import re
 from pathlib import Path
 
 import pytest
 
 from scraper.extract import ParseError
-from scraper.parsers import irs_eitc, snap_sua
+from scraper.parsers import hhs_fpg, irs_eitc, medicaid_current, snap_cola, snap_sua
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -135,3 +136,93 @@ def test_eitc_rejects_row_with_missing_amount():
     pages = [p.replace("$4,427 $7,316 $8,231 $664", "$4,427 $7,316 $8,231") for p in eitc_pages()]
     with pytest.raises(ParseError, match="expected 4 amounts"):
         irs_eitc.parse_pages(pages)
+
+
+def fpg_text():
+    return (FIXTURES / "fpg_2026_notice.txt").read_text()
+
+
+def test_fpg_reads_all_three_tables():
+    rows = hhs_fpg.parse_text(fpg_text())
+    assert len(rows) == 30
+    assert {r.period for r in rows} == {"2026"}
+    assert pick(rows, "guideline", "CONTIGUOUS_US", 1).value == 15960.0
+    assert pick(rows, "guideline", "CONTIGUOUS_US", 4).value == 33000.0
+    assert pick(rows, "guideline", "AK", 8).value == 69650.0
+    assert pick(rows, "guideline", "HI", 3).value == 31420.0
+    assert pick(rows, "first_person", "HI").value == 18360.0
+    assert pick(rows, "additional_person", "AK").value == 7100.0
+
+
+def test_fpg_rejects_missing_table_or_row():
+    with pytest.raises(ParseError, match="expected 3 poverty guideline tables"):
+        hhs_fpg.parse_text(fpg_text().replace("Guidelines for Hawaii", "Guidelines for Elsewhere"))
+    with pytest.raises(ParseError, match="expected sizes 1-8"):
+        hhs_fpg.parse_text(re.sub(r"^8\.+\s+69,650$", "8 lots", fpg_text(), flags=re.M))
+
+
+def cola(name):
+    return (FIXTURES / name).read_text()
+
+
+def test_cola_reads_allotments_deductions_and_asset_limits():
+    rows = snap_cola.parse_allotments(cola("snap_fy27_allotments.txt"))
+    assert {r.period for r in rows} == {"FY2027"}
+    assert pick(rows, "max_allotment", "CONTIGUOUS_US", 1).value == 306.0
+    assert pick(rows, "max_allotment", "AK_RURAL_2", 8).value == 3650.0
+    assert pick(rows, "max_allotment", "VI", 4).value == 1315.0
+    assert pick(rows, "max_allotment.additional_person", "HI").value == 364.0
+    assert pick(rows, "standard_deduction", "GU", 6).value == 614.0
+    assert pick(rows, "standard_deduction", "CONTIGUOUS_US", 4).value == 229.0
+    assert pick(rows, "excess_shelter_deduction.cap", "AK").value == 1229.0
+    assert pick(rows, "homeless_shelter_deduction", "VI").value == 205.66
+    assert pick(rows, "asset_limit.elderly_disabled", "").value == 4750.0
+    assert pick(rows, "asset_limit.standard", "").value == 3000.0
+
+
+def test_cola_reads_income_standards():
+    rows = snap_cola.parse_income_standards(cola("snap_fy27_income_standards.txt"))
+    assert pick(rows, "income_limit.net", "CONTIGUOUS_US", 1).value == 1330.0
+    assert pick(rows, "income_limit.gross", "AK", 4).value == 4469.0
+    assert pick(rows, "income_limit.gross", "HI", 8).value == 6941.0
+    assert pick(rows, "income_limit.gross.additional_person", "CONTIGUOUS_US").value == 616.0
+    assert pick(rows, "income_limit.gross_separate_elderly.additional_person", "HI").value == 898.0
+
+
+def test_cola_rejects_short_rows_and_missing_sections():
+    with pytest.raises(ParseError, match="expected 7 amounts"):
+        snap_cola.parse_allotments(cola("snap_fy27_allotments.txt").replace("$1,841 $2,352", "$1,841"))
+    with pytest.raises(ParseError, match="no 'Table 2: Standard Deductions' section"):
+        snap_cola.parse_allotments(cola("snap_fy27_allotments.txt").replace("Table 2: Standard", "Table 2: Other"))
+    with pytest.raises(ParseError, match="no 'Fiscal Year"):
+        snap_cola.parse_income_standards(cola("snap_fy27_income_standards.txt").replace("(FY) 2027", "2027"))
+
+
+def medicaid_html():
+    return (FIXTURES / "medicaid_levels_current_sample.html").read_text()
+
+
+def test_medicaid_current_reads_table_date_and_footnoted_values():
+    with pytest.raises(ParseError, match="expected 51 states"):
+        medicaid_current.parse_html(medicaid_html())
+    rows = medicaid_current.parse_html(medicaid_html(), min_states=5)
+    assert {r.period for r in rows} == {"2023-12-01"}
+    assert pick(rows, "income_limit.infant", "AL").value == 141.0
+    assert pick(rows, "income_limit.expansion_adult", "AL").value is None  # "No"
+    alaska = pick(rows, "income_limit.parent", "AK")  # "130%($)"; footnote 5 dropped from "Alaska"
+    assert (alaska.value, alaska.raw) == (130.0, "130%($)")
+    assert "dollar amounts" in pick(rows, "income_limit.parent.note", "AK").raw
+    assert pick(rows, "income_limit.child", "DE").value == 212.0
+    assert pick(rows, "income_limit.child.note", "DE").raw == "ages 1 up to 19"
+    assert pick(rows, "income_limit.child", "CA").value is None  # "See note"
+    wisconsin = pick(rows, "income_limit.expansion_adult", "WI")
+    assert (wisconsin.value, wisconsin.raw) == (None, "No/95%")
+
+
+def test_medicaid_current_rejects_changed_columns_and_values():
+    with pytest.raises(ParseError, match="columns changed"):
+        medicaid_current.parse_html(medicaid_html().replace("Pregnant Women Medicaid", "Pregnant People"), min_states=5)
+    with pytest.raises(ParseError, match="can't read 'lots'"):
+        medicaid_current.parse_html(medicaid_html().replace("<td>141%</td>", "<td>lots</td>", 1), min_states=5)
+    with pytest.raises(ParseError, match="no 'as of <date>'"):
+        medicaid_current.parse_html(medicaid_html().replace("as of December 1, 2023", "recently"), min_states=5)

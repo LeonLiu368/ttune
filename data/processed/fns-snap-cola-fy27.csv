@@ -1,0 +1,187 @@
+source_id,snapshot,program,parameter,region,value,unit,raw,location,household_size,period
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,CONTIGUOUS_US,306.0,usd_per_month,1 $306 $392 $499 $608 $452 $496 $394,Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_URBAN,392.0,usd_per_month,1 $306 $392 $499 $608 $452 $496 $394,Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_1,499.0,usd_per_month,1 $306 $392 $499 $608 $452 $496 $394,Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_2,608.0,usd_per_month,1 $306 $392 $499 $608 $452 $496 $394,Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,GU,452.0,usd_per_month,1 $306 $392 $499 $608 $452 $496 $394,Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,HI,496.0,usd_per_month,1 $306 $392 $499 $608 $452 $496 $394,Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,VI,394.0,usd_per_month,1 $306 $392 $499 $608 $452 $496 $394,Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,CONTIGUOUS_US,562.0,usd_per_month,"2 $562 $718 $916 $1,115 $829 $910 $723",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_URBAN,718.0,usd_per_month,"2 $562 $718 $916 $1,115 $829 $910 $723",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_1,916.0,usd_per_month,"2 $562 $718 $916 $1,115 $829 $910 $723",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_2,1115.0,usd_per_month,"2 $562 $718 $916 $1,115 $829 $910 $723",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,GU,829.0,usd_per_month,"2 $562 $718 $916 $1,115 $829 $910 $723",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,HI,910.0,usd_per_month,"2 $562 $718 $916 $1,115 $829 $910 $723",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,VI,723.0,usd_per_month,"2 $562 $718 $916 $1,115 $829 $910 $723",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,CONTIGUOUS_US,808.0,usd_per_month,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_URBAN,1032.0,usd_per_month,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_1,1316.0,usd_per_month,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_2,1602.0,usd_per_month,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,GU,1191.0,usd_per_month,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,HI,1307.0,usd_per_month,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,VI,1039.0,usd_per_month,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,CONTIGUOUS_US,1023.0,usd_per_month,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_URBAN,1306.0,usd_per_month,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_1,1666.0,usd_per_month,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_2,2027.0,usd_per_month,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,GU,1507.0,usd_per_month,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,HI,1655.0,usd_per_month,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,VI,1315.0,usd_per_month,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,CONTIGUOUS_US,1217.0,usd_per_month,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_URBAN,1555.0,usd_per_month,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_1,1982.0,usd_per_month,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_2,2413.0,usd_per_month,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,GU,1794.0,usd_per_month,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,HI,1969.0,usd_per_month,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,VI,1565.0,usd_per_month,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,CONTIGUOUS_US,1463.0,usd_per_month,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_URBAN,1868.0,usd_per_month,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_1,2382.0,usd_per_month,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_2,2900.0,usd_per_month,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,GU,2156.0,usd_per_month,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,HI,2367.0,usd_per_month,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,VI,1880.0,usd_per_month,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,CONTIGUOUS_US,1616.0,usd_per_month,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_URBAN,2064.0,usd_per_month,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_1,2632.0,usd_per_month,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_2,3204.0,usd_per_month,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,GU,2382.0,usd_per_month,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,HI,2615.0,usd_per_month,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,VI,2078.0,usd_per_month,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,CONTIGUOUS_US,1841.0,usd_per_month,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_URBAN,2352.0,usd_per_month,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_1,2999.0,usd_per_month,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,AK_RURAL_2,3650.0,usd_per_month,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,GU,2714.0,usd_per_month,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,HI,2979.0,usd_per_month,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment,VI,2367.0,usd_per_month,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment.additional_person,CONTIGUOUS_US,225.0,usd_per_month,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,"Table 1, sizes 9-17",,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment.additional_person,AK_URBAN,287.0,usd_per_month,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,"Table 1, sizes 9-17",,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment.additional_person,AK_RURAL_1,366.0,usd_per_month,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,"Table 1, sizes 9-17",,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment.additional_person,AK_RURAL_2,446.0,usd_per_month,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,"Table 1, sizes 9-17",,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment.additional_person,GU,331.0,usd_per_month,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,"Table 1, sizes 9-17",,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment.additional_person,HI,364.0,usd_per_month,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,"Table 1, sizes 9-17",,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,max_allotment.additional_person,VI,289.0,usd_per_month,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,"Table 1, sizes 9-17",,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,CONTIGUOUS_US,217.0,usd_per_month,1 $217 $371 $435 $306 $191,Table 2,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,AK,371.0,usd_per_month,1 $217 $371 $435 $306 $191,Table 2,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,GU,435.0,usd_per_month,1 $217 $371 $435 $306 $191,Table 2,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,HI,306.0,usd_per_month,1 $217 $371 $435 $306 $191,Table 2,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,VI,191.0,usd_per_month,1 $217 $371 $435 $306 $191,Table 2,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,CONTIGUOUS_US,217.0,usd_per_month,2 $217 $371 $435 $306 $191,Table 2,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,AK,371.0,usd_per_month,2 $217 $371 $435 $306 $191,Table 2,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,GU,435.0,usd_per_month,2 $217 $371 $435 $306 $191,Table 2,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,HI,306.0,usd_per_month,2 $217 $371 $435 $306 $191,Table 2,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,VI,191.0,usd_per_month,2 $217 $371 $435 $306 $191,Table 2,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,CONTIGUOUS_US,217.0,usd_per_month,3 $217 $371 $435 $306 $191,Table 2,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,AK,371.0,usd_per_month,3 $217 $371 $435 $306 $191,Table 2,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,GU,435.0,usd_per_month,3 $217 $371 $435 $306 $191,Table 2,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,HI,306.0,usd_per_month,3 $217 $371 $435 $306 $191,Table 2,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,VI,191.0,usd_per_month,3 $217 $371 $435 $306 $191,Table 2,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,CONTIGUOUS_US,229.0,usd_per_month,4 $229 $371 $457 $306 $229,Table 2,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,AK,371.0,usd_per_month,4 $229 $371 $457 $306 $229,Table 2,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,GU,457.0,usd_per_month,4 $229 $371 $457 $306 $229,Table 2,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,HI,306.0,usd_per_month,4 $229 $371 $457 $306 $229,Table 2,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,VI,229.0,usd_per_month,4 $229 $371 $457 $306 $229,Table 2,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,CONTIGUOUS_US,268.0,usd_per_month,5 $268 $371 $536 $309 $268,Table 2,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,AK,371.0,usd_per_month,5 $268 $371 $536 $309 $268,Table 2,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,GU,536.0,usd_per_month,5 $268 $371 $536 $309 $268,Table 2,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,HI,309.0,usd_per_month,5 $268 $371 $536 $309 $268,Table 2,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,VI,268.0,usd_per_month,5 $268 $371 $536 $309 $268,Table 2,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,CONTIGUOUS_US,308.0,usd_per_month,6+ $308 $385 $614 $354 $308,Table 2,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,AK,385.0,usd_per_month,6+ $308 $385 $614 $354 $308,Table 2,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,GU,614.0,usd_per_month,6+ $308 $385 $614 $354 $308,Table 2,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,HI,354.0,usd_per_month,6+ $308 $385 $614 $354 $308,Table 2,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,standard_deduction,VI,308.0,usd_per_month,6+ $308 $385 $614 $354 $308,Table 2,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,excess_shelter_deduction.cap,CONTIGUOUS_US,769.0,usd_per_month,"$769 $1,229 $903 $1,306 $606",Table 3,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,excess_shelter_deduction.cap,AK,1229.0,usd_per_month,"$769 $1,229 $903 $1,306 $606",Table 3,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,excess_shelter_deduction.cap,GU,903.0,usd_per_month,"$769 $1,229 $903 $1,306 $606",Table 3,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,excess_shelter_deduction.cap,HI,1306.0,usd_per_month,"$769 $1,229 $903 $1,306 $606",Table 3,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,excess_shelter_deduction.cap,VI,606.0,usd_per_month,"$769 $1,229 $903 $1,306 $606",Table 3,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,homeless_shelter_deduction,CONTIGUOUS_US,205.66,usd_per_month,$205.66 $205.66 $205.66 $205.66 $205.66,Table 4,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,homeless_shelter_deduction,AK,205.66,usd_per_month,$205.66 $205.66 $205.66 $205.66 $205.66,Table 4,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,homeless_shelter_deduction,GU,205.66,usd_per_month,$205.66 $205.66 $205.66 $205.66 $205.66,Table 4,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,homeless_shelter_deduction,HI,205.66,usd_per_month,$205.66 $205.66 $205.66 $205.66 $205.66,Table 4,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,homeless_shelter_deduction,VI,205.66,usd_per_month,$205.66 $205.66 $205.66 $205.66 $205.66,Table 4,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,asset_limit.elderly_disabled,,4750.0,usd,"$4,750 $3,000",Maximum Asset Limits,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,asset_limit.standard,,3000.0,usd,"$4,750 $3,000",Maximum Asset Limits,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,CONTIGUOUS_US,1330.0,usd_per_month,"1 $1,330 $1,663 $1,530",Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,AK,1663.0,usd_per_month,"1 $1,330 $1,663 $1,530",Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,HI,1530.0,usd_per_month,"1 $1,330 $1,663 $1,530",Table 1,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,CONTIGUOUS_US,1804.0,usd_per_month,"2 $1,804 $2,255 $2,075",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,AK,2255.0,usd_per_month,"2 $1,804 $2,255 $2,075",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,HI,2075.0,usd_per_month,"2 $1,804 $2,255 $2,075",Table 1,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,CONTIGUOUS_US,2277.0,usd_per_month,"3 $2,277 $2,846 $2,619",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,AK,2846.0,usd_per_month,"3 $2,277 $2,846 $2,619",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,HI,2619.0,usd_per_month,"3 $2,277 $2,846 $2,619",Table 1,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,CONTIGUOUS_US,2750.0,usd_per_month,"4 $2,750 $3,438 $3,163",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,AK,3438.0,usd_per_month,"4 $2,750 $3,438 $3,163",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,HI,3163.0,usd_per_month,"4 $2,750 $3,438 $3,163",Table 1,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,CONTIGUOUS_US,3224.0,usd_per_month,"5 $3,224 $4,030 $3,707",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,AK,4030.0,usd_per_month,"5 $3,224 $4,030 $3,707",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,HI,3707.0,usd_per_month,"5 $3,224 $4,030 $3,707",Table 1,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,CONTIGUOUS_US,3697.0,usd_per_month,"6 $3,697 $4,621 $4,251",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,AK,4621.0,usd_per_month,"6 $3,697 $4,621 $4,251",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,HI,4251.0,usd_per_month,"6 $3,697 $4,621 $4,251",Table 1,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,CONTIGUOUS_US,4170.0,usd_per_month,"7 $4,170 $5,213 $4,795",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,AK,5213.0,usd_per_month,"7 $4,170 $5,213 $4,795",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,HI,4795.0,usd_per_month,"7 $4,170 $5,213 $4,795",Table 1,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,CONTIGUOUS_US,4644.0,usd_per_month,"8 $4,644 $5,805 $5,340",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,AK,5805.0,usd_per_month,"8 $4,644 $5,805 $5,340",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net,HI,5340.0,usd_per_month,"8 $4,644 $5,805 $5,340",Table 1,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net.additional_person,CONTIGUOUS_US,474.0,usd_per_month,Each Additional Member $474 $592 $545,Table 1,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net.additional_person,AK,592.0,usd_per_month,Each Additional Member $474 $592 $545,Table 1,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.net.additional_person,HI,545.0,usd_per_month,Each Additional Member $474 $592 $545,Table 1,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,CONTIGUOUS_US,1729.0,usd_per_month,"1 $1,729 $2,162 $1,989",Table 2,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,AK,2162.0,usd_per_month,"1 $1,729 $2,162 $1,989",Table 2,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,HI,1989.0,usd_per_month,"1 $1,729 $2,162 $1,989",Table 2,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,CONTIGUOUS_US,2345.0,usd_per_month,"2 $2,345 $2,931 $2,697",Table 2,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,AK,2931.0,usd_per_month,"2 $2,345 $2,931 $2,697",Table 2,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,HI,2697.0,usd_per_month,"2 $2,345 $2,931 $2,697",Table 2,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,CONTIGUOUS_US,2960.0,usd_per_month,"3 $2,960 $3,700 $3,404",Table 2,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,AK,3700.0,usd_per_month,"3 $2,960 $3,700 $3,404",Table 2,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,HI,3404.0,usd_per_month,"3 $2,960 $3,700 $3,404",Table 2,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,CONTIGUOUS_US,3575.0,usd_per_month,"4 $3,575 $4,469 $4,112",Table 2,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,AK,4469.0,usd_per_month,"4 $3,575 $4,469 $4,112",Table 2,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,HI,4112.0,usd_per_month,"4 $3,575 $4,469 $4,112",Table 2,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,CONTIGUOUS_US,4191.0,usd_per_month,"5 $4,191 $5,238 $4,819",Table 2,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,AK,5238.0,usd_per_month,"5 $4,191 $5,238 $4,819",Table 2,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,HI,4819.0,usd_per_month,"5 $4,191 $5,238 $4,819",Table 2,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,CONTIGUOUS_US,4806.0,usd_per_month,"6 $4,806 $6,008 $5,527",Table 2,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,AK,6008.0,usd_per_month,"6 $4,806 $6,008 $5,527",Table 2,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,HI,5527.0,usd_per_month,"6 $4,806 $6,008 $5,527",Table 2,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,CONTIGUOUS_US,5421.0,usd_per_month,"7 $5,421 $6,777 $6,234",Table 2,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,AK,6777.0,usd_per_month,"7 $5,421 $6,777 $6,234",Table 2,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,HI,6234.0,usd_per_month,"7 $5,421 $6,777 $6,234",Table 2,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,CONTIGUOUS_US,6037.0,usd_per_month,"8 $6,037 $7,546 $6,941",Table 2,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,AK,7546.0,usd_per_month,"8 $6,037 $7,546 $6,941",Table 2,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross,HI,6941.0,usd_per_month,"8 $6,037 $7,546 $6,941",Table 2,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross.additional_person,CONTIGUOUS_US,616.0,usd_per_month,Each Additional Member $616 $770 $708 ,Table 2,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross.additional_person,AK,770.0,usd_per_month,Each Additional Member $616 $770 $708 ,Table 2,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross.additional_person,HI,708.0,usd_per_month,Each Additional Member $616 $770 $708 ,Table 2,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,CONTIGUOUS_US,2195.0,usd_per_month,"1 $2,195 $2,744 $2,525",Table 3,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,AK,2744.0,usd_per_month,"1 $2,195 $2,744 $2,525",Table 3,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,HI,2525.0,usd_per_month,"1 $2,195 $2,744 $2,525",Table 3,1,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,CONTIGUOUS_US,2976.0,usd_per_month,"2 $2,976 $3,720 $3,423",Table 3,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,AK,3720.0,usd_per_month,"2 $2,976 $3,720 $3,423",Table 3,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,HI,3423.0,usd_per_month,"2 $2,976 $3,720 $3,423",Table 3,2,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,CONTIGUOUS_US,3757.0,usd_per_month,"3 $3,757 $4,696 $4,321",Table 3,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,AK,4696.0,usd_per_month,"3 $3,757 $4,696 $4,321",Table 3,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,HI,4321.0,usd_per_month,"3 $3,757 $4,696 $4,321",Table 3,3,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,CONTIGUOUS_US,4538.0,usd_per_month,"4 $4,538 $5,672 $5,219",Table 3,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,AK,5672.0,usd_per_month,"4 $4,538 $5,672 $5,219",Table 3,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,HI,5219.0,usd_per_month,"4 $4,538 $5,672 $5,219",Table 3,4,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,CONTIGUOUS_US,5319.0,usd_per_month,"5 $5,319 $6,649 $6,116",Table 3,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,AK,6649.0,usd_per_month,"5 $5,319 $6,649 $6,116",Table 3,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,HI,6116.0,usd_per_month,"5 $5,319 $6,649 $6,116",Table 3,5,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,CONTIGUOUS_US,6100.0,usd_per_month,"6 $6,100 $7,625 $7,014",Table 3,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,AK,7625.0,usd_per_month,"6 $6,100 $7,625 $7,014",Table 3,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,HI,7014.0,usd_per_month,"6 $6,100 $7,625 $7,014",Table 3,6,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,CONTIGUOUS_US,6881.0,usd_per_month,"7 $6,881 $8,601 $7,912",Table 3,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,AK,8601.0,usd_per_month,"7 $6,881 $8,601 $7,912",Table 3,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,HI,7912.0,usd_per_month,"7 $6,881 $8,601 $7,912",Table 3,7,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,CONTIGUOUS_US,7662.0,usd_per_month,"8 $7,662 $9,577 $8,810",Table 3,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,AK,9577.0,usd_per_month,"8 $7,662 $9,577 $8,810",Table 3,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly,HI,8810.0,usd_per_month,"8 $7,662 $9,577 $8,810",Table 3,8,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly.additional_person,CONTIGUOUS_US,781.0,usd_per_month,Each Additional $781 $977 $898 ,Table 3,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly.additional_person,AK,977.0,usd_per_month,Each Additional $781 $977 $898 ,Table 3,,FY2027
+fns-snap-cola-fy27,raw/fns-snap-cola-fy27/2026-10-21,snap,income_limit.gross_separate_elderly.additional_person,HI,898.0,usd_per_month,Each Additional $781 $977 $898 ,Table 3,,FY2027

@@ -1,0 +1,187 @@
+source_id,parameter,region,household_size,period,official,policyengine,status,policyengine_file,note
+fns-snap-cola-fy27,max_allotment,CONTIGUOUS_US,1,FY2027,1 $306 $392 $499 $608 $452 $496 $394,306,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_URBAN,1,FY2027,1 $306 $392 $499 $608 $452 $496 $394,392,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_1,1,FY2027,1 $306 $392 $499 $608 $452 $496 $394,499,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_2,1,FY2027,1 $306 $392 $499 $608 $452 $496 $394,608,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,GU,1,FY2027,1 $306 $392 $499 $608 $452 $496 $394,452,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,HI,1,FY2027,1 $306 $392 $499 $608 $452 $496 $394,496,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,VI,1,FY2027,1 $306 $392 $499 $608 $452 $496 $394,394,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,CONTIGUOUS_US,2,FY2027,"2 $562 $718 $916 $1,115 $829 $910 $723",562,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_URBAN,2,FY2027,"2 $562 $718 $916 $1,115 $829 $910 $723",718,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_1,2,FY2027,"2 $562 $718 $916 $1,115 $829 $910 $723",916,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_2,2,FY2027,"2 $562 $718 $916 $1,115 $829 $910 $723",1115,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,GU,2,FY2027,"2 $562 $718 $916 $1,115 $829 $910 $723",829,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,HI,2,FY2027,"2 $562 $718 $916 $1,115 $829 $910 $723",910,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,VI,2,FY2027,"2 $562 $718 $916 $1,115 $829 $910 $723",723,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,CONTIGUOUS_US,3,FY2027,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",808,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_URBAN,3,FY2027,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",1032,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_1,3,FY2027,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",1316,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_2,3,FY2027,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",1602,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,GU,3,FY2027,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",1191,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,HI,3,FY2027,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",1307,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,VI,3,FY2027,"3 $808 $1,032 $1,316 $1,602 $1,191 $1,307 $1,039",1039,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,CONTIGUOUS_US,4,FY2027,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",1023,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_URBAN,4,FY2027,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",1306,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_1,4,FY2027,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",1666,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_2,4,FY2027,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",2027,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,GU,4,FY2027,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",1507,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,HI,4,FY2027,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",1655,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,VI,4,FY2027,"4 $1,023 $1,306 $1,666 $2,027 $1,507 $1,655 $1,315",1315,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,CONTIGUOUS_US,5,FY2027,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",1217,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_URBAN,5,FY2027,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",1555,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_1,5,FY2027,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",1982,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_2,5,FY2027,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",2413,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,GU,5,FY2027,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",1794,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,HI,5,FY2027,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",1969,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,VI,5,FY2027,"5 $1,217 $1,555 $1,982 $2,413 $1,794 $1,969 $1,565",1565,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,CONTIGUOUS_US,6,FY2027,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",1463,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_URBAN,6,FY2027,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",1868,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_1,6,FY2027,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",2382,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_2,6,FY2027,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",2900,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,GU,6,FY2027,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",2156,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,HI,6,FY2027,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",2367,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,VI,6,FY2027,"6 $1,463 $1,868 $2,382 $2,900 $2,156 $2,367 $1,880",1880,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,CONTIGUOUS_US,7,FY2027,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",1616,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_URBAN,7,FY2027,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",2064,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_1,7,FY2027,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",2632,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_2,7,FY2027,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",3204,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,GU,7,FY2027,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",2382,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,HI,7,FY2027,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",2615,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,VI,7,FY2027,"7 $1,616 $2,064 $2,632 $3,204 $2,382 $2,615 $2,078",2078,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,CONTIGUOUS_US,8,FY2027,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",1841,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_URBAN,8,FY2027,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",2352,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_1,8,FY2027,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",2999,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,AK_RURAL_2,8,FY2027,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",3650,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,GU,8,FY2027,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",2714,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,HI,8,FY2027,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",2979,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment,VI,8,FY2027,"8 $1,841 $2,352 $2,999 $3,650 $2,714 $2,979 $2,367",2367,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment.additional_person,CONTIGUOUS_US,,FY2027,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,225,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment.additional_person,AK_URBAN,,FY2027,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,287,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment.additional_person,AK_RURAL_1,,FY2027,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,366,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment.additional_person,AK_RURAL_2,,FY2027,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,446,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment.additional_person,GU,,FY2027,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,331,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment.additional_person,HI,,FY2027,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,364,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,max_allotment.additional_person,VI,,FY2027,$225 per $287 per $366 per $446 per $331 per $364 per $289 per,289,match,usda/snap/max_allotment.yaml,
+fns-snap-cola-fy27,standard_deduction,CONTIGUOUS_US,1,FY2027,1 $217 $371 $435 $306 $191,217,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,AK,1,FY2027,1 $217 $371 $435 $306 $191,371,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,GU,1,FY2027,1 $217 $371 $435 $306 $191,435,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,HI,1,FY2027,1 $217 $371 $435 $306 $191,306,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,VI,1,FY2027,1 $217 $371 $435 $306 $191,191,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,CONTIGUOUS_US,2,FY2027,2 $217 $371 $435 $306 $191,217,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,AK,2,FY2027,2 $217 $371 $435 $306 $191,371,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,GU,2,FY2027,2 $217 $371 $435 $306 $191,435,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,HI,2,FY2027,2 $217 $371 $435 $306 $191,306,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,VI,2,FY2027,2 $217 $371 $435 $306 $191,191,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,CONTIGUOUS_US,3,FY2027,3 $217 $371 $435 $306 $191,217,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,AK,3,FY2027,3 $217 $371 $435 $306 $191,371,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,GU,3,FY2027,3 $217 $371 $435 $306 $191,435,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,HI,3,FY2027,3 $217 $371 $435 $306 $191,306,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,VI,3,FY2027,3 $217 $371 $435 $306 $191,191,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,CONTIGUOUS_US,4,FY2027,4 $229 $371 $457 $306 $229,229,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,AK,4,FY2027,4 $229 $371 $457 $306 $229,371,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,GU,4,FY2027,4 $229 $371 $457 $306 $229,457,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,HI,4,FY2027,4 $229 $371 $457 $306 $229,306,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,VI,4,FY2027,4 $229 $371 $457 $306 $229,229,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,CONTIGUOUS_US,5,FY2027,5 $268 $371 $536 $309 $268,268,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,AK,5,FY2027,5 $268 $371 $536 $309 $268,371,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,GU,5,FY2027,5 $268 $371 $536 $309 $268,536,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,HI,5,FY2027,5 $268 $371 $536 $309 $268,309,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,VI,5,FY2027,5 $268 $371 $536 $309 $268,268,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,CONTIGUOUS_US,6,FY2027,6+ $308 $385 $614 $354 $308,308,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,AK,6,FY2027,6+ $308 $385 $614 $354 $308,385,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,GU,6,FY2027,6+ $308 $385 $614 $354 $308,614,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,HI,6,FY2027,6+ $308 $385 $614 $354 $308,354,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,standard_deduction,VI,6,FY2027,6+ $308 $385 $614 $354 $308,308,match,usda/snap/income/deductions/standard.yaml,
+fns-snap-cola-fy27,excess_shelter_deduction.cap,CONTIGUOUS_US,,FY2027,"$769 $1,229 $903 $1,306 $606",769,match,usda/snap/income/deductions/excess_shelter_expense/cap.yaml,
+fns-snap-cola-fy27,excess_shelter_deduction.cap,AK,,FY2027,"$769 $1,229 $903 $1,306 $606",1229,match,usda/snap/income/deductions/excess_shelter_expense/cap.yaml,
+fns-snap-cola-fy27,excess_shelter_deduction.cap,GU,,FY2027,"$769 $1,229 $903 $1,306 $606",903,match,usda/snap/income/deductions/excess_shelter_expense/cap.yaml,
+fns-snap-cola-fy27,excess_shelter_deduction.cap,HI,,FY2027,"$769 $1,229 $903 $1,306 $606",1036,differ,usda/snap/income/deductions/excess_shelter_expense/cap.yaml,
+fns-snap-cola-fy27,excess_shelter_deduction.cap,VI,,FY2027,"$769 $1,229 $903 $1,306 $606",606,match,usda/snap/income/deductions/excess_shelter_expense/cap.yaml,
+fns-snap-cola-fy27,homeless_shelter_deduction,CONTIGUOUS_US,,FY2027,$205.66 $205.66 $205.66 $205.66 $205.66,205.66,match,usda/snap/income/deductions/excess_shelter_expense/homeless/deduction.yaml,one national amount
+fns-snap-cola-fy27,homeless_shelter_deduction,AK,,FY2027,$205.66 $205.66 $205.66 $205.66 $205.66,205.66,match,usda/snap/income/deductions/excess_shelter_expense/homeless/deduction.yaml,one national amount
+fns-snap-cola-fy27,homeless_shelter_deduction,GU,,FY2027,$205.66 $205.66 $205.66 $205.66 $205.66,205.66,match,usda/snap/income/deductions/excess_shelter_expense/homeless/deduction.yaml,one national amount
+fns-snap-cola-fy27,homeless_shelter_deduction,HI,,FY2027,$205.66 $205.66 $205.66 $205.66 $205.66,205.66,match,usda/snap/income/deductions/excess_shelter_expense/homeless/deduction.yaml,one national amount
+fns-snap-cola-fy27,homeless_shelter_deduction,VI,,FY2027,$205.66 $205.66 $205.66 $205.66 $205.66,205.66,match,usda/snap/income/deductions/excess_shelter_expense/homeless/deduction.yaml,one national amount
+fns-snap-cola-fy27,asset_limit.elderly_disabled,,,FY2027,"$4,750 $3,000",4750,match,usda/snap/asset_test/limit.yaml,
+fns-snap-cola-fy27,asset_limit.standard,,,FY2027,"$4,750 $3,000",3000,match,usda/snap/asset_test/limit.yaml,
+fns-snap-cola-fy27,income_limit.net,CONTIGUOUS_US,1,FY2027,"1 $1,330 $1,663 $1,530",1330,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,AK,1,FY2027,"1 $1,330 $1,663 $1,530",1663,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,HI,1,FY2027,"1 $1,330 $1,663 $1,530",1530,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,CONTIGUOUS_US,2,FY2027,"2 $1,804 $2,255 $2,075",1804,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,AK,2,FY2027,"2 $1,804 $2,255 $2,075",2255,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,HI,2,FY2027,"2 $1,804 $2,255 $2,075",2075,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,CONTIGUOUS_US,3,FY2027,"3 $2,277 $2,846 $2,619",2277,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,AK,3,FY2027,"3 $2,277 $2,846 $2,619",2846,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,HI,3,FY2027,"3 $2,277 $2,846 $2,619",2619,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,CONTIGUOUS_US,4,FY2027,"4 $2,750 $3,438 $3,163",2750,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,AK,4,FY2027,"4 $2,750 $3,438 $3,163",3438,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,HI,4,FY2027,"4 $2,750 $3,438 $3,163",3163,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,CONTIGUOUS_US,5,FY2027,"5 $3,224 $4,030 $3,707",3224,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,AK,5,FY2027,"5 $3,224 $4,030 $3,707",4030,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,HI,5,FY2027,"5 $3,224 $4,030 $3,707",3707,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,CONTIGUOUS_US,6,FY2027,"6 $3,697 $4,621 $4,251",3697,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,AK,6,FY2027,"6 $3,697 $4,621 $4,251",4621,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,HI,6,FY2027,"6 $3,697 $4,621 $4,251",4251,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,CONTIGUOUS_US,7,FY2027,"7 $4,170 $5,213 $4,795",4170,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,AK,7,FY2027,"7 $4,170 $5,213 $4,795",5213,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,HI,7,FY2027,"7 $4,170 $5,213 $4,795",4795,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,CONTIGUOUS_US,8,FY2027,"8 $4,644 $5,805 $5,340",4644,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,AK,8,FY2027,"8 $4,644 $5,805 $5,340",5805,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net,HI,8,FY2027,"8 $4,644 $5,805 $5,340",5340,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net.additional_person,CONTIGUOUS_US,,FY2027,Each Additional Member $474 $592 $545,474,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net.additional_person,AK,,FY2027,Each Additional Member $474 $592 $545,592,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.net.additional_person,HI,,FY2027,Each Additional Member $474 $592 $545,545,match,usda/snap/income/limit/net.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,CONTIGUOUS_US,1,FY2027,"1 $1,729 $2,162 $1,989",1729,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,AK,1,FY2027,"1 $1,729 $2,162 $1,989",2162,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,HI,1,FY2027,"1 $1,729 $2,162 $1,989",1989,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,CONTIGUOUS_US,2,FY2027,"2 $2,345 $2,931 $2,697",2345,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,AK,2,FY2027,"2 $2,345 $2,931 $2,697",2931,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,HI,2,FY2027,"2 $2,345 $2,931 $2,697",2697,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,CONTIGUOUS_US,3,FY2027,"3 $2,960 $3,700 $3,404",2960,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,AK,3,FY2027,"3 $2,960 $3,700 $3,404",3700,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,HI,3,FY2027,"3 $2,960 $3,700 $3,404",3404,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,CONTIGUOUS_US,4,FY2027,"4 $3,575 $4,469 $4,112",3575,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,AK,4,FY2027,"4 $3,575 $4,469 $4,112",4469,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,HI,4,FY2027,"4 $3,575 $4,469 $4,112",4112,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,CONTIGUOUS_US,5,FY2027,"5 $4,191 $5,238 $4,819",4191,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,AK,5,FY2027,"5 $4,191 $5,238 $4,819",5238,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,HI,5,FY2027,"5 $4,191 $5,238 $4,819",4819,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,CONTIGUOUS_US,6,FY2027,"6 $4,806 $6,008 $5,527",4806,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,AK,6,FY2027,"6 $4,806 $6,008 $5,527",6008,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,HI,6,FY2027,"6 $4,806 $6,008 $5,527",5527,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,CONTIGUOUS_US,7,FY2027,"7 $5,421 $6,777 $6,234",5421,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,AK,7,FY2027,"7 $5,421 $6,777 $6,234",6777,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,HI,7,FY2027,"7 $5,421 $6,777 $6,234",6234,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,CONTIGUOUS_US,8,FY2027,"8 $6,037 $7,546 $6,941",6037,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,AK,8,FY2027,"8 $6,037 $7,546 $6,941",7546,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross,HI,8,FY2027,"8 $6,037 $7,546 $6,941",6941,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross.additional_person,CONTIGUOUS_US,,FY2027,Each Additional Member $616 $770 $708 ,616,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross.additional_person,AK,,FY2027,Each Additional Member $616 $770 $708 ,770,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross.additional_person,HI,,FY2027,Each Additional Member $616 $770 $708 ,708,match,usda/snap/income/limit/gross.yaml × hhs/fpg.yaml,"derived: rate × poverty guideline ÷ 12, rounded up"
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,CONTIGUOUS_US,1,FY2027,"1 $2,195 $2,744 $2,525",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,AK,1,FY2027,"1 $2,195 $2,744 $2,525",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,HI,1,FY2027,"1 $2,195 $2,744 $2,525",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,CONTIGUOUS_US,2,FY2027,"2 $2,976 $3,720 $3,423",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,AK,2,FY2027,"2 $2,976 $3,720 $3,423",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,HI,2,FY2027,"2 $2,976 $3,720 $3,423",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,CONTIGUOUS_US,3,FY2027,"3 $3,757 $4,696 $4,321",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,AK,3,FY2027,"3 $3,757 $4,696 $4,321",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,HI,3,FY2027,"3 $3,757 $4,696 $4,321",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,CONTIGUOUS_US,4,FY2027,"4 $4,538 $5,672 $5,219",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,AK,4,FY2027,"4 $4,538 $5,672 $5,219",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,HI,4,FY2027,"4 $4,538 $5,672 $5,219",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,CONTIGUOUS_US,5,FY2027,"5 $5,319 $6,649 $6,116",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,AK,5,FY2027,"5 $5,319 $6,649 $6,116",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,HI,5,FY2027,"5 $5,319 $6,649 $6,116",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,CONTIGUOUS_US,6,FY2027,"6 $6,100 $7,625 $7,014",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,AK,6,FY2027,"6 $6,100 $7,625 $7,014",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,HI,6,FY2027,"6 $6,100 $7,625 $7,014",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,CONTIGUOUS_US,7,FY2027,"7 $6,881 $8,601 $7,912",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,AK,7,FY2027,"7 $6,881 $8,601 $7,912",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,HI,7,FY2027,"7 $6,881 $8,601 $7,912",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,CONTIGUOUS_US,8,FY2027,"8 $7,662 $9,577 $8,810",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,AK,8,FY2027,"8 $7,662 $9,577 $8,810",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly,HI,8,FY2027,"8 $7,662 $9,577 $8,810",,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly.additional_person,CONTIGUOUS_US,,FY2027,Each Additional $781 $977 $898 ,,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly.additional_person,AK,,FY2027,Each Additional $781 $977 $898 ,,missing in PolicyEngine,,no mapping for this item
+fns-snap-cola-fy27,income_limit.gross_separate_elderly.additional_person,HI,,FY2027,Each Additional $781 $977 $898 ,,missing in PolicyEngine,,no mapping for this item

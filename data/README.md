@@ -78,7 +78,7 @@ python -m scraper extract                      # parse latest snapshots into pro
 
 ## Extract
 
-`python -m scraper extract` runs one parser per source over its latest snapshot and writes `processed/<source-id>.csv`. Every parser emits the same columns, so the upcoming `check` step can compare any source against PolicyEngine:
+`python -m scraper extract` runs one parser per source over its latest snapshot and writes `processed/<source-id>.csv`. Every parser emits the same columns, so the `check` step can compare any source against PolicyEngine:
 
 | Column | Meaning |
 |---|---|
@@ -94,10 +94,12 @@ Parsers live in `scraper/parsers/` and are registered in `scraper/parsers/__init
 
 | Source | Parser |
 |---|---|
-| `medicaid-eligibility-levels` | done: income limits by state and category (% FPL), plus notes |
+| `medicaid-eligibility-levels-current` | done: Medicaid.gov's table of income limits by state and category (% FPL), with its "as of" date and footnoted values as notes |
+| `medicaid-eligibility-levels` | done: the same limits from the 2018 CSV (superseded), plus notes |
 | `fns-snap-sua-fy26` | done: every allowance by state, sub-state area and household size (`N or more` is recorded at size N), plus footnotes |
 | `irs-eitc-rp-25-32` | done: the EITC table by number of children (`children_3` = three or more) and the investment income limit |
-| `hhs-poverty-guidelines`, `fns-snap-cola-fy27` | not yet: written once their files are fetched; see [ROADMAP.md](../ROADMAP.md) |
+| `hhs-poverty-guidelines` | done: the guideline for sizes 1–8 and each extra person, for the 48 states and DC, Alaska and Hawaii |
+| `fns-snap-cola-fy27` | done: max allotments by SNAP region and size, standard, shelter and homeless deductions, asset limits, and the net, gross and 165% income limits |
 
 The spreadsheet and PDF parsers need `openpyxl` and `pdfplumber` (both in `requirements.txt`).
 
