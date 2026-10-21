@@ -39,6 +39,10 @@ Copied unmodified from [harbor-framework/harbor](https://github.com/laude-instit
 | [`rewardkit`](../.claude/skills/rewardkit/SKILL.md) | Writing verifiers with Reward Kit: built-in checks, custom `@criterion` functions, LLM/agent judges, multi-dimension rewards and aggregation |
 | [`publish`](../.claude/skills/publish/SKILL.md) | Publishing tasks and datasets to Harbor Hub |
 
+Also pulled in: [`plain-language`](../.claude/skills/plain-language/SKILL.md) from [surendranb/writing-skills](https://github.com/surendranb/writing-skills) (MIT): plain-English writing rules (front-load the point, sentences under 25 words, active voice, no jargon). Use it for docs, reports and task instructions.
+
+The research reports use the `exa-agent` skill from the **Exa Deep Research** plugin (Anthropic plugin directory). It needs that plugin's Exa search tools, so enable the plugin on your claude.ai account rather than copying the skill here.
+
 Harbor also ships `harbor-exec` (map-reduce over loose inputs), `create-adapter` (porting existing benchmarks) and `upload-parity-experiments`. They aren't needed yet; copy them from upstream if that changes.
 
 ## Already on my claude.ai account
