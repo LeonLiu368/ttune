@@ -1,0 +1,43 @@
+{
+  "base_url": "https://openrouter.ai/api/v1",
+  "model": "liquid/lfm-2.5-2.6b:free",
+  "prompt_hash": "99462b99b4b17c82",
+  "prompt_version": 1,
+  "run_id": "20261022-1853-liquid-lfm-2.5-2.6b-free-n10",
+  "sets": {
+    "id": {
+      "api_errors": 0,
+      "cases": 10,
+      "completion_tokens": 30000,
+      "cost_usd": 0.0,
+      "floors": {
+        "always_no": 0.1917,
+        "always_yes": 0.3714
+      },
+      "households": "data/households/id/households.jsonl",
+      "households_sha256": "f9b2b287f57822d97e7ee493b1cc938080c4092f5b65297c8e3448e96198f53a",
+      "limit": 10,
+      "malformed": 10,
+      "mean_reward": 0.0,
+      "policyengine_us": "2.50.1",
+      "prompt_tokens": 4795
+    },
+    "ood": {
+      "api_errors": 0,
+      "cases": 10,
+      "completion_tokens": 30000,
+      "cost_usd": 0.0,
+      "floors": {
+        "always_no": 0.0,
+        "always_yes": 0.4139
+      },
+      "households": "data/households/ood/households.jsonl",
+      "households_sha256": "6d5b9ab0ad860c16a41a138183763ea050323e05547fcd6d7aa8b5dfbebfc325",
+      "limit": 10,
+      "malformed": 10,
+      "mean_reward": 0.0,
+      "policyengine_us": "2.50.1",
+      "prompt_tokens": 4898
+    }
+  }
+}
