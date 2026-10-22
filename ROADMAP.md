@@ -29,8 +29,8 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
   - [x] [#2](https://github.com/LeonLiu368/ttune/issues/2) Household schema, in-distribution sampler and case text
   - [x] [#3](https://github.com/LeonLiu368/ttune/issues/3) PolicyEngine ground truth and `python -m envgen generate` (ID set of 200)
   - [x] [#4](https://github.com/LeonLiu368/ttune/issues/4) Out-of-distribution set of 200: rare shapes, threshold edges, held-out states ([data/households](data/households/README.md))
-  - [ ] [#5](https://github.com/LeonLiu368/ttune/issues/5) Eval harness: scoring, OpenRouter client, run and compare
-  - [ ] [#6](https://github.com/LeonLiu368/ttune/issues/6) Eval workflow and first ID vs OOD results (needs the `OPENROUTER_API_KEY` repo secret)
+  - [x] [#5](https://github.com/LeonLiu368/ttune/issues/5) Eval harness: scoring, OpenRouter client, run and compare ([evals/](evals/README.md); tested against a local mock server)
+  - [ ] [#6](https://github.com/LeonLiu368/ttune/issues/6) Eval workflow and first ID vs OOD results. The workflow refuses paid models unless `allow_paid` is ticked; free-model smoke runs first, paid runs only when decided
 - [ ] Messy document renderer
 - [ ] First Harbor task and reward (`benefits-task` skill)
 - [ ] Reward-hack audit (`reward-hack-audit` skill)

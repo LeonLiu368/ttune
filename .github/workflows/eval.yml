@@ -1,0 +1,108 @@
+name: Eval
+
+# Runs a model over both household sets, compares them, and opens a PR with the results.
+# Cost guard: the preflight step stops the job before any model request unless the model is free on
+# OpenRouter ($0 per token and per request), or allow_paid is ticked.
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: 'OpenRouter model id, or "free" for the first available free 3-8B instruct model'
+        required: true
+        default: "free"
+      limit:
+        description: "Households per set (blank = all 200)"
+        required: false
+        default: "10"
+      allow_paid:
+        description: "Allow a model that costs money"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: eval
+  cancel-in-progress: false
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      LIMIT: ${{ inputs.limit }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Check the model and its price (cost guard)
+        id: model
+        env:
+          MODEL: ${{ inputs.model }}
+          ALLOW_PAID: ${{ inputs.allow_paid }}
+        run: |
+          args=(--model "$MODEL" --limit "$LIMIT" --github-output "$GITHUB_OUTPUT")
+          if [ "$ALLOW_PAID" = "true" ]; then args+=(--allow-paid); fi
+          python -m evals preflight "${args[@]}"
+
+      - name: Run the ID set
+        id: run_id_set
+        continue-on-error: true
+        env:
+          MODEL: ${{ steps.model.outputs.model }}
+          RUN_ID: ${{ steps.model.outputs.run_id }}
+          FREE: ${{ steps.model.outputs.free }}
+        run: |
+          args=(--set id --model "$MODEL" --run-id "$RUN_ID")
+          if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+          # Free models are rate-limited: go slowly and retry more.
+          if [ "$FREE" = "true" ]; then args+=(--concurrency 2 --retries 8); fi
+          python -m evals run "${args[@]}" || python -m evals run "${args[@]}" --resume
+
+      - name: Run the OOD set
+        id: run_ood_set
+        if: always() && steps.model.outcome == 'success'
+        continue-on-error: true
+        env:
+          MODEL: ${{ steps.model.outputs.model }}
+          RUN_ID: ${{ steps.model.outputs.run_id }}
+          FREE: ${{ steps.model.outputs.free }}
+        run: |
+          args=(--set ood --model "$MODEL" --run-id "$RUN_ID")
+          if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+          if [ "$FREE" = "true" ]; then args+=(--concurrency 2 --retries 8); fi
+          python -m evals run "${args[@]}" || python -m evals run "${args[@]}" --resume
+
+      - name: Compare
+        id: compare
+        if: always() && steps.model.outcome == 'success'
+        env:
+          RUN_ID: ${{ steps.model.outputs.run_id }}
+        run: |
+          python -m evals compare "$RUN_ID"
+          cat "evals/results/$RUN_ID/comparison.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request
+        if: always() && steps.compare.outcome == 'success'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: eval/${{ steps.model.outputs.run_id }}
+          add-paths: evals/results/${{ steps.model.outputs.run_id }}
+          commit-message: "Eval: ${{ steps.model.outputs.model }} (${{ steps.model.outputs.run_id }})"
+          title: "Eval: ${{ steps.model.outputs.model }} (${{ steps.model.outputs.run_id }})"
+          body-path: evals/results/${{ steps.model.outputs.run_id }}/comparison.md
+          delete-branch: true
+
+      - name: Fail if a set failed
+        if: always() && (steps.run_id_set.outcome == 'failure' || steps.run_ood_set.outcome == 'failure')
+        run: |
+          echo "A set failed or has cases with no answer; see the logs above."
+          exit 1

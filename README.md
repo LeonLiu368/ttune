@@ -38,7 +38,7 @@ ttune adds what's missing:
 
 ## Data
 
-[`data/`](data/README.md) holds raw inputs for the benefits environment: PolicyEngine's rule parameters and about 1,300 example households for SNAP, WIC, EITC and Medicaid. [`data/sources.json`](data/sources.json) lists every source. The official government sources are fetched by [`scraper/`](scraper/), which runs monthly on GitHub Actions and opens a PR with new snapshots; see [data/README.md](data/README.md#scraper). [`data/households/`](data/households/README.md) holds two generated sets of 200 households, typical (ID) and unusual (OOD), each with PolicyEngine's correct answers; [`envgen/`](envgen/) generates them.
+[`data/`](data/README.md) holds raw inputs for the benefits environment: PolicyEngine's rule parameters and about 1,300 example households for SNAP, WIC, EITC and Medicaid. [`data/sources.json`](data/sources.json) lists every source. The official government sources are fetched by [`scraper/`](scraper/), which runs monthly on GitHub Actions and opens a PR with new snapshots; see [data/README.md](data/README.md#scraper). [`data/households/`](data/households/README.md) holds two generated sets of 200 households, typical (ID) and unusual (OOD), each with PolicyEngine's correct answers; [`envgen/`](envgen/) generates them, and [`evals/`](evals/README.md) scores a model on both and compares the results.
 
 ## Constraints I'm working under
 
