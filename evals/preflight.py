@@ -7,10 +7,10 @@ import httpx
 MODELS_URL = "https://openrouter.ai/api/v1/models"
 FREE = "free"
 # Small open instruct models, in order of preference, for model="free". OpenRouter's free list changes often;
-# when none of these is listed, preflight stops and prints the free models it does list.
+# when none of these is listed, preflight stops and prints the free models it does list. Some free models only
+# answer "agentic harnesses" (thinkingmachines/inkling-small:free returns 403 to plain API calls).
 FREE_PREFERENCES = (
     "google/gemma-4-26b-a4b-it:free",  # mixture of experts, about 4B parameters active per token
-    "thinkingmachines/inkling-small:free",
     "liquid/lfm-2.5-2.6b:free",
     "meta-llama/llama-3.1-8b-instruct:free",
     "qwen/qwen3-8b:free",

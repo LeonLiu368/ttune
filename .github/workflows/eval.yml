@@ -87,6 +87,10 @@ jobs:
         env:
           RUN_ID: ${{ steps.model.outputs.run_id }}
         run: |
+          if [ ! -f "evals/results/$RUN_ID/summary.json" ]; then
+            echo "No results to compare: both sets stopped before any answer (see their errors above)." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
           python -m evals compare "$RUN_ID"
           cat "evals/results/$RUN_ID/comparison.md" >> "$GITHUB_STEP_SUMMARY"
 
