@@ -70,7 +70,8 @@ def comparison_markdown(run_dir: Path) -> str:
         f"# Eval: `{summary['model']}`",
         "",
         f"Run `{summary['run_id']}` · prompt v{summary['prompt_version']} (`{summary['prompt_hash']}`) · "
-        f"answers from policyengine-us {', '.join(sorted(pe)) or '?'} · cost ${cost:.4f}",
+        f"answers from policyengine-us {', '.join(sorted(pe)) or '?'} · max tokens {summary.get('max_tokens', '?')}"
+        f"{' · reasoning effort ' + summary['reasoning_effort'] if summary.get('reasoning_effort') else ''} · cost ${cost:.4f}",
         "",
         "Changes are OOD minus ID, with 95% bootstrap intervals over households in brackets. With about 67 "
         "households per OOD family, small gaps can be noise.",
@@ -96,6 +97,9 @@ def comparison_markdown(run_dir: Path) -> str:
             f"| Malformed answers | {pct(sid['malformed'])} | {pct(sood['malformed'])} | "
             f"{change(sid['malformed'], sood['malformed'], True)} |",
         ]
+    if sid["n"] and sood["n"]:
+        cut = {k: sets.get(k, {}).get("cut_off", 0) for k in ("id", "ood")}
+        lines.append(f"| Cut off at the token limit | {cut['id']} | {cut['ood']} | |")
     floors = {k: sets.get(k, {}).get("floors", {}) for k in ("id", "ood")}
     for key, label in (("always_no", "Floor: always \"no\""), ("always_yes", "Floor: always \"yes\", $0")):
         lines.append(f"| {label} | {num(floors['id'].get(key))} | {num(floors['ood'].get(key))} | |")

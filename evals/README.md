@@ -11,6 +11,8 @@ Runs that call a model go through GitHub Actions, because openrouter.ai can't be
 | `model` | OpenRouter model id. The default is a free (`:free`) model. |
 | `limit` | Households per set. Default 10 (a smoke test); blank runs all 200. |
 | `allow_paid` | Off by default. While it's off, the job checks the model's price on OpenRouter and stops before any request unless it's $0. |
+| `max_tokens` | Reply length cap, reasoning included. Default 8,000. |
+| `reasoning_effort` | For thinking models: `none`, `minimal`, `low`, `medium` or `high`. Blank uses the model's default. |
 
 The job runs both sets and `compare`, then opens a PR with `evals/results/<run-id>/`. It needs the `OPENROUTER_API_KEY` repo secret.
 
@@ -47,7 +49,8 @@ Every run records the prompt version and a hash of its text, so results from dif
 - **Amount score.** This covers SNAP and EITC amounts when the household truly qualifies. An amount within 5% or $10 (whichever is larger) gets full credit. Credit falls to zero at 25% off.
 - **Reward.** Two-thirds eligibility plus one-third amount, or eligibility alone when neither SNAP nor the EITC applies.
 - **Malformed replies.** A reply with no readable JSON, a missing program or a wrong type scores 0. It's counted, never skipped.
-- **API failures.** A case the API never answered, even after retries, isn't the model's fault. It's listed separately and not scored.
+- **Replies cut off at the token limit.** These are malformed too, but counted separately so you can tell them apart. Thinking models can spend the whole budget reasoning and never write the answer. If many replies are cut off, raise `max_tokens` or lower `reasoning_effort`.
+- **API failures.** A case the API never answered, even after retries, isn't the model's fault. It's listed separately and not scored. If the first three cases all fail, the run stops, because the endpoint is down or rate-limited.
 
 ## Reading `comparison.md`
 

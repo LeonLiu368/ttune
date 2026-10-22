@@ -34,9 +34,11 @@ def _names(row: dict) -> dict[str, str]:
     return {m["name"]: m["id"] for m in row["household"]["members"]}
 
 
-def evaluate(row: dict, text: str) -> dict:
+def evaluate(row: dict, text: str, finish_reason: str | None = None) -> dict:
     """Parse and score one reply."""
     answer, error = parse_answer(text, _names(row))
+    if answer is None and finish_reason == "length":
+        error = f"cut off at the token limit before the answer ({error})"
     member_ids = [m["id"] for m in row["household"]["members"]]
     return {"answer": answer, "parse_error": error, "score": score(answer, row["truth"], member_ids)}
 
@@ -56,7 +58,8 @@ async def _one(client: ChatClient, index: int, row: dict) -> dict:
     except ApiError as exc:
         return {**out, "status": "api_error", "api_error": str(exc)}
     return {**out, "status": "ok", "reply": completion.text, "usage": completion.usage,
-            "attempts": completion.attempts, **evaluate(row, completion.text)}
+            "attempts": completion.attempts, "finish_reason": completion.finish_reason,
+            **evaluate(row, completion.text, completion.finish_reason)}
 
 
 GIVE_UP_AFTER = 3  # failed cases in a row, before any case succeeds: the endpoint is down or rate-limited
@@ -79,6 +82,7 @@ async def _run_all(client: ChatClient, todo: list[tuple[int, dict]], partial: Pa
 
 def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None = None, base_url: str | None = None,
         households: Path | None = None, resume: bool = False, concurrency: int = 8, retries: int = 5,
+        max_tokens: int = 8000, reasoning_effort: str | None = None,
         results_dir: Path = RESULTS_DIR, api_key: str | None = None) -> tuple[Path, dict]:
     """Run one set. Returns (run directory, that set's summary)."""
     path = households or SETS_DIR / set_ / "households.jsonl"
@@ -101,7 +105,8 @@ def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None =
     todo = [(i, row) for i, row in enumerate(rows) if row["id"] not in done]
 
     async def go() -> list[dict]:
-        kwargs = {"concurrency": concurrency, "retries": retries}
+        kwargs = {"concurrency": concurrency, "retries": retries, "max_tokens": max_tokens,
+                  "reasoning_effort": reasoning_effort}
         if base_url:
             kwargs["base_url"] = base_url
         client = ChatClient(model, api_key=api_key, **kwargs)
@@ -130,6 +135,8 @@ def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None =
         "cases": len(results),
         "api_errors": stats["api_errors"],
         "malformed": round(stats.get("malformed", 0.0) * stats["n"]),
+        "cut_off": sum(r.get("finish_reason") == "length" for r in results),
+        "reasoning_tokens": sum((u.get("completion_tokens_details") or {}).get("reasoning_tokens") or 0 for u in usage),
         "mean_reward": None if not stats["n"] else round(stats["reward"], 4),
         "prompt_tokens": sum(u.get("prompt_tokens", 0) for u in usage),
         "completion_tokens": sum(u.get("completion_tokens", 0) for u in usage),
@@ -139,6 +146,7 @@ def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None =
     summary_path = out_dir / "summary.json"
     summary = json.loads(summary_path.read_text()) if summary_path.is_file() else {}
     summary.update({"run_id": run_id, "model": model, "base_url": base_url or "https://openrouter.ai/api/v1",
+                    "max_tokens": max_tokens, "reasoning_effort": reasoning_effort,
                     "prompt_version": prompt.PROMPT_VERSION, "prompt_hash": prompt.prompt_hash()})
     summary.setdefault("sets", {})[set_] = set_summary
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")

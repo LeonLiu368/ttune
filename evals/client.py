@@ -27,12 +27,13 @@ class Completion:
     text: str
     usage: dict = field(default_factory=dict)  # prompt_tokens, completion_tokens and, on OpenRouter, cost
     attempts: int = 1
+    finish_reason: str | None = None  # "length" means the reply was cut off at max_tokens
 
 
 class ChatClient:
     def __init__(self, model: str, base_url: str = OPENROUTER, api_key: str | None = None, *,
                  concurrency: int = 8, timeout: float = 180.0, retries: int = 5, backoff: float = 2.0,
-                 max_tokens: int = 3000):
+                 max_tokens: int = 8000, reasoning_effort: str | None = None):
         self.model = model
         self.base_url = base_url.rstrip("/")
         self.is_openrouter = self.base_url.startswith("https://openrouter.ai")
@@ -40,6 +41,7 @@ class ChatClient:
         if self.is_openrouter and not self.api_key:
             raise FatalApiError("OPENROUTER_API_KEY isn't set")
         self.retries, self.backoff, self.max_tokens = retries, backoff, max_tokens
+        self.reasoning_effort = reasoning_effort
         self._semaphore = asyncio.Semaphore(concurrency)
         headers = {"X-Title": "ttune evals", "HTTP-Referer": "https://github.com/LeonLiu368/ttune"}
         if self.api_key:
@@ -53,6 +55,8 @@ class ChatClient:
         body = {"model": self.model, "messages": messages, "temperature": 0, "max_tokens": self.max_tokens}
         if self.is_openrouter:
             body["usage"] = {"include": True}  # report tokens and cost in each response
+        if self.reasoning_effort:
+            body["reasoning"] = {"effort": self.reasoning_effort}  # OpenRouter's switch for thinking models
         error = ""
         async with self._semaphore:
             for attempt in range(1, self.retries + 1):
@@ -76,12 +80,13 @@ class ChatClient:
                     await self._wait(attempt, None)
                     continue
                 try:
-                    text = data["choices"][0]["message"].get("content") or ""
+                    choice = data["choices"][0]
+                    text = choice["message"].get("content") or ""
                 except (KeyError, IndexError, TypeError):
                     error = f"unexpected response: {str(data)[:200]}"
                     await self._wait(attempt, None)
                     continue
-                return Completion(text, data.get("usage") or {}, attempt)
+                return Completion(text, data.get("usage") or {}, attempt, choice.get("finish_reason"))
         raise ApiError(f"{error} (after {self.retries} attempts)")
 
     async def _wait(self, attempt: int, retry_after: str | None) -> None:

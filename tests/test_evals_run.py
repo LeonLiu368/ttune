@@ -45,6 +45,12 @@ class Mock(BaseHTTPRequestHandler):
             calls = Mock.seen[(model, case_id)]
         if model == "mock/fatal":
             return self._send(401, {"error": {"message": "bad key"}})
+        if model == "mock/thinker":
+            assert body.get("reasoning") == {"effort": "low"} and body["max_tokens"] == 500
+            return self._send(200, {"choices": [{"message": {"content": "Let me think about SNAP first, then"},
+                                                 "finish_reason": "length"}],
+                                    "usage": {"completion_tokens": 500,
+                                              "completion_tokens_details": {"reasoning_tokens": 480}}})
         if model == "mock/rate-limited":
             return self._send(429, {"error": {"message": "temporarily rate-limited upstream"}})
         if model == "mock/flaky" and calls == 1:
@@ -197,3 +203,17 @@ def test_a_rate_limited_endpoint_stops_the_run_early(server, tmp_path, monkeypat
     assert code == 2
     asked = {k for k in Mock.seen if k[0] == "mock/rate-limited"}
     assert len(asked) == 3  # gave up after three cases instead of trying all ten
+
+
+def test_replies_cut_off_at_the_token_limit_are_counted(server, tmp_path):
+    codes, run_dir = run_both(server, tmp_path, "mock/thinker", limit=3,
+                              extra=("--max-tokens", "500", "--reasoning-effort", "low"))
+    assert codes == [0, 0]
+    results = lines(run_dir / "id.jsonl")
+    assert all(r["score"]["malformed"] and "cut off at the token limit" in r["parse_error"] for r in results)
+    summary = json.loads((run_dir / "summary.json").read_text())
+    assert summary["sets"]["id"]["cut_off"] == 3 and summary["sets"]["id"]["reasoning_tokens"] == 1440
+    assert (summary["max_tokens"], summary["reasoning_effort"]) == (500, "low")
+    main(["compare", "r", "--results-dir", str(tmp_path)])
+    md = (run_dir / "comparison.md").read_text()
+    assert "| Cut off at the token limit | 3 | 3 | |" in md and "reasoning effort low" in md

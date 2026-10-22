@@ -23,6 +23,9 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--households", type=Path, default=None, help="default: data/households/<set>/households.jsonl")
     r.add_argument("--concurrency", type=int, default=8)
     r.add_argument("--retries", type=int, default=5, help="tries per request (free models rate-limit hard)")
+    r.add_argument("--max-tokens", type=int, default=8000, help="reply length cap, reasoning included")
+    r.add_argument("--reasoning-effort", choices=("none", "minimal", "low", "medium", "high"), default=None,
+                   help="for thinking models (OpenRouter's reasoning.effort); default: the model's own")
     r.add_argument("--resume", action="store_true", help="only re-run missing and failed cases")
     r.add_argument("--results-dir", type=Path, default=RESULTS_DIR)
     c = sub.add_parser("compare", help="write comparison.md for a run")
@@ -58,11 +61,13 @@ def main(argv: list[str] | None = None) -> int:
     try:
         out_dir, s = run(args.set_, args.model, run_id=args.run_id, limit=args.limit, base_url=args.base_url,
                          households=args.households, resume=args.resume, concurrency=args.concurrency,
-                         retries=args.retries, results_dir=args.results_dir)
+                         retries=args.retries, max_tokens=args.max_tokens, reasoning_effort=args.reasoning_effort,
+                         results_dir=args.results_dir)
     except FatalApiError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
-    print(f"{args.set_}: {s['cases']} cases, mean reward {s['mean_reward']}, {s['malformed']} malformed, "
+    print(f"{args.set_}: {s['cases']} cases, mean reward {s['mean_reward']}, {s['malformed']} malformed "
+          f"({s['cut_off']} cut off at the token limit), "
           f"{s['api_errors']} API errors, ${s['cost_usd']:.4f} -> {out_dir}")
     if s["api_errors"]:
         print("error: some cases got no answer; re-run with --resume", file=sys.stderr)

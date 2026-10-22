@@ -18,6 +18,14 @@ on:
         description: "Allow a model that costs money"
         type: boolean
         default: false
+      max_tokens:
+        description: "Reply length cap, reasoning included"
+        required: false
+        default: "8000"
+      reasoning_effort:
+        description: "For thinking models: none, minimal, low, medium or high (blank = the model's default)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -34,6 +42,8 @@ jobs:
     env:
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
       LIMIT: ${{ inputs.limit }}
+      MAX_TOKENS: ${{ inputs.max_tokens }}
+      REASONING_EFFORT: ${{ inputs.reasoning_effort }}
     steps:
       - uses: actions/checkout@v4
 
@@ -61,8 +71,9 @@ jobs:
           RUN_ID: ${{ steps.model.outputs.run_id }}
           FREE: ${{ steps.model.outputs.free }}
         run: |
-          args=(--set id --model "$MODEL" --run-id "$RUN_ID")
+          args=(--set id --model "$MODEL" --run-id "$RUN_ID" --max-tokens "${MAX_TOKENS:-8000}")
           if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+          if [ -n "$REASONING_EFFORT" ]; then args+=(--reasoning-effort "$REASONING_EFFORT"); fi
           # Free models are rate-limited: go slowly and retry more.
           if [ "$FREE" = "true" ]; then args+=(--concurrency 2 --retries 8); fi
           python -m evals run "${args[@]}" || python -m evals run "${args[@]}" --resume
@@ -76,8 +87,9 @@ jobs:
           RUN_ID: ${{ steps.model.outputs.run_id }}
           FREE: ${{ steps.model.outputs.free }}
         run: |
-          args=(--set ood --model "$MODEL" --run-id "$RUN_ID")
+          args=(--set ood --model "$MODEL" --run-id "$RUN_ID" --max-tokens "${MAX_TOKENS:-8000}")
           if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+          if [ -n "$REASONING_EFFORT" ]; then args+=(--reasoning-effort "$REASONING_EFFORT"); fi
           if [ "$FREE" = "true" ]; then args+=(--concurrency 2 --retries 8); fi
           python -m evals run "${args[@]}" || python -m evals run "${args[@]}" --resume
 
