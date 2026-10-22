@@ -30,7 +30,7 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
   - [x] [#3](https://github.com/LeonLiu368/ttune/issues/3) PolicyEngine ground truth and `python -m envgen generate` (ID set of 200)
   - [x] [#4](https://github.com/LeonLiu368/ttune/issues/4) Out-of-distribution set of 200: rare shapes, threshold edges, held-out states ([data/households](data/households/README.md))
   - [x] [#5](https://github.com/LeonLiu368/ttune/issues/5) Eval harness: scoring, OpenRouter client, run and compare ([evals/](evals/README.md); tested against a local mock server)
-  - [ ] [#6](https://github.com/LeonLiu368/ttune/issues/6) Eval workflow and first ID vs OOD results. The workflow refuses paid models unless `allow_paid` is ticked; free-model smoke runs first, paid runs only when decided
+  - [ ] [#6](https://github.com/LeonLiu368/ttune/issues/6) Eval workflow and first ID vs OOD results. The workflow is done and refuses paid models unless `allow_paid` is ticked. Free smoke runs (10 + 10 cases, $0) checked the harness against a real model; no usable free model has turned up yet (see Findings). Next: a paid run, once decided
 - [ ] Messy document renderer
 - [ ] First Harbor task and reward (`benefits-task` skill)
 - [ ] Reward-hack audit (`reward-hack-audit` skill)
@@ -61,6 +61,17 @@ From `python -m scraper check` (full list in [`data/processed/checks/summary.md`
 - **SNAP utility allowances:** the 21 differences are real. Maryland's allowances run on the calendar year (the FNS table footnotes this); North Carolina is given in cents; Wisconsin ($870 vs $553) and New York's basic allowances look out of date in PolicyEngine. Louisiana's basic allowance ($0 officially vs $258) and Maine's phone allowance need a closer look: a $0 may mean the state doesn't offer it. The 109 "not in PolicyEngine" are mostly the SMD offset column.
 - **Medicaid (Medicaid.gov table):** compared with PolicyEngine as of the table's date, December 1, 2023. Of the 35 differences, 26 are parent/caretaker limits in states that set dollar amounts by household size; CMS converts those to a % of the poverty line, so small gaps are expected, except North Carolina (36% vs 138%), which expanded Medicaid on that same date. The other 9 need a look: Minnesota and New York show 200% for adults (that includes their Basic Health Program; PolicyEngine's 138% is Medicaid alone); Tennessee children; Rhode Island pregnant women; Missouri children (153% vs 155%); Wisconsin adults ("No/95%", a waiver). CHIP limits aren't in the downloaded PolicyEngine files.
 - **Medicaid (2018 CSV):** stale; kept only for the record. Idaho shows no expansion, which it adopted in 2020.
+
+### Eval smoke runs (free models, $0)
+
+| Model | What happened | What changed |
+|---|---|---|
+| `google/gemma-4-26b-a4b-it:free` | All 20 requests: "temporarily rate-limited upstream" | Runs now stop after the first 3 cases fail |
+| `thinkingmachines/inkling-small:free` | 403: only answers "agentic harnesses" | Dropped from the free list |
+| `liquid/lfm-2.5-2.6b:free`, 3,000 tokens | All 20 replies cut off while reasoning | Cut-off replies counted separately; `max_tokens` (default 8,000) and `reasoning_effort` inputs |
+| `liquid/lfm-2.5-2.6b:free`, 8,000 tokens, low effort | Answers, but writes its reasoning as a made-up `think(...)` tool call and stops without JSON. 1 of 20 parsed, and it scored 0 (false denials) | Nothing: the harness parsed and scored correctly; the model can't follow the format |
+
+The harness now works end to end against a real model: request, retries, parsing, scoring, compare and the results PR. A real ID vs OOD result needs a model that can follow the answer format. None of the free 2-8B models that answer plain API calls can, so the next run means a paid model (cents for 20 cases) or serving an open model ourselves.
 
 ## Known blockers
 
