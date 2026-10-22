@@ -59,14 +59,21 @@ async def _one(client: ChatClient, index: int, row: dict) -> dict:
             "attempts": completion.attempts, **evaluate(row, completion.text)}
 
 
+GIVE_UP_AFTER = 3  # failed cases in a row, before any case succeeds: the endpoint is down or rate-limited
+
+
 async def _run_all(client: ChatClient, todo: list[tuple[int, dict]], partial: Path) -> list[dict]:
-    results = []
+    results, answered = [], False
     with partial.open("a") as fh:
         for task in asyncio.as_completed([_one(client, i, row) for i, row in todo]):
             result = await task
             fh.write(json.dumps(result, sort_keys=True) + "\n")
             fh.flush()
             results.append(result)
+            answered = answered or result["status"] == "ok"
+            if not answered and len(results) >= GIVE_UP_AFTER:
+                raise FatalApiError(f"the first {len(results)} cases all failed, so the endpoint looks down or "
+                                    f"rate-limited; last error: {result['api_error'][:300]}")
     return results
 
 

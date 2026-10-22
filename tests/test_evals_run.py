@@ -45,6 +45,8 @@ class Mock(BaseHTTPRequestHandler):
             calls = Mock.seen[(model, case_id)]
         if model == "mock/fatal":
             return self._send(401, {"error": {"message": "bad key"}})
+        if model == "mock/rate-limited":
+            return self._send(429, {"error": {"message": "temporarily rate-limited upstream"}})
         if model == "mock/flaky" and calls == 1:
             return self._send(503, {"error": {"message": "busy"}})
         text = {"mock/oracle": oracle_reply, "mock/flaky": oracle_reply, "mock/deny-all": deny_all_reply,
@@ -186,3 +188,12 @@ def test_free_picks_the_first_preferred_free_model():
     assert choose_model(MODELS, "free", allow_paid=False)["id"] == "qwen/qwen3-8b:free"
     with pytest.raises(CostGuardError, match="free models now"):
         choose_model(MODELS[:1], "free", allow_paid=False)
+
+
+def test_a_rate_limited_endpoint_stops_the_run_early(server, tmp_path, monkeypatch):
+    monkeypatch.setattr("evals.client.ChatClient._wait", lambda self, attempt, retry_after: _no_wait())
+    code = main(["run", "--set", "id", "--model", "mock/rate-limited", "--limit", "10", "--run-id", "r",
+                 "--base-url", server, "--results-dir", str(tmp_path), "--concurrency", "1"])
+    assert code == 2
+    asked = {k for k in Mock.seen if k[0] == "mock/rate-limited"}
+    assert len(asked) == 3  # gave up after three cases instead of trying all ten
