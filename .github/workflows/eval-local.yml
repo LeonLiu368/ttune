@@ -12,7 +12,7 @@ on:
         options: [qwen3-4b-instruct, llama-3.1-8b-instruct, gemma-3-4b-it]
         default: qwen3-4b-instruct
       limit:
-        description: "Households per set (blank = all 200)"
+        description: 'Households per set, or "all" for all 200'
         required: false
         default: "10"
       shards:
@@ -20,9 +20,9 @@ on:
         required: false
         default: "1"
       max_tokens:
-        description: "Reply length cap"
+        description: "Reply length cap (Qwen3 4B needs about 6,000 to finish its working)"
         required: false
-        default: "3000"
+        default: "6000"
 
 permissions:
   contents: write
@@ -38,6 +38,7 @@ jobs:
     outputs:
       run_id: ${{ steps.plan.outputs.run_id }}
       shards: ${{ steps.plan.outputs.shards }}
+      limit: ${{ steps.plan.outputs.limit }}
     steps:
       - id: plan
         env:
@@ -45,8 +46,11 @@ jobs:
           LIMIT: ${{ inputs.limit }}
           SHARDS: ${{ inputs.shards }}
         run: |
+          if [ "$LIMIT" = "all" ]; then LIMIT=""; fi
+          case "$LIMIT" in *[!0-9]*) echo 'limit must be a number or "all"'; exit 1;; esac
           case "$SHARDS" in ''|*[!0-9]*) echo "shards must be a number"; exit 1;; esac
           if [ "$SHARDS" -lt 1 ] || [ "$SHARDS" -gt 20 ]; then echo "shards must be 1-20"; exit 1; fi
+          echo "limit=$LIMIT" >> "$GITHUB_OUTPUT"
           echo "run_id=$(date -u +%Y%m%d-%H%M)-local-${PRESET}${LIMIT:+-n$LIMIT}" >> "$GITHUB_OUTPUT"
           echo "shards=$(python3 -c "import json,sys; print(json.dumps(list(range(int(sys.argv[1])))))" "$SHARDS")" >> "$GITHUB_OUTPUT"
 
@@ -60,7 +64,7 @@ jobs:
         shard: ${{ fromJSON(needs.plan.outputs.shards) }}
     env:
       PRESET: ${{ inputs.preset }}
-      LIMIT: ${{ inputs.limit }}
+      LIMIT: ${{ needs.plan.outputs.limit }}
       SHARDS: ${{ inputs.shards }}
       MAX_TOKENS: ${{ inputs.max_tokens }}
       RUN_ID: ${{ needs.plan.outputs.run_id }}
@@ -109,7 +113,7 @@ jobs:
         run: |
           for set in id ood; do
             args=(--set "$set" --model "local/$PRESET" --run-id "$RUN_ID" --base-url http://127.0.0.1:8000/v1
-                  --shard "$SHARD/$SHARDS" --concurrency 1 --timeout 1800 --max-tokens "${MAX_TOKENS:-3000}"
+                  --shard "$SHARD/$SHARDS" --concurrency 1 --timeout 1800 --max-tokens "${MAX_TOKENS:-6000}"
                   --model-info models/model.json)
             if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
             python -m evals run "${args[@]}" || python -m evals run "${args[@]}" --resume
@@ -132,7 +136,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUN_ID: ${{ needs.plan.outputs.run_id }}
-      LIMIT: ${{ inputs.limit }}
+      LIMIT: ${{ needs.plan.outputs.limit }}
     steps:
       - uses: actions/checkout@v4
 

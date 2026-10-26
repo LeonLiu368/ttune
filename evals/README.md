@@ -9,7 +9,7 @@ Runs that call a model go through GitHub Actions, because openrouter.ai can't be
 | Input | Meaning |
 |---|---|
 | `model` | OpenRouter model id. The default is a free (`:free`) model. |
-| `limit` | Households per set. Default 10 (a smoke test); blank runs all 200. |
+| `limit` | Households per set. Default 10 (a smoke test); `all` runs all 200. |
 | `allow_paid` | Off by default. While it's off, the job checks the model's price on OpenRouter and stops before any request unless it's $0. |
 | `max_tokens` | Reply length cap, reasoning included. Default 8,000. |
 | `reasoning_effort` | For thinking models: `none`, `minimal`, `low`, `medium` or `high`. Blank uses the model's default. |
@@ -34,9 +34,9 @@ python -m evals compare test             # writes evals/results/test/comparison.
 | Input | Meaning |
 |---|---|
 | `preset` | Which model; the presets are in [`local_models.json`](local_models.json). The default is Qwen3 4B Instruct (Apache-2.0). |
-| `limit` | Households per set. Default 10; blank runs all 200. |
+| `limit` | Households per set. Default 10; `all` runs all 200. |
 | `shards` | How many jobs run in parallel. Each runs every N-th household of both sets. |
-| `max_tokens` | Reply length cap. Default 3,000. |
+| `max_tokens` | Reply length cap. Default 6,000; at 3,000, Qwen3 4B was cut off in 11 of 20 cases. |
 
 Each shard job:
 1. Builds `llama-cpp-python` (cached after the first run).

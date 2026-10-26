@@ -11,7 +11,7 @@ on:
         required: true
         default: "free"
       limit:
-        description: "Households per set (blank = all 200)"
+        description: 'Households per set, or "all" for all 200'
         required: false
         default: "10"
       allow_paid:
@@ -41,7 +41,7 @@ jobs:
     timeout-minutes: 180
     env:
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      LIMIT: ${{ inputs.limit }}
+      LIMIT: ${{ inputs.limit != 'all' && inputs.limit || '' }}
       MAX_TOKENS: ${{ inputs.max_tokens }}
       REASONING_EFFORT: ${{ inputs.reasoning_effort }}
     steps:
