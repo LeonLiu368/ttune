@@ -1,0 +1,62 @@
+{
+  "base_url": "http://127.0.0.1:8000/v1",
+  "max_tokens": 6000,
+  "model": "local/qwen3-4b-instruct",
+  "model_info": {
+    "file": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+    "license": "Apache-2.0",
+    "llama_cpp_python": "0.3.35",
+    "parameters": "4B",
+    "path": "models/Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+    "preset": "qwen3-4b-instruct",
+    "repo": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
+    "revision": "a06e946bb6b655725eafa393f4a9745d460374c9",
+    "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+    "size_bytes": 2497281120
+  },
+  "prompt_hash": "99462b99b4b17c82",
+  "prompt_version": 1,
+  "run_id": "20261026-0340-local-qwen3-4b-instruct",
+  "sets": {
+    "id": {
+      "api_errors": 0,
+      "cases": 200,
+      "completion_tokens": 581701,
+      "cost_usd": 0.0,
+      "cut_off": 12,
+      "floors": {
+        "always_no": 0.3482,
+        "always_yes": 0.2591
+      },
+      "households": "data/households/id/households.jsonl",
+      "households_sha256": "f9b2b287f57822d97e7ee493b1cc938080c4092f5b65297c8e3448e96198f53a",
+      "limit": null,
+      "malformed": 11,
+      "mean_reward": 0.4408,
+      "policyengine_us": "2.50.1",
+      "prompt_tokens": 95474,
+      "reasoning_tokens": 0,
+      "shard": null
+    },
+    "ood": {
+      "api_errors": 0,
+      "cases": 200,
+      "completion_tokens": 609539,
+      "cost_usd": 0.0,
+      "cut_off": 5,
+      "floors": {
+        "always_no": 0.2168,
+        "always_yes": 0.315
+      },
+      "households": "data/households/ood/households.jsonl",
+      "households_sha256": "6d5b9ab0ad860c16a41a138183763ea050323e05547fcd6d7aa8b5dfbebfc325",
+      "limit": null,
+      "malformed": 5,
+      "mean_reward": 0.3454,
+      "policyengine_us": "2.50.1",
+      "prompt_tokens": 101133,
+      "reasoning_tokens": 0,
+      "shard": null
+    }
+  }
+}
