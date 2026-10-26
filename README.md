@@ -4,6 +4,8 @@ Notes and plans for building RL environments (in the [Harbor](https://github.com
 
 **What's next:** see [ROADMAP.md](ROADMAP.md) for what's done, in progress and next.
 
+**Eval results:** browse every run, and each household's answer next to PolicyEngine's, in the [eval viewer](https://leonliu368.github.io/ttune/) ([`viewer/`](viewer/README.md)).
+
 ## Current direction
 
 **Public-benefits eligibility.** An agent reads a household's messy documents and determines eligibility and amounts for SNAP, Medicaid, EITC, WIC and similar programs, using [PolicyEngine](https://github.com/PolicyEngine) as an exact, open-source verifier. Full plan: [docs/04-benefits-eligibility-plan.md](docs/04-benefits-eligibility-plan.md).
@@ -38,7 +40,7 @@ ttune adds what's missing:
 
 ## Data
 
-[`data/`](data/README.md) holds raw inputs for the benefits environment: PolicyEngine's rule parameters and about 1,300 example households for SNAP, WIC, EITC and Medicaid. [`data/sources.json`](data/sources.json) lists every source. The official government sources are fetched by [`scraper/`](scraper/), which runs monthly on GitHub Actions and opens a PR with new snapshots; see [data/README.md](data/README.md#scraper). [`data/households/`](data/households/README.md) holds two generated sets of 200 households, typical (ID) and unusual (OOD), each with PolicyEngine's correct answers; [`envgen/`](envgen/) generates them, and [`evals/`](evals/README.md) scores a model on both and compares the results.
+[`data/`](data/README.md) holds raw inputs for the benefits environment: PolicyEngine's rule parameters and about 1,300 example households for SNAP, WIC, EITC and Medicaid. [`data/sources.json`](data/sources.json) lists every source. The official government sources are fetched by [`scraper/`](scraper/), which runs monthly on GitHub Actions and opens a PR with new snapshots; see [data/README.md](data/README.md#scraper). [`data/households/`](data/households/README.md) holds two generated sets of 200 households, typical (ID) and unusual (OOD), each with PolicyEngine's correct answers; [`envgen/`](envgen/) generates them, [`evals/`](evals/README.md) scores a model on both and compares the results, and [`viewer/`](viewer/README.md) shows the results on a web page that can also start new runs.
 
 ## Constraints I'm working under
 

@@ -31,6 +31,8 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
   - [x] [#4](https://github.com/LeonLiu368/ttune/issues/4) Out-of-distribution set of 200: rare shapes, threshold edges, held-out states ([data/households](data/households/README.md))
   - [x] [#5](https://github.com/LeonLiu368/ttune/issues/5) Eval harness: scoring, OpenRouter client, run and compare ([evals/](evals/README.md); tested against a local mock server)
   - [x] [#6](https://github.com/LeonLiu368/ttune/issues/6) Eval workflows and first ID vs OOD results: Qwen3 4B Instruct, self-hosted on GitHub's runners for $0 ([results](evals/results/20261026-0340-local-qwen3-4b-instruct/comparison.md); findings below)
+- [x] Eval viewer ([`viewer/`](viewer/README.md)): runs, OOD families and every household traced, published read-only to GitHub Pages; `python -m viewer serve` adds a launch form that starts runs on GitHub Actions
+- [ ] Host the viewer server in the cloud, with sign-in, so runs can be launched from the site
 - [ ] Messy document renderer
 - [ ] First Harbor task and reward (`benefits-task` skill)
 - [ ] Reward-hack audit (`reward-hack-audit` skill)
