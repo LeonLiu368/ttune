@@ -80,13 +80,23 @@ async def _run_all(client: ChatClient, todo: list[tuple[int, dict]], partial: Pa
     return results
 
 
+def select(rows: list[dict], limit: int | None = None, shard: tuple[int, int] | None = None) -> list[tuple[int, dict]]:
+    """(index in the full set, row) for the households to run: the first `limit`, then every n-th from k for shard k/n."""
+    chosen = list(enumerate(rows[:limit] if limit else rows))
+    if shard:
+        k, n = shard
+        chosen = [(i, row) for i, row in chosen if i % n == k]
+    return chosen
+
+
 def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None = None, base_url: str | None = None,
         households: Path | None = None, resume: bool = False, concurrency: int = 8, retries: int = 5,
-        max_tokens: int = 8000, reasoning_effort: str | None = None,
+        max_tokens: int = 8000, reasoning_effort: str | None = None, timeout: float = 180.0,
+        shard: tuple[int, int] | None = None, model_info: dict | None = None,
         results_dir: Path = RESULTS_DIR, api_key: str | None = None) -> tuple[Path, dict]:
-    """Run one set. Returns (run directory, that set's summary)."""
+    """Run one set (or one shard of it). Returns (run directory, that set's summary)."""
     path = households or SETS_DIR / set_ / "households.jsonl"
-    rows = load_set(path)[:limit] if limit else load_set(path)
+    chosen = select(load_set(path), limit, shard)
     run_id = run_id or default_run_id(model)
     out_dir = results_dir / run_id
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -102,11 +112,11 @@ def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None =
                         done[result["id"]] = result
     elif partial.exists():
         partial.unlink()
-    todo = [(i, row) for i, row in enumerate(rows) if row["id"] not in done]
+    todo = [(i, row) for i, row in chosen if row["id"] not in done]
 
     async def go() -> list[dict]:
         kwargs = {"concurrency": concurrency, "retries": retries, "max_tokens": max_tokens,
-                  "reasoning_effort": reasoning_effort}
+                  "reasoning_effort": reasoning_effort, "timeout": timeout}
         if base_url:
             kwargs["base_url"] = base_url
         client = ChatClient(model, api_key=api_key, **kwargs)
@@ -116,13 +126,24 @@ def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None =
             await client.aclose()
 
     new = asyncio.run(go()) if todo else []
-    wanted = {row["id"] for row in rows}
+    wanted = {row["id"] for _, row in chosen}
     results = sorted([r for r in done.values() if r["id"] in wanted] + new, key=lambda r: r["index"])
-    with final.open("w") as fh:
+    settings = {"run_id": run_id, "model": model, "base_url": base_url or "https://openrouter.ai/api/v1",
+                "max_tokens": max_tokens, "reasoning_effort": reasoning_effort}
+    if model_info:
+        settings["model_info"] = model_info
+    set_summary = write_set(out_dir, set_, path, [row for _, row in chosen], results, limit, settings,
+                            shard=f"{shard[0]}/{shard[1]}" if shard else None)
+    partial.unlink(missing_ok=True)
+    return out_dir, set_summary
+
+
+def write_set(out_dir: Path, set_: str, path: Path, rows: list[dict], results: list[dict], limit: int | None,
+              settings: dict, shard: str | None = None) -> dict:
+    """Write <set>.jsonl and this set's entry in summary.json."""
+    with (out_dir / f"{set_}.jsonl").open("w") as fh:
         for result in results:
             fh.write(json.dumps(result, sort_keys=True) + "\n")
-    partial.unlink(missing_ok=True)
-
     manifest_path = path.parent / "manifest.json"
     manifest = json.loads(manifest_path.read_text()) if manifest_path.is_file() else {}
     usage = [r.get("usage") or {} for r in results]
@@ -132,6 +153,7 @@ def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None =
         "households_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "policyengine_us": manifest.get("policyengine_us"),
         "limit": limit,
+        "shard": shard,
         "cases": len(results),
         "api_errors": stats["api_errors"],
         "malformed": round(stats.get("malformed", 0.0) * stats["n"]),
@@ -145,9 +167,44 @@ def run(set_: str, model: str, *, run_id: str | None = None, limit: int | None =
     }
     summary_path = out_dir / "summary.json"
     summary = json.loads(summary_path.read_text()) if summary_path.is_file() else {}
-    summary.update({"run_id": run_id, "model": model, "base_url": base_url or "https://openrouter.ai/api/v1",
-                    "max_tokens": max_tokens, "reasoning_effort": reasoning_effort,
-                    "prompt_version": prompt.PROMPT_VERSION, "prompt_hash": prompt.prompt_hash()})
+    summary.update({**settings, "prompt_version": prompt.PROMPT_VERSION, "prompt_hash": prompt.prompt_hash()})
     summary.setdefault("sets", {})[set_] = set_summary
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
-    return out_dir, set_summary
+    return set_summary
+
+
+class MergeError(Exception):
+    pass
+
+
+def merge(run_id: str, parts: list[Path], *, limit: int | None = None, results_dir: Path = RESULTS_DIR,
+          sets_dir: Path = SETS_DIR) -> Path:
+    """Combine shard results (each part is a run directory) into one run, checking every household is there once."""
+    summaries = [json.loads((p / "summary.json").read_text()) for p in parts if (p / "summary.json").is_file()]
+    if not summaries:
+        raise MergeError("no summary.json in any part")
+    for key in ("model", "prompt_hash", "max_tokens", "reasoning_effort"):
+        values = {json.dumps(s.get(key)) for s in summaries}
+        if len(values) > 1:
+            raise MergeError(f"parts disagree on {key}: {sorted(values)}")
+    first = summaries[0]
+    settings = {k: first.get(k) for k in ("model", "base_url", "max_tokens", "reasoning_effort", "model_info")
+                if first.get(k) is not None}
+    settings["run_id"] = run_id
+    out_dir = results_dir / run_id
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for set_ in ("id", "ood"):
+        files = [p / f"{set_}.jsonl" for p in parts if (p / f"{set_}.jsonl").is_file()]
+        if not files:
+            continue
+        results = [json.loads(line) for f in files for line in f.open()]
+        path = sets_dir / set_ / "households.jsonl"
+        rows = [row for _, row in select(load_set(path), limit)]
+        ids = [r["id"] for r in results]
+        if len(ids) != len(set(ids)):
+            raise MergeError(f"{set_}: some households appear in more than one part")
+        missing = sorted({row["id"] for row in rows} - set(ids))
+        if missing:
+            raise MergeError(f"{set_}: {len(missing)} households missing, e.g. {missing[:5]}")
+        write_set(out_dir, set_, path, rows, sorted(results, key=lambda r: r["index"]), limit, settings)
+    return out_dir

@@ -1,0 +1,5 @@
+# Self-hosted eval model: llama.cpp's OpenAI-compatible server, plus Hugging Face downloads. llama-cpp-python
+# builds from source (about 4 minutes); the Eval (self-hosted model) workflow caches the built wheel.
+-r requirements.txt
+llama-cpp-python[server]==0.3.35
+huggingface_hub==1.33.0

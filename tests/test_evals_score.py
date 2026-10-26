@@ -155,3 +155,37 @@ def test_degenerate_answers_score_low_on_the_real_sets():
         assert mean_reward(lambda n, t: {p: ({"eligible": "unknown"} if p in ("snap", "eitc")
                                              else {"eligible_members": []}) for p in ("snap", "eitc", "medicaid", "wic")},
                            rows) < 0.4
+
+
+def test_local_model_presets_and_file_choice(tmp_path):
+    from evals import local_model
+    names = local_model.presets()
+    assert "qwen3-4b-instruct" in names and all({"repo", "pattern", "license"} <= set(v) for v in names.values())
+    files = {"model-Q4_K_M.gguf": "aa", "model-Q8_0.gguf": "bb", "README.md": None, "sub/model-Q4_K_M.gguf": "cc"}
+    assert local_model.choose_file(files, "Q4_K_M.gguf") == "model-Q4_K_M.gguf"
+    with pytest.raises(local_model.ModelError, match="expected one file"):
+        local_model.choose_file(files, "Q5_K_M.gguf")
+    with pytest.raises(local_model.ModelError, match="unknown preset"):
+        local_model.preset("nope")
+    f = tmp_path / "w.gguf"
+    f.write_bytes(b"weights")
+    assert local_model.sha256_file(f) == __import__("hashlib").sha256(b"weights").hexdigest()
+
+
+def test_fetch_refuses_a_file_whose_hash_doesnt_match(tmp_path, monkeypatch):
+    import sys
+    import types
+    from evals import local_model
+
+    def fake_download(repo, file, revision, local_dir):
+        path = Path(local_dir) / file
+        path.write_bytes(b"tampered")
+        return str(path)
+
+    monkeypatch.setitem(sys.modules, "huggingface_hub", types.SimpleNamespace(hf_hub_download=fake_download))
+    resolved = {"repo": "r/m", "file": "m.gguf", "revision": "c0ffee", "sha256": "0" * 64}
+    with pytest.raises(local_model.ModelError, match="doesn't match"):
+        local_model.fetch(resolved, tmp_path)
+    assert not (tmp_path / "m.gguf").exists()
+    resolved["sha256"] = __import__("hashlib").sha256(b"tampered").hexdigest()
+    assert local_model.fetch(resolved, tmp_path).read_bytes() == b"tampered"

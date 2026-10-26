@@ -1,0 +1,24 @@
+{
+  "_about": "Open models the Eval (self-hosted) workflow can serve with llama.cpp on a GitHub CPU runner. `pattern` picks one GGUF file in the Hugging Face repo; the exact commit and SHA-256 are recorded in every run's summary.json.",
+  "qwen3-4b-instruct": {
+    "repo": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
+    "pattern": "Q4_K_M.gguf",
+    "parameters": "4B",
+    "license": "Apache-2.0",
+    "notes": "Qwen3 4B Instruct (2507), the non-thinking variant: answers without a long hidden reasoning phase."
+  },
+  "llama-3.1-8b-instruct": {
+    "repo": "bartowski/Meta-Llama-3.1-8B-Instruct-GGUF",
+    "pattern": "Q4_K_M.gguf",
+    "parameters": "8B",
+    "license": "Llama 3.1 Community License",
+    "notes": "Slower on CPU (about twice the 4B models' time per case)."
+  },
+  "gemma-3-4b-it": {
+    "repo": "unsloth/gemma-3-4b-it-GGUF",
+    "pattern": "Q4_K_M.gguf",
+    "parameters": "4B",
+    "license": "Gemma Terms of Use",
+    "notes": "Google Gemma 3 4B instruction-tuned."
+  }
+}

@@ -1,0 +1,174 @@
+name: Eval (self-hosted model)
+
+# Serves an open model with llama.cpp on the GitHub runner's CPU and runs both household sets against it.
+# Costs nothing: no API, no tokens. Each shard is a separate job that runs every N-th household of both sets,
+# so a full run can be split across parallel jobs; a final job merges the shards, compares and opens a PR.
+on:
+  workflow_dispatch:
+    inputs:
+      preset:
+        description: "Model (presets in evals/local_models.json)"
+        type: choice
+        options: [qwen3-4b-instruct, llama-3.1-8b-instruct, gemma-3-4b-it]
+        default: qwen3-4b-instruct
+      limit:
+        description: "Households per set (blank = all 200)"
+        required: false
+        default: "10"
+      shards:
+        description: "Parallel jobs (each runs every N-th household of both sets)"
+        required: false
+        default: "1"
+      max_tokens:
+        description: "Reply length cap"
+        required: false
+        default: "3000"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: eval-local
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      run_id: ${{ steps.plan.outputs.run_id }}
+      shards: ${{ steps.plan.outputs.shards }}
+    steps:
+      - id: plan
+        env:
+          PRESET: ${{ inputs.preset }}
+          LIMIT: ${{ inputs.limit }}
+          SHARDS: ${{ inputs.shards }}
+        run: |
+          case "$SHARDS" in ''|*[!0-9]*) echo "shards must be a number"; exit 1;; esac
+          if [ "$SHARDS" -lt 1 ] || [ "$SHARDS" -gt 20 ]; then echo "shards must be 1-20"; exit 1; fi
+          echo "run_id=$(date -u +%Y%m%d-%H%M)-local-${PRESET}${LIMIT:+-n$LIMIT}" >> "$GITHUB_OUTPUT"
+          echo "shards=$(python3 -c "import json,sys; print(json.dumps(list(range(int(sys.argv[1])))))" "$SHARDS")" >> "$GITHUB_OUTPUT"
+
+  run:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJSON(needs.plan.outputs.shards) }}
+    env:
+      PRESET: ${{ inputs.preset }}
+      LIMIT: ${{ inputs.limit }}
+      SHARDS: ${{ inputs.shards }}
+      MAX_TOKENS: ${{ inputs.max_tokens }}
+      RUN_ID: ${{ needs.plan.outputs.run_id }}
+      SHARD: ${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-local-llm.txt
+
+      - name: Install the llama.cpp server
+        env:
+          # Portable CPU build (AVX2), so a cached wheel works on any runner.
+          CMAKE_ARGS: "-DGGML_NATIVE=OFF -DGGML_AVX2=ON -DGGML_FMA=ON -DGGML_F16C=ON"
+        run: pip install -r requirements-local-llm.txt
+
+      - name: Resolve the model on Hugging Face
+        id: model
+        run: python -m evals model resolve "$PRESET" --github-output "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@v4
+        with:
+          path: models
+          key: model-${{ steps.model.outputs.sha256 }}
+
+      - name: Download and verify the model
+        run: python -m evals model fetch "$PRESET" --models-dir models
+
+      - name: Start the model server
+        env:
+          FILE: ${{ steps.model.outputs.file }}
+        run: |
+          nohup python -m llama_cpp.server --model "models/$FILE" --model_alias "local/$PRESET" \
+            --n_ctx 8192 --n_threads "$(nproc)" --seed 0 --host 127.0.0.1 --port 8000 --verbose False \
+            > server.log 2>&1 &
+          for i in $(seq 1 120); do
+            if curl -sf http://127.0.0.1:8000/v1/models > /dev/null; then echo "server up after $((i * 5))s"; exit 0; fi
+            sleep 5
+          done
+          echo "server didn't start:"; tail -50 server.log; exit 1
+
+      - name: Run this shard of both sets
+        run: |
+          for set in id ood; do
+            args=(--set "$set" --model "local/$PRESET" --run-id "$RUN_ID" --base-url http://127.0.0.1:8000/v1
+                  --shard "$SHARD/$SHARDS" --concurrency 1 --timeout 1800 --max-tokens "${MAX_TOKENS:-3000}"
+                  --model-info models/model.json)
+            if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+            python -m evals run "${args[@]}" || python -m evals run "${args[@]}" --resume
+          done
+
+      - name: Server log
+        if: failure()
+        run: tail -100 server.log
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shard-${{ matrix.shard }}
+          path: evals/results/${{ needs.plan.outputs.run_id }}
+          if-no-files-found: ignore
+
+  merge:
+    needs: [plan, run]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    env:
+      RUN_ID: ${{ needs.plan.outputs.run_id }}
+      LIMIT: ${{ inputs.limit }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: shard-*
+          path: parts
+
+      - name: Merge the shards and compare
+        id: compare
+        run: |
+          args=(--parts parts/shard-*)
+          if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+          python -m evals merge "$RUN_ID" "${args[@]}"
+          python -m evals compare "$RUN_ID"
+          cat "evals/results/$RUN_ID/comparison.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request
+        if: steps.compare.outcome == 'success'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: eval/${{ needs.plan.outputs.run_id }}
+          add-paths: evals/results/${{ needs.plan.outputs.run_id }}
+          commit-message: "Eval: local/${{ inputs.preset }} (${{ needs.plan.outputs.run_id }})"
+          title: "Eval: local/${{ inputs.preset }} (${{ needs.plan.outputs.run_id }})"
+          body-path: evals/results/${{ needs.plan.outputs.run_id }}/comparison.md
+          delete-branch: true
+
+      - name: Fail if a shard failed
+        if: needs.run.result != 'success'
+        run: |
+          echo "At least one shard failed; the merge above needs every household, so check the shard logs."
+          exit 1

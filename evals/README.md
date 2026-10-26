@@ -27,6 +27,29 @@ python -m evals compare test             # writes evals/results/test/comparison.
 
 `--base-url http://localhost:8000/v1` points it at a local server, such as vLLM or llama.cpp. `--resume` re-runs only the cases that are missing or got no answer.
 
+## Run it on a self-hosted open model ($0)
+
+**Actions → Eval (self-hosted model) → Run workflow** serves an open model with llama.cpp on GitHub's runner CPUs, so there's no API and no token cost. Public repos get Actions minutes for free.
+
+| Input | Meaning |
+|---|---|
+| `preset` | Which model; the presets are in [`local_models.json`](local_models.json). The default is Qwen3 4B Instruct (Apache-2.0). |
+| `limit` | Households per set. Default 10; blank runs all 200. |
+| `shards` | How many jobs run in parallel. Each runs every N-th household of both sets. |
+| `max_tokens` | Reply length cap. Default 3,000. |
+
+Each shard job:
+1. Builds `llama-cpp-python` (cached after the first run).
+2. Resolves the model on Hugging Face. It records the repo commit, then downloads the GGUF file and checks its SHA-256 against the published one.
+3. Starts the server on `127.0.0.1:8000`.
+4. Runs its share of both sets with `--base-url`.
+
+A final job runs `python -m evals merge`, which refuses a missing or duplicated household. It then runs `compare` and opens the results PR. The model's repo, file, commit, hash and license are kept in `summary.json` under `model_info`.
+
+A CPU runner generates roughly 10 tokens a second, so a case takes about one to two minutes and a job runs for at most 6 hours. For the full 200 + 200, use about 8 shards.
+
+The same works on your own machine. Start any OpenAI-compatible server, such as `python -m llama_cpp.server --model <file.gguf>`, then run `python -m evals run --base-url http://127.0.0.1:8000/v1 ...`.
+
 ## What the model sees
 
 The system prompt sets the rule periods: SNAP for October 2026 (FY2027), the EITC for tax year 2026, Medicaid (not CHIP) for 2026, and WIC for October 2026. The user message is the household's case text plus the answer format (see [`prompt.py`](prompt.py)). The model may reason first, but must end with one JSON block:

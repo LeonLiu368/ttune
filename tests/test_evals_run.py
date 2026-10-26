@@ -217,3 +217,35 @@ def test_replies_cut_off_at_the_token_limit_are_counted(server, tmp_path):
     main(["compare", "r", "--results-dir", str(tmp_path)])
     md = (run_dir / "comparison.md").read_text()
     assert "| Cut off at the token limit | 3 | 3 | |" in md and "reasoning effort low" in md
+
+
+def test_shards_merge_back_into_the_same_results(server, tmp_path):
+    whole = tmp_path / "whole"
+    run_both(server, whole, "mock/oracle", limit=7)
+    parts = []
+    for k in range(3):
+        part = tmp_path / f"part{k}"
+        info = tmp_path / "model.json"
+        info.write_text(json.dumps({"preset": "mock", "sha256": "abc"}))
+        codes, run_dir = run_both(server, part, "mock/oracle", limit=7, extra=("--shard", f"{k}/3", "--model-info", str(info)))
+        assert codes == [0, 0]
+        assert [r["index"] for r in lines(run_dir / "id.jsonl")] == [i for i in range(7) if i % 3 == k]
+        parts.append(run_dir)
+    assert main(["merge", "m", "--parts", *map(str, parts), "--limit", "7", "--results-dir", str(tmp_path / "merged")]) == 0
+    merged = tmp_path / "merged" / "m"
+    for s in ("id", "ood"):
+        assert lines(merged / f"{s}.jsonl") == lines(whole / "r" / f"{s}.jsonl")
+    summary = json.loads((merged / "summary.json").read_text())
+    expected = json.loads((whole / "r" / "summary.json").read_text())
+    assert summary["sets"]["id"]["floors"] == expected["sets"]["id"]["floors"]
+    assert summary["sets"]["ood"]["cases"] == 7 and summary["model_info"] == {"preset": "mock", "sha256": "abc"}
+    assert main(["compare", "m", "--results-dir", str(tmp_path / "merged")]) == 0
+
+
+def test_merge_refuses_missing_or_duplicated_households(server, tmp_path):
+    a = run_both(server, tmp_path / "a", "mock/oracle", limit=4, extra=("--shard", "0/2"))[1]
+    b = run_both(server, tmp_path / "b", "mock/oracle", limit=4, extra=("--shard", "1/2"))[1]
+    out = str(tmp_path / "merged")
+    assert main(["merge", "m", "--parts", str(a), "--limit", "4", "--results-dir", out]) == 1  # shard 1 missing
+    assert main(["merge", "m", "--parts", str(a), str(a), "--limit", "4", "--results-dir", out]) == 1  # duplicates
+    assert main(["merge", "m", "--parts", str(a), str(b), "--limit", "4", "--results-dir", out]) == 0
