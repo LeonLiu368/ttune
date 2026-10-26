@@ -46,7 +46,7 @@ Each shard job:
 
 A final job runs `python -m evals merge`, which refuses a missing or duplicated household. It then runs `compare` and opens the results PR. The model's repo, file, commit, hash and license are kept in `summary.json` under `model_info`.
 
-A CPU runner generates roughly 10 tokens a second, so a case takes about one to two minutes and a job runs for at most 6 hours. For the full 200 + 200, use about 8 shards.
+A CPU runner generates roughly 10 tokens a second, and Qwen3 4B writes about 3,000 tokens per case, so a case takes about 5 minutes. A job can run for at most 6 hours. The full 200 + 200 ran as 20 shards, each taking 1.5 to 3.5 hours.
 
 The same works on your own machine. Start any OpenAI-compatible server, such as `python -m llama_cpp.server --model <file.gguf>`, then run `python -m evals run --base-url http://127.0.0.1:8000/v1 ...`.
 
