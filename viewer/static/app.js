@@ -65,7 +65,7 @@ function show(...nodes) {
 const table = (head, rows) => h("div", { class: "table-scroll" }, h("table", {},
   h("thead", {}, h("tr", {}, head.map(([label, cls]) => h("th", { class: cls }, label)))),
   h("tbody", {}, rows)));
-const tile = (label, value, note) => h("div", { class: "tile" },
+const tile = (label, value, note, cls) => h("div", { class: cls ? `tile ${cls}` : "tile" },
   h("span", { class: "label" }, label), h("span", { class: "value" }, value), note ? h("span", { class: "note" }, note) : null);
 
 // --- runs list + launch -------------------------------------------------------------------------
@@ -118,12 +118,12 @@ function launchPanel() {
       h("span", {}, h("input", { type: "checkbox", name: "allow_paid", disabled: !(health && health.allow_paid) }),
         health && health.allow_paid ? " allow (costs money)" : " off on this server")));
   const keyField = health && health.needs_key
-    ? h("label", { class: "field", style: "max-width:320px" }, "Launch key", h("input", { type: "password", name: "key", autocomplete: "off" })) : null;
+    ? h("label", { class: "field field-key" }, "Launch key", h("input", { type: "password", name: "key", autocomplete: "off" })) : null;
   const fieldset = h("fieldset", { disabled: !canLaunch },
     h("div", { class: "radio-row", role: "radiogroup", "aria-label": "Where the model runs" },
       backend("self-hosted", "Self-hosted open model ($0)", true), backend("openrouter", "OpenRouter API")),
     selfHosted, openrouter, keyField,
-    h("p", { id: "limit-help", class: "muted", style: "font-size:0.8rem" }, "Households per set: a number up to 200, or \"all\". Self-hosted runs take about 5 minutes per household per job, so use 20 parallel jobs for full sets."),
+    h("p", { id: "limit-help", class: "help" }, "Households per set: a number up to 200, or \"all\". Self-hosted runs take about 5 minutes per household per job, so use 20 parallel jobs for full sets."),
     h("div", {}, h("button", { class: "button", type: "submit" }, "Launch run")));
   const form = h("form", { class: "launch" }, fieldset);
   form.addEventListener("change", (e) => {
@@ -206,16 +206,16 @@ async function viewRun(runId, set) {
   show(
     h("section", {}, h("p", { class: "crumbs" }, h("a", { href: "#/" }, "Runs"), " / ", runId),
       h("div", { class: "head" }, h("h1", {}, s.model || runId),
-        h("p", { class: "muted" }, [runDate(runId), info.parameters && `${info.parameters} parameters`, info.license,
-          `prompt v${s.prompt_version}`, s.max_tokens && `max ${s.max_tokens} tokens`].filter(Boolean).join(" · "))),
+        h("ul", { class: "meta" }, [runDate(runId), info.parameters && `${info.parameters} parameters`, info.license,
+          `prompt v${s.prompt_version}`, s.max_tokens && `max ${s.max_tokens} tokens`].filter(Boolean).map((t) => h("li", {}, t)))),
       h("div", { class: "tiles" },
-        tile("Reward, typical (ID)", num(hid.reward), `${hid.n} households`),
-        tile("Reward, unusual (OOD)", num(hood.reward), `${hood.n} households`),
+        tile("Reward, typical (ID)", num(hid.reward), `${hid.n} households`, "lead"),
+        tile("Reward, unusual (OOD)", num(hood.reward), `${hood.n} households`, "lead"),
         tile("Change", ov.changes.reward ? signed(ov.changes.reward.change, false) : "–",
           ov.changes.reward ? `95%: ${signed(ov.changes.reward.low, false)} to ${signed(ov.changes.reward.high, false)}` : null),
         tile("False denials", `${pct(hid.false_denial_rate)} → ${pct(hood.false_denial_rate)}`, "of truly eligible decisions"),
         tile("Malformed", `${pct(hid.malformed)} / ${pct(hood.malformed)}`, "replies with no readable answer")),
-      h("p", { class: "muted", style: "font-size:0.85rem" },
+      h("p", { class: "help" },
         `Floors, ID / OOD: always "no" scores ${floors("always_no")}; always "yes" with $0 scores ${floors("always_yes")}. ` +
         "Judge the ID → OOD change by balanced accuracy: it doesn't move with how many households qualify.")),
     h("section", {}, h("h2", {}, "By program"), table([["Program"], ["Balanced acc. ID", "num"], ["OOD", "num"],
@@ -297,8 +297,8 @@ async function viewCase(runId, caseId) {
       const tAmount = key === "snap" ? t.monthly_benefit : t.annual_amount;
       const unit = key === "snap" ? "/mo" : "/yr";
       verdictRows.push(h("tr", {}, h("td", {}, label), h("td", {}, "Household"),
-        h("td", {}, a ? [yesNo(a.eligible), a.eligible === true ? ` · ${money(a.amount)}${unit}` : ""] : "–"),
-        h("td", {}, yesNo(t.eligible), t.eligible ? ` · ${money(tAmount)}${unit}` : ""),
+        h("td", { class: "said" }, a ? [yesNo(a.eligible), a.eligible === true ? h("span", { class: "amount" }, `${money(a.amount)}${unit}`) : ""] : "–"),
+        h("td", { class: "truth" }, yesNo(t.eligible), t.eligible ? h("span", { class: "amount" }, `${money(tAmount)}${unit}`) : ""),
         h("td", {}, verdict(Boolean(t.eligible), a ? a.eligible : null),
           t.eligible && ok ? h("div", { class: "muted" }, `amount score ${num(c.score.programs[key].amount_score)}`) : null)));
     } else {
@@ -306,7 +306,7 @@ async function viewCase(runId, caseId) {
       const eligible = new Set((truth[key] || {}).eligible_members || []);
       c.members.forEach((m, i) => {
         verdictRows.push(h("tr", {}, h("td", {}, i === 0 ? label : ""), h("td", {}, `${m.name}, ${m.age}`),
-          h("td", {}, ans ? yesNo(listed.has(m.id)) : "–"), h("td", {}, yesNo(eligible.has(m.id))),
+          h("td", { class: "said" }, ans ? yesNo(listed.has(m.id)) : "–"), h("td", { class: "truth" }, yesNo(eligible.has(m.id))),
           h("td", {}, verdict(eligible.has(m.id), ans ? listed.has(m.id) : null))));
       });
       const unknown = ans ? ans[key].unknown_names : [];
@@ -333,7 +333,7 @@ async function viewCase(runId, caseId) {
     h("div", { class: "split" },
       h("section", { class: "card" }, h("h2", {}, "What the model saw"), h("pre", { class: "text" }, c.case || "(case text not found)")),
       h("section", { class: "card" }, h("h2", {}, "Model vs PolicyEngine"),
-        h("div", { class: "verdict" }, table([["Program"], ["Who"], ["Model says"], ["PolicyEngine"], ["Result"]], verdictRows)))),
+        h("div", { class: "verdict" }, table([["Program"], ["Who"], ["Model says", "said"], ["PolicyEngine", "truth"], ["Result"]], verdictRows)))),
     h("section", { class: "card" }, h("div", { class: "controls" }, h("h2", {}, "Full reply"),
       h("button", { type: "button", class: "link-button", onclick: (e) => { reply.classList.toggle("open"); e.target.textContent = reply.classList.contains("open") ? "Collapse" : "Show all"; } }, "Show all")),
       reply));

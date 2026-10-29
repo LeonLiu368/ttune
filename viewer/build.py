@@ -19,7 +19,7 @@ def _write(path: Path, payload) -> None:
 def build(out: Path, results_dir: Path = data.RESULTS_DIR, sets_dir: Path = data.SETS_DIR) -> dict:
     if out.exists():
         shutil.rmtree(out)
-    shutil.copytree(STATIC_DIR, out)
+    shutil.copytree(STATIC_DIR, out, ignore=shutil.ignore_patterns(".hallmark"))
     (out / ".nojekyll").write_text("")  # serve files as they are on GitHub Pages
     index = data.runs_index(results_dir)
     _write(out / "data" / "runs.json", index)
