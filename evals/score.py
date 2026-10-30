@@ -12,6 +12,10 @@ Follows the reward in the `benefits-task` skill (docs/04), adapted to programs d
   eligible. These are the skill's weights (0.5 and 0.25) renormalized: its missing-information and
   unknown-use dimensions need documents, which these cases don't have yet.
 - A malformed answer scores 0, and every decision counts as wrong.
+- Document cases (docgen) can leave a decision undetermined: a missing document could change it. There the
+  right answer is "unknown" and earns full credit; "yes" or "no" earns nothing (a guess), and is never counted
+  as a false denial or approval. An undetermined amount isn't scored. Text cases have no undetermined decisions,
+  so they score exactly as before.
 """
 
 from __future__ import annotations
@@ -39,14 +43,24 @@ def amount_score(given: float | None, true: float) -> float:
     return (zero - error) / (zero - tolerance)
 
 
-def _decisions(program: str, answer: dict | None, truth: dict, member_ids: list[str]) -> list[tuple[bool, object]]:
-    """(truly eligible, answered) per decision; answered is True, False, "unknown", or None if malformed."""
+def _decisions(program: str, answer: dict | None, truth: dict, member_ids: list[str]) -> list[tuple[object, object]]:
+    """(truth, answered) per decision. Truth is True, False or "unknown" (undetermined); answered is True, False,
+    "unknown", or None if malformed."""
     if program in AMOUNT_KEYS:
         given = None if answer is None else answer[program]["eligible"]
-        return [(bool(truth[program]["eligible"]), given)]
+        true = truth[program]["eligible"]
+        return [(UNKNOWN if true == UNKNOWN else bool(true), given)]
     eligible = set(truth[program]["eligible_members"])
-    listed = None if answer is None else set(answer[program]["members"])
-    return [(m in eligible, None if listed is None else m in listed) for m in member_ids]
+    undetermined = set(truth[program].get("unknown_members", []))
+
+    def said(m: str) -> object:
+        if answer is None:
+            return None
+        if m in answer[program]["members"]:
+            return True
+        return UNKNOWN if m in answer[program].get("unknown", []) else False
+
+    return [(UNKNOWN if m in undetermined else m in eligible, said(m)) for m in member_ids]
 
 
 def score(answer: dict | None, truth: dict, member_ids: list[str]) -> dict:
@@ -57,19 +71,21 @@ def score(answer: dict | None, truth: dict, member_ids: list[str]) -> dict:
     for program in PROGRAMS:
         decisions = _decisions(program, answer, truth, member_ids)
         n = len(decisions)
-        correct = sum(given is not None and given != UNKNOWN and given == true for true, given in decisions)
-        denials = sum(true and given is False for true, given in decisions)
-        approvals = sum((not true) and given is True for true, given in decisions)
+        correct = sum(given is not None and given == true for true, given in decisions)
+        denials = sum(true is True and given is False for true, given in decisions)
+        approvals = sum(true is False and given is True for true, given in decisions)
         unknown = sum(given == UNKNOWN for _, given in decisions)
         detail = {"decisions": n, "correct": correct, "false_denials": denials, "false_approvals": approvals,
-                  "unknown": unknown, "truly_eligible": sum(true for true, _ in decisions),
-                  "true_approvals": sum(true and given is True for true, given in decisions),
-                  "true_denials": sum((not true) and given is False for true, given in decisions)}
+                  "unknown": unknown, "truly_eligible": sum(true is True for true, _ in decisions),
+                  "true_approvals": sum(true is True and given is True for true, given in decisions),
+                  "true_denials": sum(true is False and given is False for true, given in decisions),
+                  "undetermined": sum(true == UNKNOWN for true, _ in decisions),
+                  "undetermined_right": sum(true == UNKNOWN and given == UNKNOWN for true, given in decisions)}
         correct_w += correct / n
         denial_w += denials / n
         if program in AMOUNT_KEYS:
             detail["amount_score"] = detail["amount_ok"] = None
-            if truth[program]["eligible"]:
+            if truth[program]["eligible"] is True and truth[program][TRUTH_AMOUNT[program]] is not None:
                 true_amount = float(truth[program][TRUTH_AMOUNT[program]])
                 said_yes = answer is not None and answer[program]["eligible"] is True
                 a = amount_score(answer[program]["amount"], true_amount) if said_yes else 0.0
@@ -95,9 +111,11 @@ def oracle_answer(truth: dict, names: dict[str, str]) -> dict:
     for program in PROGRAMS:
         if program in AMOUNT_KEYS:
             out[program] = {"eligible": truth[program]["eligible"],
-                            AMOUNT_KEYS[program]: truth[program][TRUTH_AMOUNT[program]]}
+                            AMOUNT_KEYS[program]: truth[program][TRUTH_AMOUNT[program]] or 0}
         else:
             out[program] = {"eligible_members": [by_id[m] for m in truth[program]["eligible_members"]]}
+            if truth[program].get("unknown_members"):
+                out[program]["unknown_members"] = [by_id[m] for m in truth[program]["unknown_members"]]
     return out
 
 

@@ -1,0 +1,4 @@
+# Document renderer (docgen): reportlab draws the PDFs. Building a set's truth also needs PolicyEngine:
+# pip install -r requirements-docgen.txt -r requirements-envgen.txt
+-r requirements.txt
+reportlab==4.4.4

@@ -23,6 +23,11 @@ on:
         description: "Reply length cap (Qwen3 4B needs about 6,000 to finish its working)"
         required: false
         default: "6000"
+      cases:
+        description: "text: the plain case summaries; documents: each household's application and paperwork (docgen)"
+        type: choice
+        options: [text, documents]
+        default: text
 
 permissions:
   contents: write
@@ -45,13 +50,15 @@ jobs:
           PRESET: ${{ inputs.preset }}
           LIMIT: ${{ inputs.limit }}
           SHARDS: ${{ inputs.shards }}
+          CASES: ${{ inputs.cases }}
         run: |
           if [ "$LIMIT" = "all" ]; then LIMIT=""; fi
           case "$LIMIT" in *[!0-9]*) echo 'limit must be a number or "all"'; exit 1;; esac
           case "$SHARDS" in ''|*[!0-9]*) echo "shards must be a number"; exit 1;; esac
           if [ "$SHARDS" -lt 1 ] || [ "$SHARDS" -gt 20 ]; then echo "shards must be 1-20"; exit 1; fi
           echo "limit=$LIMIT" >> "$GITHUB_OUTPUT"
-          echo "run_id=$(date -u +%Y%m%d-%H%M)-local-${PRESET}${LIMIT:+-n$LIMIT}" >> "$GITHUB_OUTPUT"
+          SUFFIX=""; if [ "$CASES" = "documents" ]; then SUFFIX="-docs"; fi
+          echo "run_id=$(date -u +%Y%m%d-%H%M)-local-${PRESET}${SUFFIX}${LIMIT:+-n$LIMIT}" >> "$GITHUB_OUTPUT"
           echo "shards=$(python3 -c "import json,sys; print(json.dumps(list(range(int(sys.argv[1])))))" "$SHARDS")" >> "$GITHUB_OUTPUT"
 
   run:
@@ -69,6 +76,7 @@ jobs:
       MAX_TOKENS: ${{ inputs.max_tokens }}
       RUN_ID: ${{ needs.plan.outputs.run_id }}
       SHARD: ${{ matrix.shard }}
+      CASES: ${{ inputs.cases }}
     steps:
       - uses: actions/checkout@v4
 
@@ -100,8 +108,10 @@ jobs:
         env:
           FILE: ${{ steps.model.outputs.file }}
         run: |
+          # Document cases run up to about 2,300 tokens before the reply, so they get a longer context.
+          N_CTX=8192; if [ "$CASES" = "documents" ]; then N_CTX=12288; fi
           nohup python -m llama_cpp.server --model "models/$FILE" --model_alias "local/$PRESET" \
-            --n_ctx 8192 --n_threads "$(nproc)" --seed 0 --host 127.0.0.1 --port 8000 --verbose False \
+            --n_ctx "$N_CTX" --n_threads "$(nproc)" --seed 0 --host 127.0.0.1 --port 8000 --verbose False \
             > server.log 2>&1 &
           for i in $(seq 1 120); do
             if curl -sf http://127.0.0.1:8000/v1/models > /dev/null; then echo "server up after $((i * 5))s"; exit 0; fi
@@ -116,6 +126,7 @@ jobs:
                   --shard "$SHARD/$SHARDS" --concurrency 1 --timeout 1800 --max-tokens "${MAX_TOKENS:-6000}"
                   --model-info models/model.json)
             if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+            if [ "$CASES" = "documents" ]; then args+=(--households "data/documents/$set/cases.jsonl"); fi
             python -m evals run "${args[@]}" || python -m evals run "${args[@]}" --resume
           done
 

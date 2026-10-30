@@ -1,0 +1,55 @@
+{
+  "application_date": "2026-10-02",
+  "counts": {
+    "document": {
+      "application": 200,
+      "benefit_letter": 34,
+      "childcare_invoice": 45,
+      "earnings_ledger": 12,
+      "enrollment_letter": 13,
+      "lease": 200,
+      "medical_bill": 72,
+      "medical_letter": 13,
+      "pay_stub": 521,
+      "payment_history": 10,
+      "utility_bill": 118
+    },
+    "eligible": {
+      "eitc": {
+        "no": 67,
+        "unknown": 12,
+        "yes": 121
+      },
+      "medicaid": {
+        "no": 54,
+        "unknown": 10,
+        "yes": 136
+      },
+      "snap": {
+        "no": 86,
+        "unknown": 22,
+        "yes": 92
+      },
+      "wic": {
+        "no": 117,
+        "unknown": 4,
+        "yes": 79
+      }
+    },
+    "issue": {
+      "missing_childcare_receipt": 5,
+      "missing_income_doc": 19,
+      "missing_lease_page": 24,
+      "name_variant": 43,
+      "partner_moved_out": 7,
+      "rent_mismatch": 28,
+      "stale_stub": 34
+    },
+    "packets_with_gap": 48
+  },
+  "households": "data/households/ood/households.jsonl",
+  "n": 200,
+  "policyengine_us": "2.50.1",
+  "seed": 1,
+  "set": "ood"
+}

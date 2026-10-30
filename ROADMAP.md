@@ -33,7 +33,7 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
   - [x] [#6](https://github.com/LeonLiu368/ttune/issues/6) Eval workflows and first ID vs OOD results: Qwen3 4B Instruct, self-hosted on GitHub's runners for $0 ([results](evals/results/20261026-0340-local-qwen3-4b-instruct/comparison.md); findings below)
 - [x] Eval viewer ([`viewer/`](viewer/README.md)): runs, OOD families and every household traced, published read-only to GitHub Pages; `python -m viewer serve` adds a launch form that starts runs on GitHub Actions
 - [ ] Host the viewer server in the cloud, with sign-in, so runs can be launched from the site
-- [ ] Messy document renderer
+- [x] Messy document renderer ([#14](https://github.com/LeonLiu368/ttune/issues/14), [data/documents](data/documents/README.md)): every household as an application plus pay stubs, letters, a lease and bills, with injected distractors and gaps; truth follows the documents, and a gap that could change an answer makes it "unknown"
 - [ ] First Harbor task and reward (`benefits-task` skill)
 - [ ] Reward-hack audit (`reward-hack-audit` skill)
 - [ ] Generated task set with train / holdout splits
@@ -120,3 +120,4 @@ The scraper doesn't spoof a browser to get past these. If a site blocks it, the 
 
 - Bump `actions/checkout`, `actions/setup-python` and `peter-evans/create-pull-request` off Node 20 (read their changelogs first).
 - Test the ttune skills in `.claude/skills/` with skill-creator once the first Harbor task exists.
+- Official forms for the document packets: fetch the 2025 W-2, 1099-NEC and 1099-G revisions (`irs.gov/pub/irs-prior/`) from GitHub's runners, and fill them as last year's tax forms. The forms on hand are 2026 revisions, which can't exist yet in October 2026.

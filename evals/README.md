@@ -63,12 +63,15 @@ The system prompt sets the rule periods: SNAP for October 2026 (FY2027), the EIT
 
 Every run records the prompt version and a hash of its text, so results from different prompts are never mixed by accident.
 
+**Document cases.** Point `--households` at [`data/documents/<set>/cases.jsonl`](../data/documents/README.md), or pick `cases: documents` in the self-hosted workflow. The model then reads the household's application and paperwork instead of a summary. Its prompt adds the rules for reading the documents (from [`docgen/rules.py`](../docgen/rules.py)) and an `unknown_members` list for Medicaid and WIC. The run records `case_format: documents` and its own prompt hash.
+
 ## How answers are scored
 
 [`score.py`](score.py) holds the rules as pure functions, so the Harbor verifier can reuse them.
 
 - **Decisions.** SNAP and the EITC are one yes/no each. Medicaid and WIC are one per household member.
-- **Eligibility score.** Each program weighs the same, and its weight is split across its decisions. A wrong "not eligible" for someone who qualifies costs **double**, because that's the error that costs people food or health care. A wrong "eligible" just earns nothing. So does `"unknown"`, since every case lists everything needed.
+- **Eligibility score.** Each program weighs the same, and its weight is split across its decisions. A wrong "not eligible" for someone who qualifies costs **double**, because that's the error that costs people food or health care. A wrong "eligible" just earns nothing. So does `"unknown"` wherever the case settles the answer.
+- **Undetermined decisions** (document cases only). When a missing document could change a decision, the right answer is `"unknown"`, and it earns full credit. A "yes" or "no" there earns nothing but is never counted as a false denial or approval. Its amount isn't scored. Text cases have none of these, so they score exactly as before.
 - **Amount score.** This covers SNAP and EITC amounts when the household truly qualifies. An amount within 5% or $10 (whichever is larger) gets full credit. Credit falls to zero at 25% off.
 - **Reward.** Two-thirds eligibility plus one-third amount, or eligibility alone when neither SNAP nor the EITC applies.
 - **Malformed replies.** A reply with no readable JSON, a missing program or a wrong type scores 0. It's counted, never skipped.

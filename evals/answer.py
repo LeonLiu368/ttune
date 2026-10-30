@@ -52,7 +52,9 @@ def parse_answer(text: str, names: dict[str, str]) -> tuple[dict | None, str | N
 
     The answer uses member ids:
     {"snap": {"eligible": True|False|"unknown", "amount": float|None}, "eitc": {...},
-     "medicaid": {"members": [ids], "unknown_names": [...]}, "wic": {...}}
+     "medicaid": {"members": [ids], "unknown": [ids], "unknown_names": [...]}, "wic": {...}}
+
+    "unknown" holds members listed under "unknown_members" (document cases) and not also listed as eligible.
     """
     try:
         return _parse(last_json_object(text or ""), names), None
@@ -83,14 +85,18 @@ def _parse(data: dict, names: dict[str, str]) -> dict:
             listed = part.get("eligible_members")
             if not isinstance(listed, list) or not all(isinstance(n, str) for n in listed):
                 raise Malformed(f"'{program}.eligible_members' must be a list of names")
-            members, unknown = [], []
-            for name in listed:
+            undecided = part.get("unknown_members", [])
+            if not isinstance(undecided, list) or not all(isinstance(n, str) for n in undecided):
+                raise Malformed(f"'{program}.unknown_members' must be a list of names")
+            members, maybe, unknown = [], [], []
+            for name, bucket in [*((n, members) for n in listed), *((n, maybe) for n in undecided)]:
                 member_id = lookup.get(_key(name))
                 if member_id is None:
                     unknown.append(name)
-                elif member_id not in members:
-                    members.append(member_id)
-            answer[program] = {"members": members, "unknown_names": unknown}
+                elif member_id not in members and member_id not in bucket:
+                    bucket.append(member_id)
+            answer[program] = {"members": members, "unknown": [m for m in maybe if m not in members],
+                               "unknown_names": unknown}
     return answer
 
 

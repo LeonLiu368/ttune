@@ -1,0 +1,51 @@
+{
+  "application_date": "2026-10-02",
+  "counts": {
+    "document": {
+      "application": 200,
+      "childcare_invoice": 33,
+      "lease": 200,
+      "medical_bill": 25,
+      "pay_stub": 449,
+      "payment_history": 14,
+      "utility_bill": 129
+    },
+    "eligible": {
+      "eitc": {
+        "no": 76,
+        "unknown": 35,
+        "yes": 89
+      },
+      "medicaid": {
+        "no": 88,
+        "unknown": 33,
+        "yes": 79
+      },
+      "snap": {
+        "no": 84,
+        "unknown": 40,
+        "yes": 76
+      },
+      "wic": {
+        "no": 155,
+        "unknown": 14,
+        "yes": 31
+      }
+    },
+    "issue": {
+      "missing_childcare_receipt": 3,
+      "missing_income_doc": 38,
+      "missing_lease_page": 36,
+      "name_variant": 21,
+      "partner_moved_out": 11,
+      "rent_mismatch": 32,
+      "stale_stub": 26
+    },
+    "packets_with_gap": 77
+  },
+  "households": "data/households/id/households.jsonl",
+  "n": 200,
+  "policyengine_us": "2.50.1",
+  "seed": 1,
+  "set": "id"
+}

@@ -42,9 +42,14 @@ def summarize(results: list[dict]) -> dict:
             "accuracy": _rate(total("correct"), total("decisions")),
             "balanced_accuracy": _balanced(details),
             "false_denial_rate": _rate(total("false_denials"), eligible),
-            "false_approval_rate": _rate(total("false_approvals"), total("decisions") - eligible),
+            "false_approval_rate": _rate(total("false_approvals"),
+                                         total("decisions") - eligible - sum(d.get("undetermined", 0) for d in details)),
             "unknown_rate": _rate(total("unknown"), total("decisions")),
         }
+        undetermined = sum(d.get("undetermined", 0) for d in details)
+        if undetermined:
+            stats["undetermined"] = undetermined
+            stats["undetermined_flagged"] = _rate(sum(d.get("undetermined_right", 0) for d in details), undetermined)
         if program in AMOUNT_KEYS:
             stats["amount_within_tolerance"] = _rate(sum(bool(d["amount_ok"]) for d in details), eligible)
         out["programs"][program] = stats
@@ -55,7 +60,7 @@ def _balanced(details: list[dict]) -> float | None:
     """Mean of accuracy on truly eligible and on truly ineligible decisions. Unlike plain accuracy, it doesn't
     move when one set simply has more eligible households: answering "no" to everything scores 50% on any set."""
     eligible = sum(d["truly_eligible"] for d in details)
-    ineligible = sum(d["decisions"] for d in details) - eligible
+    ineligible = sum(d["decisions"] - d.get("undetermined", 0) for d in details) - eligible
     if not eligible or not ineligible:
         return None
     return (sum(d["true_approvals"] for d in details) / eligible + sum(d["true_denials"] for d in details) / ineligible) / 2

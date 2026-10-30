@@ -12,7 +12,9 @@ from evals.__main__ import main
 from evals.score import oracle_answer
 
 SETS = Path(__file__).resolve().parents[1] / "data" / "households"
+DOCS = Path(__file__).resolve().parents[1] / "data" / "documents"
 ROWS = {json.loads(line)["id"]: json.loads(line) for s in ("id", "ood") for line in (SETS / s / "households.jsonl").open()}
+DOC_ROWS = {json.loads(line)["id"]: json.loads(line) for s in ("id", "ood") for line in (DOCS / s / "cases.jsonl").open()}
 CASE_ID = re.compile(r"Case (\S+)")
 
 
@@ -20,6 +22,12 @@ def oracle_reply(case_id):
     row = ROWS[case_id]
     names = {m["name"]: m["id"] for m in row["household"]["members"]}
     return "Let me work through each program.\n```json\n" + json.dumps(oracle_answer(row["truth"], names)) + "\n```"
+
+
+def doc_oracle_reply(case_id):
+    row = DOC_ROWS[case_id]
+    names = {m["name"]: m["id"] for m in row["household"]["members"]}
+    return "```json\n" + json.dumps(oracle_answer(row["truth"], names)) + "\n```"
 
 
 def deny_all_reply(case_id):
@@ -51,11 +59,15 @@ class Mock(BaseHTTPRequestHandler):
                                                  "finish_reason": "length"}],
                                     "usage": {"completion_tokens": 500,
                                               "completion_tokens_details": {"reasoning_tokens": 480}}})
+        if model == "mock/doc-oracle":
+            from evals.prompt import DOCUMENT_SYSTEM
+            assert body["messages"][0]["content"] == DOCUMENT_SYSTEM
         if model == "mock/rate-limited":
             return self._send(429, {"error": {"message": "temporarily rate-limited upstream"}})
         if model == "mock/flaky" and calls == 1:
             return self._send(503, {"error": {"message": "busy"}})
         text = {"mock/oracle": oracle_reply, "mock/flaky": oracle_reply, "mock/deny-all": deny_all_reply,
+                "mock/doc-oracle": doc_oracle_reply,
                 "mock/garbage": lambda _: "They probably qualify for something."}[model](case_id)
         self._send(200, {"choices": [{"message": {"role": "assistant", "content": text}}],
                          "usage": {"prompt_tokens": 1000, "completion_tokens": 200, "cost": 0}})
@@ -249,3 +261,23 @@ def test_merge_refuses_missing_or_duplicated_households(server, tmp_path):
     assert main(["merge", "m", "--parts", str(a), "--limit", "4", "--results-dir", out]) == 1  # shard 1 missing
     assert main(["merge", "m", "--parts", str(a), str(a), "--limit", "4", "--results-dir", out]) == 1  # duplicates
     assert main(["merge", "m", "--parts", str(a), str(b), "--limit", "4", "--results-dir", out]) == 0
+
+
+def test_document_cases_get_their_prompt_and_merge_from_the_cases_they_ran_on(server, tmp_path):
+    from evals.prompt import prompt_hash
+
+    parts = []
+    for k in range(2):
+        out = tmp_path / f"part{k}"
+        for s in ("id", "ood"):
+            assert main(["run", "--set", s, "--model", "mock/doc-oracle", "--limit", "6", "--run-id", "r",
+                         "--base-url", server, "--results-dir", str(out), "--shard", f"{k}/2",
+                         "--households", str(DOCS / s / "cases.jsonl")]) == 0
+        parts.append(out / "r")
+    assert main(["merge", "m", "--parts", *map(str, parts), "--limit", "6", "--results-dir", str(tmp_path / "merged")]) == 0
+    merged = tmp_path / "merged" / "m"
+    summary = json.loads((merged / "summary.json").read_text())
+    assert summary["case_format"] == "documents" and summary["prompt_hash"] == prompt_hash(documents=True)
+    assert summary["sets"]["id"]["households"] == "data/documents/id/cases.jsonl"
+    for s in ("id", "ood"):
+        assert [r["score"]["reward"] for r in lines(merged / f"{s}.jsonl")] == [1.0] * 6

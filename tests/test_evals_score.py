@@ -92,7 +92,7 @@ def test_unknown_earns_nothing_and_is_not_a_denial():
 
 def test_names_match_ignoring_case_and_spaces_and_unknown_names_are_kept():
     answer, _ = parse_answer(reply(medicaid=("luis", "ana  sofia", "Nobody")), NAMES)
-    assert answer["medicaid"] == {"members": ["p2", "p3"], "unknown_names": ["Nobody"]}
+    assert answer["medicaid"] == {"members": ["p2", "p3"], "unknown": [], "unknown_names": ["Nobody"]}
 
 
 def test_amounts_given_as_strings_are_read():

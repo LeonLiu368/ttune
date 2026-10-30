@@ -273,6 +273,8 @@ function caseSection(runId, set, rows) {
 
 function verdict(truthYes, answered) {
   if (answered === null || answered === undefined) return h("span", { class: "muted" }, "no answer");
+  if (truthYes === "unknown") return answered === "unknown" ? h("span", { class: "mark-right" }, "✓ flagged unknown")
+    : h("span", { class: "mark-wrong" }, "✗ guessed past a gap");
   if (answered === "unknown") return h("span", { class: "muted" }, "unknown");
   if (answered === truthYes) return h("span", { class: "mark-right" }, "✓ right");
   return h("span", { class: "mark-wrong" }, truthYes ? "✗ false denial" : "✗ false approval");
@@ -298,16 +300,21 @@ async function viewCase(runId, caseId) {
       const unit = key === "snap" ? "/mo" : "/yr";
       verdictRows.push(h("tr", {}, h("td", {}, label), h("td", {}, "Household"),
         h("td", { class: "said" }, a ? [yesNo(a.eligible), a.eligible === true ? h("span", { class: "amount" }, `${money(a.amount)}${unit}`) : ""] : "–"),
-        h("td", { class: "truth" }, yesNo(t.eligible), t.eligible ? h("span", { class: "amount" }, `${money(tAmount)}${unit}`) : ""),
-        h("td", {}, verdict(Boolean(t.eligible), a ? a.eligible : null),
-          t.eligible && ok ? h("div", { class: "muted" }, `amount score ${num(c.score.programs[key].amount_score)}`) : null)));
+        h("td", { class: "truth" }, yesNo(t.eligible), t.eligible === true ? h("span", { class: "amount" }, `${money(tAmount)}${unit}`) : ""),
+        h("td", {}, verdict(t.eligible === "unknown" ? "unknown" : Boolean(t.eligible), a ? a.eligible : null),
+          t.eligible === true && ok ? h("div", { class: "muted" }, `amount score ${num(c.score.programs[key].amount_score)}`) : null)));
     } else {
       const listed = new Set(ans ? ans[key].members : []);
+      const maybe = new Set(ans ? ans[key].unknown || [] : []);
       const eligible = new Set((truth[key] || {}).eligible_members || []);
+      const undetermined = new Set((truth[key] || {}).unknown_members || []);
+      // Document cases can leave a member undetermined: a missing document could change the answer.
+      const said = (id) => (listed.has(id) ? true : maybe.has(id) ? "unknown" : false);
+      const truthOf = (id) => (undetermined.has(id) ? "unknown" : eligible.has(id));
       c.members.forEach((m, i) => {
         verdictRows.push(h("tr", {}, h("td", {}, i === 0 ? label : ""), h("td", {}, `${m.name}, ${m.age}`),
-          h("td", { class: "said" }, ans ? yesNo(listed.has(m.id)) : "–"), h("td", { class: "truth" }, yesNo(eligible.has(m.id))),
-          h("td", {}, verdict(eligible.has(m.id), ans ? listed.has(m.id) : null))));
+          h("td", { class: "said" }, ans ? yesNo(said(m.id)) : "–"), h("td", { class: "truth" }, yesNo(truthOf(m.id))),
+          h("td", {}, verdict(truthOf(m.id), ans ? said(m.id) : null))));
       });
       const unknown = ans ? ans[key].unknown_names : [];
       if (unknown && unknown.length) verdictRows.push(h("tr", {}, h("td", {}), h("td", { class: "wrap-cell muted", colspan: 4 }, `Names not in the case: ${unknown.join(", ")}`)));

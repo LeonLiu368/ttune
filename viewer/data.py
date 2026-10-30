@@ -34,8 +34,15 @@ def load_results(run_dir: Path, set_: str) -> list[dict]:
     return [json.loads(line) for line in path.open()] if path.is_file() else []
 
 
-def load_households(sets_dir: Path, set_: str) -> dict[str, dict]:
+def load_households(sets_dir: Path, set_: str, run_dir: Path | None = None) -> dict[str, dict]:
+    """The cases a run was graded on: the file its summary names (e.g. docgen's document cases) if it is inside the
+    repo, else the household set."""
     path = sets_dir / set_ / "households.jsonl"
+    if run_dir is not None and (run_dir / "summary.json").is_file():
+        named = json.loads((run_dir / "summary.json").read_text()).get("sets", {}).get(set_, {}).get("households")
+        candidate = (ROOT / named).resolve() if named else None
+        if candidate and candidate.is_relative_to(ROOT) and candidate.is_file():
+            path = candidate
     return {row["id"]: row for row in map(json.loads, path.open())} if path.is_file() else {}
 
 
@@ -149,7 +156,7 @@ def case_detail(run_dir: Path, case_id: str, sets_dir: Path = SETS_DIR) -> dict 
     result = next((r for r in load_results(run_dir, set_) if r["id"] == case_id), None)
     if result is None:
         return None
-    household = load_households(sets_dir, set_).get(case_id, {})
+    household = load_households(sets_dir, set_, run_dir).get(case_id, {})
     members = [{k: m[k] for k in ("id", "name", "age", "relationship")} for m in household.get("household", {}).get("members", [])]
     return {**result, "set": set_, "case": household.get("case"), "truth": household.get("truth"), "members": members,
             "state": household.get("household", {}).get("state"), "edge": household.get("household", {}).get("edge")}

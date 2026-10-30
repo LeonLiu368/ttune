@@ -52,7 +52,7 @@ def _base(index: int, row: dict) -> dict:
 async def _one(client: ChatClient, index: int, row: dict) -> dict:
     out = _base(index, row)
     try:
-        completion = await client.complete(prompt.messages(row["case"]))
+        completion = await client.complete(prompt.messages(row["case"], documents="packet" in row))
     except FatalApiError:
         raise
     except ApiError as exc:
@@ -167,7 +167,9 @@ def write_set(out_dir: Path, set_: str, path: Path, rows: list[dict], results: l
     }
     summary_path = out_dir / "summary.json"
     summary = json.loads(summary_path.read_text()) if summary_path.is_file() else {}
-    summary.update({**settings, "prompt_version": prompt.PROMPT_VERSION, "prompt_hash": prompt.prompt_hash()})
+    documents = any("packet" in row for row in rows)  # cases built by docgen get the document prompt
+    summary.update({**settings, "case_format": "documents" if documents else "text",
+                    "prompt_version": prompt.version(documents), "prompt_hash": prompt.prompt_hash(documents)})
     summary.setdefault("sets", {})[set_] = set_summary
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
     return set_summary
@@ -198,7 +200,10 @@ def merge(run_id: str, parts: list[Path], *, limit: int | None = None, results_d
         if not files:
             continue
         results = [json.loads(line) for f in files for line in f.open()]
-        path = sets_dir / set_ / "households.jsonl"
+        named = {s.get("sets", {}).get(set_, {}).get("households") for s in summaries} - {None}
+        if len(named) > 1:
+            raise MergeError(f"{set_}: parts ran on different cases: {sorted(named)}")
+        path = ROOT / named.pop() if named else sets_dir / set_ / "households.jsonl"  # e.g. docgen's document cases
         rows = [row for _, row in select(load_set(path), limit)]
         ids = [r["id"] for r in results]
         if len(ids) != len(set(ids)):
