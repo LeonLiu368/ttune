@@ -90,7 +90,7 @@ def _parse(data: dict, names: dict[str, str]) -> dict:
                 raise Malformed(f"'{program}.unknown_members' must be a list of names")
             members, maybe, unknown = [], [], []
             for name, bucket in [*((n, members) for n in listed), *((n, maybe) for n in undecided)]:
-                member_id = lookup.get(_key(name))
+                member_id = _lookup(lookup, name)
                 if member_id is None:
                     unknown.append(name)
                 elif member_id not in members and member_id not in bucket:
@@ -98,6 +98,15 @@ def _parse(data: dict, names: dict[str, str]) -> dict:
             answer[program] = {"members": members, "unknown": [m for m in maybe if m not in members],
                                "unknown_names": unknown}
     return answer
+
+
+def _lookup(lookup: dict[str, str], name: str) -> str | None:
+    """A member id by name. Document cases print full names ("Elena Nguyen") while the household knows first
+    names, so a first name followed by a surname also matches; first names are unique within a household."""
+    member_id = lookup.get(_key(name))
+    if member_id is None and len(name.split()) > 1:
+        member_id = lookup.get(_key(name.split()[0]))
+    return member_id
 
 
 def _number(text: str) -> float | None:

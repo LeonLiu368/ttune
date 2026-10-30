@@ -229,3 +229,12 @@ def test_pdf_has_the_amounts_and_the_same_bytes_every_time():
     text = " ".join(page.extract_text() for page in pdfplumber.open(io.BytesIO(pdf)).pages)
     gross = next(r for r in stub.pages[0].blocks[1]["rows"] if r[0] == "Gross pay")[-1]
     assert gross in text and "Earnings statement" in text
+
+
+def test_full_names_from_the_documents_match_the_household_members():
+    body = {"snap": {"eligible": True, "monthly_benefit": 10}, "eitc": {"eligible": True, "annual_amount": 600},
+            "medicaid": {"eligible_members": ["Ana Lopez"], "unknown_members": ["Leo Lopez"]},
+            "wic": {"eligible_members": ["Nobody Here"]}}
+    answer, _ = parse_answer(reply(body), NAMES)
+    assert answer["medicaid"] == {"members": ["p1"], "unknown": ["p2"], "unknown_names": []}
+    assert answer["wic"] == {"members": [], "unknown": [], "unknown_names": ["Nobody Here"]}
