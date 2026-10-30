@@ -1,0 +1,63 @@
+{
+  "base_url": "http://127.0.0.1:8000/v1",
+  "case_format": "documents",
+  "max_tokens": 6000,
+  "model": "local/qwen3-4b-instruct",
+  "model_info": {
+    "file": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+    "license": "Apache-2.0",
+    "llama_cpp_python": "0.3.35",
+    "parameters": "4B",
+    "path": "models/Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+    "preset": "qwen3-4b-instruct",
+    "repo": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
+    "revision": "a06e946bb6b655725eafa393f4a9745d460374c9",
+    "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+    "size_bytes": 2497281120
+  },
+  "prompt_hash": "8f738e993b5ac884",
+  "prompt_version": 1,
+  "run_id": "20261030-2220-local-qwen3-4b-instruct-docs-n20",
+  "sets": {
+    "id": {
+      "api_errors": 0,
+      "cases": 20,
+      "completion_tokens": 57747,
+      "cost_usd": 0.0,
+      "cut_off": 1,
+      "floors": {
+        "always_no": 0.3158,
+        "always_yes": 0.2746
+      },
+      "households": "data/documents/id/cases.jsonl",
+      "households_sha256": "cb5227e0a6f7401584eeda4005c51ba568623b1539f1ed1adfef0e5bc2505d3a",
+      "limit": 20,
+      "malformed": 1,
+      "mean_reward": 0.4135,
+      "policyengine_us": "2.50.1",
+      "prompt_tokens": 36765,
+      "reasoning_tokens": 0,
+      "shard": null
+    },
+    "ood": {
+      "api_errors": 0,
+      "cases": 20,
+      "completion_tokens": 66405,
+      "cost_usd": 0.0,
+      "cut_off": 0,
+      "floors": {
+        "always_no": 0.0811,
+        "always_yes": 0.3388
+      },
+      "households": "data/documents/ood/cases.jsonl",
+      "households_sha256": "0cc045b14e8a2efccd24673b525c761e3333103857a80695fc64f8d5de1465b3",
+      "limit": 20,
+      "malformed": 0,
+      "mean_reward": 0.1369,
+      "policyengine_us": "2.50.1",
+      "prompt_tokens": 40990,
+      "reasoning_tokens": 0,
+      "shard": null
+    }
+  }
+}
