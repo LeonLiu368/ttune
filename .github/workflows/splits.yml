@@ -1,0 +1,111 @@
+name: Task splits
+
+# Builds the Harbor task splits: train and validation from fresh typical households (seeded from the
+# TTUNE_TRAIN_SEED secret, so their answers stay private), and the published holdout sets. The tasks are kept as an
+# artifact encrypted with that secret; only the manifests (counts, audit, task digests: no answers) come back as a
+# PR. $0, no model.
+on:
+  workflow_dispatch:
+    inputs:
+      n_train:
+        description: "Training households"
+        required: false
+        default: "1000"
+      n_validation:
+        description: "Validation households"
+        required: false
+        default: "200"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: splits
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      TTUNE_TRAIN_SEED: ${{ secrets.TTUNE_TRAIN_SEED }}
+      N_TRAIN: ${{ inputs.n_train }}
+      N_VALIDATION: ${{ inputs.n_validation }}
+    steps:
+      - name: The secret is set
+        run: |
+          if [ -z "$TTUNE_TRAIN_SEED" ]; then
+            echo "Add a repository secret named TTUNE_TRAIN_SEED (any long random string): Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          case "$N_TRAIN$N_VALIDATION" in *[!0-9]*|"") echo "n_train and n_validation must be numbers"; exit 1;; esac
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements-envgen.txt
+            requirements-docgen.txt
+
+      - run: pip install -r requirements-envgen.txt -r requirements-docgen.txt
+
+      - name: Build every split
+        run: |
+          python -m harbortask split --split train --n "$N_TRAIN" --out build/splits
+          python -m harbortask split --split validation --n "$N_VALIDATION" --out build/splits
+          python -m harbortask split --split holdout-id --out build/splits
+          python -m harbortask split --split holdout-ood --out build/splits
+          mkdir -p tasks/splits
+          for s in train validation holdout-id holdout-ood; do cp "build/splits/$s/manifest.json" "tasks/splits/$s.json"; done
+
+      - name: Oracle in Docker on a sample of the generated tasks
+        run: |
+          curl -LsSf https://astral.sh/uv/0.9.7/install.sh | sh
+          ~/.local/bin/uv tool install harbor==0.25.0
+          mkdir -p jobs
+          for task in $(ls -d build/splits/train/benefits-*/ | sort | head -3) $(ls -d build/splits/validation/benefits-*/ | sort | head -1); do
+            harbor run -p "$task" -a oracle -e docker -n 1 -o "jobs/$(basename "$task")" -y -q
+          done
+          python3 - <<'PY'
+          import json, pathlib, sys
+          bad = []
+          for job in sorted(pathlib.Path("jobs").iterdir()):
+              rewards = [(json.loads(p.read_text()).get("verifier_result") or {}).get("rewards") or {}
+                         for p in job.rglob("result.json") if "verifier_result" in json.loads(p.read_text())]
+              print(job.name, rewards)
+              if [r.get("reward") for r in rewards] != [1.0]:
+                  bad.append(job.name)
+          sys.exit(f"oracle below 1.0: {bad}" if bad else 0)
+          PY
+
+      # Artifacts of a public repo can be downloaded by any GitHub user, so the bundle (answers included) is
+      # encrypted with the same secret. Decrypt: see tasks/README.md#splits.
+      - name: Encrypt the tasks
+        run: |
+          tar -czf - -C build splits \
+            | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:TTUNE_TRAIN_SEED -out ttune-splits.tar.gz.enc
+          ls -lh ttune-splits.tar.gz.enc
+
+      - name: Keep the encrypted tasks
+        uses: actions/upload-artifact@v4
+        with:
+          name: ttune-splits-${{ github.run_id }}
+          path: ttune-splits.tar.gz.enc
+          retention-days: 90
+
+      - name: Open a PR with the manifests
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: splits/${{ github.run_id }}
+          add-paths: tasks/splits
+          commit-message: "Task splits: manifests from run ${{ github.run_id }}"
+          title: "Task splits: train ${{ inputs.n_train }}, validation ${{ inputs.n_validation }}, holdout 200 + 200"
+          body: |
+            Manifests for the task splits built in run ${{ github.run_id }}. They hold counts, audit results and task digests, with no case data or answers.
+
+            The tasks themselves are in the run's artifact `ttune-splits-${{ github.run_id }}`, encrypted with `TTUNE_TRAIN_SEED` and kept for 90 days. See tasks/README.md, "Splits", to decrypt.
+          delete-branch: true

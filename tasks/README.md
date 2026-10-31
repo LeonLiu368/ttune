@@ -15,6 +15,40 @@ This folder holds 6 hand-checked sample tasks:
 
 The full generated set, with train and holdout splits, is the next step on the [roadmap](../ROADMAP.md).
 
+## Splits
+
+The tasks a model trains on are generated separately from the sample tasks here, by `python -m harbortask split`:
+
+| Split | Households | Source | Answers |
+|---|---|---|---|
+| `train` | 1,000 | Fresh typical households (envgen's ID sampler), seeded from the `TTUNE_TRAIN_SEED` secret | Private |
+| `validation` | 200 | The same sampler, from a second seed derived from the same secret | Private |
+| `holdout-id` | 200 | The published typical cases, [`data/documents/id`](../data/documents/id/) | Public; never trained on |
+| `holdout-ood` | 200 | The published unusual cases, [`data/documents/ood`](../data/documents/ood/) | Public; never trained on |
+
+- **Why typical households only.** Training uses typical households only, so the OOD holdout measures true generalization: does practice on typical paperwork carry over to unusual households? The eval numbers so far come from the same 400 holdout cases, so they stay comparable.
+- **Keeping the answers private.** A public seed would let anyone regenerate the training answers.
+  - Each generated case is renamed `train-0001`, `validation-0001` and so on, and its seed is blanked, so no file reveals the seed.
+  - The build fails if any generated household has the same facts as another or as a holdout household.
+- **Checks on every build.** Each split gets the reward-hack audit, and the balance check stops the build if a program comes out all one answer.
+
+The **Task splits** workflow (run by hand) does all of this:
+
+1. Builds the four splits.
+2. Runs the Oracle in Docker on a sample of the generated tasks.
+3. Uploads the tasks encrypted with the secret. Artifacts of a public repo can be downloaded by any GitHub user, so they're never uploaded in the clear.
+4. Opens a PR with the manifests in [`splits/`](splits/): counts, audit and task digests, with no case data or answers.
+
+To build a split yourself, or to open the workflow's artifact:
+
+```bash
+export TTUNE_TRAIN_SEED=...      # the repository secret; never commit it
+python -m harbortask split --split train --n 1000 --out build/splits
+openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:TTUNE_TRAIN_SEED \
+  -in ttune-splits.tar.gz.enc | tar -xzf -                     # -> splits/<split>/<task-id>/
+harbor run -p splits/train -a <agent> -m <model> -e docker     # a whole split as one Harbor job
+```
+
 ## How a task works
 
 - **The agent's container:**

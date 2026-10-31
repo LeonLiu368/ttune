@@ -37,7 +37,7 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
 - [x] Messy document renderer ([#14](https://github.com/LeonLiu368/ttune/issues/14), [data/documents](data/documents/README.md)): every household as an application plus pay stubs, letters, a lease and bills, with injected distractors and gaps; truth follows the documents, and a gap that could change an answer makes it "unknown"
 - [x] First Harbor task and reward ([tasks/](tasks/README.md), `harbortask/`): 6 sample tasks built from document cases. The agent reads the PDFs, uses `benefits-calc` (PolicyEngine as a calculator) and writes `/app/answer.json`. A separate offline Reward Kit verifier scores eligibility, amounts and the missing-information list. The Oracle scores 1.0 in Docker in CI; blanket answers stay at about 0.33
 - [x] Reward-hack audit (`reward-hack-audit` skill), for the first tasks: [tasks/README.md](tasks/README.md#reward-hack-audit). Rerun for the generated set
-- [ ] Generated task set with train / holdout splits
+- [ ] Generated task set with train / holdout splits ([tasks/README.md](tasks/README.md#splits)). The tooling is built: 1,000 train + 200 validation from fresh typical households on a secret seed, and the published 200 + 200 as the holdout. The **Task splits** workflow builds them, encrypts the tasks and opens a PR with the manifests. The first build waits on the `TTUNE_TRAIN_SEED` repository secret.
 
 ## 4. Train
 

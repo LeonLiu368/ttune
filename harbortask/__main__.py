@@ -1,4 +1,4 @@
-"""python -m harbortask audit | build [--samples | --set {id,ood} --ids ...] [--out tasks]"""
+"""python -m harbortask audit | build [--samples | --set {id,ood} --ids ...] | split --split ... [--n N]"""
 
 from __future__ import annotations
 
@@ -26,9 +26,29 @@ def main(argv: list[str] | None = None) -> int:
     b.add_argument("--set", choices=("id", "ood"), dest="set_")
     b.add_argument("--ids", nargs="*", default=None)
     b.add_argument("--out", type=Path, default=TASKS)
+    sp = sub.add_parser("split", help="build a task split: train/validation (secret seed) or holdout-id/holdout-ood")
+    sp.add_argument("--split", required=True, choices=("train", "validation", "holdout-id", "holdout-ood"))
+    sp.add_argument("--n", type=int, default=None, help="households, for train and validation")
+    sp.add_argument("--secret-env", default="TTUNE_TRAIN_SEED", help="environment variable holding the secret")
+    sp.add_argument("--out", type=Path, default=ROOT / "build" / "splits")
     a = sub.add_parser("audit", help="score degenerate answers over every document case (writes tasks/audit.json)")
     a.add_argument("--out", type=Path, default=TASKS / "audit.json")
     args = parser.parse_args(argv)
+
+    if args.command == "split":
+        import os
+
+        from harbortask.split import GENERATED, SplitError, build_split
+        if args.split in GENERATED and not args.n:
+            parser.error("--n is required for train and validation")
+        try:
+            meta = build_split(args.split, args.out, os.environ.get(args.secret_env, ""), args.n)
+        except SplitError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        print(json.dumps({k: meta[k] for k in ("split", "n", "audit")}, indent=1))
+        print(json.dumps(meta["counts"]["answer"]), f"\nwrote {len(meta['tasks'])} tasks to {args.out / args.split}")
+        return 0
 
     if args.command == "audit":
         rows = load("id") + load("ood")
