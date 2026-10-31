@@ -1,6 +1,6 @@
 # Eval: `local/qwen3-4b-instruct`
 
-Run `20261030-2220-local-qwen3-4b-instruct-docs-n20` · prompt v1 (`8f738e993b5ac884`) · answers from policyengine-us 2.50.1 · max tokens 6000 · cost $0.0000
+Run `20261030-2220-local-qwen3-4b-instruct-docs-n20` · document cases (application and paperwork, data/documents) · document prompt v1 (`8f738e993b5ac884`) · answers from policyengine-us 2.50.1 · max tokens 6000 · cost $0.0000
 
 Changes are OOD minus ID, with 95% bootstrap intervals over households in brackets. With about 67 households per OOD family, small gaps can be noise.
 
