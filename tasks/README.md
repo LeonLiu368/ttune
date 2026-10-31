@@ -13,7 +13,7 @@ This folder holds 6 hand-checked sample tasks:
 | [benefits-ad9f0b012e](benefits-ad9f0b012e/) | id-1-0079 | No childcare receipt (a gap) |
 | [benefits-145a2b74d9](benefits-145a2b74d9/) | ood-1-0000 | A multigenerational household with a stale pay stub |
 
-The full generated set, with train and holdout splits, is the next step on the [roadmap](../ROADMAP.md).
+The full generated set, with train and holdout splits, is described under [Splits](#splits).
 
 ## Splits
 
@@ -38,6 +38,22 @@ The **Task splits** workflow (run by hand) does all of this:
 2. Runs the Oracle in Docker on a sample of the generated tasks.
 3. Uploads the tasks encrypted with the secret. Artifacts of a public repo can be downloaded by any GitHub user, so they're never uploaded in the clear.
 4. Opens a PR with the manifests in [`splits/`](splits/): counts, audit and task digests, with no case data or answers.
+
+### The current build
+
+Run [41242886804](https://github.com/LeonLiu368/ttune/actions/runs/41242886804), 2026-10-31, generator commit `3ba7556`. The encrypted tasks are in the artifact `ttune-splits-41242886804` (42 MB), kept until 2027-01-29.
+
+| Split | Tasks | Packets with a gap | SNAP yes / no / unknown | Oracle | Best degenerate answer |
+|---|---|---|---|---|---|
+| `train` | 1,000 | 338 | 433 / 383 / 184 | 1.0 | 0.36 (all no) |
+| `validation` | 200 | 82 | 81 / 73 / 46 | 1.0 | 0.35 (all no) |
+| `holdout-id` | 200 | 77 | 76 / 84 / 40 | 1.0 | 0.38 (all no) |
+| `holdout-ood` | 200 | 48 | 92 / 86 / 22 | 1.0 | 0.38 (all yes) |
+
+- **Oracle in Docker:** Harbor's Oracle scored 1.0 on every dimension of 4 sampled tasks (3 train, 1 validation).
+- **Audit:** the reward-hack audit passed on every split. Empty and malformed answers scored 0.
+- **Overlap:** no train or validation household repeats another household or a holdout one.
+- **Details:** the per-program answers, issue counts and task digests are in the [manifests](splits/).
 
 To build a split yourself, or to open the workflow's artifact:
 
