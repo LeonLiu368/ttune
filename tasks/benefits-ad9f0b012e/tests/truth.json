@@ -1,0 +1,40 @@
+{
+ "missing_information": [
+  {
+   "document": "childcare_receipt",
+   "member": null
+  }
+ ],
+ "names": {
+  "p1": "James",
+  "p2": "Abigail"
+ },
+ "truth": {
+  "chip": {
+   "eligible_members": [],
+   "unknown_members": []
+  },
+  "eitc": {
+   "annual_amount": 4427.0,
+   "eligible": true
+  },
+  "medicaid": {
+   "eligible_members": [
+    "p2"
+   ],
+   "unknown_members": []
+  },
+  "missing_information": [
+   "Childcare invoice or receipt showing the monthly cost"
+  ],
+  "snap": {
+   "eligible": true,
+   "monthly_benefit": 562.0
+  },
+  "wic": {
+   "eligible_members": [],
+   "monthly_value": 0.0,
+   "unknown_members": []
+  }
+ }
+}

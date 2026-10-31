@@ -1,0 +1,32 @@
+{
+ "missing_information": [],
+ "names": {
+  "p1": "Malik",
+  "p2": "Keisha",
+  "p3": "Naomi"
+ },
+ "truth": {
+  "chip": {
+   "eligible_members": [],
+   "unknown_members": []
+  },
+  "eitc": {
+   "annual_amount": 664.0,
+   "eligible": true
+  },
+  "medicaid": {
+   "eligible_members": [],
+   "unknown_members": []
+  },
+  "missing_information": [],
+  "snap": {
+   "eligible": true,
+   "monthly_benefit": 114.0
+  },
+  "wic": {
+   "eligible_members": [],
+   "monthly_value": 0.0,
+   "unknown_members": []
+  }
+ }
+}

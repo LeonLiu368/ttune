@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-31",
+  "cases": 400,
+  "policies": {
+    "oracle": {
+      "mean": 1.0,
+      "max": 1.0,
+      "dimensions": {
+        "eligibility": 1.0,
+        "amount": 1.0,
+        "missing_info": 1.0
+      }
+    },
+    "empty": {
+      "mean": 0.0,
+      "max": 0.0,
+      "dimensions": {
+        "eligibility": 0.0,
+        "amount": 0.0,
+        "missing_info": 0.0
+      }
+    },
+    "malformed": {
+      "mean": 0.0,
+      "max": 0.0,
+      "dimensions": {
+        "eligibility": 0.0,
+        "amount": 0.0,
+        "missing_info": 0.0
+      }
+    },
+    "all no, flag nothing": {
+      "mean": 0.3345,
+      "max": 1.0,
+      "dimensions": {
+        "eligibility": 0.2779,
+        "amount": 0.2584,
+        "missing_info": 0.6875
+      }
+    },
+    "all yes, flag nothing": {
+      "mean": 0.3301,
+      "max": 0.7125,
+      "dimensions": {
+        "eligibility": 0.3684,
+        "amount": 0.0239,
+        "missing_info": 0.6875
+      }
+    },
+    "all unknown, flag everything": {
+      "mean": 0.0828,
+      "max": 0.765,
+      "dimensions": {
+        "eligibility": 0.0987,
+        "amount": 0.0944,
+        "missing_info": 0.0
+      }
+    },
+    "random values, right format": {
+      "mean": 0.276,
+      "max": 1.0,
+      "dimensions": {
+        "eligibility": 0.2627,
+        "amount": 0.1587,
+        "missing_info": 0.5244
+      }
+    }
+  },
+  "checks": [
+    {
+      "check": "Leakage",
+      "result": "pass",
+      "notes": "The agent image holds only the PDFs and benefits-calc; the answer key, grading code and solution are in the verifier's image or solution/. No network in either. Task ids are hashed, not case ids."
+    },
+    {
+      "check": "Tampering",
+      "result": "pass",
+      "notes": "Separate verifier container built from tests/; only /app/answer.json crosses over, as data."
+    },
+    {
+      "check": "Degenerate policies",
+      "result": "pass",
+      "notes": "empty: 0.00; malformed: 0.00; all no, flag nothing: 0.33; all yes, flag nothing: 0.33; all unknown, flag everything: 0.08; random values, right format: 0.28 (mean reward over 400 cases; oracle 1.00)"
+    },
+    {
+      "check": "Verifier logic",
+      "result": "pass",
+      "notes": "Scores outcomes (answers vs PolicyEngine), not format. Unreadable answers and grading errors score 0. Deterministic."
+    }
+  ]
+}

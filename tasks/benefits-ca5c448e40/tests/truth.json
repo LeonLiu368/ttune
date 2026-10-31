@@ -1,0 +1,39 @@
+{
+ "missing_information": [
+  {
+   "document": "pay_stubs",
+   "member": "Imani"
+  }
+ ],
+ "names": {
+  "p1": "Imani"
+ },
+ "truth": {
+  "chip": {
+   "eligible_members": [],
+   "unknown_members": []
+  },
+  "eitc": {
+   "annual_amount": null,
+   "eligible": "unknown"
+  },
+  "medicaid": {
+   "eligible_members": [],
+   "unknown_members": [
+    "p1"
+   ]
+  },
+  "missing_information": [
+   "Pay stubs for Imani Clark"
+  ],
+  "snap": {
+   "eligible": "unknown",
+   "monthly_benefit": null
+  },
+  "wic": {
+   "eligible_members": [],
+   "monthly_value": 0.0,
+   "unknown_members": []
+  }
+ }
+}

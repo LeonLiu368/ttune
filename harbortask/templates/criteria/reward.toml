@@ -1,0 +1,5 @@
+# One key per dimension, plus "reward": the weighted mean. Weights are harbortask/verify.py's WEIGHTS.
+[[reward]]
+name = "reward"
+aggregation = "weighted-mean"
+weights = { eligibility = $w_eligibility, amount = $w_amount, missing_info = $w_missing_info }

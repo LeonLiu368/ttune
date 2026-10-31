@@ -1,0 +1,74 @@
+name: Harbor tasks
+
+# Builds the committed sample tasks in Docker and runs Harbor's Oracle agent (the reference answer) on each: every
+# one must score reward 1.0. One copy with an empty solution must score 0. No model, no API, $0.
+on:
+  push:
+    branches: [main]
+    paths: ["harbortask/**", "tasks/**", "evals/answer.py", "evals/score.py", "envgen/household.py",
+            "envgen/truth.py", "docgen/**", "data/documents/**", ".github/workflows/harbor.yml"]
+  pull_request:
+    paths: ["harbortask/**", "tasks/**", "evals/answer.py", "evals/score.py", "envgen/household.py",
+            "envgen/truth.py", "docgen/**", "data/documents/**", ".github/workflows/harbor.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  oracle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-docgen.txt
+
+      - name: The committed tasks match the generator
+        run: |
+          python -m harbortask build --samples
+          git diff --exit-code tasks/ || { echo "tasks/ is stale: run python -m harbortask build --samples"; exit 1; }
+
+      - name: Install Harbor
+        run: |
+          curl -LsSf https://astral.sh/uv/0.9.7/install.sh | sh
+          ~/.local/bin/uv tool install harbor==0.25.0
+
+      - name: Oracle on every task, and an empty answer
+        run: |
+          mkdir -p jobs
+          for task in tasks/benefits-*/; do
+            name=$(basename "$task")
+            harbor run -p "$task" -a oracle -e docker -n 1 -o "jobs/$name" -y -q
+          done
+          empty=$(mktemp -d)/empty-answer
+          cp -r "$(ls -d tasks/benefits-*/ | head -1)" "$empty"
+          printf '#!/bin/bash\ntrue\n' > "$empty/solution/solve.sh"
+          harbor run -p "$empty" -a oracle -e docker -n 1 -o jobs/empty-answer -y -q
+          python3 - <<'PY'
+          import json, pathlib, sys
+          bad = []
+          for job in sorted(pathlib.Path("jobs").iterdir()):
+              results = [json.loads(p.read_text()) for p in job.rglob("result.json")
+                         if "verifier_result" in json.loads(p.read_text())]
+              rewards = [((r.get("verifier_result") or {}).get("rewards") or {}) for r in results]
+              want = 0.0 if job.name == "empty-answer" else 1.0
+              got = [rw.get("reward") for rw in rewards]
+              print(f"{job.name}: {rewards}")
+              if got != [want]:
+                  bad.append(f"{job.name}: reward {got}, expected {want}")
+          if bad:
+              sys.exit("\n".join(bad))
+          print("every task scored as expected")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: harbor-jobs
+          path: jobs
+          if-no-files-found: ignore

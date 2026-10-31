@@ -30,6 +30,7 @@ Give the model PolicyEngine **as a tool**, the way a caseworker uses a calculato
 - Large penalty for a confidently wrong "not eligible" (the harmful error).
 - Reward for correctly flagging missing information.
 - Ground truth lives outside the container so the agent can't read it.
+- As built (`harbortask/verify.py`): reward = 0.60 × eligibility + 0.25 × amount + 0.15 × missing information. The skill's separate "unknown use" weight (0.10) is folded into eligibility, where "unknown" counts as right only on a decision a missing document leaves open. Change these weights here and in `verify.WEIGHTS` together.
 
 ### 3. Model
 - Small open-weight instruct model (4–8B) with LoRA.

@@ -1,0 +1,49 @@
+{
+ "missing_information": [
+  {
+   "document": "lease_rent_page",
+   "member": null
+  }
+ ],
+ "names": {
+  "p1": "Fatima",
+  "p2": "Mariana",
+  "p3": "Omar",
+  "p4": "Kevin",
+  "p5": "Tariq"
+ },
+ "truth": {
+  "chip": {
+   "eligible_members": [],
+   "unknown_members": []
+  },
+  "eitc": {
+   "annual_amount": 5091.8,
+   "eligible": true
+  },
+  "medicaid": {
+   "eligible_members": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5"
+   ],
+   "unknown_members": []
+  },
+  "missing_information": [
+   "Page 2 of the lease, showing the rent"
+  ],
+  "snap": {
+   "eligible": true,
+   "monthly_benefit": null
+  },
+  "wic": {
+   "eligible_members": [
+    "p5"
+   ],
+   "monthly_value": 60.4,
+   "unknown_members": []
+  }
+ }
+}

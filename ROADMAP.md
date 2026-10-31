@@ -35,8 +35,8 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
 - [x] First eval on document cases ([#16](https://github.com/LeonLiu368/ttune/pull/16), findings below): reading paperwork costs Qwen3 4B little except on the EITC
 - [ ] Host the viewer server in the cloud, with sign-in, so runs can be launched from the site
 - [x] Messy document renderer ([#14](https://github.com/LeonLiu368/ttune/issues/14), [data/documents](data/documents/README.md)): every household as an application plus pay stubs, letters, a lease and bills, with injected distractors and gaps; truth follows the documents, and a gap that could change an answer makes it "unknown"
-- [ ] First Harbor task and reward (`benefits-task` skill)
-- [ ] Reward-hack audit (`reward-hack-audit` skill)
+- [x] First Harbor task and reward ([tasks/](tasks/README.md), `harbortask/`): 6 sample tasks built from document cases. The agent reads the PDFs, uses `benefits-calc` (PolicyEngine as a calculator) and writes `/app/answer.json`. A separate offline Reward Kit verifier scores eligibility, amounts and the missing-information list. The Oracle scores 1.0 in Docker in CI; blanket answers stay at about 0.33
+- [x] Reward-hack audit (`reward-hack-audit` skill), for the first tasks: [tasks/README.md](tasks/README.md#reward-hack-audit). Rerun for the generated set
 - [ ] Generated task set with train / holdout splits
 
 ## 4. Train
