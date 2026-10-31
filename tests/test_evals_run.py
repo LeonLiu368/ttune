@@ -281,3 +281,19 @@ def test_document_cases_get_their_prompt_and_merge_from_the_cases_they_ran_on(se
     assert summary["sets"]["id"]["households"] == "data/documents/id/cases.jsonl"
     for s in ("id", "ood"):
         assert [r["score"]["reward"] for r in lines(merged / f"{s}.jsonl")] == [1.0] * 6
+
+
+def test_rescore_redoes_scores_from_stored_replies_without_calling_a_model(server, tmp_path):
+    for s in ("id", "ood"):
+        assert main(["run", "--set", s, "--model", "mock/doc-oracle", "--limit", "3", "--run-id", "r",
+                     "--base-url", server, "--results-dir", str(tmp_path), "--households", str(DOCS / s / "cases.jsonl")]) == 0
+    path = tmp_path / "r" / "id.jsonl"
+    rows = lines(path)
+    rows[1]["score"] = {**rows[1]["score"], "reward": 0.0}  # as if scored by an older, buggy scorer
+    path.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in rows))
+    calls = dict(Mock.seen)
+    assert main(["rescore", "r", "--results-dir", str(tmp_path)]) == 0
+    assert Mock.seen == calls
+    assert [r["score"]["reward"] for r in lines(path)] == [1.0] * 3
+    summary = json.loads((tmp_path / "r" / "summary.json").read_text())
+    assert summary["sets"]["id"]["mean_reward"] == 1.0 and summary["case_format"] == "documents"

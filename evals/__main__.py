@@ -1,4 +1,4 @@
-"""python -m evals run --set {id,ood} --model <slug> [--limit N] | compare <run-id> | preflight --model <slug|free>"""
+"""python -m evals run --set {id,ood} --model <slug> [--limit N] | compare <run-id> | rescore <run-id> | preflight --model <slug|free>"""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from pathlib import Path
 
 from evals.client import FatalApiError
 from evals.compare import compare
-from evals.run import RESULTS_DIR, MergeError, default_run_id, merge, run
+from evals.run import RESULTS_DIR, MergeError, default_run_id, merge, rescore, run
 
 
 def _shard(text: str | None) -> tuple[int, int] | None:
@@ -51,6 +51,9 @@ def main(argv: list[str] | None = None) -> int:
     m.add_argument("--parts", type=Path, nargs="+", required=True, help="run directories, one per shard")
     m.add_argument("--limit", type=int, default=None, help="the --limit the shards used")
     m.add_argument("--results-dir", type=Path, default=RESULTS_DIR)
+    rs = sub.add_parser("rescore", help="score a run's stored replies again with the current scorer (no model calls)")
+    rs.add_argument("run_id")
+    rs.add_argument("--results-dir", type=Path, default=RESULTS_DIR)
     c = sub.add_parser("compare", help="write comparison.md for a run")
     c.add_argument("run_id")
     c.add_argument("--results-dir", type=Path, default=RESULTS_DIR)
@@ -101,6 +104,10 @@ def main(argv: list[str] | None = None) -> int:
             print(f"error: {exc}", file=sys.stderr)
             return 1
         print(f"merged {len(args.parts)} parts -> {out}")
+        return 0
+    if args.command == "rescore":
+        changed = rescore(args.results_dir / args.run_id)
+        print("rescored " + ", ".join(f"{s}: {n} answers changed" for s, n in changed.items()))
         return 0
     if args.command == "compare":
         out = compare(args.results_dir / args.run_id)

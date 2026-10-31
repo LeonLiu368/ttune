@@ -27,6 +27,8 @@ python -m evals compare test             # writes evals/results/test/comparison.
 
 `--base-url http://localhost:8000/v1` points it at a local server, such as vLLM or llama.cpp. `--resume` re-runs only the cases that are missing or got no answer.
 
+After a fix to scoring or answer parsing, `python -m evals rescore <run-id>` scores a finished run's stored replies again, against the cases it ran on, without calling the model. Then run `compare` again.
+
 ## Run it on a self-hosted open model ($0)
 
 **Actions → Eval (self-hosted model) → Run workflow** serves an open model with llama.cpp on GitHub's runner CPUs, so there's no API and no token cost. Public repos get Actions minutes for free.

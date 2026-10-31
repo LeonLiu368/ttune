@@ -213,3 +213,28 @@ def merge(run_id: str, parts: list[Path], *, limit: int | None = None, results_d
             raise MergeError(f"{set_}: {len(missing)} households missing, e.g. {missing[:5]}")
         write_set(out_dir, set_, path, rows, sorted(results, key=lambda r: r["index"]), limit, settings)
     return out_dir
+
+
+def rescore(run_dir: Path, sets_dir: Path = SETS_DIR) -> dict[str, int]:
+    """Score a finished run's stored replies again with the current scorer, against the cases it ran on.
+
+    For a fix to scoring or parsing: no model is called, the replies stay as they are. Returns how many
+    answered cases changed reward, per set."""
+    summary = json.loads((run_dir / "summary.json").read_text())
+    settings = {k: summary[k] for k in ("run_id", "model", "base_url", "max_tokens", "reasoning_effort", "model_info")
+                if k in summary}
+    changed = {}
+    for set_, entry in summary.get("sets", {}).items():
+        path = ROOT / entry["households"] if entry.get("households") else sets_dir / set_ / "households.jsonl"
+        rows = {row["id"]: row for row in load_set(path)}
+        old = [json.loads(line) for line in (run_dir / f"{set_}.jsonl").open()]
+        new = []
+        for result in old:
+            if result["status"] == "ok":
+                fresh = evaluate(rows[result["id"]], result["reply"], result.get("finish_reason"))
+                result = {**result, **fresh}
+            new.append(result)
+        changed[set_] = sum(a["status"] == "ok" and a["score"] != b["score"] for a, b in zip(old, new))
+        chosen = [rows[r["id"]] for r in new]
+        write_set(run_dir, set_, path, chosen, new, entry.get("limit"), settings, shard=entry.get("shard"))
+    return changed
