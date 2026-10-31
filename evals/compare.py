@@ -69,7 +69,9 @@ def comparison_markdown(run_dir: Path) -> str:
     lines = [
         f"# Eval: `{summary['model']}`",
         "",
-        f"Run `{summary['run_id']}` · prompt v{summary['prompt_version']} (`{summary['prompt_hash']}`) · "
+        f"Run `{summary['run_id']}` · "
+        f"{'document cases (application and paperwork, data/documents) · document ' if summary.get('case_format') == 'documents' else ''}"
+        f"prompt v{summary['prompt_version']} (`{summary['prompt_hash']}`) · "
         f"answers from policyengine-us {', '.join(sorted(pe)) or '?'} · max tokens {summary.get('max_tokens', '?')}"
         f"{' · reasoning effort ' + summary['reasoning_effort'] if summary.get('reasoning_effort') else ''} · cost ${cost:.4f}",
         "",
