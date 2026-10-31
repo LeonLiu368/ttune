@@ -32,6 +32,7 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
   - [x] [#5](https://github.com/LeonLiu368/ttune/issues/5) Eval harness: scoring, OpenRouter client, run and compare ([evals/](evals/README.md); tested against a local mock server)
   - [x] [#6](https://github.com/LeonLiu368/ttune/issues/6) Eval workflows and first ID vs OOD results: Qwen3 4B Instruct, self-hosted on GitHub's runners for $0 ([results](evals/results/20261026-0340-local-qwen3-4b-instruct/comparison.md); findings below)
 - [x] Eval viewer ([`viewer/`](viewer/README.md)): runs, OOD families and every household traced, published read-only to GitHub Pages; `python -m viewer serve` adds a launch form that starts runs on GitHub Actions
+- [x] First eval on document cases ([#16](https://github.com/LeonLiu368/ttune/pull/16), findings below): reading paperwork costs Qwen3 4B little except on the EITC
 - [ ] Host the viewer server in the cloud, with sign-in, so runs can be launched from the site
 - [x] Messy document renderer ([#14](https://github.com/LeonLiu368/ttune/issues/14), [data/documents](data/documents/README.md)): every household as an application plus pay stubs, letters, a lease and bills, with injected distractors and gaps; truth follows the documents, and a gap that could change an answer makes it "unknown"
 - [ ] First Harbor task and reward (`benefits-task` skill)
@@ -101,6 +102,34 @@ All 200 + 200 households, Q4_K_M weights on CPU, temperature 0, 6,000-token cap.
 - Twists have only 10 to 23 households each, so treat their rows in comparison.md as hints. The college-student and `edge_snap` households look worst for SNAP: 39% and 34% balanced accuracy, below what a blanket answer gets.
 
 What this means for training: the model needs exact rules and arithmetic, and the reward should focus on false denials for unusual households. The next steps on this roadmap (the document renderer, Harbor tasks, then SFT and GRPO) aim at exactly that.
+
+### First eval on document cases: Qwen3 4B Instruct, self-hosted ($0)
+
+The same 200 + 200 households and the same model as above, but the model reads each household's application and paperwork ([data/documents](data/documents/README.md)) instead of the clean summary. Full tables are in [comparison.md](evals/results/20261031-0030-local-qwen3-4b-instruct-docs/comparison.md). 4 ID and 6 OOD replies were cut off at the 6,000-token limit.
+
+| | ID | OOD | Change (95% interval) |
+|---|---|---|---|
+| Mean reward, document cases | 0.45 | 0.31 | −0.14 (−0.20 to −0.08) |
+| Mean reward, clean summaries (above) | 0.44 | 0.35 | −0.10 |
+| Same households, documents minus summaries | +0.01 (−0.04 to +0.06) | −0.03 (−0.08 to +0.02) | |
+
+| Program | Balanced accuracy, ID / OOD (summaries → documents) | False denials, ID / OOD (summaries → documents) |
+|---|---|---|
+| SNAP | 63 → 58% / 60 → 59% | 42 → 30% / 54 → 36% |
+| EITC | 62 → 54% / 61 → 50% | 54 → 65% / 53 → 69% |
+| Medicaid | 63 → 63% / 62 → 54% | 29 → 19% / 43 → 34% |
+| WIC | 69 → 75% / 67 → 69% | 33 → 31% / 60 → 46% |
+
+- **Reading the paperwork costs little overall.** On the same households, document cases score within 3 points of the clean summaries on both sets, and both intervals include zero. The 20-case smoke run (#15: OOD 0.19) overstated the drop.
+- **The EITC is the exception.** On paperwork, false denials rise by 11 to 16 points and balanced accuracy falls by 8 to 11. The EITC needs a year's income, and that conversion from pay stubs is the likely place it slips; this hasn't been checked reply by reply yet.
+- **The other programs deny less on paperwork.** For example, SNAP false denials drop from 42% to 30% (ID) and Medicaid from 29% to 19%. The documents state exact numbers, which seems to help.
+- **Gaps:**
+  - The model answered "unknown" on 56% of the 267 decisions a missing document left open: SNAP 75% (ID), Medicaid 70% (ID), the EITC only 29 to 33%.
+  - It said "unknown" somewhere in 22 of the 275 packets that have no gap.
+- **Distractors:** a partner who moved out costs the most (−0.10 against the summary, 18 households), then a name variant (−0.06). A stale pay stub or a rent that disagrees with the lease barely matters.
+- **Threshold edges stay the hardest family:** 0.22 on documents, 0.28 on summaries. Held-out states again cost almost nothing (0.41 against 0.43).
+
+What this adds for training: document reading itself isn't the bottleneck for a 4B model. Turning pay stubs into a year's income for the EITC is, and so is flagging gaps consistently. The Harbor task's reward should score the missing-information list, which these evals don't yet.
 
 ## Known blockers
 

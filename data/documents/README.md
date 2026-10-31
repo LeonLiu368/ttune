@@ -92,6 +92,16 @@ The grid matters because the EITC rises and then falls with income, so $0 and th
 | Medicaid (any member) | 79 / 88 / 33 | 136 / 54 / 10 |
 | WIC (any member) | 31 / 155 / 14 | 79 / 117 / 4 |
 
+## First results
+
+Qwen3 4B Instruct on all 400 document cases, self-hosted for $0 ([comparison.md](../../evals/results/20261031-0030-local-qwen3-4b-instruct-docs/comparison.md)):
+
+- **Overall:** mean reward 0.45 on ID and 0.31 on OOD. On the same households, that's within 3 points of the clean summaries.
+- **The EITC is the weak spot:** false denials rise by 11 to 16 points on paperwork.
+- **Gaps:** the model answered "unknown" on 56% of the decisions a missing document left open.
+
+The full write-up is in the [roadmap](../../ROADMAP.md#first-eval-on-document-cases-qwen3-4b-instruct-self-hosted-0).
+
 ## One line of `cases.jsonl`
 
 ```json
