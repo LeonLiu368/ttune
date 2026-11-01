@@ -1,0 +1,239 @@
+name: Baseline (Harbor agent, self-hosted model)
+
+# The agentic baseline: an open model, served by llama.cpp on the runner's CPU, drives Harbor's terminus-2 agent
+# through the holdout tasks (the published 200 ID + 200 OOD document cases, never trained on). Each task runs in
+# Docker with no network: the agent reads the PDFs, runs benefits-calc and writes /app/answer.json, and the task's
+# separate verifier scores it. No API, no tokens bought, $0. A final job scores every trial like the one-shot evals
+# (python -m harbortask agentic collect), compares and opens a PR.
+on:
+  workflow_dispatch:
+    inputs:
+      preset:
+        description: "Model (presets in evals/local_models.json)"
+        type: choice
+        options: [qwen3-4b-instruct, llama-3.1-8b-instruct, gemma-3-4b-it]
+        default: qwen3-4b-instruct
+      limit:
+        description: 'Tasks per holdout set, or "all" for all 200'
+        required: false
+        default: "5"
+      shards:
+        description: "Parallel jobs (each runs every N-th task of both sets; up to 20 run at once)"
+        required: false
+        default: "1"
+      agent_timeout_minutes:
+        description: "Time the agent gets per task"
+        required: false
+        default: "30"
+      max_turns:
+        description: "Agent turns per task"
+        required: false
+        default: "40"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: baseline
+  cancel-in-progress: false
+
+env:
+  HARBOR: "0.25.0"
+  CONTEXT: "32768"
+  # The one-shot run on the same households, for the comparison.
+  COMPARE_TO: 20261031-0030-local-qwen3-4b-instruct-docs
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      run_id: ${{ steps.plan.outputs.run_id }}
+      shards: ${{ steps.plan.outputs.shards }}
+      limit: ${{ steps.plan.outputs.limit }}
+    steps:
+      - id: plan
+        env:
+          PRESET: ${{ inputs.preset }}
+          LIMIT: ${{ inputs.limit }}
+          SHARDS: ${{ inputs.shards }}
+          MINUTES: ${{ inputs.agent_timeout_minutes }}
+          TURNS: ${{ inputs.max_turns }}
+        run: |
+          if [ "$LIMIT" = "all" ]; then LIMIT=""; fi
+          case "$LIMIT" in *[!0-9]*) echo 'limit must be a number or "all"'; exit 1;; esac
+          for v in "$SHARDS" "$MINUTES" "$TURNS"; do
+            case "$v" in ''|*[!0-9]*) echo "shards, agent_timeout_minutes and max_turns must be numbers"; exit 1;; esac
+          done
+          if [ "$SHARDS" -lt 1 ] || [ "$SHARDS" -gt 60 ]; then echo "shards must be 1-60"; exit 1; fi
+          if [ "$MINUTES" -lt 5 ] || [ "$MINUTES" -gt 60 ]; then echo "agent_timeout_minutes must be 5-60"; exit 1; fi
+          echo "limit=$LIMIT" >> "$GITHUB_OUTPUT"
+          echo "run_id=$(date -u +%Y%m%d-%H%M)-harbor-${PRESET}${LIMIT:+-n$LIMIT}" >> "$GITHUB_OUTPUT"
+          echo "shards=$(python3 -c "import json,sys; print(json.dumps(list(range(int(sys.argv[1])))))" "$SHARDS")" >> "$GITHUB_OUTPUT"
+
+  run:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJSON(needs.plan.outputs.shards) }}
+    env:
+      PRESET: ${{ inputs.preset }}
+      LIMIT: ${{ needs.plan.outputs.limit }}
+      SHARDS: ${{ inputs.shards }}
+      SHARD: ${{ matrix.shard }}
+      MINUTES: ${{ inputs.agent_timeout_minutes }}
+      TURNS: ${{ inputs.max_turns }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements-local-llm.txt
+            requirements-docgen.txt
+
+      - name: Install the llama.cpp server and the task builder
+        env:
+          CMAKE_ARGS: "-DGGML_NATIVE=OFF -DGGML_AVX2=ON -DGGML_FMA=ON -DGGML_F16C=ON"
+        run: pip install -r requirements-local-llm.txt -r requirements-docgen.txt
+
+      - name: Build this shard's tasks
+        run: |
+          args=(--out build/tasks --shard "$SHARD/$SHARDS")
+          if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+          python -m harbortask agentic pick "${args[@]}" | tee build/tasks.txt
+          echo "$(wc -l < build/tasks.txt) tasks"
+
+      - name: Install Harbor
+        run: |
+          curl -LsSf https://astral.sh/uv/0.9.7/install.sh | sh
+          ~/.local/bin/uv tool install "harbor==$HARBOR"
+
+      - name: Resolve the model on Hugging Face
+        id: model
+        run: python -m evals model resolve "$PRESET" --github-output "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@v4
+        with:
+          path: models
+          key: model-${{ steps.model.outputs.sha256 }}
+
+      - name: Download and verify the model
+        run: python -m evals model fetch "$PRESET" --models-dir models
+
+      - name: Start the model server
+        env:
+          FILE: ${{ steps.model.outputs.file }}
+        run: |
+          nohup python -m llama_cpp.server --model "models/$FILE" --model_alias "local/$PRESET" \
+            --n_ctx "$CONTEXT" --n_threads "$(nproc)" --seed 0 --host 127.0.0.1 --port 8000 --verbose False \
+            > server.log 2>&1 &
+          for i in $(seq 1 120); do
+            if curl -sf http://127.0.0.1:8000/v1/models > /dev/null; then echo "server up after $((i * 5))s"; exit 0; fi
+            sleep 5
+          done
+          echo "server didn't start:"; tail -50 server.log; exit 1
+
+      - name: Run the agent on each task
+        env:
+          # The local server takes any key; LiteLLM just needs one set.
+          OPENAI_API_KEY: sk-local-no-key
+        run: |
+          mkdir -p jobs
+          # Stop starting tasks once one more might not fit in the job's 350 minutes.
+          deadline=$(( $(date +%s) + (330 - MINUTES - 25) * 60 ))
+          multiplier=$(python3 -c "print(int('$MINUTES') * 60 / 900)")  # tasks set 900 s
+          info="{\"max_input_tokens\": $((CONTEXT - 4096)), \"max_output_tokens\": 4096, \"input_cost_per_token\": 0, \"output_cost_per_token\": 0}"
+          for task in build/tasks/*/; do
+            name=$(basename "$task")
+            if [ "$(date +%s)" -gt "$deadline" ]; then echo "out of time: $name and later tasks not run"; break; fi
+            harbor run -p "$task" -a terminus-2 -m "openai/local/$PRESET" \
+              --ak api_base=http://127.0.0.1:8000/v1 --ak temperature=0 --ak "max_turns=$TURNS" \
+              --ak record_terminal_session=false --ak "model_info=$info" \
+              --agent-timeout-multiplier "$multiplier" -e docker -n 1 -o "jobs/$name" -y -q \
+              || echo "harbor exited non-zero on $name"
+            python3 - "$name" <<'PY'
+          import json, pathlib, sys
+          name = sys.argv[1]
+          for p in pathlib.Path("jobs", name).rglob("result.json"):
+              r = json.loads(p.read_text())
+              if "trial_name" in r:
+                  exc = (r.get("exception_info") or {}).get("exception_type")
+                  rewards = (r.get("verifier_result") or {}).get("rewards")
+                  turns = ((r.get("agent_result") or {}).get("metadata") or {}).get("n_episodes")
+                  print(f"{name}: rewards={rewards} turns={turns} exception={exc}")
+          PY
+            # The model server must still be up; if it died, the rest of the shard is wasted.
+            curl -sf http://127.0.0.1:8000/v1/models > /dev/null || { echo "model server is down"; tail -50 server.log; exit 1; }
+          done
+          cp models/model.json jobs/model.json
+
+      - name: Server log
+        if: failure()
+        run: tail -100 server.log
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shard-${{ matrix.shard }}
+          path: jobs
+          if-no-files-found: ignore
+
+  merge:
+    needs: [plan, run]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    env:
+      RUN_ID: ${{ needs.plan.outputs.run_id }}
+      LIMIT: ${{ needs.plan.outputs.limit }}
+      PRESET: ${{ inputs.preset }}
+      MINUTES: ${{ inputs.agent_timeout_minutes }}
+      TURNS: ${{ inputs.max_turns }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-docgen.txt
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: shard-*
+          path: parts
+
+      - name: Score every trial and compare
+        id: compare
+        run: |
+          args=(--jobs parts/shard-* --model "local/$PRESET" --base-url http://127.0.0.1:8000/v1
+                --max-turns "$TURNS" --agent-timeout-sec "$((MINUTES * 60))" --temperature 0
+                --compare-to "$COMPARE_TO")
+          info=$(ls parts/shard-*/model.json 2>/dev/null | head -1)
+          if [ -n "$info" ]; then args+=(--model-info "$info"); fi
+          if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+          python -m harbortask agentic collect "$RUN_ID" "${args[@]}"
+          python -m evals compare "$RUN_ID"
+          cat "evals/results/$RUN_ID/comparison.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request
+        if: steps.compare.outcome == 'success'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: baseline/${{ needs.plan.outputs.run_id }}
+          add-paths: evals/results/${{ needs.plan.outputs.run_id }}
+          commit-message: "Baseline: local/${{ inputs.preset }} with terminus-2 (${{ needs.plan.outputs.run_id }})"
+          title: "Baseline: local/${{ inputs.preset }} with terminus-2 (${{ needs.plan.outputs.run_id }})"
+          body-path: evals/results/${{ needs.plan.outputs.run_id }}/comparison.md
+          delete-branch: true
+
+      - name: Fail if a shard failed
+        if: needs.run.result != 'success'
+        run: |
+          echo "At least one shard failed; tasks it didn't reach are listed as not run in the results."
+          exit 1

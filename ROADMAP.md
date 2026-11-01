@@ -41,7 +41,7 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
 
 ## 4. Train
 
-- [ ] Baseline eval
+- [ ] Baseline eval: Qwen3 4B, self-hosted for $0, driving Harbor's terminus-2 agent on the 400 holdout tasks (the **Baseline** workflow, [tasks/README.md](tasks/README.md#the-agentic-baseline)). A 10-task smoke run comes first
 - [ ] SFT warm-start
 - [ ] GRPO
 - [ ] Publish to Harbor Hub

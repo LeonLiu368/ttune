@@ -59,6 +59,74 @@ def _group_table(groups: list[tuple[str, list[dict]]]) -> list[str]:
     return lines
 
 
+def paired_change(a: list[dict], b: list[dict], stat, n_boot: int = 2000, seed: int = 0):
+    """stat(b) - stat(a) over the households scored in both runs, with a 95% bootstrap interval over households."""
+    import random
+
+    left, right = {r["id"]: r for r in scored(a)}, {r["id"]: r for r in scored(b)}
+    ids = sorted(set(left) & set(right))
+    if not ids:
+        return None, 0, (None, None)
+
+    def diff(sample):
+        x, y = stat([left[i] for i in sample]), stat([right[i] for i in sample])
+        return None if x is None or y is None else y - x
+
+    base = stat([left[i] for i in ids]), stat([right[i] for i in ids])
+    d = diff(ids)
+    if d is None:
+        return None, len(ids), base
+    rng = random.Random(seed)
+    boots = sorted(v for v in (diff([rng.choice(ids) for _ in ids]) for _ in range(n_boot)) if v is not None)
+    return (d, boots[int(0.025 * len(boots))], boots[int(0.975 * len(boots)) - 1]), len(ids), base
+
+
+def _agent_section(sets: dict, id_rows: list[dict], ood_rows: list[dict], compare_to: str | None,
+                   results_dir: Path) -> list[str]:
+    agent = {k: sets.get(k, {}).get("agent", {}) for k in ("id", "ood")}
+
+    def row(label: str, key: str, fmt=num) -> str:
+        return f"| {label} | {fmt(agent['id'].get(key))} | {fmt(agent['ood'].get(key))} |"
+
+    count = lambda v: "–" if v is None else str(v)  # noqa: E731
+    lines = ["", "## The agent", "",
+             "The task's own reward adds the missing-information list (weights 0.60 eligibility, 0.25 amount, 0.15 "
+             "missing information), as the task verifier scores it. The mean reward above uses the evals scorer, so "
+             "it compares directly with one-shot runs.", "",
+             "| | ID | OOD |", "|---|---|---|",
+             row("Task reward, with missing information (0–1)", "task_reward"),
+             row("Missing-information score", "task_missing_info"),
+             row("Timed out", "agent_timeouts", count),
+             row("Wrote no answer file", "no_answer", count),
+             row("Errors before the verifier (not scored)", "errors", count),
+             row("Not run (shard out of time; not scored)", "not_run", count),
+             row("Median turns", "median_turns", count),
+             row("Median minutes per task", "median_minutes", count)]
+    mismatched = agent["id"].get("harbor_reward_mismatches", []) + agent["ood"].get("harbor_reward_mismatches", [])
+    lines += ["", "Harbor's verifier and the stored answer agree on every task's reward." if not mismatched else
+              f"**Harbor's verifier disagrees with the stored answer on {len(mismatched)} tasks** "
+              f"({', '.join(mismatched[:5])}): check the verifier image."]
+    other = results_dir / compare_to if compare_to else None
+    if other and (other / "summary.json").is_file():
+        lines += ["", f"## Against the one-shot run `{compare_to}`", "",
+                  "The same households: there the model read the documents as text in one prompt and answered in one reply. "
+                  "Changes are agent minus one-shot, with 95% bootstrap intervals over households.", "",
+                  "| | ID | OOD |", "|---|---|---|"]
+        pairs = {s: (load(other, s), rows) for s, rows in (("id", id_rows), ("ood", ood_rows))}
+        cells = {s: paired_change(*pairs[s], mean_reward) for s in pairs}
+        lines.append("| Households in both | " + " | ".join(str(cells[s][1]) for s in ("id", "ood")) + " |")
+        lines.append("| Mean reward | " + " | ".join(
+            f"{num(cells[s][2][0])} → {num(cells[s][2][1])}: {change_ci(cells[s][0], points=False)}"
+            for s in ("id", "ood")) + " |")
+        for p in PROGRAMS:
+            stat = program_balanced_accuracy(p)
+            cell = {s: paired_change(*pairs[s], stat) for s in pairs}
+            lines.append(f"| {PROGRAM_NAMES[p]} balanced accuracy | " + " | ".join(
+                f"{pct(cell[s][2][0])} → {pct(cell[s][2][1])}: {change_ci(cell[s][0], points=True)}"
+                for s in ("id", "ood")) + " |")
+    return lines
+
+
 def comparison_markdown(run_dir: Path) -> str:
     summary = json.loads((run_dir / "summary.json").read_text())
     id_rows, ood_rows = load(run_dir, "id"), load(run_dir, "ood")
@@ -66,13 +134,22 @@ def comparison_markdown(run_dir: Path) -> str:
     sets = summary.get("sets", {})
     pe = {s.get("policyengine_us") for s in sets.values()} - {None}
     cost = sum(s.get("cost_usd") or 0 for s in sets.values())
+    harness = summary.get("harness")
+    if harness:
+        setup = (f"Harbor {harness.get('harbor', '?')} agent `{harness.get('agent', '?')}` on the {harness.get('tasks', '')} "
+                 f"tasks: the model reads the PDFs, runs `benefits-calc` and writes `/app/answer.json`"
+                 f"{' · up to ' + str(harness['max_turns']) + ' turns' if harness.get('max_turns') else ''}"
+                 f"{' · ' + str(round(harness['agent_timeout_sec'] / 60)) + ' min per task' if harness.get('agent_timeout_sec') else ''}"
+                 f"{' · temperature ' + str(harness['temperature']) if harness.get('temperature') is not None else ''} · ")
+    else:
+        setup = (f"{'document cases (application and paperwork, data/documents) · document ' if summary.get('case_format') == 'documents' else ''}"
+                 f"prompt v{summary['prompt_version']} (`{summary['prompt_hash']}`) · ")
     lines = [
         f"# Eval: `{summary['model']}`",
         "",
-        f"Run `{summary['run_id']}` · "
-        f"{'document cases (application and paperwork, data/documents) · document ' if summary.get('case_format') == 'documents' else ''}"
-        f"prompt v{summary['prompt_version']} (`{summary['prompt_hash']}`) · "
-        f"answers from policyengine-us {', '.join(sorted(pe)) or '?'} · max tokens {summary.get('max_tokens', '?')}"
+        f"Run `{summary['run_id']}` · {setup}"
+        f"answers from policyengine-us {', '.join(sorted(pe)) or '?'}"
+        f"{' · max tokens ' + str(summary['max_tokens']) if summary.get('max_tokens') else ''}"
         f"{' · reasoning effort ' + summary['reasoning_effort'] if summary.get('reasoning_effort') else ''} · cost ${cost:.4f}",
         "",
         "Changes are OOD minus ID, with 95% bootstrap intervals over households in brackets. With about 67 "
@@ -108,6 +185,9 @@ def comparison_markdown(run_dir: Path) -> str:
     api_errors = sid.get("api_errors", 0) + sood.get("api_errors", 0)
     if api_errors:
         lines += ["", f"{api_errors} cases got no answer from the API and aren't scored; see the result files."]
+
+    if harness:
+        lines += _agent_section(sets, id_rows, ood_rows, summary.get("compare_to"), run_dir.parent)
 
     lines += ["", "## By program", "", "| Program | Measure | ID | OOD | Change |", "|---|---|---|---|---|"]
     for p in PROGRAMS:

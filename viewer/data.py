@@ -78,6 +78,7 @@ def runs_index(results_dir: Path = RESULTS_DIR) -> list[dict]:
             "parameters": info.get("parameters"),
             "license": info.get("license"),
             "prompt_version": summary.get("prompt_version"),
+            "harness": (summary.get("harness") or {}).get("agent"),
             "max_tokens": summary.get("max_tokens"),
             "cost_usd": round(sum((s.get("cost_usd") or 0) for s in summary.get("sets", {}).values()), 6),
             "limit": next((s.get("limit") for s in summary.get("sets", {}).values()), None),

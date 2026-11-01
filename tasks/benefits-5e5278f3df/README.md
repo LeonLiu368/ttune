@@ -8,7 +8,7 @@ Screen one household for SNAP, EITC, Medicaid and WIC from its paperwork: an app
 
 ## Environment
 
-- **Agent image:** `python:3.12-slim` with `poppler-utils` (for `pdftotext`), `jq` and `policyengine-us==2.50.1`.
+- **Agent image:** `python:3.12-slim` with `poppler-utils` (for `pdftotext`), `jq`, `tmux` (for terminal agents) and `policyengine-us==2.50.1`.
 - **Calculator:** `benefits-calc` turns the household's facts into PolicyEngine's answers. It runs the code that wrote the answer key, so correct facts give the right answer.
 - **No network.** The image holds only the PDFs and the calculator; the answer key and grading code are in the verifier's separate image.
 

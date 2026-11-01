@@ -1,6 +1,7 @@
 # The agent's container: the household's documents and a PolicyEngine calculator. No answers, no verifier code.
 FROM python:3.12-slim
-RUN apt-get update && apt-get install -y --no-install-recommends poppler-utils jq \
+# tmux is for terminal agents such as Harbor's terminus-2, which can't install it here: the task has no network.
+RUN apt-get update && apt-get install -y --no-install-recommends poppler-utils jq tmux \
     && rm -rf /var/lib/apt/lists/*
 RUN pip install --no-cache-dir policyengine-us==2.50.1
 COPY calc/ /opt/benefits-calc/

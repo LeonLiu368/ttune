@@ -207,7 +207,7 @@ async function viewRun(runId, set) {
     h("section", {}, h("p", { class: "crumbs" }, h("a", { href: "#/" }, "Runs"), " / ", runId),
       h("div", { class: "head" }, h("h1", {}, s.model || runId),
         h("ul", { class: "meta" }, [runDate(runId), info.parameters && `${info.parameters} parameters`, info.license,
-          `prompt v${s.prompt_version}`, s.max_tokens && `max ${s.max_tokens} tokens`].filter(Boolean).map((t) => h("li", {}, t)))),
+          s.harness ? `agent ${s.harness.agent}` : `prompt v${s.prompt_version}`, s.max_tokens && `max ${s.max_tokens} tokens`].filter(Boolean).map((t) => h("li", {}, t)))),
       h("div", { class: "tiles" },
         tile("Reward, typical (ID)", num(hid.reward), `${hid.n} households`, "lead"),
         tile("Reward, unusual (OOD)", num(hood.reward), `${hood.n} households`, "lead"),

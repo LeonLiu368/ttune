@@ -95,6 +95,22 @@ harbor run -p tasks/benefits-5e5278f3df -a oracle -e docker    # needs Docker; r
 
 The **Harbor tasks** workflow does the last step for every task on each change, in Docker, and checks that a copy with an empty answer scores 0. It also checks that `tasks/` matches what the generator writes.
 
+### The agentic baseline
+
+The **Baseline (Harbor agent, self-hosted model)** workflow runs a real agent on the holdout tasks, for $0. An open model (Qwen3 4B by default) is served by llama.cpp on the runner's CPU and drives Harbor's `terminus-2` agent in each task's offline container. A final job scores every trial and opens a PR with an evals run in `evals/results/`:
+
+- **Two scores for each answer:** the evals scorer, which lines up with the one-shot runs on the same households, and the task's own reward, which adds the missing-information list. The report also checks that the second matches what Harbor's verifier reported.
+- **Failures:** an agent that times out or writes no answer scores 0. A trial that never reached the verifier, or a task the shard ran out of time for, is counted as an error and not scored.
+- **The report:** comparison.md shows the agent's numbers (timeouts, turns, minutes per task) and a same-household comparison with the one-shot document run.
+
+```bash
+python -m harbortask agentic pick --out build/tasks --limit 5 --shard 0/2     # build one shard's holdout tasks
+harbor run -p build/tasks/<task> -a terminus-2 -m openai/<model> --ak api_base=<server>/v1 -e docker
+python -m harbortask agentic collect <run id> --jobs jobs/ --model <model> --limit 5   # -> evals/results/<run id>
+```
+
+The task image includes `tmux`, which terminal agents need and can't install themselves without a network. The manifests in [`splits/`](splits/) were built before tmux was added, so their task digests are out of date until the **Task splits** workflow runs again.
+
 ## Reward-hack audit
 
 Run on 2026-10-31 over all 400 document cases (`python -m harbortask audit`), scoring each policy with the verifier's own code:
