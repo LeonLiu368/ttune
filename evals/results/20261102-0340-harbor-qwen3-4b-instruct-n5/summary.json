@@ -1,0 +1,95 @@
+{
+  "base_url": "http://127.0.0.1:8000/v1",
+  "case_format": "documents",
+  "compare_to": "20261031-0030-local-qwen3-4b-instruct-docs",
+  "harness": {
+    "agent": "terminus-2",
+    "agent_timeout_sec": 1800.0,
+    "harbor": "0.25.0",
+    "max_turns": 40,
+    "tasks": "holdout-id + holdout-ood",
+    "temperature": 0.0
+  },
+  "max_tokens": null,
+  "model": "local/qwen3-4b-instruct",
+  "model_info": {
+    "file": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+    "license": "Apache-2.0",
+    "llama_cpp_python": "0.3.35",
+    "parameters": "4B",
+    "path": "models/Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+    "preset": "qwen3-4b-instruct",
+    "repo": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
+    "revision": "a06e946bb6b655725eafa393f4a9745d460374c9",
+    "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+    "size_bytes": 2497281120
+  },
+  "prompt_hash": null,
+  "prompt_version": null,
+  "reasoning_effort": null,
+  "run_id": "20261102-0340-harbor-qwen3-4b-instruct-n5",
+  "sets": {
+    "id": {
+      "agent": {
+        "agent_timeouts": 2,
+        "errors": 0,
+        "harbor_reward_mismatches": [],
+        "median_minutes": 16.8,
+        "median_turns": 6,
+        "no_answer": 1,
+        "not_run": 0,
+        "task_missing_info": 0.15,
+        "task_reward": 0.15
+      },
+      "api_errors": 0,
+      "cases": 5,
+      "completion_tokens": 23824,
+      "cost_usd": 0.0,
+      "cut_off": 0,
+      "floors": {
+        "always_no": 0.25,
+        "always_yes": 0.3222
+      },
+      "households": "data/documents/id/cases.jsonl",
+      "households_sha256": "cb5227e0a6f7401584eeda4005c51ba568623b1539f1ed1adfef0e5bc2505d3a",
+      "limit": 5,
+      "malformed": 1,
+      "mean_reward": 0.15,
+      "policyengine_us": "2.50.1",
+      "prompt_tokens": 176227,
+      "reasoning_tokens": 0,
+      "shard": null
+    },
+    "ood": {
+      "agent": {
+        "agent_timeouts": 1,
+        "errors": 0,
+        "harbor_reward_mismatches": [],
+        "median_minutes": 11.5,
+        "median_turns": 5,
+        "no_answer": 2,
+        "not_run": 0,
+        "task_missing_info": 0.3,
+        "task_reward": 0.105
+      },
+      "api_errors": 0,
+      "cases": 5,
+      "completion_tokens": 18864,
+      "cost_usd": 0.0,
+      "cut_off": 0,
+      "floors": {
+        "always_no": 0.0,
+        "always_yes": 0.425
+      },
+      "households": "data/documents/ood/cases.jsonl",
+      "households_sha256": "0cc045b14e8a2efccd24673b525c761e3333103857a80695fc64f8d5de1465b3",
+      "limit": 5,
+      "malformed": 3,
+      "mean_reward": 0.0667,
+      "policyengine_us": "2.50.1",
+      "prompt_tokens": 102183,
+      "reasoning_tokens": 0,
+      "shard": null
+    }
+  }
+}
