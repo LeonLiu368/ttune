@@ -39,8 +39,31 @@ def main(argv: list[str] | None = None) -> int:
     pk.add_argument("--out", type=Path, required=True)
     pk.add_argument("--limit", type=int, default=None, help="only the first N cases of each holdout set")
     pk.add_argument("--shard", default=None, help="K/N: cases whose index %% N == K, as evals run --shard")
+    pk.add_argument("--split", default=None, choices=("train", "validation"),
+                    help="a secret-seeded split instead of the holdout (needs the secret in --secret-env)")
+    pk.add_argument("--n-cases", type=int, default=1000, help="the split's size, as built (for --split)")
+    pk.add_argument("--start", type=int, default=0, help="first case index to use (for --split)")
+    pk.add_argument("--secret-env", default="TTUNE_TRAIN_SEED")
     sh = agsub.add_parser("show", help="print a trial's result, answer file and agent turns")
     sh.add_argument("job_dir", type=Path)
+    te = sub.add_parser("teacher", help="teacher trajectories for the SFT warm-start (training split only)")
+    tesub = te.add_subparsers(dest="action", required=True)
+    tp = tesub.add_parser("price", help="the teacher's OpenRouter price, refusing one above the ceiling")
+    tp.add_argument("--model", required=True)
+    tp.add_argument("--out", type=Path, required=True, help="write the prices as JSON here")
+    tc = tesub.add_parser("can-start", help="exit 0 if one more task fits in the budget, 3 if not")
+    tc.add_argument("--jobs", type=Path, required=True)
+    tc.add_argument("--prices", type=Path, required=True)
+    tc.add_argument("--budget", type=float, required=True, help="USD for this shard")
+    ts = tesub.add_parser("sft", help="the good trials as chat transcripts (JSONL)")
+    ts.add_argument("--jobs", type=Path, nargs="+", required=True)
+    ts.add_argument("--out", type=Path, required=True)
+    ts.add_argument("--min-reward", type=float, default=None)
+    tm = tesub.add_parser("summary", help="aggregate numbers only (safe to publish)")
+    tm.add_argument("--jobs", type=Path, nargs="+", required=True)
+    tm.add_argument("--prices", type=Path, required=True)
+    tm.add_argument("--model", required=True)
+    tm.add_argument("--out", type=Path, required=True)
     co = agsub.add_parser("collect", help="score Harbor's trials into an evals run (evals/results/<run id>)")
     co.add_argument("run_id")
     co.add_argument("--jobs", type=Path, nargs="+", required=True, help="Harbor jobs directories, one or more per shard")
@@ -54,11 +77,44 @@ def main(argv: list[str] | None = None) -> int:
     co.add_argument("--compare-to", default=None, help="a one-shot run on the same households, for comparison.md")
     args = parser.parse_args(argv)
 
+    if args.command == "teacher":
+        from harbortask import teacher
+        try:
+            if args.action == "price":
+                from evals.preflight import fetch_models
+                prices = teacher.price(fetch_models(), args.model)
+                args.out.write_text(json.dumps(prices) + "\n")
+                print(f"{args.model}: {prices['input'] * 1e6:.3f} / {prices['output'] * 1e6:.3f} USD per million "
+                      "input / output tokens")
+                return 0
+            if args.action == "can-start":
+                ok, so_far = teacher.can_start([args.jobs], json.loads(args.prices.read_text()), args.budget)
+                print(f"spent ${so_far:.3f} of ${args.budget:.2f}")
+                return 0 if ok else 3
+            if args.action == "sft":
+                kw = {} if args.min_reward is None else {"min_reward": args.min_reward}
+                print(json.dumps(teacher.sft(args.jobs, args.out, **kw)))
+                return 0
+            text = teacher.summary(args.jobs, json.loads(args.prices.read_text()), args.model)
+            args.out.parent.mkdir(parents=True, exist_ok=True)
+            args.out.write_text(text)
+            print(text)
+            return 0
+        except teacher.TeacherError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+
     if args.command == "agentic":
         from harbortask import agentic
         if args.action == "pick":
             from evals.__main__ import _shard
-            for path in agentic.pick(args.out, args.limit, _shard(args.shard)):
+            if args.split:
+                import os
+                paths = agentic.pick_generated(args.out, args.split, args.n_cases, os.environ.get(args.secret_env, ""),
+                                               args.start, args.limit, _shard(args.shard))
+            else:
+                paths = agentic.pick(args.out, args.limit, _shard(args.shard))
+            for path in paths:
                 print(path.name)
             return 0
         if args.action == "show":

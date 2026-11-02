@@ -44,6 +44,18 @@ def pick(out: Path, limit: int | None = None, shard: tuple[int, int] | None = No
     return [build.build(row, out) for set_ in SETS for _, row in chosen(set_, limit, shard)]
 
 
+def pick_generated(out: Path, split: str, n_cases: int, secret: str, start: int = 0, limit: int | None = None,
+                   shard: tuple[int, int] | None = None) -> list[Path]:
+    """Build this shard's tasks from a secret-seeded split (train, validation): cases start .. start+limit-1."""
+    from harbortask.split import GENERATED, generated_rows
+
+    if split not in GENERATED:
+        raise CollectError(f"{split!r} isn't a generated split ({', '.join(GENERATED)})")
+    rows = generated_rows(split, n_cases, secret)[start:]
+    out.mkdir(parents=True, exist_ok=True)
+    return [build.build(row, out) for _, row in select(rows, limit, shard)]
+
+
 def _seconds(timing: dict | None) -> float | None:
     if not timing or not timing.get("started_at") or not timing.get("finished_at"):
         return None
