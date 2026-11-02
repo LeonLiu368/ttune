@@ -110,8 +110,10 @@ jobs:
         run: |
           # Document cases run up to about 2,300 tokens before the reply, so they get a longer context.
           N_CTX=8192; if [ "$CASES" = "documents" ]; then N_CTX=12288; fi
+          # logits_all False: the server otherwise keeps every token's logits (n_ctx x 152k floats, ~20 GB at 32k),
+          # which fills the runner's memory and slows each turn. Sampling only needs the last token's.
           nohup python -m llama_cpp.server --model "models/$FILE" --model_alias "local/$PRESET" \
-            --n_ctx "$N_CTX" --n_threads "$(nproc)" --seed 0 --host 127.0.0.1 --port 8000 --verbose False \
+            --n_ctx "$N_CTX" --n_threads "$(nproc)" --seed 0 --host 127.0.0.1 --port 8000 --verbose False --logits_all False \
             > server.log 2>&1 &
           for i in $(seq 1 120); do
             if curl -sf http://127.0.0.1:8000/v1/models > /dev/null; then echo "server up after $((i * 5))s"; exit 0; fi

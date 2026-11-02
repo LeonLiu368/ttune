@@ -111,7 +111,7 @@ python -m harbortask agentic collect <run id> --jobs jobs/ --model <model> --lim
 
 The task image includes `tmux`, which terminal agents need and can't install themselves without a network.
 
-The first smoke runs (2026-11-02) found Qwen3 4B giving up after a glance: it took the document categories in the instruction for file names, searched the PDFs with `grep` instead of reading them, declared the paperwork missing and answered "unknown" everywhere, scoring about 0.05. The instruction now says the categories aren't file names and asks the agent to read every document in full.
+The first smoke runs (2026-11-02) found Qwen3 4B giving up after a glance: it took the document categories in the instruction for file names, searched the PDFs with `grep` instead of reading them, declared the paperwork missing and answered "unknown" everywhere, scoring about 0.05. The instruction now says the categories aren't file names and asks the agent to read every document in full. The re-run on the clarified tasks did a little better (one task at 0.41) but kept the same habits: it still greps instead of reading, still looks for files named after categories, loops on its own malformed JSON, and never runs `benefits-calc`. Those runs also found the model server holding about 13 GB: llama-cpp-python's server keeps every token's logits by default, so it now runs with `--logits_all False`.
 
 ## Reward-hack audit
 
