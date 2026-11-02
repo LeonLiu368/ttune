@@ -154,3 +154,32 @@ def collect(run_id: str, jobs: list[Path], *, model: str, limit: int | None = No
         summary["sets"][set_]["agent"] = s
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
     return out_dir
+
+
+def _text(value, limit: int) -> str:
+    if isinstance(value, list):  # content parts
+        value = " ".join(p.get("text", "") if isinstance(p, dict) else str(p) for p in value)
+    value = " ".join(str(value or "").split())
+    return value if len(value) <= limit else value[:limit] + " …"
+
+
+def show(job_dir: Path, message_chars: int = 600, observation_chars: int = 300) -> str:
+    """A trial in a few lines, for the workflow log: its result, the answer file and every agent turn."""
+    found = trials([job_dir])
+    lines = []
+    for task, (result, trial_dir) in sorted(found.items()):
+        exc = result.get("exception_info") or {}
+        rewards = (result.get("verifier_result") or {}).get("rewards")
+        lines.append(f"== {task}: rewards={rewards} exception={exc.get('exception_type')}"
+                     f"{' (' + _text(exc.get('exception_message'), 200) + ')' if exc else ''}")
+        answer = trial_dir / "artifacts" / "app" / "answer.json"
+        lines.append(f"answer.json: {_text(answer.read_text(), 800) if answer.is_file() else 'none'}")
+        path = trial_dir / "agent" / "trajectory.json"
+        steps = json.loads(path.read_text()).get("steps", []) if path.is_file() else []
+        for step in steps:
+            if step.get("source") != "agent":
+                continue
+            lines.append(f"-- turn {step.get('step_id')}: {_text(step.get('message'), message_chars)}")
+            for res in ((step.get("observation") or {}).get("results") or []):
+                lines.append(f"   => {_text(res.get('content'), observation_chars)}")
+    return "\n".join(lines) or f"no trials under {job_dir}"

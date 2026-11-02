@@ -39,6 +39,8 @@ def main(argv: list[str] | None = None) -> int:
     pk.add_argument("--out", type=Path, required=True)
     pk.add_argument("--limit", type=int, default=None, help="only the first N cases of each holdout set")
     pk.add_argument("--shard", default=None, help="K/N: cases whose index %% N == K, as evals run --shard")
+    sh = agsub.add_parser("show", help="print a trial's result, answer file and agent turns")
+    sh.add_argument("job_dir", type=Path)
     co = agsub.add_parser("collect", help="score Harbor's trials into an evals run (evals/results/<run id>)")
     co.add_argument("run_id")
     co.add_argument("--jobs", type=Path, nargs="+", required=True, help="Harbor jobs directories, one or more per shard")
@@ -58,6 +60,9 @@ def main(argv: list[str] | None = None) -> int:
             from evals.__main__ import _shard
             for path in agentic.pick(args.out, args.limit, _shard(args.shard)):
                 print(path.name)
+            return 0
+        if args.action == "show":
+            print(agentic.show(args.job_dir))
             return 0
         info = json.loads(args.model_info.read_text()) if args.model_info and args.model_info.is_file() else None
         harness = {k: v for k, v in (("max_turns", args.max_turns), ("agent_timeout_sec", args.agent_timeout_sec),

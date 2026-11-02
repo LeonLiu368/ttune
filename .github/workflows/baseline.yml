@@ -158,17 +158,7 @@ jobs:
               --ak record_terminal_session=false --ak "model_info=$info" \
               --agent-timeout-multiplier "$multiplier" -e docker -n 1 -o "jobs/$name" -y -q \
               || echo "harbor exited non-zero on $name"
-            python3 - "$name" <<'PY'
-          import json, pathlib, sys
-          name = sys.argv[1]
-          for p in pathlib.Path("jobs", name).rglob("result.json"):
-              r = json.loads(p.read_text())
-              if "trial_name" in r:
-                  exc = (r.get("exception_info") or {}).get("exception_type")
-                  rewards = (r.get("verifier_result") or {}).get("rewards")
-                  turns = ((r.get("agent_result") or {}).get("metadata") or {}).get("n_episodes")
-                  print(f"{name}: rewards={rewards} turns={turns} exception={exc}")
-          PY
+            python -m harbortask agentic show "jobs/$name" || true
             # The model server must still be up; if it died, the rest of the shard is wasted.
             curl -sf http://127.0.0.1:8000/v1/models > /dev/null || { echo "model server is down"; tail -50 server.log; exit 1; }
           done

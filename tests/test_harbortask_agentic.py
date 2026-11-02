@@ -120,3 +120,18 @@ def test_pick_builds_each_shards_tasks_once(tmp_path):
     assert not set(names[0]) & set(names[1]) and set(names[0]) | set(names[1]) == every
     assert (tmp_path / "0" / names[0][0] / "tests" / "truth.json").is_file()
     shutil.rmtree(tmp_path / "0")
+
+
+def test_show_prints_the_answer_and_each_agent_turn(tmp_path):
+    row = holdout_rows("holdout-id")[0]
+    fake_trial(tmp_path / "jobs", row, answer='{"snap": {"eligible": true}}')
+    trial = next(p.parent for p in (tmp_path / "jobs").rglob("result.json") if p.parent.name.endswith("__abc"))
+    (trial / "agent").mkdir()
+    (trial / "agent" / "trajectory.json").write_text(json.dumps({"steps": [
+        {"step_id": 1, "source": "user", "message": "the instruction"},
+        {"step_id": 2, "source": "agent", "message": '{"commands": [{"keystrokes": "pdftotext case/01.pdf -\\n"}]}',
+         "observation": {"results": [{"content": "APPLICATION FOR BENEFITS"}]}},
+    ]}))
+    text = agentic.show(tmp_path / "jobs" / build.task_id(row["id"]))
+    assert '"snap"' in text and "-- turn 2:" in text and "pdftotext" in text and "APPLICATION FOR BENEFITS" in text
+    assert "the instruction" not in text
