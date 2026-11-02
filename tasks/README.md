@@ -41,7 +41,7 @@ The **Task splits** workflow (run by hand) does all of this:
 
 ### The current build
 
-Run [41242886804](https://github.com/LeonLiu368/ttune/actions/runs/41242886804), 2026-10-31, generator commit `3ba7556`. The encrypted tasks are in the artifact `ttune-splits-41242886804` (42 MB), kept until 2027-01-29.
+Run [41384368942](https://github.com/LeonLiu368/ttune/actions/runs/41384368942), 2026-11-02, generator commit `bd8a50c` (tmux in the image and the clarified instruction). The encrypted tasks are in the artifact `ttune-splits-41384368942` (42 MB), kept until 2027-01-31. The households and answers are the same as the first build ([run 41242886804](https://github.com/LeonLiu368/ttune/actions/runs/41242886804), 2026-10-31); only the task files changed.
 
 | Split | Tasks | Packets with a gap | SNAP yes / no / unknown | Oracle | Best degenerate answer |
 |---|---|---|---|---|---|
