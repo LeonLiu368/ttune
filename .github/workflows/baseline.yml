@@ -153,12 +153,15 @@ jobs:
           for task in build/tasks/*/; do
             name=$(basename "$task")
             if [ "$(date +%s)" -gt "$deadline" ]; then echo "out of time: $name and later tasks not run"; break; fi
+            # A hard stop past the agent's own timeout, so one stuck trial can't take the whole shard with it.
+            timeout --kill-after=60 "$(( (MINUTES + 15) * 60 ))" \
             harbor run -p "$task" -a terminus-2 -m "openai/local/$PRESET" \
               --ak api_base=http://127.0.0.1:8000/v1 --ak temperature=0 --ak "max_turns=$TURNS" \
               --ak record_terminal_session=false --ak "model_info=$info" \
               --agent-timeout-multiplier "$multiplier" -e docker -n 1 -o "jobs/$name" -y -q \
-              || echo "harbor exited non-zero on $name"
+              || { echo "harbor exited with $? on $name"; docker ps -aq | xargs -r docker rm -f > /dev/null; }
             python -m harbortask agentic show "jobs/$name" || true
+            free -m | head -2; ps -o rss=,comm= -C python,python3,harbor,dockerd | sort -rn | head -3
             # The model server must still be up; if it died, the rest of the shard is wasted.
             curl -sf http://127.0.0.1:8000/v1/models > /dev/null || { echo "model server is down"; tail -50 server.log; exit 1; }
           done
@@ -211,6 +214,12 @@ jobs:
           python -m harbortask agentic collect "$RUN_ID" "${args[@]}"
           python -m evals compare "$RUN_ID"
           cat "evals/results/$RUN_ID/comparison.md" >> "$GITHUB_STEP_SUMMARY"
+
+      # The results go on top of today's main: a branch based on the run's older commit would look to GitHub like
+      # it changes workflow files, which this token may not do.
+      - name: Move to the latest main
+        if: steps.compare.outcome == 'success'
+        run: git fetch origin main && git checkout -B main origin/main
 
       - name: Open pull request
         if: steps.compare.outcome == 'success'
