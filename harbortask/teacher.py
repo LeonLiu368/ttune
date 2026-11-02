@@ -122,7 +122,8 @@ def summary(jobs: list[Path], prices: dict, model: str, min_reward: float = SFT_
         f"{n} training tasks · cost ${total:.2f} (from token counts at "
         f"${prices['input'] * 1e6:.3f} / ${prices['output'] * 1e6:.3f} per million input / output tokens)", "",
         "| | |", "|---|---|",
-        f"| Mean task reward | {statistics.mean(rewards):.3f} |" if rewards else "| Mean task reward | – |",
+        f"| Reached the verifier | {len(rewards)} of {n} |",
+        f"| Mean task reward (of those) | {statistics.mean(rewards):.3f} |" if rewards else "| Mean task reward | – |",
         f"| Reward ≥ {min_reward} (kept for SFT) | {sum(r >= min_reward for r in rewards)} ({pct(sum(r >= min_reward for r in rewards))}) |",
         f"| Reward 1.0 | {sum(r == 1.0 for r in rewards)} ({pct(sum(r == 1.0 for r in rewards))}) |",
         f"| Reward 0 | {sum(r == 0 for r in rewards)} ({pct(sum(r == 0 for r in rewards))}) |",

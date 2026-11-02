@@ -66,7 +66,7 @@ def test_summary_is_aggregate_only(tmp_path):
                     {"role": "assistant", "content": f"benefits-calc household.json; echo '{secret_answer}'"}])
     trial(tmp_path, "benefits-9876543210", reward=0.0)
     text = teacher.summary([tmp_path], PRICES, "qwen/teacher")
-    assert "2 training tasks" in text and "Mean task reward | 0.500" in text and "Reward 1.0 | 1 (50%)" in text
+    assert "2 training tasks" in text and "Mean task reward (of those) | 0.500" in text and "Reached the verifier | 2 of 2" in text and "Reward 1.0 | 1 (50%)" in text
     assert "Ran `benefits-calc` on a household file | 2 (100%)" in text
     for leak in ("benefits-0123456789", "benefits-9876543210", "Ana", "Elm", "291", "monthly_benefit"):
         assert leak not in text

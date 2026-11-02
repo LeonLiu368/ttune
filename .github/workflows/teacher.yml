@@ -159,28 +159,39 @@ jobs:
           deadline=$(( $(date +%s) + (330 - MINUTES - 25) * 60 ))
           multiplier=$(python3 -c "print(int('$MINUTES') * 60 / 900)")
           info=$(python3 -c "import json; p=json.load(open('prices.json')); print(json.dumps({'max_input_tokens': 131072, 'max_output_tokens': 16384, 'input_cost_per_token': p['input'], 'output_cost_per_token': p['output']}))")
+          api_errors=0
           for task in build/tasks/*/; do
             name=$(basename "$task")
             if [ "$(date +%s)" -gt "$deadline" ]; then echo "out of time: $name and later tasks not run"; break; fi
+            if [ "$api_errors" -ge 2 ]; then echo "two API errors in a row: stopping; $name and later tasks not run"; break; fi
             python -m harbortask teacher can-start --jobs jobs --prices prices.json --budget "$BUDGET" \
               || { echo "budget reached: $name and later tasks not run"; break; }
             timeout --kill-after=60 "$(( (MINUTES + 15) * 60 ))" \
             harbor run -p "$task" -a terminus-2 -m "openrouter/$MODEL" --skip-credential-checks \
               --ak temperature=0 --ak "max_turns=$TURNS" --ak store_all_messages=true \
               --ak record_terminal_session=false --ak "model_info=$info" \
-              --agent-timeout-multiplier "$multiplier" -e docker -n 1 -o "jobs/$name" -y -q > /dev/null \
+              --agent-timeout-multiplier "$multiplier" -e docker -n 1 -o "jobs/$name" -y -q \
+              > "jobs/$name.harbor.log" 2>&1 \
               || { echo "harbor exited with $? on $name"; docker ps -aq | xargs -r docker rm -f > /dev/null; }
-            # Public log: rewards and turn counts only, never the answer or the conversation.
-            python3 - "$name" <<'PY'
+            # Public log: rewards, turn counts and the kind of error only. Harbor's own output (which can quote the
+            # model and the API's error text) stays in jobs/, which is encrypted below.
+            if python3 - "$name" <<'PY'
           import json, pathlib, sys
-          for p in pathlib.Path("jobs", sys.argv[1]).rglob("result.json"):
+          name, api_error = sys.argv[1], False
+          for p in pathlib.Path("jobs", name).rglob("result.json"):
               r = json.loads(p.read_text())
               if "trial_name" in r:
                   reward = ((r.get("verifier_result") or {}).get("rewards") or {}).get("reward")
                   turns = ((r.get("agent_result") or {}).get("metadata") or {}).get("n_episodes")
                   exc = (r.get("exception_info") or {}).get("exception_type")
-                  print(f"{sys.argv[1]}: reward={reward} turns={turns} exception={exc}")
+                  log = pathlib.Path("jobs", f"{name}.harbor.log")
+                  text = log.read_text(errors="replace") if log.is_file() else ""
+                  why = " (out of OpenRouter credits: HTTP 402)" if "requires more credits" in text else ""
+                  print(f"{name}: reward={reward} turns={turns} exception={exc}{why}")
+                  api_error = api_error or (exc == "APIError" and reward is None)
+          sys.exit(4 if api_error else 0)
           PY
+            then api_errors=0; else api_errors=$((api_errors + 1)); fi
           done
           python -m harbortask teacher can-start --jobs jobs --prices prices.json --budget "$BUDGET" || true
 
