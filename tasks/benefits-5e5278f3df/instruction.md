@@ -1,6 +1,6 @@
 # Screen a household for benefits
 
-You are a public-benefits caseworker in the United States. A household in North Carolina has applied for help and handed in the paperwork in `/app/case/` (4 PDF files, starting with their application). Work out which programs they qualify for, and how much, and write your answer to `/app/answer.json`.
+You are a public-benefits caseworker in the United States. A household in North Carolina has applied for help and handed in the paperwork in `/app/case/` (4 PDF files, starting with their application; `ls /app/case/` lists them all). Work out which programs they qualify for, and how much, and write your answer to `/app/answer.json`.
 
 ## The programs and periods
 
@@ -13,7 +13,7 @@ Assume the household applies for every program.
 
 ## Tools
 
-- `pdftotext -layout /app/case/01-application.pdf -` prints a document's text.
+- `pdftotext -layout /app/case/01-application.pdf -` prints a document's text. Read every document in full before deciding anything: searching them with `grep` misses facts, because labels and layout vary from one document to the next.
 - `benefits-calc household.json` runs PolicyEngine on the household's facts, like a caseworker's calculator. It needs the facts as monthly dollar amounts. `benefits-calc --help` describes the input; `benefits-calc --example` prints one to start from. The calculator is exact, so the work is in getting the facts right.
 
 ## How to read the documents
@@ -47,4 +47,4 @@ Write `/app/answer.json` like this:
 - `unknown_members` lists members whose Medicaid or WIC answer a missing document could change.
 - Amounts are in US dollars. Give 0 when not eligible.
 - Name members by first name, as the application does.
-- `missing_information` lists the documents the household still needs to bring, if any. Use an empty list if nothing is missing. Each `document` is one of: `pay_stubs`, `self_employment_records`, `social_security_letter`, `ssi_letter`, `child_support_history`, `unemployment_letter`, `lease_rent_page`, `childcare_receipt`. For pay stubs, self-employment records and benefit letters, also give the `member` they're for; for the others, give `"member": null`.
+- `missing_information` lists the documents the household still needs to bring, if any. Use an empty list if nothing is missing. Each `document` is one of: `pay_stubs`, `self_employment_records`, `social_security_letter`, `ssi_letter`, `child_support_history`, `unemployment_letter`, `lease_rent_page`, `childcare_receipt`. These are kinds of document, not file names: one is missing only when no file in `/app/case/` provides it. For pay stubs, self-employment records and benefit letters, also give the `member` they're for; for the others, give `"member": null`.

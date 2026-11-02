@@ -115,6 +115,7 @@ def test_task_config_uses_a_separate_offline_verifier_and_a_non_root_agent():
 def test_instruction_states_the_rules_the_tools_and_every_category():
     text = (sorted((ROOT / "tasks").glob("benefits-*"))[0] / "instruction.md").read_text()
     assert "two most recent pay stubs" in text and "benefits-calc" in text and "pdftotext" in text
+    assert "Read every document in full" in text and "not file names" in text
     for category in verify.CATEGORIES:
         assert f"`{category}`" in text
 

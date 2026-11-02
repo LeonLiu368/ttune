@@ -109,7 +109,9 @@ harbor run -p build/tasks/<task> -a terminus-2 -m openai/<model> --ak api_base=<
 python -m harbortask agentic collect <run id> --jobs jobs/ --model <model> --limit 5   # -> evals/results/<run id>
 ```
 
-The task image includes `tmux`, which terminal agents need and can't install themselves without a network. The manifests in [`splits/`](splits/) were built before tmux was added, so their task digests are out of date until the **Task splits** workflow runs again.
+The task image includes `tmux`, which terminal agents need and can't install themselves without a network.
+
+The first smoke runs (2026-11-02) found Qwen3 4B giving up after a glance: it took the document categories in the instruction for file names, searched the PDFs with `grep` instead of reading them, declared the paperwork missing and answered "unknown" everywhere, scoring about 0.05. The instruction now says the categories aren't file names and asks the agent to read every document in full.
 
 ## Reward-hack audit
 
