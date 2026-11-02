@@ -41,7 +41,7 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
 
 ## 4. Train
 
-- [ ] Baseline eval: Qwen3 4B, self-hosted for $0, driving Harbor's terminus-2 agent on the 400 holdout tasks (the **Baseline** workflow, [tasks/README.md](tasks/README.md#the-agentic-baseline)). A 10-task smoke run comes first
+- [x] Baseline eval: Qwen3 4B, self-hosted for $0, driving Harbor's terminus-2 agent on the holdout tasks ([results](evals/results/20261102-0558-harbor-qwen3-4b-instruct/comparison.md), findings below). 276 of 400 tasks scored; mean reward 0.18 ID / 0.12 OOD, against 0.44 / 0.29 for the same model answering in one reply on the same households
 - [ ] SFT warm-start
 - [ ] GRPO
 - [ ] Publish to Harbor Hub
@@ -130,6 +130,33 @@ The same 200 + 200 households and the same model as above, but the model reads e
 - **Threshold edges stay the hardest family:** 0.22 on documents, 0.28 on summaries. Held-out states again cost almost nothing (0.41 against 0.43).
 
 What this adds for training: document reading itself isn't the bottleneck for a 4B model. Turning pay stubs into a year's income for the EITC is, and so is flagging gaps consistently. The Harbor task's reward should score the missing-information list, which these evals don't yet.
+
+### Agentic baseline: Qwen3 4B Instruct with Harbor's terminus-2 ($0)
+
+The same model and holdout households as the document eval above, now as Harbor tasks: the agent works in an offline container with the PDFs, `pdftotext` and `benefits-calc` (PolicyEngine as a calculator), and writes `/app/answer.json`. 20 parallel jobs on GitHub's runners, 30 minutes and 40 turns per task, temperature 0. Full tables in [comparison.md](evals/results/20261102-0558-harbor-qwen3-4b-instruct/comparison.md).
+
+| | ID | OOD |
+|---|---|---|
+| Tasks scored (of 200) | 131 | 145 |
+| Mean reward, agent | 0.18 | 0.12 |
+| Mean reward, one-shot on the same households | 0.44 | 0.29 |
+| Agent minus one-shot (95% interval) | −0.26 (−0.32 to −0.21) | −0.17 (−0.22 to −0.12) |
+| Task reward, with the missing-information list | 0.17 | 0.12 |
+| Timed out / wrote no answer file | 20 / 33 | 30 / 36 |
+| Median turns / minutes per task | 5 / 12.6 | 6 / 13.6 |
+
+- **Far below answering in one reply.** On the same households, the agent scores less than half the one-shot reward, and every program's balanced accuracy falls by 29 to 51 points. The agent is also below the blanket-answer floors (always "no": 0.34 ID, 0.21 OOD).
+- **It answers "unknown" instead of deciding.** 67% of the readable answers say "unknown" for both SNAP and the EITC. In the smoke-run logs, which print every turn, the agent:
+  - read part of the application, searched the PDFs with `grep` instead of reading them;
+  - looked for files named after the missing-information categories (`03-self_employment.pdf`), then declared those documents missing;
+  - never ran `benefits-calc`.
+  Clarifying the instruction (categories aren't file names; read every document in full) raised a 10-task smoke score from about 0.05 to 0.12 but didn't change these habits.
+- **A third of tasks produce no usable answer:** 69 wrote no answer file and 31 more wrote one that doesn't parse. The agent also loops on its own malformed JSON replies, which eats turns and causes most of the 50 timeouts.
+- **124 tasks weren't run.** Each job stops starting tasks 275 minutes in, and 20 tasks of about 13 minutes each only just fit, so 18 of the 20 jobs skipped their last 2 to 16 tasks. Tasks run in task-id order, a hash of the case, so the skipped ones aren't a chosen subset; the comparison uses only households scored in both runs. A future run needs about 30 jobs.
+- **Unusual households score lowest again:** rare shapes 0.09 and threshold edges 0.08, against 0.18 on ID; held-out states 0.19. Multigenerational households (0.04, 73% malformed) and Medicaid edge cases (0.00) are worst.
+- **A memory fix along the way.** llama-cpp-python's server keeps every token's logits by default, about 20 GB at the 32k context the agent needs. Its memory reached 13.9 GB and shut down a runner. With `--logits_all False` it stays at 9–10 GB.
+
+What this means for training: the 4B model can't yet use the environment's tools, so RL from this starting point would see almost no reward. An SFT warm-start on good trajectories should come first, teaching it to read every document, run `benefits-calc` and write the answer file. That needs a stronger model's trajectories, which cost tokens.
 
 ## Known blockers
 
