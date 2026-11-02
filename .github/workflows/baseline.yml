@@ -104,6 +104,7 @@ jobs:
 
       - name: Build this shard's tasks
         run: |
+          mkdir -p build
           args=(--out build/tasks --shard "$SHARD/$SHARDS")
           if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
           python -m harbortask agentic pick "${args[@]}" | tee build/tasks.txt

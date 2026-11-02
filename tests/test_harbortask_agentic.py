@@ -100,6 +100,17 @@ def test_trials_outside_the_run_are_refused(tmp_path):
         raise AssertionError("expected CollectError")
 
 
+def test_no_trials_at_all_is_an_error_not_an_empty_run(tmp_path):
+    (tmp_path / "jobs").mkdir()
+    try:
+        agentic.collect("run", [tmp_path / "jobs"], model="m", limit=1, results_dir=tmp_path / "results")
+    except agentic.CollectError as exc:
+        assert "no Harbor trials" in str(exc)
+    else:
+        raise AssertionError("expected CollectError")
+    assert not (tmp_path / "results" / "run").exists()
+
+
 def test_pick_builds_each_shards_tasks_once(tmp_path):
     import pytest
 

@@ -127,6 +127,8 @@ def collect(run_id: str, jobs: list[Path], *, model: str, limit: int | None = No
             model_info: dict | None = None, compare_to: str | None = None, base_url: str | None = None,
             results_dir: Path = RESULTS_DIR) -> Path:
     found = trials(jobs)
+    if not found:
+        raise CollectError(f"no Harbor trials under {', '.join(map(str, jobs))}: every shard failed before running a task")
     out_dir = results_dir / run_id
     out_dir.mkdir(parents=True, exist_ok=True)
     settings = {"run_id": run_id, "model": model, "base_url": base_url, "max_tokens": None, "reasoning_effort": None}
