@@ -74,8 +74,8 @@
         }
       },
       "local_path": "raw/fns-snap-cola-fy27",
-      "retrieved": "2026-10-21",
-      "latest_snapshot": "raw/fns-snap-cola-fy27/2026-10-21"
+      "retrieved": "2026-11-03",
+      "latest_snapshot": "raw/fns-snap-cola-fy27/2026-11-03"
     },
     {
       "id": "fns-snap-sua-fy26",
@@ -159,8 +159,8 @@
         ]
       },
       "local_path": "raw/medicaid-eligibility-levels-current",
-      "retrieved": "2026-10-21",
-      "latest_snapshot": "raw/medicaid-eligibility-levels-current/2026-10-21"
+      "retrieved": "2026-11-03",
+      "latest_snapshot": "raw/medicaid-eligibility-levels-current/2026-11-03"
     },
     {
       "id": "irs-form-w2",
