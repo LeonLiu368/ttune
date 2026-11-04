@@ -1,8 +1,35 @@
 # SFT warm-start
 
-The agentic baseline showed Qwen3 4B can't use the environment yet: it answers "unknown", greps the PDFs and never runs `benefits-calc` ([ROADMAP](../ROADMAP.md#agentic-baseline-qwen3-4b-instruct-with-harbors-terminus-2-0)). RL from there would see almost no reward, so it first learns from a stronger model's good runs.
+The agentic baseline showed Qwen3 4B can't use the environment yet: it answers "unknown", greps the PDFs and never runs `benefits-calc` ([ROADMAP](../ROADMAP.md#agentic-baseline-qwen3-4b-instruct-with-harbors-terminus-2-0)). RL from there would see almost no reward, so it first learns from worked examples of the task done well.
 
-## Teacher trajectories
+## Scripted demonstrations ($0, the default)
+
+The **Scripted demonstrations** workflow (run by hand, free) writes one terminus-2 conversation per training case with `python -m harbortask scripted`. There's no model and no API. Each conversation:
+
+1. lists `/app/case/` and reads the application;
+2. reads every other document in full with `pdftotext`;
+3. works out each fact by the stated rules, showing the arithmetic, and notes each distractor (a stale stub, a name variant, a partner who moved out);
+4. writes `/app/household.json` and runs `benefits-calc`;
+5. names any missing document, says which answers it could change, and writes `/app/answer.json`.
+
+What makes the examples trustworthy:
+
+- **Real outputs.** Every terminal output is real: `pdftotext` on the task's own PDFs, and PolicyEngine on the facts as written.
+- **No hidden facts.** The facts are what docgen's `established()` reads off the documents. A figure whose document is missing is left out of the calculation and flagged, never filled in from the hidden household.
+- **Checked before keeping.** Each demonstration's answer must score 1.0 with the task's verifier, and the calculator output it shows must agree with every answer the documents settle. Any case that fails is dropped and counted.
+- **Same shape as evaluation.** The prompt and observation wording copy Harbor's terminus-2 (`harbortask/templates/terminus/`, Apache-2.0), so the student trains on the conversation it sees at evaluation.
+
+The demonstrations contain training answers. They're kept in an artifact encrypted with `TTUNE_TRAIN_SEED`, holding `bundle/train.jsonl` and `bundle/validation.jsonl`. Only the counts are committed, in [`scripted/`](scripted/).
+
+```bash
+python -m harbortask scripted --holdout id --limit 5 --out /tmp/preview.jsonl   # preview on public holdout cases
+openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:TTUNE_TRAIN_SEED \
+  -in ttune-scripted.tar.gz.enc | tar -xzf -                                    # -> bundle/train.jsonl, validation.jsonl
+```
+
+The trade-off is variety. Every demonstration follows one tidy path, with no exploring and no recovering from a mistake. That should be enough to teach the habits the baseline lacked: read everything, run the calculator, write the file. If the fine-tuned model needs more, the teacher route below can add model-written examples.
+
+## Teacher trajectories (optional, paid)
 
 The **Teacher trajectories** workflow (run by hand, costs money) runs a stronger open model through Harbor's `terminus-2` agent on the secret training tasks:
 

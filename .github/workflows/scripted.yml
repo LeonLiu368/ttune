@@ -1,0 +1,100 @@
+name: Scripted demonstrations (SFT warm-start)
+
+# Writes the SFT warm-start data at $0, with no model and no API: one terminus-2 conversation per training case that
+# reads every document, works out the facts by the stated rules, runs benefits-calc and writes the right answer
+# (harbortask/scripted.py). Each demonstration is checked before it's kept.
+#
+# The demonstrations contain training answers, so they're kept as an artifact encrypted with TTUNE_TRAIN_SEED; the
+# PR carries aggregate counts only.
+on:
+  workflow_dispatch:
+    inputs:
+      n_train:
+        description: "Training cases (the split's size, as built)"
+        required: false
+        default: "1000"
+      n_validation:
+        description: "Validation cases"
+        required: false
+        default: "200"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: scripted
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      TTUNE_TRAIN_SEED: ${{ secrets.TTUNE_TRAIN_SEED }}
+      N_TRAIN: ${{ inputs.n_train }}
+      N_VALIDATION: ${{ inputs.n_validation }}
+    steps:
+      - name: The secret is set
+        run: |
+          [ -n "$TTUNE_TRAIN_SEED" ] || { echo "TTUNE_TRAIN_SEED is not set"; exit 1; }
+          case "$N_TRAIN$N_VALIDATION" in *[!0-9]*|"") echo "n_train and n_validation must be numbers"; exit 1;; esac
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements-envgen.txt
+            requirements-docgen.txt
+
+      - run: |
+          sudo apt-get install -y --no-install-recommends poppler-utils
+          pip install -r requirements-envgen.txt -r requirements-docgen.txt
+
+      - name: Write the demonstrations
+        id: build
+        run: |
+          echo "run_id=$(date -u +%Y%m%d-%H%M)-scripted" >> "$GITHUB_OUTPUT"
+          python -m harbortask scripted --split train --n-cases "$N_TRAIN" --out bundle/train.jsonl > counts-train.json
+          python -m harbortask scripted --split validation --n-cases "$N_VALIDATION" --out bundle/validation.jsonl \
+            > counts-validation.json
+          cat counts-*.json
+
+      - name: Summarize (aggregate only)
+        env:
+          RUN_ID: ${{ steps.build.outputs.run_id }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib
+          from harbortask import scripted
+          counts = {s: json.loads(pathlib.Path(f"counts-{s}.json").read_text()) for s in ("train", "validation")}
+          out = pathlib.Path("sft/scripted") / f"{os.environ['RUN_ID']}.md"
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(scripted.summary(counts))
+          print(out.read_text())
+          PY
+          cat "sft/scripted/$RUN_ID.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Encrypt the demonstrations
+        run: |
+          tar -czf - bundle | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:TTUNE_TRAIN_SEED \
+            -out ttune-scripted.tar.gz.enc
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ttune-scripted-${{ steps.build.outputs.run_id }}
+          path: ttune-scripted.tar.gz.enc
+          retention-days: 90
+
+      - name: Open a PR with the summary
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: scripted/${{ steps.build.outputs.run_id }}
+          add-paths: sft/scripted/${{ steps.build.outputs.run_id }}.md
+          commit-message: "Scripted demonstrations: ${{ steps.build.outputs.run_id }}"
+          title: "Scripted demonstrations: ${{ steps.build.outputs.run_id }}"
+          body-path: sft/scripted/${{ steps.build.outputs.run_id }}.md
+          delete-branch: true

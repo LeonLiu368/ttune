@@ -42,7 +42,7 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
 ## 4. Train
 
 - [x] Baseline eval: Qwen3 4B, self-hosted for $0, driving Harbor's terminus-2 agent on the holdout tasks ([results](evals/results/20261102-0558-harbor-qwen3-4b-instruct/comparison.md), findings below). 276 of 400 tasks scored; mean reward 0.18 ID / 0.12 OOD, against 0.44 / 0.29 for the same model answering in one reply on the same households
-- [ ] SFT warm-start ([sft/](sft/README.md)): teacher trajectories from Qwen3 235B Instruct on the secret training tasks (the **Teacher trajectories** workflow; a 50-task pilot, then the rest, $25 cap in total), then LoRA fine-tuning of Qwen3 4B on the good ones
+- [ ] SFT warm-start ([sft/](sft/README.md)): scripted demonstrations at $0 (the **Scripted demonstrations** workflow: one checked terminus-2 conversation per training case, read every document, run `benefits-calc`, write the answer), then LoRA fine-tuning of Qwen3 4B. A paid teacher route exists too; its pilot ran out of OpenRouter credit after 14 tasks (mean reward 0.875)
 - [ ] GRPO
 - [ ] Publish to Harbor Hub
 

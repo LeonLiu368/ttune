@@ -46,6 +46,13 @@ def main(argv: list[str] | None = None) -> int:
     pk.add_argument("--secret-env", default="TTUNE_TRAIN_SEED")
     sh = agsub.add_parser("show", help="print a trial's result, answer file and agent turns")
     sh.add_argument("job_dir", type=Path)
+    sc = sub.add_parser("scripted", help="scripted SFT demonstrations ($0): terminus-2 conversations from a split")
+    sc.add_argument("--split", choices=("train", "validation"), default=None, help="a secret-seeded split")
+    sc.add_argument("--n-cases", type=int, default=None, help="the split's size, as built (default: 1000 / 200)")
+    sc.add_argument("--holdout", choices=("id", "ood"), default=None, help="public holdout cases instead (to preview)")
+    sc.add_argument("--limit", type=int, default=None)
+    sc.add_argument("--secret-env", default="TTUNE_TRAIN_SEED")
+    sc.add_argument("--out", type=Path, required=True)
     te = sub.add_parser("teacher", help="teacher trajectories for the SFT warm-start (training split only)")
     tesub = te.add_subparsers(dest="action", required=True)
     tp = tesub.add_parser("price", help="the teacher's OpenRouter price, refusing one above the ceiling")
@@ -76,6 +83,21 @@ def main(argv: list[str] | None = None) -> int:
     co.add_argument("--temperature", type=float, default=None)
     co.add_argument("--compare-to", default=None, help="a one-shot run on the same households, for comparison.md")
     args = parser.parse_args(argv)
+
+    if args.command == "scripted":
+        import os
+        from harbortask import scripted
+        if bool(args.split) == bool(args.holdout):
+            parser.error("give --split or --holdout")
+        if args.split:
+            n = args.n_cases or {"train": 1000, "validation": 200}[args.split]
+            rows = scripted.generated_cases(args.split, n, os.environ.get(args.secret_env, ""))
+        else:
+            rows = load(args.holdout)
+        rows = rows[:args.limit] if args.limit else rows
+        counts = scripted.build_all(rows, args.out)
+        print(json.dumps(counts))
+        return 0 if counts.get("kept") else 1
 
     if args.command == "teacher":
         from harbortask import teacher
