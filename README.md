@@ -1,49 +1,99 @@
 # ttune
 
-Notes and plans for building RL environments (in the [Harbor](https://github.com/laude-institute/harbor) format) and using them to fine-tune / RL a small model of my own, on little compute.
+An RL environment for public-benefits eligibility, in the [Harbor](https://github.com/laude-institute/harbor) format, and the pipeline to train a small open model on it with little compute.
 
-**What's next:** see [ROADMAP.md](ROADMAP.md) for what's done, in progress and next.
+An agent gets a household's paperwork as PDFs (an application, pay stubs, a lease, benefit letters) and a terminal. It works out SNAP, the EITC, Medicaid and WIC, using [PolicyEngine](https://github.com/PolicyEngine/policyengine-us) as a calculator, and writes its answer to a file. A separate verifier scores that answer against PolicyEngine's exact result. Every household is synthetic, so there's no private data.
 
-**Eval results:** browse every run, and each household's answer next to PolicyEngine's, in the [eval viewer](https://leonliu368.github.io/ttune/) ([`viewer/`](viewer/README.md)).
+- **Status:** [ROADMAP.md](ROADMAP.md) has what's done, in progress and next, and every finding so far.
+- **Results:** the [eval viewer](https://leonliu368.github.io/ttune/) shows every run, and each household's answer next to PolicyEngine's.
+- **How it works:** [docs/architecture.md](docs/architecture.md).
 
-## Current direction
+## How it works
 
-**Public-benefits eligibility.** An agent reads a household's messy documents and determines eligibility and amounts for SNAP, Medicaid, EITC, WIC and similar programs, using [PolicyEngine](https://github.com/PolicyEngine) as an exact, open-source verifier. Full plan: [docs/04-benefits-eligibility-plan.md](docs/04-benefits-eligibility-plan.md).
+```mermaid
+flowchart LR
+  A[Government sources] -->|scraper| B[Rules, checked against PolicyEngine]
+  B --> C[Households: envgen]
+  C --> D[Paperwork as PDFs: docgen]
+  D --> E[Harbor tasks: harbortask]
+  P[(PolicyEngine)] -. correct answers .-> C
+  P -. calculator and grader .-> E
+  E --> F[Evaluate: evals, viewer]
+  E --> G[Train: SFT, then GRPO]
+```
 
-## Research: where ttune fits
+1. **Rules.** [`scraper/`](scraper/) fetches official SNAP, EITC, Medicaid and poverty-line sources each month. `python -m scraper check` compares every value with PolicyEngine's.
+2. **Households.** [`envgen/`](envgen/) samples households: 200 typical ones (ID), and 200 unusual ones (OOD: rare household shapes, incomes at a cutoff, held-out states). PolicyEngine computes each one's correct answers.
+3. **Paperwork.** [`docgen/`](docgen/) turns each household into the documents a caseworker would see. It adds distractors (a stale pay stub, a partner who moved out) and gaps (a missing pay stub). Where a gap could change an answer, the right answer becomes "unknown".
+4. **Tasks.** [`harbortask/`](harbortask/) packages each case as a Harbor task. The agent's container is offline and holds the PDFs and `benefits-calc`. A separate container holds the answer key and scores `/app/answer.json`.
+5. **Splits.** 1,000 training and 200 validation tasks are built from a secret seed, so their answers stay private. The 400 published cases are the holdout, never trained on.
+6. **Evaluate and train.** [`evals/`](evals/README.md) and the GitHub Actions workflows run models on all of this for $0. [`sft/`](sft/README.md) holds the fine-tuning data and a free Colab notebook.
 
-Earlier work shows language models still get benefits and tax rules wrong often, and none of it trains a model to do better. The best model answers about 77% of SNAP questions correctly ([Public Benefits Bench](https://www.vals.ai/benchmarks/public-benefits-bench)). The best gets 78% of full tax returns right, and only with web search ([TaxCalcBench](https://github.com/column-tax/tax-calc-bench)). These benchmarks use small, fixed, hand-written test sets, and each covers one program.
+## Results so far
 
-ttune adds what's missing:
+Qwen3 4B Instruct, self-hosted on GitHub's CPU runners for $0, on the same 200 ID and 200 OOD households. Mean reward from 0 to 1.
 
-| What we plan to hit | Closest earlier work | How ttune does it |
+| How the model works | ID | OOD |
 |---|---|---|
-| Exact answers from a rules engine | TaxCalcBench, τ-bench | PolicyEngine's answer for every household |
-| Generated, unlimited cases | Reasoning Gym, GSM-Symbolic | A seeded household generator ([#2](https://github.com/LeonLiu368/ttune/issues/2)) |
-| A planned in- vs out-of-distribution test | GSM-Symbolic | Typical vs unusual households, one kind of shift each ([#4](https://github.com/LeonLiu368/ttune/issues/4)) |
-| Wrongful denials cost more than other errors | None found | Counted double in the score ([#5](https://github.com/LeonLiu368/ttune/issues/5)) |
-| An RL environment to train on | Reasoning Gym (no benefits programs) | A Harbor environment, then fine-tuning and RL |
-| Rules checked against official sources | None found | A monthly scraper and `python -m scraper check` |
+| One reply, from a clean written summary | 0.44 | 0.35 |
+| One reply, from the paperwork as text | 0.45 | 0.31 |
+| As an agent in Harbor, with the PDFs and the calculator | 0.18 | 0.12 |
+| Floor: answer "no" to everything | 0.34 | 0.21 |
 
-**Goals, in order:** build two household sets of 200 with exact answers; measure how much worse a small open model (4–8B) does on the unusual set; find which kind of household causes the drop; package it as an environment that shortcut answers can't game; then train to close the gap without losing ground on typical households.
+As an agent, the 4B model mostly gives up: it greps the PDFs instead of reading them, answers "unknown" and never runs the calculator. The fine-tuning step now in progress targets exactly that, using 1,200 scripted demonstrations of the task done well. Details are in [ROADMAP.md](ROADMAP.md#findings-so-far).
 
-## Docs
+## Quick start
 
-| Doc | What's in it |
+Python 3.11 or later. PolicyEngine needs its own requirements file because it's large.
+
+```bash
+pip install -r requirements-dev.txt -r requirements-docgen.txt   # tests, documents, tasks
+pip install -r requirements-envgen.txt                            # PolicyEngine (for answers and the calculator)
+python -m pytest -q                                               # the PolicyEngine tests skip without it
+
+python -m harbortask build --samples                              # rebuild the 6 sample tasks in tasks/
+harbor run -p tasks/benefits-5e5278f3df -a oracle -e docker       # the reference answer: reward 1.0 (needs Docker, Harbor 0.25.0)
+python -m viewer build && python -m http.server -d _site          # the eval viewer, locally
+```
+
+[docs/commands.md](docs/commands.md) lists every command. [docs/workflows.md](docs/workflows.md) covers the GitHub Actions workflows that run the evals, build the splits and write the training data. It also lists the secrets they need and what each one costs.
+
+## Repository
+
+| Path | What's in it |
 |---|---|
-| [01 – Niche exploration](docs/01-niche-exploration.md) | Early ideas: why plain terminal tasks were rejected, AI-safety-flavored envs, automated interpretability envs |
-| [02 – Realistic environments](docs/02-realistic-environments.md) | 8 realistic, CPU-only environment ideas across different domains |
-| [03 – 2026 trends](docs/03-trends-2026.md) | What people on X and in papers are saying about RL environments, and what it means for these ideas |
-| [04 – Benefits eligibility plan](docs/04-benefits-eligibility-plan.md) | The chosen domain: environment design, reward, training pipeline, risks |
-| [05 – Skills](docs/05-skills.md) | Claude Code skills in `.claude/skills/`: 4 written for ttune, 4 pulled in (3 from Harbor, plus plain-language), plus relevant account skills |
-| [06 – Research report](docs/06-research-report.md) | Earlier work on benefits, tax and legal reasoning, verifiable RL environments and robustness; what it did well, where it falls short, ttune's checklist, goals and methods |
+| [`scraper/`](scraper/) | Fetch, parse and check official sources ([data/README.md](data/README.md#scraper)) |
+| [`envgen/`](envgen/) | The household schema, samplers and PolicyEngine answers |
+| [`docgen/`](docgen/) | Documents, distractors and gaps, the truth that follows the documents, and the PDF renderer ([data/documents/README.md](data/documents/README.md)) |
+| [`harbortask/`](harbortask/) | Harbor tasks: generator, verifier, calculator, reward-hack audit, splits, agentic baseline, SFT data ([tasks/README.md](tasks/README.md)) |
+| [`evals/`](evals/README.md) | Run a model over a set, score it, compare ID with OOD |
+| [`viewer/`](viewer/README.md) | The eval viewer site, and a local server that can start runs |
+| [`data/`](data/README.md) | Raw sources, parsed rows, checks, household sets and document packets |
+| [`tasks/`](tasks/README.md) | 6 sample tasks, the reward-hack audit, and the split manifests |
+| [`sft/`](sft/README.md) | Fine-tuning: scripted demonstrations, the Colab notebook, the teacher route |
+| [`evals/results/`](evals/results/) | Every eval run: per-household results and `comparison.md` |
+| [`docs/`](docs/README.md) | Guides, plus the research notes behind the project |
+| [`.claude/skills/`](.claude/skills/) | Claude Code skills used to build the environment ([docs/05-skills.md](docs/05-skills.md)) |
 
-## Data
+## Why this environment
 
-[`data/`](data/README.md) holds raw inputs for the benefits environment: PolicyEngine's rule parameters and about 1,300 example households for SNAP, WIC, EITC and Medicaid. [`data/sources.json`](data/sources.json) lists every source. The official government sources are fetched by [`scraper/`](scraper/), which runs monthly on GitHub Actions and opens a PR with new snapshots; see [data/README.md](data/README.md#scraper). [`data/households/`](data/households/README.md) holds two generated sets of 200 households, typical (ID) and unusual (OOD), each with PolicyEngine's correct answers; [`envgen/`](envgen/) generates them, and [`docgen/`](data/documents/README.md) turns each one into messy paperwork (an application, pay stubs, letters, a lease) whose right answers follow the documents, in [`data/documents/`](data/documents/README.md). [`evals/`](evals/README.md) scores a model on both and compares the results, and [`viewer/`](viewer/README.md) shows the results on a web page that can also start new runs.
+Language models still get benefits and tax rules wrong often. The best model answers about 77% of SNAP questions correctly ([Public Benefits Bench](https://www.vals.ai/benchmarks/public-benefits-bench)), and the best gets 78% of full tax returns right, only with web search ([TaxCalcBench](https://github.com/column-tax/tax-calc-bench)). Those benchmarks use small, fixed, hand-written test sets covering one program each, and none trains a model.
 
-## Constraints I'm working under
+| What ttune does | Closest earlier work |
+|---|---|
+| Exact answers from a rules engine for every case | TaxCalcBench, τ-bench |
+| Unlimited generated cases from a seeded generator | Reasoning Gym, GSM-Symbolic |
+| A planned in- vs out-of-distribution test, one kind of shift per family | GSM-Symbolic |
+| Wrongful denials cost double in the score | None found |
+| Missing paperwork must be flagged, and "unknown" is right only where a gap leaves the answer open | None found |
+| An RL environment to train in, audited against shortcut answers | Reasoning Gym (no benefits programs) |
+| Rules checked against official sources every month | None found |
 
-- Little compute: CPU-side verification, small open-weight models (4–8B), LoRA, a single rented GPU or a hosted fine-tuning API.
-- Rewards should come from a deterministic verifier where possible, not an LLM judge.
-- Environments should be procedurally generated, so one generator yields many tasks.
+The full survey is in [docs/06-research-report.md](docs/06-research-report.md).
+
+## Constraints
+
+- **Little compute.** Verification runs on CPU. The models are small open-weight ones (4–8B), fine-tuned with LoRA. Evals run on GitHub's free runners, and training on free Colab GPUs.
+- **Exact rewards.** Scores come from a deterministic verifier, not an LLM judge.
+- **Generated, not hand-written.** One generator yields as many tasks as needed, and the training answers stay secret.
+- **Money only with approval.** Paid models are refused unless a run explicitly allows them. So far the project has spent $0.11.

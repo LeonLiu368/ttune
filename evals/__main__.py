@@ -35,7 +35,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--retries", type=int, default=5, help="tries per request (free models rate-limit hard)")
     r.add_argument("--max-tokens", type=int, default=8000, help="reply length cap, reasoning included")
     r.add_argument("--timeout", type=float, default=180.0, help="seconds per request (raise it for CPU-hosted models)")
-    r.add_argument("--shard", default=None, help="K/N: run households whose index % N == K (for parallel jobs)")
+    r.add_argument("--shard", default=None, help="K/N: run households whose index %% N == K (for parallel jobs)")
     r.add_argument("--model-info", type=Path, default=None, help="JSON describing a self-hosted model, kept in summary.json")
     r.add_argument("--reasoning-effort", choices=("none", "minimal", "low", "medium", "high"), default=None,
                    help="for thinking models (OpenRouter's reasoning.effort); default: the model's own")
