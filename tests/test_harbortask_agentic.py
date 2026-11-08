@@ -83,10 +83,27 @@ def test_comparison_against_a_one_shot_run_pairs_households(tmp_path):
     lines = [json.loads(line) for line in path.open()]
     lines[0]["score"] = {**lines[0]["score"], "reward": 0.0}
     path.write_text("".join(json.dumps(r) + "\n" for r in lines))
+    summary = results / "one-shot" / "summary.json"  # a one-shot run has no harness
+    summary.write_text(json.dumps({k: v for k, v in json.loads(summary.read_text()).items() if k != "harness"}))
     out = agentic.collect("agent", [jobs], model="m", limit=3, results_dir=results, compare_to="one-shot")
     text = comparison_markdown(out)
     assert "Against the one-shot run `one-shot`" in text
     assert "| Households in both | 3 | 3 |" in text and "0.67 → 1.00: +0.33" in text
+
+
+def test_comparison_against_an_earlier_agent_run_adds_the_task_reward(tmp_path):
+    rows = holdout_rows("holdout-id")[:2] + holdout_rows("holdout-ood")[:2]
+    before, after = tmp_path / "before", tmp_path / "after"
+    for i, row in enumerate(rows):
+        oracle = json.dumps(verify.oracle(build.truth_file(row)))
+        fake_trial(before, row, answer="" if i == 0 else oracle)  # the base model wrote nothing on one task
+        fake_trial(after, row, answer=oracle)
+    results = tmp_path / "results"
+    agentic.collect("base", [before], model="base", limit=2, results_dir=results)
+    out = agentic.collect("tuned", [after], model="tuned", limit=2, results_dir=results, compare_to="base")
+    text = comparison_markdown(out)
+    assert "Against the agent run `base`" in text and "Against the one-shot run" not in text
+    assert "| Task reward, with missing information | 0.50 → 1.00: +0.50" in text
 
 
 def test_trials_outside_the_run_are_refused(tmp_path):

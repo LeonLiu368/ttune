@@ -81,6 +81,11 @@ def paired_change(a: list[dict], b: list[dict], stat, n_boot: int = 2000, seed: 
     return (d, boots[int(0.025 * len(boots))], boots[int(0.975 * len(boots)) - 1]), len(ids), base
 
 
+def task_reward(rows: list[dict]) -> float | None:
+    """The mean of the task verifier's reward (with the missing-information list) over agent results."""
+    return sum(r["task_score"]["reward"] for r in rows) / len(rows) if rows else None
+
+
 def _agent_section(sets: dict, id_rows: list[dict], ood_rows: list[dict], compare_to: str | None,
                    results_dir: Path) -> list[str]:
     agent = {k: sets.get(k, {}).get("agent", {}) for k in ("id", "ood")}
@@ -108,16 +113,27 @@ def _agent_section(sets: dict, id_rows: list[dict], ood_rows: list[dict], compar
               f"({', '.join(mismatched[:5])}): check the verifier image."]
     other = results_dir / compare_to if compare_to else None
     if other and (other / "summary.json").is_file():
-        lines += ["", f"## Against the one-shot run `{compare_to}`", "",
-                  "The same households: there the model read the documents as text in one prompt and answered in one reply. "
-                  "Changes are agent minus one-shot, with 95% bootstrap intervals over households.", "",
-                  "| | ID | OOD |", "|---|---|---|"]
+        if json.loads((other / "summary.json").read_text()).get("harness"):
+            lines += ["", f"## Against the agent run `{compare_to}`", "",
+                      "The same tasks, also run as an agent, for example by the base model before fine-tuning. "
+                      "Changes are this run minus that one, with 95% bootstrap intervals over households.", "",
+                      "| | ID | OOD |", "|---|---|---|"]
+        else:
+            lines += ["", f"## Against the one-shot run `{compare_to}`", "",
+                      "The same households: there the model read the documents as text in one prompt and answered in one "
+                      "reply. Changes are agent minus one-shot, with 95% bootstrap intervals over households.", "",
+                      "| | ID | OOD |", "|---|---|---|"]
         pairs = {s: (load(other, s), rows) for s, rows in (("id", id_rows), ("ood", ood_rows))}
         cells = {s: paired_change(*pairs[s], mean_reward) for s in pairs}
         lines.append("| Households in both | " + " | ".join(str(cells[s][1]) for s in ("id", "ood")) + " |")
         lines.append("| Mean reward | " + " | ".join(
             f"{num(cells[s][2][0])} → {num(cells[s][2][1])}: {change_ci(cells[s][0], points=False)}"
             for s in ("id", "ood")) + " |")
+        if all(r.get("task_score") for s in pairs for r in scored(pairs[s][0])):
+            cell = {s: paired_change(*pairs[s], task_reward) for s in pairs}
+            lines.append("| Task reward, with missing information | " + " | ".join(
+                f"{num(cell[s][2][0])} → {num(cell[s][2][1])}: {change_ci(cell[s][0], points=False)}"
+                for s in ("id", "ood")) + " |")
         for p in PROGRAMS:
             stat = program_balanced_accuracy(p)
             cell = {s: paired_change(*pairs[s], stat) for s in pairs}

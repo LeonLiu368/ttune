@@ -11,6 +11,10 @@ on:
         type: choice
         options: [qwen3-4b-instruct, llama-3.1-8b-instruct, gemma-3-4b-it]
         default: qwen3-4b-instruct
+      model_repo:
+        description: "Optional: a Hugging Face repo (owner/name) with a GGUF fine-tuned from the preset, used in its place. A private repo needs the HF_TOKEN secret."
+        required: false
+        default: ""
       limit:
         description: 'Households per set, or "all" for all 200'
         required: false
@@ -42,12 +46,14 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       run_id: ${{ steps.plan.outputs.run_id }}
+      name: ${{ steps.plan.outputs.name }}
       shards: ${{ steps.plan.outputs.shards }}
       limit: ${{ steps.plan.outputs.limit }}
     steps:
       - id: plan
         env:
           PRESET: ${{ inputs.preset }}
+          MODEL_REPO: ${{ inputs.model_repo }}
           LIMIT: ${{ inputs.limit }}
           SHARDS: ${{ inputs.shards }}
           CASES: ${{ inputs.cases }}
@@ -56,9 +62,18 @@ jobs:
           case "$LIMIT" in *[!0-9]*) echo 'limit must be a number or "all"'; exit 1;; esac
           case "$SHARDS" in ''|*[!0-9]*) echo "shards must be a number"; exit 1;; esac
           if [ "$SHARDS" -lt 1 ] || [ "$SHARDS" -gt 20 ]; then echo "shards must be 1-20"; exit 1; fi
+          if [ -n "$MODEL_REPO" ]; then
+            if ! [[ "$MODEL_REPO" =~ ^[A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*$ ]] || [[ "$MODEL_REPO" == *..* ]]; then
+              echo "model_repo must be a Hugging Face repo id, owner/name"; exit 1
+            fi
+            NAME=$(printf '%s' "${MODEL_REPO#*/}" | tr '[:upper:]' '[:lower:]')
+          else
+            NAME="$PRESET"
+          fi
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
           echo "limit=$LIMIT" >> "$GITHUB_OUTPUT"
           SUFFIX=""; if [ "$CASES" = "documents" ]; then SUFFIX="-docs"; fi
-          echo "run_id=$(date -u +%Y%m%d-%H%M)-local-${PRESET}${SUFFIX}${LIMIT:+-n$LIMIT}" >> "$GITHUB_OUTPUT"
+          echo "run_id=$(date -u +%Y%m%d-%H%M)-local-${NAME}${SUFFIX}${LIMIT:+-n$LIMIT}" >> "$GITHUB_OUTPUT"
           echo "shards=$(python3 -c "import json,sys; print(json.dumps(list(range(int(sys.argv[1])))))" "$SHARDS")" >> "$GITHUB_OUTPUT"
 
   run:
@@ -71,6 +86,8 @@ jobs:
         shard: ${{ fromJSON(needs.plan.outputs.shards) }}
     env:
       PRESET: ${{ inputs.preset }}
+      MODEL_REPO: ${{ inputs.model_repo }}
+      NAME: ${{ needs.plan.outputs.name }}
       LIMIT: ${{ needs.plan.outputs.limit }}
       SHARDS: ${{ inputs.shards }}
       MAX_TOKENS: ${{ inputs.max_tokens }}
@@ -94,7 +111,9 @@ jobs:
 
       - name: Resolve the model on Hugging Face
         id: model
-        run: python -m evals model resolve "$PRESET" --github-output "$GITHUB_OUTPUT"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python -m evals model resolve "$PRESET" ${MODEL_REPO:+--repo "$MODEL_REPO"} --github-output "$GITHUB_OUTPUT"
 
       - uses: actions/cache@v4
         with:
@@ -102,7 +121,9 @@ jobs:
           key: model-${{ steps.model.outputs.sha256 }}
 
       - name: Download and verify the model
-        run: python -m evals model fetch "$PRESET" --models-dir models
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python -m evals model fetch "$PRESET" ${MODEL_REPO:+--repo "$MODEL_REPO"} --models-dir models
 
       - name: Start the model server
         env:
@@ -112,7 +133,7 @@ jobs:
           N_CTX=8192; if [ "$CASES" = "documents" ]; then N_CTX=12288; fi
           # logits_all False: the server otherwise keeps every token's logits (n_ctx x 152k floats, ~20 GB at 32k),
           # which fills the runner's memory and slows each turn. Sampling only needs the last token's.
-          nohup python -m llama_cpp.server --model "models/$FILE" --model_alias "local/$PRESET" \
+          nohup python -m llama_cpp.server --model "models/$FILE" --model_alias "local/$NAME" \
             --n_ctx "$N_CTX" --n_threads "$(nproc)" --seed 0 --host 127.0.0.1 --port 8000 --verbose False --logits_all False \
             > server.log 2>&1 &
           for i in $(seq 1 120); do
@@ -124,7 +145,7 @@ jobs:
       - name: Run this shard of both sets
         run: |
           for set in id ood; do
-            args=(--set "$set" --model "local/$PRESET" --run-id "$RUN_ID" --base-url http://127.0.0.1:8000/v1
+            args=(--set "$set" --model "local/$NAME" --run-id "$RUN_ID" --base-url http://127.0.0.1:8000/v1
                   --shard "$SHARD/$SHARDS" --concurrency 1 --timeout 1800 --max-tokens "${MAX_TOKENS:-6000}"
                   --model-info models/model.json)
             if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
@@ -179,8 +200,8 @@ jobs:
         with:
           branch: eval/${{ needs.plan.outputs.run_id }}
           add-paths: evals/results/${{ needs.plan.outputs.run_id }}
-          commit-message: "Eval: local/${{ inputs.preset }} (${{ needs.plan.outputs.run_id }})"
-          title: "Eval: local/${{ inputs.preset }} (${{ needs.plan.outputs.run_id }})"
+          commit-message: "Eval: local/${{ needs.plan.outputs.name }} (${{ needs.plan.outputs.run_id }})"
+          title: "Eval: local/${{ needs.plan.outputs.name }} (${{ needs.plan.outputs.run_id }})"
           body-path: evals/results/${{ needs.plan.outputs.run_id }}/comparison.md
           delete-branch: true
 

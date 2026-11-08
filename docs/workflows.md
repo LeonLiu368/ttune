@@ -52,6 +52,7 @@ This workflow serves an open model with llama.cpp on the runner's CPU and runs b
 | `shards` | 1 | Parallel jobs, up to 20. A full run with 20 shards takes 3–4 hours. |
 | `max_tokens` | 6000 | Reply length cap |
 | `cases` | `text` | `text` for written summaries, `documents` for the paperwork |
+| `model_repo` | blank | A Hugging Face repo (`owner/name`) with a GGUF fine-tuned from `preset`, served in its place. A private repo needs `HF_TOKEN`. |
 
 ### Eval
 
@@ -76,6 +77,8 @@ This workflow runs an open model, served by llama.cpp on the runner's CPU, as Ha
 | `shards` | 1 | Parallel jobs, up to 60 (20 run at once) |
 | `agent_timeout_minutes` | 30 | Time per task |
 | `max_turns` | 40 | Agent turns per task |
+| `model_repo` | blank | As above: a fine-tuned GGUF on Hugging Face, served in place of `preset` |
+| `compare_to` | the one-shot document run | The run to compare with. For a fine-tuned model, use the base model's baseline run. |
 
 - **Sizing a full run:** a 4B model takes about 13 minutes per task, and a job stops starting tasks 275 minutes in, so use about 30 shards for all 400. Tasks a job runs out of time for are counted as "not run" and aren't scored.
 - **The log:** each task's answer file and agent turns are printed (`python -m harbortask agentic show`). The holdout is public, so this is safe.
@@ -127,8 +130,7 @@ Set these under Settings → Secrets and variables → Actions. GitHub can't sho
 |---|---|---|
 | `TTUNE_TRAIN_SEED` | Task splits, Scripted demonstrations, Teacher trajectories, the Colab notebook | Any long random string. It seeds the training households and encrypts every artifact that holds training answers. Changing it gives new training households, so rebuild the splits and the SFT data afterwards; the holdout doesn't change. |
 | `OPENROUTER_API_KEY` | Eval, Teacher trajectories | An OpenRouter key. With the cost guard on, only free models run. |
-
-To evaluate a fine-tuned model kept in a private Hugging Face repo, a workflow will also need `HF_TOKEN`.
+| `HF_TOKEN` | Eval (self-hosted model), Baseline, when `model_repo` is private | A Hugging Face read token. It's passed only to the steps that look up and download the model. |
 
 ## Privacy rules
 

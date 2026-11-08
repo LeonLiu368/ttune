@@ -44,7 +44,7 @@ Every command runs as `python -m <package> <command>` from the repository root. 
 | `harbortask audit` | Score degenerate answers (empty, all yes, all no, random…) on all 400 document cases; writes `tasks/audit.json` |
 | `harbortask agentic pick --out DIR [--limit N] [--shard K/N]` | Build one shard's holdout tasks. `--split train --start S` builds training tasks instead. |
 | `harbortask agentic show JOB_DIR` | Print a Harbor trial: its rewards, `answer.json` and every agent turn |
-| `harbortask agentic collect RUN_ID --jobs DIR... --model M [--compare-to RUN]` | Score Harbor trials into an evals run in `evals/results/RUN_ID/` |
+| `harbortask agentic collect RUN_ID --jobs DIR... --model M [--compare-to RUN]` | Score Harbor trials into an evals run in `evals/results/RUN_ID/`. `--compare-to` takes a one-shot run or an earlier agent run, such as the base model's. |
 | `harbortask scripted --split {train,validation} --out FILE` | Write the scripted SFT demonstrations for a secret split |
 | `harbortask scripted --holdout {id,ood} --limit N --out FILE` | The same for public holdout cases, to preview or test |
 | `harbortask teacher price --model M --out FILE` | The teacher model's OpenRouter price, refusing one above the ceiling |
@@ -67,7 +67,7 @@ Inside a task's container, the agent also has:
 | `evals merge RUN_ID --parts DIR...` | Combine shard results into one run, checking that every household appears once |
 | `evals rescore RUN_ID` | Score a run's stored replies again with the current scorer (no model calls) |
 | `evals compare RUN_ID` | Write `comparison.md`: ID vs OOD with bootstrap intervals, per program and per OOD family |
-| `evals model {resolve,fetch} PRESET` | Find or download an open model from `evals/local_models.json`, checking its SHA-256 |
+| `evals model {resolve,fetch} PRESET [--repo OWNER/NAME]` | Find or download an open model from `evals/local_models.json`, checking its SHA-256. `--repo` takes the GGUF from a model fine-tuned from the preset instead; a private repo needs `HF_TOKEN`. |
 | `evals preflight --model M [--allow-paid]` | The cost guard: refuse a paid OpenRouter model unless allowed |
 
 To run a self-hosted model locally:

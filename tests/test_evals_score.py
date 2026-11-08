@@ -189,3 +189,30 @@ def test_fetch_refuses_a_file_whose_hash_doesnt_match(tmp_path, monkeypatch):
     assert not (tmp_path / "m.gguf").exists()
     resolved["sha256"] = __import__("hashlib").sha256(b"tampered").hexdigest()
     assert local_model.fetch(resolved, tmp_path).read_bytes() == b"tampered"
+
+
+def test_a_fine_tuned_repo_replaces_the_preset_repo(monkeypatch):
+    import sys
+    import types
+    from evals import local_model
+
+    asked = []
+
+    class FakeApi:
+        def model_info(self, repo, files_metadata):
+            asked.append(repo)
+            lfs = types.SimpleNamespace(sha256="ab" * 32)
+            return types.SimpleNamespace(sha="c0ffee", siblings=[
+                types.SimpleNamespace(rfilename="unsloth.Q4_K_M.gguf", lfs=lfs, size=10),
+                types.SimpleNamespace(rfilename="unsloth.F16.gguf", lfs=lfs, size=20),
+                types.SimpleNamespace(rfilename="README.md", lfs=None, size=1)])
+
+    monkeypatch.setitem(sys.modules, "huggingface_hub", types.SimpleNamespace(HfApi=FakeApi))
+    resolved = local_model.resolve("qwen3-4b-instruct", "Someone/TTune-Qwen3-4B-SFT")
+    assert asked == ["Someone/TTune-Qwen3-4B-SFT"]
+    assert resolved["preset"] == "ttune-qwen3-4b-sft" and resolved["base"] == "qwen3-4b-instruct"
+    assert resolved["file"] == "unsloth.Q4_K_M.gguf" and resolved["revision"] == "c0ffee"
+    assert "base" not in local_model.resolve("qwen3-4b-instruct")
+    for bad in ("no-slash", "a/b/c", "../x", "a/..", "a b/c", "-a/b"):
+        with pytest.raises(local_model.ModelError, match="isn't a Hugging Face repo"):
+            local_model.model_name("qwen3-4b-instruct", bad)

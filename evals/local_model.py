@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from importlib import metadata
 from pathlib import Path
 
@@ -30,9 +31,23 @@ def preset(name: str) -> dict:
     return known[name]
 
 
+REPO_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,95}/[A-Za-z0-9][A-Za-z0-9_.-]{0,95}")
+
+
+def model_name(preset_name: str, repo: str | None = None) -> str:
+    """The name a run uses for the model: the preset's, or for a repo given in its place (a fine-tuned model),
+    the repo's own name, lowercased (`you/ttune-qwen3-4b-sft` -> `ttune-qwen3-4b-sft`)."""
+    if repo is None:
+        return preset_name
+    if not REPO_RE.fullmatch(repo) or ".." in repo:
+        raise ModelError(f"{repo!r} isn't a Hugging Face repo id (owner/name)")
+    return repo.split("/")[1].lower()
+
+
 def choose_file(files: dict[str, str | None], pattern: str) -> str:
-    """The one GGUF file whose name ends with `pattern`. `files` maps each file name to its SHA-256 (or None)."""
-    matches = sorted(f for f in files if f.endswith(pattern) and "/" not in f)
+    """The one GGUF file whose name ends with `pattern`, ignoring case. `files` maps each file name to its SHA-256
+    (or None)."""
+    matches = sorted(f for f in files if f.lower().endswith(pattern.lower()) and "/" not in f)
     if len(matches) != 1:
         ggufs = sorted(f for f in files if f.endswith(".gguf"))
         raise ModelError(f"expected one file ending in {pattern!r}, found {matches or 'none'}; GGUF files: {ggufs[:20]}")
@@ -47,19 +62,28 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def resolve(name: str) -> dict:
-    """Look the preset up on Hugging Face: the repo's current commit, the file, its size and SHA-256."""
+def resolve(name: str, repo: str | None = None) -> dict:
+    """Look the preset up on Hugging Face: the repo's current commit, the file, its size and SHA-256.
+
+    With `repo`, the GGUF comes from that repo instead, for a model fine-tuned from the preset (its base). A
+    private repo needs a read token in HF_TOKEN, which huggingface_hub picks up by itself."""
     from huggingface_hub import HfApi
 
     spec = preset(name)
+    label = model_name(name, repo)
+    if repo is not None:
+        spec = {**spec, "repo": repo, "base": name}
     info = HfApi().model_info(spec["repo"], files_metadata=True)
     files = {s.rfilename: (s.lfs.sha256 if s.lfs else None) for s in info.siblings}
     file = choose_file(files, spec["pattern"])
     if not files[file]:
         raise ModelError(f"{spec['repo']}/{file} has no published SHA-256 to check against")
     size = next(s.size for s in info.siblings if s.rfilename == file)
-    return {"preset": name, "repo": spec["repo"], "file": file, "revision": info.sha, "sha256": files[file],
-            "size_bytes": size, "parameters": spec["parameters"], "license": spec["license"]}
+    resolved = {"preset": label, "repo": spec["repo"], "file": file, "revision": info.sha, "sha256": files[file],
+                "size_bytes": size, "parameters": spec["parameters"], "license": spec["license"]}
+    if "base" in spec:
+        resolved["base"] = spec["base"]
+    return resolved
 
 
 def fetch(resolved: dict, models_dir: Path) -> Path:

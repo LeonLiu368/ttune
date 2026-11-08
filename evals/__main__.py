@@ -44,8 +44,11 @@ def main(argv: list[str] | None = None) -> int:
     lm = sub.add_parser("model", help="resolve or download an open model to serve locally")
     lm.add_argument("action", choices=("resolve", "fetch"))
     lm.add_argument("preset")
+    lm.add_argument("--repo", default=None,
+                    help="a Hugging Face repo (owner/name) with a GGUF fine-tuned from the preset, used in its place; "
+                         "a private repo needs HF_TOKEN")
     lm.add_argument("--models-dir", type=Path, default=Path("models"))
-    lm.add_argument("--github-output", type=Path, default=None, help="append file=, sha256= and revision=")
+    lm.add_argument("--github-output", type=Path, default=None, help="append file=, sha256=, revision= and name=")
     m = sub.add_parser("merge", help="combine shard results into one run")
     m.add_argument("run_id")
     m.add_argument("--parts", type=Path, nargs="+", required=True, help="run directories, one per shard")
@@ -83,7 +86,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "model":
         from evals import local_model
         try:
-            resolved = local_model.resolve(args.preset)
+            resolved = local_model.resolve(args.preset, args.repo)
             if args.action == "fetch":
                 path = local_model.fetch(resolved, args.models_dir)
                 info = {**resolved, "path": str(path), "llama_cpp_python": local_model.server_version()}
@@ -96,6 +99,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.github_output:
             with args.github_output.open("a") as fh:
                 fh.write("".join(f"{k}={resolved[k]}\n" for k in ("file", "sha256", "revision")))
+                fh.write(f"name={resolved['preset']}\n")
         return 0
     if args.command == "merge":
         try:

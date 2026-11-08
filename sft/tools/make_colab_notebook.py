@@ -190,7 +190,9 @@ print("uploaded to", repo)
 md("""
 ## Next
 
-Tell Claude the Hugging Face repo name (or that the GGUF is on your Drive). It will add the fine-tuned model to the evaluation workflows and run the agentic baseline again on the 400 holdout tasks, for $0. Those tasks are the ones the model has never trained on, so the before and after compare directly. A private repo also needs `HF_TOKEN` as a GitHub repository secret, so the workflow can download it.
+Tell Claude the Hugging Face repo name printed above (or that the GGUF is only on your Drive). Before that, add a Hugging Face token with **read** access (a separate one from the write token used here) as the GitHub repository secret `HF_TOKEN`, so the workflows can download the private repo.
+
+The fine-tuned model then runs as an agent on the same 400 holdout tasks as the base model, for $0: the Baseline workflow with `model_repo` set to the repo and `compare_to` set to the base model's run. Those tasks are the ones the model has never trained on, so the before and after compare directly. [sft/README.md](https://github.com/LeonLiu368/ttune/blob/main/sft/README.md#evaluating-the-fine-tuned-model) has the steps.
 """)
 
 nb = {"cells": cells, "metadata": {"accelerator": "GPU", "colab": {"provenance": [], "gpuType": "T4"},

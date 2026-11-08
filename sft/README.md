@@ -39,7 +39,19 @@ The trade-off is variety. Every demonstration follows one tidy path, with no exp
 4. **Check.** Report validation loss before and after on 20 validation demonstrations, and print the model's first reply to one validation task.
 5. **Save.** Save the adapter and a merged `q4_k_m` GGUF to Drive. Optionally, upload the GGUF to a private Hugging Face repo, so the evaluation workflows can serve it with llama.cpp.
 
-The notebook reads `TTUNE_TRAIN_SEED` from Colab's secrets and never prints it, or any case. Kaggle's free T4s also work: use Kaggle's secrets and dataset upload in place of `google.colab`.
+The notebook reads `TTUNE_TRAIN_SEED` from Colab's secrets and never prints it, or any case.
+
+### Evaluating the fine-tuned model
+
+1. Add a Hugging Face **read** token as the GitHub repository secret `HF_TOKEN` (Settings → Secrets and variables → Actions), so the workflows can download from the private repo.
+2. Run the **Baseline (Harbor agent, self-hosted model)** workflow with:
+   - `preset`: `qwen3-4b-instruct`, the base model;
+   - `model_repo`: the repo the notebook uploaded to, e.g. `<you>/ttune-qwen3-4b-sft`;
+   - `limit`: `all`, `shards`: `30`;
+   - `compare_to`: the base model's full baseline run id in `evals/results/`.
+3. The PR's `comparison.md` then shows the fine-tuned model against the base model on the same 400 holdout tasks, with 95% intervals.
+
+The run is named after the repo (for example `…-harbor-ttune-qwen3-4b-sft`), and its `model.json` records the repo commit, the file's SHA-256 and the base preset. The **Eval (self-hosted model)** workflow takes the same `model_repo` input, for the one-reply evals. Kaggle's free T4s also work: use Kaggle's secrets and dataset upload in place of `google.colab`.
 
 ## Teacher trajectories (optional, paid)
 
