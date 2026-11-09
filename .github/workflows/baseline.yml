@@ -37,8 +37,17 @@ on:
         description: "The evals run to compare with, e.g. the base model's baseline when evaluating a fine-tuned model"
         required: false
         default: "20261031-0030-local-qwen3-4b-instruct-docs"
+      rerun_shards:
+        description: 'Only these shards, e.g. "12,20", to redo the ones an earlier run lost; needs resume_run'
+        required: false
+        default: ""
+      resume_run:
+        description: "The earlier Baseline run (its numeric id) whose other shards complete this one; use the same shards and limit"
+        required: false
+        default: ""
 
 permissions:
+  actions: read
   contents: write
   pull-requests: write
 
@@ -58,6 +67,7 @@ jobs:
       name: ${{ steps.plan.outputs.name }}
       shards: ${{ steps.plan.outputs.shards }}
       limit: ${{ steps.plan.outputs.limit }}
+      rerun: ${{ steps.plan.outputs.rerun }}
     steps:
       - id: plan
         env:
@@ -68,6 +78,8 @@ jobs:
           MINUTES: ${{ inputs.agent_timeout_minutes }}
           TURNS: ${{ inputs.max_turns }}
           COMPARE_TO: ${{ inputs.compare_to }}
+          RERUN: ${{ inputs.rerun_shards }}
+          RESUME: ${{ inputs.resume_run }}
         run: |
           if [ "$LIMIT" = "all" ]; then LIMIT=""; fi
           case "$LIMIT" in *[!0-9]*) echo 'limit must be a number or "all"'; exit 1;; esac
@@ -88,7 +100,22 @@ jobs:
           case "$COMPARE_TO" in ''|*[!A-Za-z0-9_.-]*|*..*) echo "compare_to must be a run id in evals/results/"; exit 1;; esac
           echo "limit=$LIMIT" >> "$GITHUB_OUTPUT"
           echo "run_id=$(date -u +%Y%m%d-%H%M)-harbor-${NAME}${LIMIT:+-n$LIMIT}" >> "$GITHUB_OUTPUT"
-          echo "shards=$(python3 -c "import json,sys; print(json.dumps(list(range(int(sys.argv[1])))))" "$SHARDS")" >> "$GITHUB_OUTPUT"
+          # A rerun: only the listed shards, with the earlier run's other shards merged in at the end.
+          python3 - "$SHARDS" "$RERUN" "$RESUME" >> "$GITHUB_OUTPUT" <<'PY'
+          import json, re, sys
+          n, rerun, resume = int(sys.argv[1]), sys.argv[2].replace(" ", ""), sys.argv[3].strip()
+          if bool(rerun) != bool(resume):
+              sys.exit("rerun_shards and resume_run go together")
+          if resume and not re.fullmatch(r"[0-9]{1,20}", resume):
+              sys.exit("resume_run must be a run's numeric id")
+          if rerun and not re.fullmatch(r"[0-9]+(,[0-9]+)*", rerun):
+              sys.exit('rerun_shards must look like "12,20"')
+          shards = sorted({int(k) for k in rerun.split(",")}) if rerun else list(range(n))
+          if any(k >= n for k in shards):
+              sys.exit(f"rerun_shards must be below shards ({n})")
+          print(f"shards={json.dumps(shards)}")
+          print(f"rerun={','.join(map(str, shards)) if rerun else ''}")
+          PY
 
   run:
     needs: plan
@@ -155,22 +182,13 @@ jobs:
       - name: Start the model server
         env:
           FILE: ${{ steps.model.outputs.file }}
-        run: |
-          # logits_all False: the server otherwise keeps every token's logits (n_ctx x 152k floats, ~20 GB at 32k),
-          # which fills the runner's memory and slows each turn. Sampling only needs the last token's.
-          nohup python -m llama_cpp.server --model "models/$FILE" --model_alias "local/$NAME" \
-            --n_ctx "$CONTEXT" --n_threads "$(nproc)" --seed 0 --host 127.0.0.1 --port 8000 --verbose False --logits_all False \
-            > server.log 2>&1 &
-          for i in $(seq 1 120); do
-            if curl -sf http://127.0.0.1:8000/v1/models > /dev/null; then echo "server up after $((i * 5))s"; exit 0; fi
-            sleep 5
-          done
-          echo "server didn't start:"; tail -50 server.log; exit 1
+        run: .github/scripts/llama-server.sh "models/$FILE" "local/$NAME" "$CONTEXT"
 
       - name: Run the agent on each task
         env:
           # The local server takes any key; LiteLLM just needs one set.
           OPENAI_API_KEY: sk-local-no-key
+          FILE: ${{ steps.model.outputs.file }}
         run: |
           mkdir -p jobs
           # Stop starting tasks once one more might not fit in the job's 350 minutes.
@@ -184,13 +202,17 @@ jobs:
             timeout --kill-after=60 "$(( (MINUTES + 15) * 60 ))" \
             harbor run -p "$task" -a terminus-2 -m "openai/local/$NAME" \
               --ak api_base=http://127.0.0.1:8000/v1 --ak temperature=0 --ak "max_turns=$TURNS" \
-              --ak record_terminal_session=false --ak "model_info=$info" \
+              --ak record_terminal_session=false --ak "model_info=$info" --ak 'llm_kwargs={"max_tokens": 4096}' \
               --agent-timeout-multiplier "$multiplier" -e docker -n 1 -o "jobs/$name" -y -q \
               || { echo "harbor exited with $? on $name"; docker ps -aq | xargs -r docker rm -f > /dev/null; }
             python -m harbortask agentic show "jobs/$name" || true
             free -m | head -2; ps -o rss=,comm= -C python,python3,harbor,dockerd | sort -rn | head -3
-            # The model server must still be up; if it died, the rest of the shard is wasted.
-            curl -sf http://127.0.0.1:8000/v1/models > /dev/null || { echo "model server is down"; tail -50 server.log; exit 1; }
+            # The model server must answer before the next task. An agent that timed out can leave it generating
+            # a reply nobody reads, and it answers nothing else meanwhile: restart it rather than wait.
+            if ! curl -sf --max-time 10 http://127.0.0.1:8000/v1/models > /dev/null; then
+              echo "model server not answering after $name; restarting it"
+              .github/scripts/llama-server.sh "models/$FILE" "local/$NAME" "$CONTEXT" || { echo "model server is down"; exit 1; }
+            fi
           done
           cp models/model.json jobs/model.json
 
@@ -229,6 +251,24 @@ jobs:
         with:
           pattern: shard-*
           path: parts
+
+      - uses: actions/download-artifact@v4
+        if: inputs.resume_run != ''
+        with:
+          pattern: shard-*
+          path: earlier
+          run-id: ${{ inputs.resume_run }}
+          github-token: ${{ github.token }}
+
+      - name: Add the earlier run's other shards
+        if: inputs.resume_run != ''
+        env:
+          RERUN: ${{ needs.plan.outputs.rerun }}
+        run: |
+          for dir in earlier/shard-*; do
+            k=${dir##*-}
+            case ",$RERUN," in *",$k,"*) echo "shard $k: rerun";; *) cp -r "$dir" parts/ && echo "shard $k: from the earlier run";; esac
+          done
 
       - name: Score every trial and compare
         id: compare

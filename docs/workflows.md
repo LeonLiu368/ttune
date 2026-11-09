@@ -79,9 +79,11 @@ This workflow runs an open model, served by llama.cpp on the runner's CPU, as Ha
 | `max_turns` | 40 | Agent turns per task |
 | `model_repo` | blank | As above: a fine-tuned GGUF on Hugging Face, served in place of `preset` |
 | `compare_to` | the one-shot document run | The run to compare with. For a fine-tuned model, use the base model's baseline run. |
+| `rerun_shards`, `resume_run` | blank | Redo only some shards of an earlier run (e.g. `12,20` and that run's numeric id). The merge combines them with the earlier run's other shards. Use the same `shards` and `limit`. |
 
 - **Sizing a full run:** a 4B model takes about 13 minutes per task, and a job stops starting tasks 275 minutes in, so use about 30 shards for all 400. Tasks a job runs out of time for are counted as "not run" and aren't scored.
 - **The log:** each task's answer file and agent turns are printed (`python -m harbortask agentic show`). The holdout is public, so this is safe.
+- **A stuck server:** an agent that times out abandons its last request, but llama.cpp keeps generating it and answers nothing else meanwhile. Two shards of the November 8 run each lost about two hours this way. Each reply is now capped at 4,096 tokens, and if the server doesn't answer within 10 seconds after a task, it's restarted (`.github/scripts/llama-server.sh`).
 - **Memory:** the model server runs with `--logits_all False`. Without it, llama-cpp-python keeps every token's logits, about 20 GB at a 32k context, which once shut a runner down.
 
 ### Task splits
