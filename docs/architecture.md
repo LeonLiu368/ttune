@@ -112,7 +112,7 @@ Every run lands in `evals/results/<run id>/` with per-household results and a `c
 
 ## 8. Training
 
-1. **Baseline.** As an agent, Qwen3 4B scores 0.18 ID / 0.12 OOD: it gives up and never uses the calculator. That leaves almost no reward for RL to learn from, so it gets an SFT warm-start first.
+1. **Baseline.** As an agent, Qwen3 4B scores 0.23 ID / 0.14 OOD on all 400 holdout tasks: it gives up and never uses the calculator. That leaves almost no reward for RL to learn from, so it gets an SFT warm-start first.
 2. **SFT data.** `python -m harbortask scripted` writes one checked conversation per training case, in the exact chat format terminus-2 uses. Each conversation reads every PDF, works out the facts by the rules, runs `benefits-calc` and writes the answer. Every terminal output in it is real, and a missing figure is never filled in from the hidden household. A conversation is kept only if its answer scores 1.0. [sft/README.md](../sft/README.md) has the details.
 3. **Fine-tune.** [`sft/colab_sft.ipynb`](../sft/colab_sft.ipynb) trains a LoRA adapter on Colab's free T4 GPU and exports a GGUF for the evaluation workflows.
 4. **Evaluate again.** The fine-tuned model runs on the same 400 holdout tasks as the baseline.

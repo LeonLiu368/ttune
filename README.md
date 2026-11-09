@@ -37,7 +37,7 @@ Qwen3 4B Instruct, self-hosted on GitHub's CPU runners for $0, on the same 200 I
 |---|---|---|
 | One reply, from a clean written summary | 0.44 | 0.35 |
 | One reply, from the paperwork as text | 0.45 | 0.31 |
-| As an agent in Harbor, with the PDFs and the calculator | 0.18 | 0.12 |
+| As an agent in Harbor, with the PDFs and the calculator | 0.23 | 0.14 |
 | Floor: answer "no" to everything | 0.34 | 0.21 |
 
 As an agent, the 4B model mostly gives up: it greps the PDFs instead of reading them, answers "unknown" and never runs the calculator. The fine-tuning step now in progress targets exactly that, using 1,200 scripted demonstrations of the task done well. Details are in [ROADMAP.md](ROADMAP.md#findings-so-far).

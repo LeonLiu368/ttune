@@ -41,8 +41,8 @@ What's done, in progress and next for the benefits-eligibility environment. Upda
 
 ## 4. Train
 
-- [x] Baseline eval: Qwen3 4B, self-hosted for $0, driving Harbor's terminus-2 agent on the holdout tasks ([results](evals/results/20261102-0558-harbor-qwen3-4b-instruct/comparison.md), findings below). 276 of 400 tasks scored; mean reward 0.18 ID / 0.12 OOD, against 0.44 / 0.29 for the same model answering in one reply on the same households
-- [ ] SFT warm-start ([sft/](sft/README.md)): scripted demonstrations at $0 are built ([counts](sft/scripted/20261104-0232-scripted.md)): 1,000 train + 200 validation terminus-2 conversations, none dropped, each scoring 1.0 with the task verifier, kept as an encrypted artifact until 2027-02-02. Next: LoRA fine-tuning of Qwen3 4B on them with the free Colab notebook ([sft/colab_sft.ipynb](sft/colab_sft.ipynb)). The eval workflows can already serve the result from a private Hugging Face repo (`model_repo`, with the `HF_TOKEN` secret) and compare it with the base model's baseline ([steps](sft/README.md#evaluating-the-fine-tuned-model)). A rerun of the baseline on all 400 holdout tasks, with 30 shards, is in progress, so the before and after compare on every task. A paid teacher route exists too; its pilot ran out of OpenRouter credit after 14 tasks (mean reward 0.875)
+- [x] Baseline eval: Qwen3 4B, self-hosted for $0, driving Harbor's terminus-2 agent on all 400 holdout tasks ([results](evals/results/20261109-0653-harbor-qwen3-4b-instruct/comparison.md), findings below). Mean reward 0.23 ID / 0.14 OOD, against 0.45 / 0.31 for the same model answering in one reply on the same households. This run, `20261109-0653-harbor-qwen3-4b-instruct`, is the "before" for the fine-tuned model
+- [ ] SFT warm-start ([sft/](sft/README.md)): scripted demonstrations at $0 are built ([counts](sft/scripted/20261104-0232-scripted.md)): 1,000 train + 200 validation terminus-2 conversations, none dropped, each scoring 1.0 with the task verifier, kept as an encrypted artifact until 2027-02-02. Next: LoRA fine-tuning of Qwen3 4B on them with the free Colab notebook ([sft/colab_sft.ipynb](sft/colab_sft.ipynb)). The eval workflows can already serve the result from a private Hugging Face repo (`model_repo`, with the `HF_TOKEN` secret) and compare it with the base model's baseline ([steps](sft/README.md#evaluating-the-fine-tuned-model)). The baseline now covers all 400 holdout tasks, so the before and after compare on every task. A paid teacher route exists too; its pilot ran out of OpenRouter credit after 14 tasks (mean reward 0.875)
 - [ ] GRPO
 - [ ] Publish to Harbor Hub
 
@@ -133,30 +133,36 @@ What this adds for training: document reading itself isn't the bottleneck for a 
 
 ### Agentic baseline: Qwen3 4B Instruct with Harbor's terminus-2 ($0)
 
-The same model and holdout households as the document eval above, now as Harbor tasks: the agent works in an offline container with the PDFs, `pdftotext` and `benefits-calc` (PolicyEngine as a calculator), and writes `/app/answer.json`. 20 parallel jobs on GitHub's runners, 30 minutes and 40 turns per task, temperature 0. Full tables in [comparison.md](evals/results/20261102-0558-harbor-qwen3-4b-instruct/comparison.md).
+The same model and holdout households as the document eval above, now as Harbor tasks: the agent works in an offline container with the PDFs, `pdftotext` and `benefits-calc` (PolicyEngine as a calculator), and writes `/app/answer.json`. 30 parallel jobs on GitHub's runners, 30 minutes and 40 turns per task, temperature 0. Full tables in [comparison.md](evals/results/20261109-0653-harbor-qwen3-4b-instruct/comparison.md).
 
 | | ID | OOD |
 |---|---|---|
-| Tasks scored (of 200) | 131 | 145 |
-| Mean reward, agent | 0.18 | 0.12 |
-| Mean reward, one-shot on the same households | 0.44 | 0.29 |
-| Agent minus one-shot (95% interval) | −0.26 (−0.32 to −0.21) | −0.17 (−0.22 to −0.12) |
-| Task reward, with the missing-information list | 0.17 | 0.12 |
-| Timed out / wrote no answer file | 20 / 33 | 30 / 36 |
-| Median turns / minutes per task | 5 / 12.6 | 6 / 13.6 |
+| Tasks scored (of 200) | 200 | 200 |
+| Mean reward, agent | 0.23 | 0.14 |
+| Mean reward, one-shot on the same households | 0.45 | 0.31 |
+| Agent minus one-shot (95% interval) | −0.22 (−0.28 to −0.18) | −0.17 (−0.22 to −0.13) |
+| Task reward, with the missing-information list | 0.21 | 0.13 |
+| Timed out / wrote no answer file | 25 / 36 | 29 / 44 |
+| Median turns / minutes per task | 6 / 12.1 | 6 / 12.7 |
 
-- **Far below answering in one reply.** On the same households, the agent scores less than half the one-shot reward, and every program's balanced accuracy falls by 29 to 51 points. The agent is also below the blanket-answer floors (always "no": 0.34 ID, 0.21 OOD).
-- **It answers "unknown" instead of deciding.** 67% of the readable answers say "unknown" for both SNAP and the EITC. In the smoke-run logs, which print every turn, the agent:
+The first run ([results](evals/results/20261102-0558-harbor-qwen3-4b-instruct/comparison.md)) reached only 276 of the 400 tasks, at 0.18 ID / 0.12 OOD; this one replaces it.
+
+- **Far below answering in one reply.** On the same households, the agent scores about half the one-shot reward, and every program's balanced accuracy falls by 21 to 47 points. The agent is also below the blanket-answer floors (always "no": 0.34 ID, 0.21 OOD).
+- **It answers "unknown" instead of deciding.** Of the answers that parse, 66 to 72% say "unknown" for SNAP and 77 to 80% for the EITC. That's why balanced accuracy for those two programs is about 10%, far below the 50% of any blanket answer: "unknown" is wrong for eligible and ineligible households alike. In the smoke-run logs, which print every turn, the agent:
   - read part of the application, searched the PDFs with `grep` instead of reading them;
   - looked for files named after the missing-information categories (`03-self_employment.pdf`), then declared those documents missing;
   - never ran `benefits-calc`.
   Clarifying the instruction (categories aren't file names; read every document in full) raised a 10-task smoke score from about 0.05 to 0.12 but didn't change these habits.
-- **A third of tasks produce no usable answer:** 69 wrote no answer file and 31 more wrote one that doesn't parse. The agent also loops on its own malformed JSON replies, which eats turns and causes most of the 50 timeouts.
-- **124 tasks weren't run.** Each job stops starting tasks 275 minutes in, and 20 tasks of about 13 minutes each only just fit, so 18 of the 20 jobs skipped their last 2 to 16 tasks. Tasks run in task-id order, a hash of the case, so the skipped ones aren't a chosen subset; the comparison uses only households scored in both runs. A future run needs about 30 jobs.
-- **Unusual households score lowest again:** rare shapes 0.09 and threshold edges 0.08, against 0.18 on ID; held-out states 0.19. Multigenerational households (0.04, 73% malformed) and Medicaid edge cases (0.00) are worst.
+- **A third of tasks produce no usable answer:** 80 wrote no answer file and 49 more wrote one that doesn't parse (32% on both sets). The agent also loops on its own malformed JSON replies, which eats turns and causes most of the 54 timeouts.
+- **Unusual households score lowest again:** rare shapes 0.13, threshold edges 0.13 and held-out states 0.15, against 0.23 on ID. College students (0.05), pregnant members (0.08) and Medicaid edge cases (0.09) are worst. False denials rise on OOD for Medicaid (34% → 50%) and WIC (33% → 63%).
+- **Getting all 400 tasks run.**
+  - The first run used 20 jobs, and 124 tasks didn't fit in the time each job has.
+  - With 30 jobs, 48 tasks in 7 jobs were still lost. When an agent timed out, llama.cpp kept generating its abandoned request and answered nothing else, and the script's health check waited on it for up to two hours.
+  - Now each reply is capped at 4,096 tokens (the output limit the agent is already given), and a server that doesn't answer within 10 seconds is restarted.
+  - The 7 jobs were rerun with those fixes (`rerun_shards`, `resume_run`) and merged with the other 23. The cap applies only to the rerun jobs' 96 tasks. It cuts only replies that had already run away, so it shouldn't change scores.
 - **A memory fix along the way.** llama-cpp-python's server keeps every token's logits by default, about 20 GB at the 32k context the agent needs. Its memory reached 13.9 GB and shut down a runner. With `--logits_all False` it stays at 9–10 GB.
 
-What this means for training: the 4B model can't yet use the environment's tools, so RL from this starting point would see almost no reward. An SFT warm-start on good trajectories should come first, teaching it to read every document, run `benefits-calc` and write the answer file. That needs a stronger model's trajectories, which cost tokens.
+What this means for training: the 4B model can't yet use the environment's tools, so RL from this starting point would see almost no reward. An SFT warm-start should come first, teaching it to read every document, run `benefits-calc` and write the answer file. The scripted demonstrations do that at $0.
 
 ## Known blockers
 
