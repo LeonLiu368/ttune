@@ -9,6 +9,10 @@ on:
       - "evals/results/**"
       - "viewer/**"
       - "data/households/**"
+      - "data/documents/**"
+      - "evals/experiments.json"
+      - "harbortask/**"
+      - "tasks/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -31,7 +35,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install -r requirements.txt
+      # reportlab draws each task's PDFs for the Tasks section.
+      - run: pip install -r requirements-docgen.txt
 
       - run: python -m viewer build --out _site
 

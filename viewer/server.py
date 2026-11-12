@@ -4,7 +4,7 @@ Endpoints:
   GET  /api/health        {"server": true, "launch": bool, ...}; the frontend turns the launch form on from this
   GET  /api/launches      the latest eval workflow runs on GitHub (when launching is set up)
   POST /api/runs          start an eval run (JSON body, see viewer/launch.py); needs X-Launch-Key if one is set
-  GET  /data/...          run data, as described in viewer/data.py
+  GET  /data/...          run data, as described in viewer/data.py, and experiments and tasks (viewer/explore.py)
   GET  /...               the frontend in viewer/static
 """
 
@@ -14,25 +14,67 @@ import hmac
 import json
 import mimetypes
 import re
+import tempfile
+import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from evals.local_model import presets
-from viewer import data
+from viewer import data, explore
 from viewer.build import STATIC_DIR
 from viewer.launch import GitHubLauncher, LaunchError, validate
 
 MAX_BODY = 10_000
 DATA_ROUTE = re.compile(r"^/data/runs/([^/]+)/(overview\.json|id\.json|ood\.json|cases/([^/]+)\.json)$")
+EXPERIMENT_ROUTE = re.compile(r"^/data/experiments/([^/]+)\.json$")
+TASK_ROUTE = re.compile(r"^/data/tasks/([^/]+)/(task\.json|files/(.+))$")
+TRAJECTORY_ROUTE = re.compile(r"^/data/runs/([^/]+)/trajectories/([^/]+\.json\.gz)$")
+
+
+class TaskStore:
+    """Tasks for the server: rows read once, each task's directory built on first use. With a private splits
+    directory (a decrypted Task splits artifact), train and validation tasks are served from there, locally only."""
+
+    def __init__(self, results_dir: Path, private_dir: Path | None = None):
+        self.results_dir, self.private_dir = results_dir, private_dir
+        self.cache = Path(tempfile.mkdtemp(prefix="ttune-viewer-"))
+        self.lock = threading.Lock()
+        self.rows: dict[str, tuple[str, dict]] = {}
+        for split in [*explore.HOLDOUT, *(explore.PRIVATE_SPLITS if private_dir else ())]:
+            for row in explore.case_rows(split, private_dir):
+                from harbortask import build
+                self.rows[build.task_id(row["id"])] = (split, row)
+
+    def task_dir(self, task: str) -> Path | None:
+        if task not in self.rows:
+            return None
+        split, row = self.rows[task]
+        if split in explore.PRIVATE_SPLITS:
+            built = self.private_dir / split / task
+            return built if built.is_dir() else None
+        with self.lock:
+            built = self.cache / task
+            return built if built.is_dir() else explore.build_task(row, self.cache)
+
+    def detail(self, task: str) -> dict | None:
+        task_dir = self.task_dir(task)
+        if task_dir is None:
+            return None
+        split, row = self.rows[task]
+        meta = explore.task_meta(row, split, explore.sample_tasks())
+        results = explore.run_results(self.results_dir).get(row["id"], {})
+        return explore.task_detail(row, meta, explore.task_files(task_dir), results, self.results_dir)
 
 
 class ViewerServer(ThreadingHTTPServer):
     daemon_threads = True
 
     def __init__(self, address, *, results_dir: Path = data.RESULTS_DIR, sets_dir: Path = data.SETS_DIR,
-                 launcher: GitHubLauncher | None = None, launch_key: str | None = None, allow_paid: bool = False):
+                 launcher: GitHubLauncher | None = None, launch_key: str | None = None, allow_paid: bool = False,
+                 private_dir: Path | None = None):
         super().__init__(address, Handler)
         self.results_dir, self.sets_dir = results_dir, sets_dir
+        self.tasks = TaskStore(results_dir, private_dir)
         self.launcher, self.launch_key, self.allow_paid = launcher, launch_key, allow_paid
         self._overviews: dict[str, tuple[tuple, dict]] = {}
 
@@ -98,7 +140,39 @@ class Handler(BaseHTTPRequestHandler):
         match = DATA_ROUTE.match(path)
         if match:
             return self._data(*match.groups())
+        if path == "/data/experiments.json":
+            return self._json(200, explore.experiments_index(self.server.results_dir))
+        if path == "/data/tasks.json":
+            return self._json(200, explore.tasks_index(self.server.results_dir, self.server.tasks.private_dir))
+        match = EXPERIMENT_ROUTE.match(path)
+        if match:
+            detail = explore.experiment_detail(match[1], self.server.results_dir) if data.safe(match[1]) else None
+            return self._json(200, detail) if detail else self._error(404, "no such experiment")
+        match = TASK_ROUTE.match(path)
+        if match:
+            return self._task(match[1], match[2], match[3])
+        match = TRAJECTORY_ROUTE.match(path)
+        if match:
+            run_id, name = match.groups()
+            target = self.server.results_dir / run_id / "trajectories" / name
+            if not data.safe(run_id) or not data.safe(name) or not target.is_file():
+                return self._error(404, "no such trajectory")
+            return self._file(target)
         return self._static(path)
+
+    def _task(self, task: str, name: str, rel: str | None):
+        if not data.safe(task):
+            return self._error(404, "no such task")
+        if rel is None:
+            detail = self.server.tasks.detail(task)
+            return self._json(200, detail) if detail else self._error(404, "no such task")
+        task_dir = self.server.tasks.task_dir(task)
+        if task_dir is None or not explore.safe_path(rel):
+            return self._error(404, "no such file")
+        target = (task_dir / rel).resolve()
+        if not target.is_relative_to(task_dir.resolve()) or not target.is_file():
+            return self._error(404, "no such file")
+        return self._file(target)
 
     def _data(self, run_id: str, name: str, case_id: str | None):
         run_dir = self.server.results_dir / run_id

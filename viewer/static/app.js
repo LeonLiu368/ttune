@@ -1,5 +1,9 @@
 // ttune eval viewer. Hash routes:
-//   #/                          runs list + launch form
+//   #/  #/experiments           experiments (explore.js)
+//   #/experiment/<id>           one experiment: summary, leaderboard, task x run grid
+//   #/tasks                     every task, searchable
+//   #/task/<task>[/trial/<run>[/<tab>]]  one task: its files beside a trial's result and trajectory
+//   #/runs                      runs list + launch form
 //   #/run/<run>[/set/<id|ood>]  one run: metrics, OOD families, case table
 //   #/run/<run>/case/<case>     one household traced: case text, model answer vs PolicyEngine, the full reply
 // Model replies are untrusted text: everything is added with textContent, never as HTML.
@@ -204,7 +208,7 @@ async function viewRun(runId, set) {
       h("td", { class: "num" }, pct(g.false_denial_rate)), h("td", { class: "num" }, pct(g.malformed)))));
 
   show(
-    h("section", {}, h("p", { class: "crumbs" }, h("a", { href: "#/" }, "Runs"), " / ", runId),
+    h("section", {}, h("p", { class: "crumbs" }, h("a", { href: "#/runs" }, "Runs"), " / ", runId),
       h("div", { class: "head" }, h("h1", {}, s.model || runId),
         h("ul", { class: "meta" }, [runDate(runId), info.parameters && `${info.parameters} parameters`, info.license,
           s.harness ? `agent ${s.harness.agent}` : `prompt v${s.prompt_version}`, s.max_tokens && `max ${s.max_tokens} tokens`].filter(Boolean).map((t) => h("li", {}, t)))),
@@ -281,13 +285,7 @@ function verdict(truthYes, answered) {
 }
 const yesNo = (v) => (v === "unknown" ? "unknown" : v === null || v === undefined ? "–" : v ? "yes" : "no");
 
-async function viewCase(runId, caseId) {
-  const base = `data/runs/${encodeURIComponent(runId)}`;
-  const set = caseId.split("-")[0];
-  const [c, rows, ov] = await Promise.all([getJSON(`${base}/cases/${encodeURIComponent(caseId)}.json`),
-    getJSON(`${base}/${set}.json`), getJSON(`${base}/overview.json`)]);
-  const at = rows.findIndex((r) => r.id === caseId);
-  const neighbour = (i) => (rows[i] ? h("a", { href: `#/run/${encodeURIComponent(runId)}/case/${encodeURIComponent(rows[i].id)}` }, i < at ? `← ${rows[i].id}` : `${rows[i].id} →`) : h("span"));
+function verdictTable(c) {
   const ok = c.status === "ok";
   const ans = ok ? c.answer : null;
   const truth = c.truth || {};
@@ -320,10 +318,21 @@ async function viewCase(runId, caseId) {
       if (unknown && unknown.length) verdictRows.push(h("tr", {}, h("td", {}), h("td", { class: "wrap-cell muted", colspan: 4 }, `Names not in the case: ${unknown.join(", ")}`)));
     }
   }
+  return h("div", { class: "verdict" }, table([["Program"], ["Who"], ["Model says", "said"], ["PolicyEngine", "truth"], ["Result"]], verdictRows));
+}
+
+async function viewCase(runId, caseId) {
+  const base = `data/runs/${encodeURIComponent(runId)}`;
+  const set = caseId.split("-")[0];
+  const [c, rows, ov] = await Promise.all([getJSON(`${base}/cases/${encodeURIComponent(caseId)}.json`),
+    getJSON(`${base}/${set}.json`), getJSON(`${base}/overview.json`)]);
+  const at = rows.findIndex((r) => r.id === caseId);
+  const neighbour = (i) => (rows[i] ? h("a", { href: `#/run/${encodeURIComponent(runId)}/case/${encodeURIComponent(rows[i].id)}` }, i < at ? `← ${rows[i].id}` : `${rows[i].id} →`) : h("span"));
+  const ok = c.status === "ok";
   const reply = h("pre", { class: "text reply" }, c.reply || "(empty reply)");
   const usage = c.usage || {};
   show(
-    h("section", {}, h("p", { class: "crumbs" }, h("a", { href: "#/" }, "Runs"), " / ",
+    h("section", {}, h("p", { class: "crumbs" }, h("a", { href: "#/runs" }, "Runs"), " / ",
       h("a", { href: `#/run/${encodeURIComponent(runId)}/set/${set}` }, ov.settings.model || runId), " / ", caseId),
       h("div", { class: "pager" }, neighbour(at - 1), neighbour(at + 1)),
       h("div", { class: "head" }, h("h1", {}, caseId),
@@ -340,7 +349,7 @@ async function viewCase(runId, caseId) {
     h("div", { class: "split" },
       h("section", { class: "card" }, h("h2", {}, "What the model saw"), h("pre", { class: "text" }, c.case || "(case text not found)")),
       h("section", { class: "card" }, h("h2", {}, "Model vs PolicyEngine"),
-        h("div", { class: "verdict" }, table([["Program"], ["Who"], ["Model says", "said"], ["PolicyEngine", "truth"], ["Result"]], verdictRows)))),
+        verdictTable(c))),
     h("section", { class: "card" }, h("div", { class: "controls" }, h("h2", {}, "Full reply"),
       h("button", { type: "button", class: "link-button", onclick: (e) => { reply.classList.toggle("open"); e.target.textContent = reply.classList.contains("open") ? "Collapse" : "Show all"; } }, "Show all")),
       reply));
@@ -348,15 +357,30 @@ async function viewCase(runId, caseId) {
 
 // --- routing ------------------------------------------------------------------------------------
 
+let keepScroll = false; // set by in-page navigation (trial picker, tabs) so the page doesn't jump to the top
+function markNav(section) {
+  const current = { experiment: "experiments", experiments: "experiments", "": "experiments", tasks: "tasks", task: "tasks",
+    runs: "runs", run: "runs" }[section] || "";
+  for (const a of document.querySelectorAll(".topbar nav a[data-section]")) {
+    if (a.dataset.section === current) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+  }
+}
+
 async function route() {
   const parts = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
   try {
     if (parts[0] === "run" && parts[1] && parts[2] === "case" && parts[3]) await viewCase(parts[1], parts[3]);
     else if (parts[0] === "run" && parts[1]) await viewRun(parts[1], parts[2] === "set" && parts[3] === "ood" ? "ood" : "id");
-    else await viewRuns();
-    window.scrollTo(0, 0);
+    else if (parts[0] === "runs") await viewRuns();
+    else if (parts[0] === "experiment" && parts[1]) await viewExperiment(parts[1]);
+    else if (parts[0] === "tasks") await viewTasks(parts[1] === "experiment" ? parts[2] : null);
+    else if (parts[0] === "task" && parts[1]) await viewTask(parts[1], parts[2] === "trial" ? parts[3] : null, parts[4] || "summary");
+    else await viewExperiments();
+    if (!(parts[0] === "task" && keepScroll)) window.scrollTo(0, 0);
+    keepScroll = false;
+    markNav(parts[0]);
   } catch (err) {
-    show(h("p", { class: "error" }, `Couldn't load this page: ${err.message}`), h("p", {}, h("a", { href: "#/" }, "Back to runs")));
+    show(h("p", { class: "error" }, `Couldn't load this page: ${err.message}`), h("p", {}, h("a", { href: "#/" }, "Back to experiments")));
   }
 }
 

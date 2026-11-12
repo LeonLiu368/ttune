@@ -5,7 +5,7 @@ An RL environment for public-benefits eligibility, in the [Harbor](https://githu
 An agent gets a household's paperwork as PDFs (an application, pay stubs, a lease, benefit letters) and a terminal. It works out SNAP, the EITC, Medicaid and WIC, using [PolicyEngine](https://github.com/PolicyEngine/policyengine-us) as a calculator, and writes its answer to a file. A separate verifier scores that answer against PolicyEngine's exact result. Every household is synthetic, so there's no private data.
 
 - **Status:** [ROADMAP.md](ROADMAP.md) has what's done, in progress and next, and every finding so far.
-- **Results:** the [eval viewer](https://leonliu368.github.io/ttune/) shows every run, and each household's answer next to PolicyEngine's.
+- **Results:** the [eval viewer](https://leonliu368.github.io/ttune/) has every experiment and task: a leaderboard per experiment, each task's documents as the agent sees them, and every trial's answer and agent steps next to PolicyEngine's answer.
 - **How it works:** [docs/architecture.md](docs/architecture.md).
 
 ## How it works
@@ -67,7 +67,7 @@ python -m viewer build && python -m http.server -d _site          # the eval vie
 | [`docgen/`](docgen/) | Documents, distractors and gaps, the truth that follows the documents, and the PDF renderer ([data/documents/README.md](data/documents/README.md)) |
 | [`harbortask/`](harbortask/) | Harbor tasks: generator, verifier, calculator, reward-hack audit, splits, agentic baseline, SFT data ([tasks/README.md](tasks/README.md)) |
 | [`evals/`](evals/README.md) | Run a model over a set, score it, compare ID with OOD |
-| [`viewer/`](viewer/README.md) | The eval viewer site, and a local server that can start runs |
+| [`viewer/`](viewer/README.md) | The eval viewer: experiments, tasks with their PDFs and trajectories, runs; and a local server that can start runs |
 | [`data/`](data/README.md) | Raw sources, parsed rows, checks, household sets and document packets |
 | [`tasks/`](tasks/README.md) | 6 sample tasks, the reward-hack audit, and the split manifests |
 | [`sft/`](sft/README.md) | Fine-tuning: scripted demonstrations, the Colab notebook, the teacher route |

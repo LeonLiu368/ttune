@@ -8,11 +8,12 @@ Everything heavy runs on GitHub's free runners: evals, task builds, the agentic 
 |---|---|---|---|---|---|
 | Tests | `tests.yml` | Every push and PR | $0 | none | Pass or fail |
 | Harbor tasks | `harbor.yml` | Pushes and PRs that touch tasks or scoring; by hand | $0 | none | The Oracle scores 1.0 and an empty answer scores 0 on every sample task, in Docker |
-| Viewer site | `pages.yml` | Pushes that touch results, households or the viewer; by hand | $0 | none | The [eval viewer](https://leonliu368.github.io/ttune/) on GitHub Pages |
+| Viewer site | `pages.yml` | Pushes that touch results, tasks, households, documents or the viewer; by hand | $0 | none | The [eval viewer](https://leonliu368.github.io/ttune/) on GitHub Pages |
 | Scrape sources | `scrape.yml` | Monthly (06:17 UTC on the 3rd); by hand | $0 | none | A PR with new source snapshots and the PolicyEngine check |
 | Eval (self-hosted model) | `eval-local.yml` | By hand | $0 | none | A PR with an evals run |
 | Eval | `eval.yml` | By hand | $0 unless `allow_paid` | `OPENROUTER_API_KEY` | A PR with an evals run |
-| Baseline (Harbor agent, self-hosted model) | `baseline.yml` | By hand | $0 | none | A PR with an agentic evals run on the holdout |
+| Baseline (Harbor agent, self-hosted model) | `baseline.yml` | By hand | $0 | none | A PR with an agentic evals run on the holdout, its trajectories included |
+| Trajectories (backfill) | `trajectories.yml` | By hand | $0 | none | A PR adding agent turns to an older agentic run |
 | Task splits | `splits.yml` | By hand | $0 | `TTUNE_TRAIN_SEED` | An encrypted artifact with all 1,600 tasks; a PR with the manifests |
 | Scripted demonstrations | `scripted.yml` | By hand | $0 | `TTUNE_TRAIN_SEED` | An encrypted artifact with the SFT data; a PR with counts |
 | Teacher trajectories | `teacher.yml` | By hand | Paid, capped by `budget_usd` | `OPENROUTER_API_KEY`, `TTUNE_TRAIN_SEED` | An encrypted artifact with trajectories and SFT data; a PR with a summary |
@@ -31,7 +32,7 @@ This workflow first checks that `tasks/` matches what `python -m harbortask buil
 
 ### Viewer site
 
-This workflow builds the static viewer from `evals/results/` and publishes it to GitHub Pages.
+This workflow builds the static viewer and publishes it to GitHub Pages: the experiments, the 400 holdout tasks with their files and PDFs, and every run in `evals/results/`. It never includes train or validation tasks.
 
 ### Scrape sources
 
@@ -85,6 +86,16 @@ This workflow runs an open model, served by llama.cpp on the runner's CPU, as Ha
 - **The log:** each task's answer file and agent turns are printed (`python -m harbortask agentic show`). The holdout is public, so this is safe.
 - **A stuck server:** an agent that times out abandons its last request, but llama.cpp keeps generating it and answers nothing else meanwhile. Two shards of the November 8 run each lost about two hours this way. Each reply is now capped at 4,096 tokens, and if the server doesn't answer within 10 seconds after a task, it's restarted (`.github/scripts/llama-server.sh`).
 - **Memory:** the model server runs with `--logits_all False`. Without it, llama-cpp-python keeps every token's logits, about 20 GB at a 32k context, which once shut a runner down.
+
+### Trajectories (backfill)
+
+Agent runs collected before November 12, 2026 kept only each trial's answer. This workflow adds every trial's turns from the run's shard artifacts, which last 90 days, and opens a PR.
+
+| Input | Meaning |
+|---|---|
+| `run_id` | The results directory, e.g. `20261109-0653-harbor-qwen3-4b-instruct` |
+| `actions_run` | The Baseline workflow run whose artifacts hold the trials |
+| `resume_run`, `rerun_shards` | For a run that resumed an earlier one: the earlier run, and the shards this one reran |
 
 ### Task splits
 

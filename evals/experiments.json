@@ -1,0 +1,25 @@
+{
+  "_about": "Experiments group eval runs that ran the same way on the same tasks, so the viewer can rank them side by side. A run not listed under any experiment's `runs` joins one by the default rule in viewer/explore.py: agent runs to agent-holdout, one-reply runs on the paperwork to one-reply-docs, the rest to one-reply-text. `notes` label a run in the leaderboard.",
+  "experiments": {
+    "agent-holdout": {
+      "title": "Agent on the holdout tasks",
+      "description": "Harbor's terminus-2 agent works in an offline container with the household's PDFs, pdftotext and benefits-calc, and writes /app/answer.json. Up to 40 turns and 30 minutes per task. The fine-tuned models land here next to the base model.",
+      "runs": ["20261109-0653-harbor-qwen3-4b-instruct", "20261102-0558-harbor-qwen3-4b-instruct"]
+    },
+    "one-reply-docs": {
+      "title": "One reply, from the paperwork",
+      "description": "The model reads the household's documents as text in one prompt and answers in one reply. No tools.",
+      "runs": ["20261031-0030-local-qwen3-4b-instruct-docs", "20261030-2220-local-qwen3-4b-instruct-docs-n20"]
+    },
+    "one-reply-text": {
+      "title": "One reply, from a written summary",
+      "description": "The model reads a clean written summary of the household and answers in one reply. No documents, no tools.",
+      "runs": ["20261026-0340-local-qwen3-4b-instruct"]
+    }
+  },
+  "notes": {
+    "20261109-0653-harbor-qwen3-4b-instruct": "base model, all 400 tasks",
+    "20261102-0558-harbor-qwen3-4b-instruct": "base model, first run: 276 of 400 tasks",
+    "20261030-2220-local-qwen3-4b-instruct-docs-n20": "smoke test: 20 + 20 tasks"
+  }
+}

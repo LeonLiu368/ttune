@@ -108,7 +108,11 @@ Two ways to evaluate, both $0 on GitHub's runners:
 - **One reply** ([`evals/`](../evals/README.md)): the model reads the case, as a summary or as the paperwork in text, and answers in a single reply. The model runs either self-hosted with llama.cpp on the runner's CPU, or as a free model on OpenRouter.
 - **As an agent** (the Baseline workflow, `harbortask/agentic.py`): the model drives Harbor's `terminus-2` agent through each holdout task in Docker, with up to 40 turns and 30 minutes per task. `python -m harbortask agentic collect` scores the trials into the same results format, so `python -m evals compare` and the viewer work unchanged.
 
-Every run lands in `evals/results/<run id>/` with per-household results and a `comparison.md`. The comparison covers mean reward with bootstrap intervals, balanced accuracy and false denials per program, and the OOD shift families. The [viewer](../viewer/README.md) publishes all runs to GitHub Pages.
+Every run lands in `evals/results/<run id>/` with per-household results and a `comparison.md`. Agent runs also keep each trial's turns in `trajectories/`. The comparison covers mean reward with bootstrap intervals, balanced accuracy and false denials per program, and the OOD shift families.
+
+The [viewer](../viewer/README.md) publishes all of it to GitHub Pages:
+- **Experiments:** runs grouped by how they worked, with a leaderboard and a task × run grid.
+- **Tasks:** the 400 holdout tasks, searchable. Each one shows its real files and PDFs next to any run's trial: the timeline, the answer against PolicyEngine's, and every agent step.
 
 ## 8. Training
 

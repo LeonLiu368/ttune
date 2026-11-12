@@ -36,12 +36,15 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--host", default="127.0.0.1")
     s.add_argument("--port", type=int, default=8000)
     s.add_argument("--results-dir", type=Path, default=data.RESULTS_DIR)
+    s.add_argument("--private-splits", type=Path, default=None,
+                   help="a decrypted Task splits artifact (holding train/ and validation/): adds those tasks to the "
+                        "Tasks section. Local only; never part of a build")
     args = parser.parse_args(argv)
 
     if args.command == "build":
         from viewer.build import build
         result = build(args.out, args.results_dir)
-        print(f"wrote {result['runs']} runs and {result['cases']} cases to {result['out']}")
+        print(f"wrote {result['runs']} runs, {result['cases']} cases and {result['tasks']} tasks to {result['out']}")
         return 0
 
     from viewer.launch import GitHubLauncher
@@ -51,9 +54,15 @@ def main(argv: list[str] | None = None) -> int:
     if token and not key and not _loopback(args.host):
         print("error: set VIEWER_LAUNCH_KEY before serving the launch API beyond this machine", file=sys.stderr)
         return 2
+    if args.private_splits is not None and not _loopback(args.host):
+        print("error: --private-splits shows secret training answers; serve it only on this machine", file=sys.stderr)
+        return 2
+    if args.private_splits is not None and not args.private_splits.is_dir():
+        print(f"error: {args.private_splits} isn't a directory", file=sys.stderr)
+        return 2
     launcher = GitHubLauncher(os.environ.get("VIEWER_REPO", "LeonLiu368/ttune"), token) if token else None
     server = ViewerServer((args.host, args.port), results_dir=args.results_dir, launcher=launcher, launch_key=key,
-                          allow_paid=os.environ.get("VIEWER_ALLOW_PAID") == "1")
+                          allow_paid=os.environ.get("VIEWER_ALLOW_PAID") == "1", private_dir=args.private_splits)
     print(f"viewer on http://{args.host}:{server.server_address[1]}/ "
           f"(launching {'on' if launcher else 'off: no VIEWER_GITHUB_TOKEN'})")
     try:

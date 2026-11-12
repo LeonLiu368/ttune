@@ -33,8 +33,8 @@ def results(tmp_path_factory):
 
 def test_static_build_writes_every_page_the_frontend_reads(results, tmp_path):
     out = tmp_path / "site"
-    summary = build(out, results)
-    assert summary == {"runs": 1, "cases": 12, "out": str(out)}
+    summary = build(out, results, task_limit=1)
+    assert summary == {"runs": 1, "cases": 12, "tasks": 400, "out": str(out)}
     assert {p.name for p in out.iterdir()} >= {"index.html", "app.js", "style.css", "data", ".nojekyll"}
     assert json.loads((out / "data" / "site.json").read_text()) == {"static": True}
     runs = json.loads((out / "data" / "runs.json").read_text())

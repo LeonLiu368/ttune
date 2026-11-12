@@ -1,6 +1,6 @@
 # Commands
 
-Every command runs as `python -m <package> <command>` from the repository root. `--help` on any command or subcommand prints its full options; a test checks that all 29 render.
+Every command runs as `python -m <package> <command>` from the repository root. `--help` on any command or subcommand prints its full options; a test checks that all 30 render.
 
 | Needs | Install |
 |---|---|
@@ -9,6 +9,7 @@ Every command runs as `python -m <package> <command>` from the repository root. 
 | Anything that computes answers (envgen, the calculator, splits, scripted demonstrations) | `pip install -r requirements-envgen.txt` (policyengine-us 2.50.1) |
 | Serving a model locally | `pip install -r requirements-local-llm.txt` (llama.cpp server) |
 | Rendering a document's text | `pdftotext`, from poppler-utils |
+| The viewer with its Tasks section | `pip install -r requirements-docgen.txt` (reportlab draws the PDFs) |
 | Running tasks | Docker, and [Harbor](https://github.com/laude-institute/harbor) 0.25.0 (`uv tool install harbor==0.25.0`) |
 
 ## scraper: official sources
@@ -44,6 +45,7 @@ Every command runs as `python -m <package> <command>` from the repository root. 
 | `harbortask audit` | Score degenerate answers (empty, all yes, all no, random…) on all 400 document cases; writes `tasks/audit.json` |
 | `harbortask agentic pick --out DIR [--limit N] [--shard K/N]` | Build one shard's holdout tasks. `--split train --start S` builds training tasks instead. |
 | `harbortask agentic show JOB_DIR` | Print a Harbor trial: its rewards, `answer.json` and every agent turn |
+| `harbortask agentic trajectories RUN_ID --jobs DIR...` | Add every trial's agent turns to a run collected before they were kept |
 | `harbortask agentic collect RUN_ID --jobs DIR... --model M [--compare-to RUN]` | Score Harbor trials into an evals run in `evals/results/RUN_ID/`. `--compare-to` takes a one-shot run or an earlier agent run, such as the base model's. |
 | `harbortask scripted --split {train,validation} --out FILE` | Write the scripted SFT demonstrations for a secret split |
 | `harbortask scripted --holdout {id,ood} --limit N --out FILE` | The same for public holdout cases, to preview or test |
@@ -85,8 +87,8 @@ python -m evals compare <run id>
 
 | Command | What it does |
 |---|---|
-| `viewer build [--out DIR]` | Write the static site from `evals/results/` (default `_site/`) |
-| `viewer serve [--port P]` | Serve the viewer locally, plus a launch form that starts eval runs on GitHub Actions ([viewer/README.md](../viewer/README.md)) |
+| `viewer build [--out DIR]` | Write the static site from `evals/results/` (default `_site/`): experiments, the 400 holdout tasks with their files, and every run |
+| `viewer serve [--port P] [--private-splits DIR]` | Serve the viewer locally, plus a launch form that starts eval runs on GitHub Actions. `--private-splits` adds train and validation tasks from a decrypted splits artifact, on this machine only ([viewer/README.md](../viewer/README.md)) |
 
 ## Other
 
