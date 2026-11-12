@@ -459,9 +459,14 @@ function timeline(traj, trial) {
 }
 
 function agentMessage(text) {
-  // terminus-2 replies with JSON: analysis, plan, commands, task_complete. Show those parts; fall back to the text.
+  // terminus-2's turns: Harbor stores them as "Analysis: …\nPlan: …", or as the model's raw JSON when it didn't
+  // parse cleanly. Show the analysis and plan either way; anything else as plain text.
   let parsed = null;
   try { parsed = JSON.parse(text); } catch { /* not JSON */ }
+  if (!parsed || typeof parsed !== "object") {
+    const m = /^Analysis:\s*([\s\S]*?)(?:\nPlan:\s*([\s\S]*))?$/.exec(text.trim());
+    parsed = m ? { analysis: m[1], plan: m[2] } : null;
+  }
   if (!parsed || typeof parsed !== "object") return h("pre", { class: "text open" }, text);
   return h("div", { class: "agent-msg" },
     parsed.analysis ? h("div", {}, h("span", { class: "tag" }, "analysis"), h("p", {}, String(parsed.analysis))) : null,
