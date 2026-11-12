@@ -8,6 +8,9 @@ work on it unchanged. Each answer is scored twice from the same /app/answer.json
 - with the task's own reward (`task_score`: eligibility, amount and the missing-information list, as the
   verifier scores it), checked against what Harbor's verifier reported.
 
+Every trial's agent turns are kept too, one gzipped file per task in trajectories/ (the holdout is public, so they
+can be published), for the viewer's trajectory display.
+
 A trial the verifier scored counts, whatever the agent did: an agent that timed out or never wrote an answer
 scores 0, like a malformed reply. A trial that never reached the verifier (the environment failed to build, the
 model server was down) is an error, not a score, and so is a task a shard ran out of time to start.
@@ -15,6 +18,7 @@ model server was down) is an error, not a score, and so is a task a shard ran ou
 
 from __future__ import annotations
 
+import gzip
 import json
 import statistics
 from datetime import datetime
@@ -109,6 +113,92 @@ def record(index: int, row: dict, trial: tuple[dict, Path] | None) -> dict:
             "task_score": verify.evaluate(text, build.truth_file(row)), "agent": run, **scored}
 
 
+PHASES = (("environment_setup", "Environment setup"), ("agent_setup", "Agent setup"),
+          ("agent_execution", "Agent running"), ("verifier", "Verification"))
+
+
+def _content(value) -> str:
+    if isinstance(value, list):  # content parts
+        return "\n".join(p.get("text", "") if isinstance(p, dict) else str(p) for p in value)
+    return "" if value is None else str(value)
+
+
+def trajectory(task: str, result: dict, trial_dir: Path) -> dict:
+    """One trial for the viewer: its timeline, rewards, answer file and every step (message, commands, output)."""
+    exc = result.get("exception_info") or {}
+    path = trial_dir / "agent" / "trajectory.json"
+    raw = json.loads(path.read_text()) if path.is_file() else {}
+    steps = []
+    for step in raw.get("steps") or []:
+        metrics = step.get("metrics") or {}
+        steps.append({
+            "id": step.get("step_id"), "source": step.get("source"), "time": step.get("timestamp"),
+            "message": _content(step.get("message")),
+            "reasoning": step.get("reasoning_content") or None,
+            "calls": [{"name": c.get("function_name"), "args": c.get("arguments")} for c in step.get("tool_calls") or []],
+            "output": [_content(r.get("content")) for r in ((step.get("observation") or {}).get("results") or [])],
+            "tokens": {k: metrics.get(k) for k in ("prompt_tokens", "completion_tokens") if metrics.get(k) is not None},
+        })
+    answer = trial_dir / "artifacts" / "app" / "answer.json"
+    agent = result.get("agent_result") or {}
+    return {
+        "task": task, "trial": result.get("trial_name"),
+        "started_at": result.get("started_at"), "finished_at": result.get("finished_at"),
+        "phases": [{"key": key, "label": label, "started_at": (result.get(key) or {}).get("started_at"),
+                    "finished_at": (result.get(key) or {}).get("finished_at"), "seconds": _seconds(result.get(key))}
+                   for key, label in PHASES],
+        "rewards": (result.get("verifier_result") or {}).get("rewards"),
+        "exception": {"type": exc.get("exception_type"), "message": (exc.get("exception_message") or "")[:2000]}
+        if exc else None,
+        "tokens": {"input": agent.get("n_input_tokens"), "output": agent.get("n_output_tokens"),
+                   "cached": agent.get("n_cache_tokens")},
+        "answer": answer.read_text() if answer.is_file() else None,
+        "steps": steps,
+    }
+
+
+def write_trajectories(out_dir: Path, found: dict[str, tuple[dict, Path]], cases: dict[str, tuple[str, str]]) -> int:
+    """trajectories/<task>.json.gz for each trial of the run's tasks, and trajectories/index.json listing them.
+    `cases` maps each task id to its (set, case id). gzip without a timestamp, so a rebuild changes nothing."""
+    folder = out_dir / "trajectories"
+    folder.mkdir(parents=True, exist_ok=True)
+    index = {}
+    for task, (result, trial_dir) in sorted(found.items()):
+        if task not in cases:
+            continue
+        data = trajectory(task, result, trial_dir)
+        blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).encode()
+        (folder / f"{task}.json.gz").write_bytes(gzip.compress(blob, compresslevel=9, mtime=0))
+        set_, case = cases[task]
+        index[task] = {"set": set_, "case": case, "steps": len(data["steps"]),
+                       "reward": (data["rewards"] or {}).get("reward")}
+    (folder / "index.json").write_text(json.dumps(index, indent=1, sort_keys=True) + "\n")
+    return len(index)
+
+
+def run_cases(limit: int | None = None) -> dict[str, tuple[str, str]]:
+    """Task id -> (set, case id) for the holdout tasks of a run."""
+    return {build.task_id(row["id"]): (set_, row["id"]) for set_ in SETS for _, row in chosen(set_, limit)}
+
+
+def backfill_trajectories(run_dir: Path, jobs: list[Path]) -> int:
+    """Add trajectories to a run collected before they were kept. Only the run's own scored tasks are written."""
+    if not (run_dir / "summary.json").is_file():
+        raise CollectError(f"{run_dir} isn't a collected run")
+    scored_tasks = {}
+    for set_ in SETS:
+        path = run_dir / f"{set_}.jsonl"
+        for line in path.open() if path.is_file() else []:
+            row = json.loads(line)
+            if row.get("agent"):
+                scored_tasks[row["agent"]["task"]] = (set_, row["id"])
+    found = trials(jobs)
+    stray = sorted(set(found) - set(scored_tasks))
+    if stray:
+        raise CollectError(f"{len(stray)} trials aren't tasks this run scored, e.g. {stray[:3]}")
+    return write_trajectories(run_dir, found, scored_tasks)
+
+
 def _median(values: list) -> float | None:
     values = [v for v in values if v is not None]
     return statistics.median(values) if values else None
@@ -158,6 +248,7 @@ def collect(run_id: str, jobs: list[Path], *, model: str, limit: int | None = No
     stray = sorted(set(found) - wanted)
     if stray:
         raise CollectError(f"{len(stray)} trials aren't holdout tasks of this run, e.g. {stray[:3]}")
+    write_trajectories(out_dir, found, run_cases(limit))
     summary_path = out_dir / "summary.json"
     summary = json.loads(summary_path.read_text())
     summary.update({"harness": {"agent": AGENT, "harbor": HARBOR, "tasks": "holdout-id + holdout-ood", **(harness or {})},

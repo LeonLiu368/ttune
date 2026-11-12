@@ -46,6 +46,9 @@ def main(argv: list[str] | None = None) -> int:
     pk.add_argument("--secret-env", default="TTUNE_TRAIN_SEED")
     sh = agsub.add_parser("show", help="print a trial's result, answer file and agent turns")
     sh.add_argument("job_dir", type=Path)
+    tj = agsub.add_parser("trajectories", help="add the trials' agent turns to a run collected without them")
+    tj.add_argument("run_id")
+    tj.add_argument("--jobs", type=Path, nargs="+", required=True, help="the Harbor job directories of the run's shards")
     sc = sub.add_parser("scripted", help="scripted SFT demonstrations ($0): terminus-2 conversations from a split")
     sc.add_argument("--split", choices=("train", "validation"), default=None, help="a secret-seeded split")
     sc.add_argument("--n-cases", type=int, default=None, help="the split's size, as built (default: 1000 / 200)")
@@ -141,6 +144,16 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.action == "show":
             print(agentic.show(args.job_dir))
+            return 0
+        if args.action == "trajectories":
+            from evals.run import RESULTS_DIR
+
+            try:
+                n = agentic.backfill_trajectories(RESULTS_DIR / args.run_id, args.jobs)
+            except agentic.CollectError as exc:
+                print(f"error: {exc}", file=sys.stderr)
+                return 1
+            print(f"{n} trajectories written to evals/results/{args.run_id}/trajectories/")
             return 0
         info = json.loads(args.model_info.read_text()) if args.model_info and args.model_info.is_file() else None
         harness = {k: v for k, v in (("max_turns", args.max_turns), ("agent_timeout_sec", args.agent_timeout_sec),

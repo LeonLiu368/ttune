@@ -1,0 +1,90 @@
+name: Trajectories (backfill)
+
+# Adds every trial's agent turns to an agentic run collected before trajectories were kept. The turns come from
+# the run's shard artifacts, so this works only while they last (90 days). Holdout trajectories are public by
+# design: the holdout's answers are already in the repo. $0, no model calls.
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "The evals run to add trajectories to, e.g. 20261109-0653-harbor-qwen3-4b-instruct"
+        required: true
+      actions_run:
+        description: "The Baseline workflow run (numeric id) whose shard artifacts hold the trials"
+        required: true
+      resume_run:
+        description: "Optional: the earlier Baseline run that run resumed (its other shards)"
+        required: false
+        default: ""
+      rerun_shards:
+        description: 'Optional, with resume_run: the shards actions_run reran, e.g. "3,4,8"'
+        required: false
+        default: ""
+
+permissions:
+  actions: read
+  contents: write
+  pull-requests: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    env:
+      RUN_ID: ${{ inputs.run_id }}
+      ACTIONS_RUN: ${{ inputs.actions_run }}
+      RESUME: ${{ inputs.resume_run }}
+      RERUN: ${{ inputs.rerun_shards }}
+    steps:
+      - name: Check the inputs
+        run: |
+          case "$RUN_ID" in ''|*[!A-Za-z0-9._-]*|*..*) echo "run_id must be a run directory name"; exit 1;; esac
+          case "$ACTIONS_RUN" in ''|*[!0-9]*) echo "actions_run must be a numeric run id"; exit 1;; esac
+          case "$RESUME" in *[!0-9]*) echo "resume_run must be a numeric run id"; exit 1;; esac
+          case "$RERUN" in *[!0-9,]*) echo 'rerun_shards must look like "3,4,8"'; exit 1;; esac
+          if [ -n "$RESUME" ] && [ -z "$RERUN" ]; then echo "resume_run needs rerun_shards"; exit 1; fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-docgen.txt
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: shard-*
+          path: parts
+          run-id: ${{ inputs.actions_run }}
+          github-token: ${{ github.token }}
+
+      - uses: actions/download-artifact@v4
+        if: inputs.resume_run != ''
+        with:
+          pattern: shard-*
+          path: earlier
+          run-id: ${{ inputs.resume_run }}
+          github-token: ${{ github.token }}
+
+      - name: Add the earlier run's other shards
+        if: inputs.resume_run != ''
+        run: |
+          for dir in earlier/shard-*; do
+            k=${dir##*-}
+            case ",$RERUN," in *",$k,"*) echo "shard $k: rerun";; *) cp -r "$dir" parts/ && echo "shard $k: from the earlier run";; esac
+          done
+
+      - name: Write the trajectories
+        run: |
+          python -m harbortask agentic trajectories "$RUN_ID" --jobs parts/shard-*
+          du -sh "evals/results/$RUN_ID/trajectories"
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: trajectories/${{ inputs.run_id }}
+          add-paths: evals/results/${{ inputs.run_id }}/trajectories
+          commit-message: "Trajectories for ${{ inputs.run_id }}"
+          title: "Trajectories for ${{ inputs.run_id }}"
+          body: "Every trial's agent turns for the holdout run `${{ inputs.run_id }}`, from the shard artifacts of workflow run ${{ inputs.actions_run }}${{ inputs.resume_run && format(' and {0}', inputs.resume_run) || '' }}, for the viewer's trajectory display."
+          delete-branch: true

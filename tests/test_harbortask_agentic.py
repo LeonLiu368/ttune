@@ -27,6 +27,14 @@ def fake_trial(jobs: Path, row: dict, *, answer: str | None, exception: str | No
         "exception_info": {"exception_type": exception, "exception_message": f"{exception} happened"} if exception else None,
     }
     (trial / "result.json").write_text(json.dumps(result))
+    (trial / "agent").mkdir()
+    (trial / "agent" / "trajectory.json").write_text(json.dumps({"steps": [
+        {"step_id": 1, "source": "user", "message": "the task"},
+        {"step_id": 2, "source": "agent", "message": "Analysis: read the packet.",
+         "tool_calls": [{"tool_call_id": "c1", "function_name": "bash_command",
+                         "arguments": {"keystrokes": "ls /app/case/\\n"}}],
+         "observation": {"results": [{"content": "01-application.pdf"}]},
+         "metrics": {"prompt_tokens": 900, "completion_tokens": 60}}]}))
     (trial.parent / "result.json").write_text(json.dumps({"stats": {}}))  # the job's own summary is skipped
 
 
@@ -143,7 +151,7 @@ def test_show_prints_the_answer_and_each_agent_turn(tmp_path):
     row = holdout_rows("holdout-id")[0]
     fake_trial(tmp_path / "jobs", row, answer='{"snap": {"eligible": true}}')
     trial = next(p.parent for p in (tmp_path / "jobs").rglob("result.json") if p.parent.name.endswith("__abc"))
-    (trial / "agent").mkdir()
+    (trial / "agent").mkdir(exist_ok=True)
     (trial / "agent" / "trajectory.json").write_text(json.dumps({"steps": [
         {"step_id": 1, "source": "user", "message": "the instruction"},
         {"step_id": 2, "source": "agent", "message": '{"commands": [{"keystrokes": "pdftotext case/01.pdf -\\n"}]}',
@@ -152,3 +160,49 @@ def test_show_prints_the_answer_and_each_agent_turn(tmp_path):
     text = agentic.show(tmp_path / "jobs" / build.task_id(row["id"]))
     assert '"snap"' in text and "-- turn 2:" in text and "pdftotext" in text and "APPLICATION FOR BENEFITS" in text
     assert "the instruction" not in text
+
+
+def test_collect_keeps_each_trials_turns(tmp_path):
+    import gzip
+
+    rows = holdout_rows("holdout-id")[:2]
+    jobs = tmp_path / "jobs"
+    fake_trial(jobs, rows[0], answer=json.dumps(verify.oracle(build.truth_file(rows[0]))))
+    fake_trial(jobs, rows[1], answer=None, exception="AgentTimeoutError")
+    out = agentic.collect("run", [jobs], model="m", limit=2, results_dir=tmp_path / "results")
+    index = json.loads((out / "trajectories" / "index.json").read_text())
+    task = build.task_id(rows[0]["id"])
+    assert set(index) == {build.task_id(r["id"]) for r in rows}
+    assert index[task] == {"set": "id", "case": rows[0]["id"], "steps": 2, "reward": 1.0}
+    data = json.loads(gzip.decompress((out / "trajectories" / f"{task}.json.gz").read_bytes()))
+    agent_step = data["steps"][1]
+    assert agent_step["calls"] == [{"name": "bash_command", "args": {"keystrokes": "ls /app/case/\\n"}}]
+    assert agent_step["output"] == ["01-application.pdf"] and agent_step["tokens"]["prompt_tokens"] == 900
+    assert data["answer"] and [p["key"] for p in data["phases"]][2] == "agent_execution"
+    assert data["phases"][2]["seconds"] == 360.0
+    timed_out = json.loads(gzip.decompress((out / "trajectories" / f"{build.task_id(rows[1]['id'])}.json.gz").read_bytes()))
+    assert timed_out["answer"] is None and timed_out["exception"]["type"] == "AgentTimeoutError"
+    # A rebuild writes the same bytes.
+    before = (out / "trajectories" / f"{task}.json.gz").read_bytes()
+    agentic.collect("run", [jobs], model="m", limit=2, results_dir=tmp_path / "results")
+    assert (out / "trajectories" / f"{task}.json.gz").read_bytes() == before
+
+
+def test_backfill_adds_trajectories_to_an_older_run_and_refuses_strays(tmp_path):
+    import shutil
+
+    rows = holdout_rows("holdout-id")[:2]
+    jobs = tmp_path / "jobs"
+    for row in rows:
+        fake_trial(jobs, row, answer=json.dumps(verify.oracle(build.truth_file(row))))
+    out = agentic.collect("run", [jobs], model="m", limit=2, results_dir=tmp_path / "results")
+    shutil.rmtree(out / "trajectories")  # as collected before trajectories were kept
+    assert agentic.backfill_trajectories(out, [jobs]) == 2
+    assert len(json.loads((out / "trajectories" / "index.json").read_text())) == 2
+    fake_trial(tmp_path / "other", holdout_rows("holdout-ood")[7], answer="{}")
+    try:
+        agentic.backfill_trajectories(out, [jobs, tmp_path / "other"])
+    except agentic.CollectError as exc:
+        assert "aren't tasks this run scored" in str(exc)
+    else:
+        raise AssertionError("expected CollectError")
