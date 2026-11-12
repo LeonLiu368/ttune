@@ -1,0 +1,2402 @@
+{
+ "benefits-0171c1f09f": {
+  "case": "ood-1-0116",
+  "reward": 0.34,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-0258f5c97f": {
+  "case": "ood-1-0006",
+  "reward": 0.45,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-0288f5f359": {
+  "case": "ood-1-0045",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-02928161db": {
+  "case": "id-1-0070",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-02ffd61558": {
+  "case": "ood-1-0098",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-03a1566aa0": {
+  "case": "ood-1-0143",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 13
+ },
+ "benefits-053fcbdf92": {
+  "case": "id-1-0166",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 4
+ },
+ "benefits-0571abc94d": {
+  "case": "id-1-0109",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-06a1adc55a": {
+  "case": "ood-1-0039",
+  "reward": 0.4625,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-06aae42423": {
+  "case": "ood-1-0182",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-0833a44d5e": {
+  "case": "id-1-0028",
+  "reward": 0.4125,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-090bf070b6": {
+  "case": "ood-1-0178",
+  "reward": 0.45,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-09a1cddcbb": {
+  "case": "id-1-0022",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-0a276bd14e": {
+  "case": "id-1-0077",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-0b31b513c5": {
+  "case": "ood-1-0173",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 14
+ },
+ "benefits-0bfa4a9c43": {
+  "case": "ood-1-0109",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-0c0c0e9399": {
+  "case": "id-1-0186",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-0c8536d621": {
+  "case": "id-1-0133",
+  "reward": 0.075,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-0d41e51359": {
+  "case": "id-1-0004",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-0d564ebec9": {
+  "case": "id-1-0025",
+  "reward": 0.15,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-0d99ce61bf": {
+  "case": "id-1-0157",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-0e5e2527d2": {
+  "case": "id-1-0146",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-102176e2d0": {
+  "case": "id-1-0080",
+  "reward": 0.15,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-10bc03ac18": {
+  "case": "ood-1-0038",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-12cc557693": {
+  "case": "id-1-0084",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-13ea746177": {
+  "case": "id-1-0076",
+  "reward": 0.5375,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-145a2b74d9": {
+  "case": "ood-1-0000",
+  "reward": 0.25,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-14ca604941": {
+  "case": "ood-1-0046",
+  "reward": 0.1125,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-169b810501": {
+  "case": "id-1-0093",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-16fa43ca1f": {
+  "case": "ood-1-0068",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-171814a2b9": {
+  "case": "id-1-0199",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-1757ba7925": {
+  "case": "id-1-0183",
+  "reward": 0.5844,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-176a47c3d3": {
+  "case": "id-1-0085",
+  "reward": 0.1125,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-17911bae6c": {
+  "case": "id-1-0187",
+  "reward": 0.34,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-17b6c082bb": {
+  "case": "ood-1-0113",
+  "reward": 0.075,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-18f44e8891": {
+  "case": "ood-1-0086",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 13
+ },
+ "benefits-19b0037273": {
+  "case": "ood-1-0194",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-1a6a6d0a23": {
+  "case": "ood-1-0165",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-1b7af3630f": {
+  "case": "ood-1-0188",
+  "reward": 0.425,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-1be8d345c7": {
+  "case": "id-1-0095",
+  "reward": 0.3375,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-1d26356ded": {
+  "case": "id-1-0171",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-1e1daed3c0": {
+  "case": "ood-1-0024",
+  "reward": 0.4958,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-1e2285431b": {
+  "case": "ood-1-0050",
+  "reward": 0.425,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-1ee7a3537e": {
+  "case": "ood-1-0009",
+  "reward": 0.1125,
+  "set": "ood",
+  "steps": 10
+ },
+ "benefits-1f3fd3ee7d": {
+  "case": "id-1-0023",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-1fc8fa5bb4": {
+  "case": "ood-1-0189",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-203134e5b7": {
+  "case": "ood-1-0087",
+  "reward": 0.2125,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-20678aee0b": {
+  "case": "ood-1-0150",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-20b512f86a": {
+  "case": "ood-1-0174",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 4
+ },
+ "benefits-210e9d84a2": {
+  "case": "ood-1-0176",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-229b53f968": {
+  "case": "ood-1-0154",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-229faa0426": {
+  "case": "ood-1-0053",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 12
+ },
+ "benefits-253cea0b70": {
+  "case": "ood-1-0195",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-25ecff819e": {
+  "case": "ood-1-0169",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 10
+ },
+ "benefits-26096bed09": {
+  "case": "ood-1-0030",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-263a8a3675": {
+  "case": "ood-1-0199",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-264d788477": {
+  "case": "ood-1-0021",
+  "reward": 0.075,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-27c9e2fbab": {
+  "case": "id-1-0142",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-28bc8e59b5": {
+  "case": "ood-1-0180",
+  "reward": 0.425,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-28d29f8dbd": {
+  "case": "id-1-0038",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-28db056f16": {
+  "case": "id-1-0160",
+  "reward": 0.7875,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-298c5f7b16": {
+  "case": "id-1-0152",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-29b9eba138": {
+  "case": "ood-1-0069",
+  "reward": 0.225,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-2a46b25658": {
+  "case": "ood-1-0163",
+  "reward": 0.3719,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-2ad887a43f": {
+  "case": "ood-1-0003",
+  "reward": 0.3,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-2af0599351": {
+  "case": "ood-1-0152",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 13
+ },
+ "benefits-2c25e618d0": {
+  "case": "ood-1-0060",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-2c59ae748e": {
+  "case": "ood-1-0017",
+  "reward": 0.85,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-2c6fb8a1e0": {
+  "case": "ood-1-0191",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-2ce06900a7": {
+  "case": "id-1-0147",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-2d0c699ae4": {
+  "case": "ood-1-0056",
+  "reward": 0.75,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-2d6ef51c4f": {
+  "case": "id-1-0031",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-2dd9e17509": {
+  "case": "id-1-0075",
+  "reward": 0.4625,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-2e8c01c189": {
+  "case": "ood-1-0032",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-2e93b0f2dd": {
+  "case": "id-1-0043",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-2f16602de1": {
+  "case": "id-1-0168",
+  "reward": 0.075,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-3111a2acb3": {
+  "case": "id-1-0003",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-315004bef3": {
+  "case": "ood-1-0063",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-324bbd2b35": {
+  "case": "id-1-0034",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-338dae31ad": {
+  "case": "id-1-0118",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-3390957f8a": {
+  "case": "ood-1-0102",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-33c2b3180a": {
+  "case": "id-1-0120",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-3468ada860": {
+  "case": "ood-1-0051",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-34cf50b9d9": {
+  "case": "ood-1-0183",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-34e9dffd88": {
+  "case": "ood-1-0015",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-34f0386cf1": {
+  "case": "ood-1-0012",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-350ff235b9": {
+  "case": "ood-1-0022",
+  "reward": 0.1062,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-35c87d39a2": {
+  "case": "id-1-0102",
+  "reward": 0.7969,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-36a2a95922": {
+  "case": "ood-1-0029",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-37b4bff55e": {
+  "case": "id-1-0163",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-3810f2751c": {
+  "case": "id-1-0047",
+  "reward": 0.5375,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-384afbaeb3": {
+  "case": "ood-1-0146",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-38a1207659": {
+  "case": "ood-1-0128",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-3905b68e66": {
+  "case": "ood-1-0125",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-39a5da9b3c": {
+  "case": "ood-1-0181",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-39abcdc7b6": {
+  "case": "id-1-0056",
+  "reward": 0.5375,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-3c880000a3": {
+  "case": "ood-1-0161",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-3ca2101e2b": {
+  "case": "ood-1-0005",
+  "reward": 0.1375,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-3dc4ec168d": {
+  "case": "ood-1-0124",
+  "reward": 0.2125,
+  "set": "ood",
+  "steps": 10
+ },
+ "benefits-3e3c838ed4": {
+  "case": "ood-1-0007",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-3e4cce8cdb": {
+  "case": "id-1-0193",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-3e6db00e3b": {
+  "case": "id-1-0145",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-3e6f3d8033": {
+  "case": "ood-1-0148",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 4
+ },
+ "benefits-3eb718e60a": {
+  "case": "ood-1-0138",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 10
+ },
+ "benefits-3f3d457870": {
+  "case": "ood-1-0059",
+  "reward": 0.6375,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-3ff0709198": {
+  "case": "ood-1-0084",
+  "reward": 0.0638,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-40473b89a4": {
+  "case": "ood-1-0014",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-409363d38c": {
+  "case": "id-1-0107",
+  "reward": 0.25,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-4121da4d51": {
+  "case": "ood-1-0126",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-4177e7d100": {
+  "case": "ood-1-0093",
+  "reward": 0.24,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-4284e3829e": {
+  "case": "id-1-0189",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-42f77bc7a5": {
+  "case": "id-1-0005",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-42ffc75c6c": {
+  "case": "ood-1-0076",
+  "reward": 0.6417,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-442b760503": {
+  "case": "ood-1-0077",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-444607ce60": {
+  "case": "id-1-0117",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-447d0a44d9": {
+  "case": "ood-1-0135",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 4
+ },
+ "benefits-448b007520": {
+  "case": "id-1-0125",
+  "reward": 0.075,
+  "set": "id",
+  "steps": 12
+ },
+ "benefits-45429855b1": {
+  "case": "id-1-0012",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-456b7b371e": {
+  "case": "ood-1-0023",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-459e7f0d51": {
+  "case": "id-1-0096",
+  "reward": 0.15,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-45d86a5fce": {
+  "case": "ood-1-0127",
+  "reward": 0.1,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-46073301aa": {
+  "case": "id-1-0026",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-46baa690bd": {
+  "case": "ood-1-0057",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 10
+ },
+ "benefits-4730e1e1d0": {
+  "case": "id-1-0060",
+  "reward": 0.4125,
+  "set": "id",
+  "steps": 13
+ },
+ "benefits-49953dc563": {
+  "case": "id-1-0018",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-4a47e3cf58": {
+  "case": "ood-1-0047",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-4ad6493373": {
+  "case": "id-1-0156",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-4b5d157010": {
+  "case": "id-1-0194",
+  "reward": 0.4625,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-4b77154ae0": {
+  "case": "id-1-0054",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-4bc633eb4f": {
+  "case": "ood-1-0120",
+  "reward": 0.3187,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-4d39e728cd": {
+  "case": "id-1-0154",
+  "reward": 0.06,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-4fa8462d05": {
+  "case": "id-1-0073",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-500a16ad29": {
+  "case": "id-1-0059",
+  "reward": 0.25,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-50a6e47681": {
+  "case": "ood-1-0114",
+  "reward": 0.18,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-50e49e99ff": {
+  "case": "ood-1-0110",
+  "reward": 0.2125,
+  "set": "ood",
+  "steps": 12
+ },
+ "benefits-51398bfccc": {
+  "case": "ood-1-0083",
+  "reward": 0.2125,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-51ad4f6775": {
+  "case": "ood-1-0197",
+  "reward": 0.225,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-5293d0ce10": {
+  "case": "id-1-0121",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-538f277276": {
+  "case": "ood-1-0160",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-5413f3bb1d": {
+  "case": "ood-1-0075",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 17
+ },
+ "benefits-546161f0cb": {
+  "case": "ood-1-0090",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 13
+ },
+ "benefits-5475c62438": {
+  "case": "ood-1-0081",
+  "reward": 0.06,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-5549666146": {
+  "case": "id-1-0141",
+  "reward": 0.1125,
+  "set": "id",
+  "steps": 13
+ },
+ "benefits-560ea008d7": {
+  "case": "id-1-0062",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-560fa3436f": {
+  "case": "id-1-0067",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-5644b3ff71": {
+  "case": "id-1-0040",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-56efc7cca7": {
+  "case": "id-1-0010",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-5806f5cac8": {
+  "case": "ood-1-0062",
+  "reward": 0.5219,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-583182f403": {
+  "case": "id-1-0035",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-5911167c55": {
+  "case": "ood-1-0156",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-5ac1de50d9": {
+  "case": "ood-1-0159",
+  "reward": 0.1667,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-5ad73094dd": {
+  "case": "id-1-0143",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-5bb131a095": {
+  "case": "ood-1-0158",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-5d394b5a63": {
+  "case": "id-1-0170",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-5d7b65a4a5": {
+  "case": "ood-1-0072",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-5d9339069e": {
+  "case": "ood-1-0141",
+  "reward": 0.1275,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-5e5278f3df": {
+  "case": "id-1-0001",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 13
+ },
+ "benefits-5edd337b8d": {
+  "case": "ood-1-0001",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-600fe05148": {
+  "case": "ood-1-0129",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-6093045711": {
+  "case": "id-1-0036",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 15
+ },
+ "benefits-60bffe56e4": {
+  "case": "id-1-0110",
+  "reward": 0.7125,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-60e78f1334": {
+  "case": "id-1-0044",
+  "reward": 0.15,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-61e6b7bc37": {
+  "case": "ood-1-0162",
+  "reward": 0.3937,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-621ac40941": {
+  "case": "id-1-0091",
+  "reward": 0.4958,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-6285824546": {
+  "case": "ood-1-0079",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-635e59be42": {
+  "case": "ood-1-0119",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-63d023c4e7": {
+  "case": "id-1-0039",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 15
+ },
+ "benefits-641c085f4f": {
+  "case": "id-1-0106",
+  "reward": 0.45,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-648d822c1f": {
+  "case": "id-1-0115",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-64ad8cced3": {
+  "case": "id-1-0097",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-64d2306019": {
+  "case": "id-1-0072",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-6554e40f4d": {
+  "case": "id-1-0105",
+  "reward": 0.5667,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-656221ffbe": {
+  "case": "id-1-0138",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-65fca43a40": {
+  "case": "id-1-0116",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-6600cfac7e": {
+  "case": "id-1-0181",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-66627cf81a": {
+  "case": "ood-1-0042",
+  "reward": 0.5667,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-6672c79f00": {
+  "case": "ood-1-0070",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 10
+ },
+ "benefits-66843ebdd7": {
+  "case": "id-1-0144",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-66aa40a3ad": {
+  "case": "ood-1-0108",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-670dd4ec56": {
+  "case": "ood-1-0100",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 14
+ },
+ "benefits-6713c035a1": {
+  "case": "ood-1-0094",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-6717a17208": {
+  "case": "ood-1-0043",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-67afe5a929": {
+  "case": "id-1-0114",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-6e64df2c02": {
+  "case": "id-1-0030",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-6f1de623b3": {
+  "case": "ood-1-0121",
+  "reward": 0.1875,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-6f3ecf4207": {
+  "case": "ood-1-0184",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-6f644217f4": {
+  "case": "ood-1-0099",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-7061ba52f9": {
+  "case": "ood-1-0134",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-72c4a971eb": {
+  "case": "id-1-0180",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-7339b7680b": {
+  "case": "id-1-0065",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-73ed00514e": {
+  "case": "id-1-0088",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-7476c82ca0": {
+  "case": "ood-1-0185",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-7496309d63": {
+  "case": "id-1-0179",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 12
+ },
+ "benefits-74a948d77c": {
+  "case": "ood-1-0092",
+  "reward": 0.5844,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-7508df223f": {
+  "case": "id-1-0009",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-752ab87ed2": {
+  "case": "ood-1-0177",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-76c95563c5": {
+  "case": "ood-1-0172",
+  "reward": 0.3,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-76e31d4b6e": {
+  "case": "id-1-0177",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-781203ea0e": {
+  "case": "ood-1-0105",
+  "reward": 0.2357,
+  "set": "ood",
+  "steps": 4
+ },
+ "benefits-7869738a93": {
+  "case": "id-1-0045",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-78b58b32a0": {
+  "case": "ood-1-0019",
+  "reward": 0.0375,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-796634776b": {
+  "case": "ood-1-0196",
+  "reward": 0.5,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-7d76649497": {
+  "case": "id-1-0113",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-7db8c33e74": {
+  "case": "ood-1-0198",
+  "reward": 0.0375,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-7f67d3cdff": {
+  "case": "id-1-0159",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-7ffff06e6b": {
+  "case": "id-1-0013",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-804a28cccc": {
+  "case": "id-1-0092",
+  "reward": 0.3187,
+  "set": "id",
+  "steps": 12
+ },
+ "benefits-823738e833": {
+  "case": "id-1-0021",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-833c8d4a6e": {
+  "case": "id-1-0172",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-8418208570": {
+  "case": "ood-1-0193",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-84529df6f0": {
+  "case": "ood-1-0073",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-84fb6368e5": {
+  "case": "ood-1-0091",
+  "reward": 0.25,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-856528911f": {
+  "case": "id-1-0063",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-85cda03f4a": {
+  "case": "ood-1-0145",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-863a8039ea": {
+  "case": "id-1-0161",
+  "reward": 0.745,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-882275cea4": {
+  "case": "id-1-0052",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-88f937faf8": {
+  "case": "ood-1-0018",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-8927703e34": {
+  "case": "ood-1-0020",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-89e8c8aded": {
+  "case": "ood-1-0157",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-8a4c1efadf": {
+  "case": "id-1-0019",
+  "reward": 0.15,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-8b6d9b44c1": {
+  "case": "ood-1-0106",
+  "reward": 0.1125,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-8c1404424c": {
+  "case": "id-1-0191",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-8c5cd4c15c": {
+  "case": "id-1-0046",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-8e595b37a5": {
+  "case": "ood-1-0151",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 13
+ },
+ "benefits-8ef6b8b572": {
+  "case": "ood-1-0028",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-8f30217545": {
+  "case": "ood-1-0074",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-8fd5b2979b": {
+  "case": "ood-1-0044",
+  "reward": 0.6375,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-909e76afc6": {
+  "case": "id-1-0148",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-91a814aa97": {
+  "case": "ood-1-0179",
+  "reward": 0.3,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-92fb21e87e": {
+  "case": "ood-1-0080",
+  "reward": 0.4125,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-9341e28110": {
+  "case": "id-1-0184",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-93d2257828": {
+  "case": "id-1-0130",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 15
+ },
+ "benefits-93d47ab9bb": {
+  "case": "ood-1-0025",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-93f5a331df": {
+  "case": "id-1-0029",
+  "reward": 0.6225,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-96dc90a9a2": {
+  "case": "id-1-0094",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-96fb453a4d": {
+  "case": "id-1-0188",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 12
+ },
+ "benefits-97cbb39599": {
+  "case": "ood-1-0175",
+  "reward": 0.3,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-9845c31d12": {
+  "case": "ood-1-0190",
+  "reward": 0.2775,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-984af75707": {
+  "case": "id-1-0100",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 12
+ },
+ "benefits-98d772a0b0": {
+  "case": "id-1-0089",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-993bca4484": {
+  "case": "id-1-0037",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-999ce81138": {
+  "case": "id-1-0196",
+  "reward": 0.5525,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-9a2c97aa37": {
+  "case": "id-1-0017",
+  "reward": 0.5525,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-9a45de4d10": {
+  "case": "id-1-0055",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 14
+ },
+ "benefits-9a8b0d3b62": {
+  "case": "ood-1-0027",
+  "reward": 0.225,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-9b2ba4c9bb": {
+  "case": "id-1-0158",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-9b8f38242b": {
+  "case": "ood-1-0089",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-9c0048be0f": {
+  "case": "id-1-0000",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-9d06a9aaaf": {
+  "case": "ood-1-0115",
+  "reward": 0.1125,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-9dc3bb49f5": {
+  "case": "id-1-0016",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-9dc6994e41": {
+  "case": "ood-1-0026",
+  "reward": 0.235,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-9f618346c9": {
+  "case": "id-1-0099",
+  "reward": 0.68,
+  "set": "id",
+  "steps": 4
+ },
+ "benefits-9f84acf65c": {
+  "case": "ood-1-0037",
+  "reward": 0.85,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-9fad55c13f": {
+  "case": "ood-1-0011",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-a007f018ff": {
+  "case": "ood-1-0132",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-a06b58e23f": {
+  "case": "ood-1-0111",
+  "reward": 0.255,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-a0a4de931a": {
+  "case": "id-1-0134",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-a0e5e632f3": {
+  "case": "id-1-0190",
+  "reward": 0.5375,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-a1961c901a": {
+  "case": "id-1-0124",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 13
+ },
+ "benefits-a1af5ad5f6": {
+  "case": "ood-1-0008",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-a28da57fdf": {
+  "case": "id-1-0015",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-a303c72c8a": {
+  "case": "ood-1-0186",
+  "reward": 0.425,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-a322195e15": {
+  "case": "ood-1-0031",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-a3e83f1186": {
+  "case": "ood-1-0071",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-a6ea2eda53": {
+  "case": "ood-1-0133",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-a8f961b328": {
+  "case": "ood-1-0013",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-a957b13d3d": {
+  "case": "id-1-0119",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-a9ce7ac318": {
+  "case": "ood-1-0033",
+  "reward": 0.5375,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-aafd28a625": {
+  "case": "ood-1-0040",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-ab597b2ca9": {
+  "case": "id-1-0064",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-ab9f6ab69e": {
+  "case": "ood-1-0149",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-abf7b721a9": {
+  "case": "id-1-0098",
+  "reward": 0.075,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-ad9f0b012e": {
+  "case": "id-1-0079",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-ade8a9219f": {
+  "case": "ood-1-0052",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-aef42ad792": {
+  "case": "ood-1-0104",
+  "reward": 0.1125,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-b081d2fa40": {
+  "case": "id-1-0053",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-b0c792e147": {
+  "case": "id-1-0165",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-b111341019": {
+  "case": "id-1-0140",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 12
+ },
+ "benefits-b1fee3225b": {
+  "case": "id-1-0042",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-b2384c5ce6": {
+  "case": "id-1-0137",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-b3f73ac75f": {
+  "case": "ood-1-0142",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-b601dc1a2a": {
+  "case": "id-1-0033",
+  "reward": 0.5667,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-b645f4b066": {
+  "case": "id-1-0174",
+  "reward": 0.4875,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-b7947d05a7": {
+  "case": "id-1-0087",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-b8ca20602d": {
+  "case": "id-1-0024",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 14
+ },
+ "benefits-b8d21d693f": {
+  "case": "ood-1-0112",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-b93e067124": {
+  "case": "ood-1-0137",
+  "reward": 0.3,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-b99d9c4d11": {
+  "case": "ood-1-0034",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-bad7543282": {
+  "case": "id-1-0128",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-bc595f2d3e": {
+  "case": "id-1-0074",
+  "reward": 0.1875,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-bc91fd51da": {
+  "case": "id-1-0014",
+  "reward": 0.05,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-bd443d0be5": {
+  "case": "ood-1-0170",
+  "reward": 0.3825,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-bde392f0e0": {
+  "case": "ood-1-0095",
+  "reward": 0.2125,
+  "set": "ood",
+  "steps": 4
+ },
+ "benefits-be19ba51d0": {
+  "case": "ood-1-0187",
+  "reward": 0.375,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-c0b764ec16": {
+  "case": "ood-1-0054",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-c0caafebe4": {
+  "case": "ood-1-0065",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-c0f12dc349": {
+  "case": "id-1-0175",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-c2765b01ad": {
+  "case": "ood-1-0048",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-c2db576fbb": {
+  "case": "ood-1-0067",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-c30747c009": {
+  "case": "ood-1-0117",
+  "reward": 0.0545,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-c4155cf3a0": {
+  "case": "ood-1-0088",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-c42a4566f7": {
+  "case": "ood-1-0035",
+  "reward": 0.075,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-c4637254e1": {
+  "case": "id-1-0083",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 16
+ },
+ "benefits-c487fc5b19": {
+  "case": "id-1-0127",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-c4c941f28b": {
+  "case": "ood-1-0002",
+  "reward": 0.0375,
+  "set": "ood",
+  "steps": 4
+ },
+ "benefits-c52a3526f1": {
+  "case": "id-1-0164",
+  "reward": 0.1275,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-c5b908e090": {
+  "case": "id-1-0169",
+  "reward": 0.5667,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-c5efc86f01": {
+  "case": "ood-1-0171",
+  "reward": 0.1375,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-c6b02c5bbe": {
+  "case": "id-1-0020",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-c7b51c0f79": {
+  "case": "ood-1-0107",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-c856551ddc": {
+  "case": "id-1-0136",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-c89453c70e": {
+  "case": "id-1-0182",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-c8cbbf1fec": {
+  "case": "id-1-0155",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-c9237050e0": {
+  "case": "ood-1-0061",
+  "reward": 0.0675,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-ca267f00c7": {
+  "case": "id-1-0011",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-ca5c448e40": {
+  "case": "id-1-0002",
+  "reward": 0.85,
+  "set": "id",
+  "steps": 4
+ },
+ "benefits-cbeeb4f728": {
+  "case": "id-1-0051",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-ccc08942c0": {
+  "case": "ood-1-0049",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 13
+ },
+ "benefits-ccd40f47ab": {
+  "case": "id-1-0078",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-cdafc792d7": {
+  "case": "id-1-0111",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-ce13c0ae7c": {
+  "case": "id-1-0057",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-ce40754d32": {
+  "case": "id-1-0192",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-ce7ffb78e7": {
+  "case": "id-1-0178",
+  "reward": 0.1275,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-ce8b5e8130": {
+  "case": "ood-1-0041",
+  "reward": 0.2625,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-cf0c0d8dfd": {
+  "case": "id-1-0027",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-cf26e16db9": {
+  "case": "id-1-0049",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-cf3276b6af": {
+  "case": "ood-1-0096",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 4
+ },
+ "benefits-cf38fdf612": {
+  "case": "ood-1-0167",
+  "reward": 0.325,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-d0104ce97c": {
+  "case": "id-1-0069",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-d08ccc9ac8": {
+  "case": "ood-1-0153",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-d105eee890": {
+  "case": "id-1-0066",
+  "reward": 0.45,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-d1600d0820": {
+  "case": "ood-1-0085",
+  "reward": 0.5375,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-d1a468c328": {
+  "case": "id-1-0153",
+  "reward": 0.1125,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-d1c811c965": {
+  "case": "id-1-0071",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-d32f61244e": {
+  "case": "ood-1-0064",
+  "reward": 0.33,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-d8d305e5be": {
+  "case": "id-1-0032",
+  "reward": 0.3825,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-d9490ad20c": {
+  "case": "id-1-0162",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-d9fddfa5f6": {
+  "case": "id-1-0126",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-da4889c800": {
+  "case": "id-1-0086",
+  "reward": 0.6375,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-db34490b8a": {
+  "case": "id-1-0197",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-dba8e71549": {
+  "case": "ood-1-0166",
+  "reward": 0.4667,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-dbd9737947": {
+  "case": "id-1-0041",
+  "reward": 0.85,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-dcb324dc2d": {
+  "case": "id-1-0132",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-dd3805ee94": {
+  "case": "id-1-0167",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-dde33ab028": {
+  "case": "ood-1-0118",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-de23f27cb3": {
+  "case": "id-1-0131",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 4
+ },
+ "benefits-dee6085b33": {
+  "case": "id-1-0151",
+  "reward": 0.5667,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-df0ff7d394": {
+  "case": "id-1-0185",
+  "reward": 0.075,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-dfedf35f35": {
+  "case": "ood-1-0147",
+  "reward": 0.075,
+  "set": "ood",
+  "steps": 10
+ },
+ "benefits-e0340c9102": {
+  "case": "ood-1-0140",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-e035bad648": {
+  "case": "id-1-0050",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-e05bf69bfe": {
+  "case": "id-1-0122",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-e11afe5fc7": {
+  "case": "ood-1-0066",
+  "reward": 0.1364,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-e19c582007": {
+  "case": "id-1-0006",
+  "reward": 0.0375,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-e3553088a4": {
+  "case": "ood-1-0078",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-e363e473f0": {
+  "case": "ood-1-0055",
+  "reward": 0.525,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-e3751d5414": {
+  "case": "id-1-0129",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-e404dd34f7": {
+  "case": "ood-1-0136",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-e41833f6c8": {
+  "case": "id-1-0008",
+  "reward": 0.85,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-e498fe7f92": {
+  "case": "ood-1-0123",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-e4e68c5c2f": {
+  "case": "ood-1-0010",
+  "reward": 0.15,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-e50ac2a650": {
+  "case": "id-1-0150",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-e54556fe5b": {
+  "case": "ood-1-0101",
+  "reward": 0.375,
+  "set": "ood",
+  "steps": 6
+ },
+ "benefits-e68e08cab8": {
+  "case": "id-1-0108",
+  "reward": 0.3937,
+  "set": "id",
+  "steps": 14
+ },
+ "benefits-e7c7d20e3c": {
+  "case": "id-1-0176",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-e85e9f2881": {
+  "case": "id-1-0061",
+  "reward": 0.15,
+  "set": "id",
+  "steps": 4
+ },
+ "benefits-e8a2126ec8": {
+  "case": "ood-1-0122",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 4
+ },
+ "benefits-e9e9b9a1be": {
+  "case": "ood-1-0139",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 11
+ },
+ "benefits-ea463953f8": {
+  "case": "id-1-0090",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 10
+ },
+ "benefits-eaab676db7": {
+  "case": "ood-1-0131",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-eac8701ff2": {
+  "case": "ood-1-0004",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 12
+ },
+ "benefits-ead4ebc63b": {
+  "case": "id-1-0104",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-edbaaac70c": {
+  "case": "id-1-0139",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-ee8ba35825": {
+  "case": "ood-1-0164",
+  "reward": 0.2125,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-ee8eef4445": {
+  "case": "id-1-0058",
+  "reward": 0.1875,
+  "set": "id",
+  "steps": 6
+ },
+ "benefits-f1c2e19374": {
+  "case": "ood-1-0103",
+  "reward": 0.425,
+  "set": "ood",
+  "steps": 10
+ },
+ "benefits-f312aae52e": {
+  "case": "id-1-0068",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-f356f47745": {
+  "case": "ood-1-0036",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-f35a6b1fa5": {
+  "case": "id-1-0195",
+  "reward": 0.1437,
+  "set": "id",
+  "steps": 15
+ },
+ "benefits-f4424d2fdc": {
+  "case": "id-1-0007",
+  "reward": 0.0375,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-f47e48bd7b": {
+  "case": "id-1-0082",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-f5b0c4a8f6": {
+  "case": "ood-1-0082",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 9
+ },
+ "benefits-f60ea3f637": {
+  "case": "id-1-0048",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 9
+ },
+ "benefits-f6957c36b0": {
+  "case": "id-1-0135",
+  "reward": 0.5667,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-f6ca1d2b8b": {
+  "case": "id-1-0101",
+  "reward": 0.3,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-f6ca7461f9": {
+  "case": "ood-1-0130",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-f791d381a6": {
+  "case": "ood-1-0144",
+  "reward": 0.425,
+  "set": "ood",
+  "steps": 8
+ },
+ "benefits-f7dbbaa5ce": {
+  "case": "ood-1-0058",
+  "reward": 0.425,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-f7e339988e": {
+  "case": "ood-1-0192",
+  "reward": 0.0375,
+  "set": "ood",
+  "steps": 13
+ },
+ "benefits-f7e875db7b": {
+  "case": "id-1-0198",
+  "reward": 0.2125,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-f8d60e19b5": {
+  "case": "ood-1-0016",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 7
+ },
+ "benefits-f8eaff86bd": {
+  "case": "id-1-0103",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-fa5e8d970b": {
+  "case": "ood-1-0155",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-fc76b8fea1": {
+  "case": "id-1-0123",
+  "reward": 0.3375,
+  "set": "id",
+  "steps": 5
+ },
+ "benefits-fc8480d91a": {
+  "case": "ood-1-0097",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 13
+ },
+ "benefits-fcb1a8c873": {
+  "case": "id-1-0081",
+  "reward": 0.4376,
+  "set": "id",
+  "steps": 11
+ },
+ "benefits-fcd3d8fd28": {
+  "case": "id-1-0149",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 8
+ },
+ "benefits-fdb24d7a4c": {
+  "case": "id-1-0173",
+  "reward": 0.0,
+  "set": "id",
+  "steps": 7
+ },
+ "benefits-fe3feafe15": {
+  "case": "ood-1-0168",
+  "reward": 0.0,
+  "set": "ood",
+  "steps": 5
+ },
+ "benefits-ff0f47aebc": {
+  "case": "id-1-0112",
+  "reward": 0.425,
+  "set": "id",
+  "steps": 12
+ }
+}
